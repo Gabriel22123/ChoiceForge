@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChoiceForge"
+  short_description: "Use and train the public candidate decision model"
+  default_prompt: "Use $choiceforge to run a public-data inference or training workflow."

@@ -50,6 +50,14 @@ The loader verifies the base lock, every bundle file, and the adapter protocol
 before inference. All predictions are marked `requires_review: true`; this is a
 decision aid, not an autonomous action executor.
 
+## Use it as a Codex skill
+
+The repository includes `skills/choiceforge`, which routes natural-language
+requests to inference, training, evaluation and audit workflows. Copy that
+directory to your Codex skills directory and invoke it as `$choiceforge`.
+Its instructions keep requests structured and keep training data provenance
+explicit.
+
 ## What we built
 
 - A task-conditioned scalar scorer that supports arbitrary candidate counts and

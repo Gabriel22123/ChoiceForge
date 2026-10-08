@@ -41,6 +41,12 @@ choiceforge predict-merged \
 模型输入是任务、上下文和任意数量候选项；输出由代码固定构造为选择、概率、复核标记、
 分数语义和校准状态。模型不会生成思考文本或任意 JSON，且所有结果都要求人工复核。
 
+## 作为 Skill 使用
+
+仓库内置 `skills/choiceforge`，可以把自然语言请求路由到推理、训练、评测和审计流程。
+将这个目录复制到 Codex 的 skills 目录后，即可用 `$choiceforge` 调用；具体输入格式和命令见
+其中的 `references/workflow.md`。
+
 ## 如何训练
 
 最小公开数据训练路径：
