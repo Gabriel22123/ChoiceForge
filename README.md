@@ -68,8 +68,9 @@ explicit.
   same-budget EuroBERT-2.1B encoder route under matched public-data protocols.
 - A reusable audit surface for accuracy, proper probability loss, calibration,
   selective risk and abstention behavior.
-- A model-independent `benchmark` command that records metrics, task-family
-  strata and input/output hashes for third-party comparisons.
+- A model-independent `benchmark` command and a tracked Benchmark v1 data
+  manifest that record metrics, task-family strata and input/output hashes for
+  third-party comparisons.
 - An RLCD-inspired outcome-learning pipeline: public outcome targets, proper
   scoring, full/null-context advantage, source-specialist experts, a
   source-balanced portfolio, and a decision-stable projection that preserves the
@@ -184,9 +185,9 @@ far, but still does not preserve the full decision function.** A frozen QASC
 screen adds 512 CC-BY-4.0 training questions while hiding source answer letters
 and balancing the answer-blind candidate positions. Held-out accuracy rises
 from 82.03% to 93.75%, NLL falls from 0.601 to 0.167, and context advantage
-rises from 1.540 to 2.004. All five QASC gates pass. Seen NLL nevertheless
+rises from 1.540 to 2.004. All five QASC criteria pass. Seen NLL nevertheless
 worsens by 0.0435, consumed-development accuracy falls by 0.78 points, and
-causal-judgment context advantage remains negative. Only 6/11 frozen gates
+causal-judgment context advantage remains negative. Only 6/11 frozen criteria
 pass, so this single-seed endpoint does not advance. See the
 [QASC evidence screen](docs/QASC_EVIDENCE_SCREEN.zh-CN.md).
 
@@ -215,21 +216,21 @@ additive correction still changes the composed function.** The parent LoRA and
 readout remain bit-identical across all 454 tensors while only a 528,897-
 parameter residual head enters the optimizer. Seen accuracy and NLL both pass,
 QASC NLL improves by 0.0594 and QASC context advantage rises by 0.1627. The
-QASC accuracy gain is only 2.34 points against a frozen 3-point gate;
+QASC accuracy gain is only 2.34 points against a frozen 3-point criterion;
 consumed-development accuracy falls by 0.521 points and causal context
-advantage falls by 0.0111. The mechanism passes 8/11 gates and does not advance.
+advantage falls by 0.0111. The mechanism passes 8/11 criteria and does not advance.
 This separates parameter preservation from behavioral preservation: a frozen
 parent is insufficient when an unrestricted residual is added to every task.
 See the [residual-expert screen](docs/QASC_RESIDUAL_EXPERT_SCREEN.zh-CN.md).
 
 **Joint sparse routing collapses before the residual expert becomes useful.**
 The request router is candidate-order invariant and reads only frozen parent
-features, while the residual starts at exact zero. All old-task retention gates
+features, while the residual starts at exact zero. All old-task retention criteria
 pass: seen and consumed-development accuracy are unchanged, seen NLL improves
 by 0.0001, and every development context-advantage delta stays within 0.00006.
 The one-sided replay sparsity term drives the gate from 0.25 to 0.00388 on
 replay and 0.00499 on QASC, however. QASC accuracy is unchanged and its NLL
-improves by only 0.0003. The arm fails four of nine gates and does not advance.
+improves by only 0.0003. The arm fails four of nine criteria and does not advance.
 The next consumed mechanism screen separates expert learning from router
 learning so the router evaluates a nonzero expert. See the
 [routed-residual screen](docs/QASC_ROUTED_RESIDUAL_SCREEN.zh-CN.md).
@@ -238,15 +239,15 @@ learning so the router evaluates a nonzero expert. See the
 the unconstrained router saturates open.** The expert-only and router-only
 phases preserve their complementary parameter sets exactly. QASC accuracy rises
 from 82.03% to 92.97%, NLL falls by 0.3511 and context advantage rises by
-0.2202; seen accuracy/NLL also pass. Both replay and QASC gates converge above
+0.2202; seen accuracy/NLL also pass. Both replay and QASC criteria converge above
 0.997, so the router does not separate them. Consumed-development accuracy
 falls by 0.78 points and movie-recommendation context advantage by 0.00834.
-The arm passes 8/11 gates and does not advance. Training-row counterfactual
+The arm passes 8/11 criteria and does not advance. Training-row counterfactual
 grid search nevertheless yields mean optimal gates of 0.266 for replay and
 0.835 for QASC, motivating a behavior-derived route teacher. See the
 [staged-router screen](docs/QASC_STAGED_ROUTER_SCREEN.zh-CN.md).
 
-**Behavior-derived routing passes 11/12 gates.** A 21-point counterfactual
+**Behavior-derived routing passes 11/12 criteria.** A 21-point counterfactual
 grid combines gold proper loss, full/null teacher KL and context advantage into
 one optimal gate per training request. The source-blind router learns a replay/
 QASC gate gap of 0.326, preserves consumed-development accuracy exactly, raises
@@ -260,7 +261,7 @@ the [counterfactual-router screen](docs/QASC_COUNTERFACTUAL_ROUTER_SCREEN.zh-CN.
 context bound.** Keeping all other controls fixed, it reduces the consumed
 development full/null gate gap to 0.0822 and improves the movie context delta
 from -0.00552 to -0.00532. The frozen limit is -0.005, so the screen still
-passes only 11/12 gates. Increasing that penalty post hoc would tune to a
+passes only 11/12 criteria. Increasing that penalty post hoc would tune to a
 consumed decimal margin. The next structural test computes one route from the
 context-ablated task/candidate view and reuses it for both branches, making the
 route invariant exact. See the
@@ -269,7 +270,7 @@ route invariant exact. See the
 **A structurally shared context-ablated route clears context retention but
 still flips three consumed-development decisions.** One gate is computed from
 the null-context task/candidate view and reused for both paths, making the gate
-difference exactly zero. All context, seen and QASC gates pass; QASC accuracy
+difference exactly zero. All context, seen and QASC criteria pass; QASC accuracy
 rises 9.38 points. Development accuracy falls from 66.15% to 65.36% because
 two causal and one formal-fallacy decisions change, despite better aggregate
 NLL. The screen passes 12/13 checks. The route teacher next needs an explicit
@@ -344,7 +345,7 @@ measure held-out utility before routing. See the
 
 **Source-specific experts break the one-positive-family bottleneck.** Using the
 same frozen 2B representation and residual-head protocol, three-seed specialists
-for SNLI, PAWS-Wiki and CLINC all pass frozen utility, accuracy and NLL gates.
+for SNLI, PAWS-Wiki and CLINC all pass frozen utility, accuracy and NLL criteria.
 Mean utility is +0.0711, +0.0627 and +0.0153 respectively. Typed Decisions and
 JSON Schema fail; notably JSON Schema gains 4.76 accuracy points while worsening
 NLL by 0.0750 and producing -0.0968 utility. This shows why routing labels must
@@ -368,7 +369,7 @@ The first constrained oracle catches another contract boundary. It records zero
 hard-label correctness, NLL, Brier or context regressions and improves aggregate
 accuracy by 4.14 points, but Typed Decisions soft cross entropy still worsens by
 0.1481. Those rows carry public `target_probabilities`; protecting only their
-argmax label is insufficient. This v1 oracle fails its per-source NLL gate. The
+argmax label is insufficient. This v1 oracle fails its per-source NLL criterion. The
 next safety rule must compute cross entropy, Brier and context advantage against
 the complete target distribution, reducing to one-hot only for hard-label rows.
 See the [safe-oracle result](docs/SAFE_SPECIALIST_ORACLE_RESULT.zh-CN.md).
@@ -378,13 +379,13 @@ with public `target_probabilities` where available yields zero per-row
 correctness, cross-entropy, Brier or expected-context regressions and no
 source-level accuracy or cross-entropy regression. The constrained oracle raises
 accuracy from 72.93% to 77.21%, lowers NLL from 0.8218 to 0.6565 and improves
-proper loss by 0.1996 on average. All frozen gates pass. This feasibility-first,
+proper loss by 0.1996 on average. All frozen criteria pass. This feasibility-first,
 reward-second target is now the required supervision rule for multi-expert route
 learning. See the
 [distribution-safe result](docs/DISTRIBUTION_SAFE_SPECIALIST_ORACLE_RESULT.zh-CN.md).
 
 The independently trained ARC specialist is directionally useful but does not
-pass its frozen gate. All three seeds gain 0.78 accuracy points, mean NLL falls
+pass its frozen criterion. All three seeds gain 0.78 accuracy points, mean NLL falls
 by 0.0166 and mean utility is +0.0209. One seed reaches only +0.0196 utility,
 and the accuracy and NLL gains miss the preregistered +1-point and -0.02 bounds.
 Unlike the transferred QASC expert, both ARC subfamilies improve, confirming the
@@ -400,7 +401,7 @@ per-expert feasibility prediction from utility ranking and keeps the parent as
 the fallback whenever no expert is conservatively eligible. See the
 [multi-expert route result](docs/SAFE_MULTI_EXPERT_ROUTE_LOFO_RESULT.zh-CN.md).
 
-The independently trained TruthfulQA specialist passes every frozen gate on
+The independently trained TruthfulQA specialist passes every frozen criterion on
 all three seeds. Accuracy improves by 1.56–1.95 points, NLL falls by
 0.2262–0.2461 and mean counterfactual utility is +0.3189. This adds a positive
 specialist family whose mechanism differs from science question answering,
@@ -409,7 +410,7 @@ release claim. See the
 [TruthfulQA specialist result](docs/TRUTHFULQA_SPECIALIST_RESULT.zh-CN.md).
 
 Factoring safety from utility materially improves zero-shot routing but does not
-yet pass the frozen safety gate. Nested source-held-out thresholds turn the
+yet pass the frozen safety criterion. Nested source-held-out thresholds turn the
 direct router's +0.0287 cross-entropy regression into a 0.0051 reduction and
 produce +0.0065 proper-loss gain, while row-level constraint violations fall
 from 26.70% to 3.82%. Expert coverage is only 4.24% and selected-expert safety
@@ -421,7 +422,7 @@ abstain outside training-family support. See the
 Separately calibrated constraint margins reach the opposite boundary: zero
 metric regression and zero safety violations, but they abstain on every heldout
 row. The frozen 99% residual bounds therefore produce a safe but useless parent
-fallback, failing both coverage and positive-gain gates. This result rules out
+fallback, failing both coverage and positive-gain criteria. This result rules out
 claiming success through pure abstention and indicates that probability-only
 behavior features lack enough information about unseen supervision structure.
 See the [constraint-margin result](docs/CONSTRAINT_MARGIN_ROUTE_LOFO_RESULT.zh-CN.md).
@@ -436,7 +437,7 @@ risk control for unseen families. See the
 
 Requiring unanimous safety and positive gain across all three frozen seeds
 reduces the violation rate to 1.66% and restores a small cross-entropy gain.
-It still fails the unchanged endpoint gates: selected-expert safety precision
+It still fails the unchanged endpoint criteria: selected-expert safety precision
 is 84.00%, coverage is 3.45% and mean proper gain is only +0.0009. Seed
 consensus is a useful risk control but cannot replace broader family-level
 meta-training. See the
