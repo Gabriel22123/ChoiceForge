@@ -11,7 +11,7 @@ downloaded separately from its upstream revision.
 ChoiceForge accepts a task, context and 2–32 caller-supplied candidates. It
 returns exactly five fields: the selected candidate ID, candidate probabilities,
 a mandatory review marker, score semantics and calibration status. It does not
-generate reasoning text or arbitrary JSON. Quality-rule assessment is one
+generate reasoning text or arbitrary JSON. Bounded candidate assessment is one
 example rather than a fixed label space.
 
 The model uses the public `openbmb/MiniCPM5-2B-Base` revision

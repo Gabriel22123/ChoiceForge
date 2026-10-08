@@ -11,7 +11,7 @@ audit=read(run_dir/"audit.json")
 manifest=read(root/"data/public-multitask-v1/manifest.json")
 names={"bandit":"局部代码策略判断","json-schema":"Schema 规则判断","clinc":"用户意图候选排序","goemotions":"情绪识别（整类任务未参与微调）"}
 lines=["# 本地通用决策模型：公开数据首轮实测","",
-       "这是通用候选决策架构的第一轮公开数据实验。质量规则只是其中一个任务。尚未发布 GitHub。", "",
+       "这是通用候选决策架构的第一轮公开数据实验。具体业务规则不属于模型接口。", "",
        "## 训练与数据", "",
        f"- 公开数据共 {manifest['rows']:,} 条，来自四个有明确许可的固定版本来源。",
        f"- 实际使用训练 {len(run['selected_ids']['train'])} 条、校准 {len(run['selected_ids']['validation'])} 条、测试 {len(run['selected_ids']['test'])} 条。",

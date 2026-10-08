@@ -4,8 +4,8 @@
 
 The project studies how a model can select among caller-defined candidates,
 communicate useful probabilities, remain stable under equivalent formulations,
-and transfer to task families absent from its fine-tuning. Quality gates are
-one application. Universal zero-shot competence is the long-term objective,
+and transfer to task families absent from its fine-tuning. Bounded rule
+assessment is one application. Universal zero-shot competence is the long-term objective,
 not a current result.
 
 See the [Chinese explanation](RESEARCH.zh-CN.md) for the motivation, mathematical

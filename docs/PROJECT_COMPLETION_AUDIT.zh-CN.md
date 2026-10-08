@@ -24,6 +24,6 @@
 - RLCD-style outcome feedback is implemented and falsifiably evaluated; the final endpoint uses source-balanced proper-loss portfolios and decision-stable projection rather than direct outcome policy updates.
 - SciFact evaluates classification given gold rationale sentences, not retrieval.
 - One sealed unseen family does not establish universal zero-shot competence.
-- Quality-gate use remains one example; every downstream use needs its own validation and human review.
+- Every downstream use remains an application-specific decision aid and needs its own validation and human review.
 
 机器可读证据：`docs/evidence/project-completion-v1.json`

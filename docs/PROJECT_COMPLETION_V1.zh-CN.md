@@ -21,5 +21,4 @@
 
 源码与 ChoiceForge 自有参数包已发布到
 <https://github.com/Gabriel22123/ChoiceForge>。第三方 MiniCPM 2B 基础模型没有
-重复上传，使用者按固定 revision 从公开上游下载；仓库不包含任何公司数据、内部
-文档、内部链接、凭证或本地绝对路径。
+重复上传，使用者按固定 revision 从公开上游下载；仓库只包含公开来源、代码和可复现实验产物。

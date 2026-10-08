@@ -1,12 +1,12 @@
 # ChoiceForge — public research preview
 
-**A task-conditioned decision model, not a quality-gate-specific classifier.**
+**A task-conditioned decision model for bounded candidate decisions.**
 
 Give it a task, context and candidate descriptions. It returns a candidate ID and
 probabilities, without generating reasoning text or arbitrary JSON. Candidate
-IDs and the number of candidates can change between requests. Quality-rule
-assessment is one example; intent routing, tool selection and other decisions
-use the same interface.
+IDs and the number of candidates can change between requests. Constraint
+assessment, intent routing, tool selection and other bounded decisions use the
+same interface.
 
 The goal is zero-shot transfer to new tasks without task-specific fine-tuning.
 **Universal zero-shot competence is a research goal, not an achieved capability.**
