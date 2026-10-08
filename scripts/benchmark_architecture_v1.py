@@ -35,10 +35,15 @@ def prediction_file(source, target):
     target.write_text(json.dumps({"predictions": converted}, indent=2) + "\n")
 
 
-def run(study, output):
+def run(study, output, manifest_path):
     study = Path(study)
     output = Path(output)
     protocol = read(study / "protocol.json")
+    manifest = read(manifest_path)
+    if (manifest["study_protocol_sha256"] != digest((study / "protocol.json").read_bytes()) or
+            manifest["study_result_manifest_sha256"] !=
+            digest((study / "result-manifest.json").read_bytes())):
+        raise ValueError("Benchmark manifest does not match the frozen architecture study")
     arms = protocol["arms"]
     output.parent.mkdir(parents=True, exist_ok=True)
     reports = {}
@@ -78,6 +83,7 @@ def run(study, output):
     result = {
         "protocol": "choiceforge-decision-benchmark",
         "benchmark_version": "0.1",
+        "manifest": manifest,
         "study": "architecture-comparison-v1",
         "study_protocol_sha256": digest((study / "protocol.json").read_bytes()),
         "study_result_manifest_sha256": digest((study / "result-manifest.json").read_bytes()),
@@ -98,9 +104,10 @@ def run(study, output):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--study", default="runs/architecture-comparison-v1")
+    parser.add_argument("--manifest", default="configs/architecture-benchmark-v1.json")
     parser.add_argument("--output", default="docs/evidence/architecture-benchmark-v1.json")
     args = parser.parse_args()
-    run(args.study, args.output)
+    run(args.study, args.output, args.manifest)
 
 
 if __name__ == "__main__":

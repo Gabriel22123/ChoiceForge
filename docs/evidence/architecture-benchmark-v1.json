@@ -1,6 +1,51 @@
 {
   "protocol": "choiceforge-decision-benchmark",
   "benchmark_version": "0.1",
+  "manifest": {
+    "name": "choiceforge-architecture-benchmark-v1",
+    "version": "0.1",
+    "purpose": "Independent audit of the frozen decoder-versus-encoder architecture study",
+    "study": "architecture-comparison-v1",
+    "study_protocol_path": "runs/architecture-comparison-v1/protocol.json",
+    "study_protocol_sha256": "1e3e646a78c4b8b71ce7740c71352207b51a350ff9acff7265bdda9291044e5a",
+    "study_result_manifest_sha256": "79b9abb9fde8317e9a10e7971400c0810aae2d45444c909188bb9280a088bc9a",
+    "task_sets": {
+      "matched_public_test": {
+        "path": "runs/architecture-comparison-v1/cases.jsonl",
+        "split": "test",
+        "rows": 576,
+        "role": "matched public task-family comparison"
+      },
+      "sealed_arc": {
+        "path": "runs/architecture-comparison-v1/arc-blind/cases.jsonl",
+        "split": "test",
+        "rows": 384,
+        "role": "answer-blind knowledge-intensive holdout"
+      }
+    },
+    "arms": [
+      "seed42-encoder",
+      "seed42-decoder",
+      "seed43-encoder",
+      "seed43-decoder",
+      "seed44-encoder",
+      "seed44-decoder"
+    ],
+    "metrics": [
+      "selection_accuracy",
+      "argmax_accuracy",
+      "nll",
+      "brier",
+      "ece_10",
+      "coverage_risk",
+      "review_rate",
+      "family_strata",
+      "artifact_hashes"
+    ],
+    "conversion_policy": "Legacy frozen probability predictions are converted with probability argmax as choice_id and requires_review=true; no weights or predictions are retrained.",
+    "leakage_boundary": "The sealed ARC task set is never used for training, temperature fitting, endpoint selection or protocol changes.",
+    "public_data_boundary": "Only public-source manifests and frozen public-study artifacts are allowed; no personal, company or private data is part of the benchmark."
+  },
   "study": "architecture-comparison-v1",
   "study_protocol_sha256": "1e3e646a78c4b8b71ce7740c71352207b51a350ff9acff7265bdda9291044e5a",
   "study_result_manifest_sha256": "79b9abb9fde8317e9a10e7971400c0810aae2d45444c909188bb9280a088bc9a",

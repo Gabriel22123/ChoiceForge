@@ -75,7 +75,8 @@ Benchmark v0.1 是审计协议，不是新的训练目标。它不会自动证�
 单一任务族上的提升解释成通用能力。正式结论必须同时查看任务族分组、校准结果和弃权风险，
 并保留失败结果。
 
-现有的 decoder/encoder 三种子研究可以通过
+现有的 decoder/encoder 三种子研究使用预注册配置
+[`architecture-benchmark-v1.json`](../configs/architecture-benchmark-v1.json)，可以通过
 `scripts/benchmark_architecture_v1.py` 转换为这套协议的报告；对应的机器可读结果见
 [`architecture-benchmark-v1.json`](evidence/architecture-benchmark-v1.json)。这一步是对已冻结
 研究结果的统一审计，不会把旧结果伪装成新训练实验。
