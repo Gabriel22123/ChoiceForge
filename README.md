@@ -1,6 +1,6 @@
-# ChoiceForge — public research preview
+# ChoiceForge — auditable decision research preview
 
-**A task-conditioned decision model for bounded candidate decisions.**
+**A calibrated candidate scorer and reproducible audit protocol for knowledge-intensive decisions.**
 
 Give it a task, context and candidate descriptions. It returns a candidate ID and
 probabilities, without generating reasoning text or arbitrary JSON. Candidate
@@ -8,8 +8,11 @@ IDs and the number of candidates can change between requests. Constraint
 assessment, intent routing, tool selection and other bounded decisions use the
 same interface.
 
-The goal is zero-shot transfer to new tasks without task-specific fine-tuning.
-**Universal zero-shot competence is a research goal, not an achieved capability.**
+The project studies how much world knowledge different decision engines need,
+and how to evaluate their probabilities and abstention behavior without hidden
+task-specific tuning. It connects a decoder-versus-encoder architecture study
+with a frozen, auditable protocol that can evaluate other candidate-decision
+engines. Universal zero-shot competence is not an achieved capability.
 **ChoiceForge** is the project name. The current Python import and CLI remain
 `decision_model` and `decision-model` so the research artifacts stay
 reproducible while the public API is still alpha.
@@ -26,7 +29,7 @@ The evidence and reproduction map is in [docs/README.md](docs/README.md).
 
 ## Quick start
 
-ChoiceForge is a structured candidate scorer. It receives a task, optional context,
+ChoiceForge is a structured candidate scorer and evaluation reference. It receives a task, optional context,
 and a variable-length list of candidates. The runtime returns one candidate ID,
 probabilities, a calibration label, and an explicit review flag. The model never
 has to generate reasoning text or free-form JSON; the schema is assembled and
@@ -63,6 +66,8 @@ explicit.
   candidate IDs instead of a fixed classifier label set.
 - A decoder route based on the public MiniCPM5-2B base, compared against the
   same-budget EuroBERT-2.1B encoder route under matched public-data protocols.
+- A reusable audit surface for accuracy, proper probability loss, calibration,
+  selective risk and abstention behavior.
 - An RLCD-inspired outcome-learning pipeline: public outcome targets, proper
   scoring, full/null-context advantage, source-specialist experts, a
   source-balanced portfolio, and a decision-stable projection that preserves the

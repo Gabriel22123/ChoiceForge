@@ -3,8 +3,9 @@
 ## Model identity
 
 - Project name: ChoiceForge.
-- Status: local public research preview; the sealed-family gates and independent
-  bundle verification pass, but no remote model or repository has been published.
+- Status: public research preview; the sealed-family protocol and independent
+  bundle verification pass. The repository and parameter bundle are published;
+  the third-party base is downloaded separately.
 - Selected research route: `openbmb/MiniCPM5-2B-Base`, revision
   `96a57cd572a02506b4500f54427dca24970c1bac`.
 - Architecture: causal decoder, independent candidate encoding, final-token
@@ -80,7 +81,9 @@
 ## Intended research use
 
 Task-conditioned, bounded decisions from caller-supplied candidate descriptions.
-Examples include intent routing, semantic selection, and evidence/rule checks.
+The primary research use is knowledge-intensive decision comparison and audit;
+examples include semantic selection and evidence/rule checks. Routing remains a
+supported interface example, not the project's primary product claim.
 New candidate IDs and meanings do not require a different output layer.
 The interface accepts 2–32 candidates; pilot training contains 2/3/4/8 choices,
 and the held-out emotion task has 7. Interface support for 32 choices is not
@@ -94,7 +97,7 @@ expected zero-based score. Both the base and typed JSON contracts forbid
 free-form reasoning fields and always mark this research preview for review.
 
 Inference returns program-built structured output. It does not generate text,
-retrieve facts, execute actions or supply an automatic production gate.
+retrieve facts, execute actions or make an autonomous production decision.
 
 ## Training
 

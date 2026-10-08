@@ -8,6 +8,11 @@ downloaded separately from its upstream revision.
 
 ## What the project is
 
+ChoiceForge is positioned as a knowledge-intensive decision study and a
+reproducible audit protocol, rather than as a general-purpose routing product.
+The repository keeps historical routing and expert-bank experiments because
+their negative transfer results define the method boundary.
+
 ChoiceForge accepts a task, context and 2–32 caller-supplied candidates. It
 returns exactly five fields: the selected candidate ID, candidate probabilities,
 a mandatory review marker, score semantics and calibration status. It does not
