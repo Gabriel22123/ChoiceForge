@@ -313,7 +313,8 @@ def prepare_mbpp_outcomes(source_path: str | Path, *, max_candidates: int = 8,
     if not allowed_splits or not set(allowed_splits) <= {"train", "validation", "test"}:
         raise ValueError("allowed_splits must use official train/validation/test names")
     source_sha256 = _sha256(Path(source_path).read_bytes())
-    rows, skipped = [], Counter()
+    rows: list[dict] = []
+    skipped: Counter[str] = Counter()
     for source in sorted(load_mbpp(source_path), key=lambda item: int(item["task_id"])):
         task_id = int(source["task_id"])
         split = mbpp_split(task_id)

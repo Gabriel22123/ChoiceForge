@@ -18,6 +18,8 @@ Before publishing or mirroring this source tree, read the
 [publication review](PUBLICATION_REVIEW.md), which fixes the included and
 excluded artifact boundary.
 
+The evidence and reproduction map is in [docs/README.md](docs/README.md).
+
 <!-- release-status:start -->
 **The public source and verified ChoiceForge parameter bundle are released.** Three frozen portfolio seeds preserve every parent decision on the sealed SciFact family while lowering cross entropy by 0.0730–0.0739 and Brier by 0.0149–0.0150. The canonical seed-42 portfolio is exactly fused into one 14 MB residual adapter and packaged with its parent decision parameters as a 55 MB bundle under `models/choiceforge-local-bundle-v1/`. The public 2B base is downloaded separately from its upstream repository. See the [sealed result](docs/SCIFACT_FINAL_EVALUATION_V1_RESULT.zh-CN.md), [adapter result](docs/CANONICAL_MERGED_ADAPTER_V1_RESULT.zh-CN.md), and [publication review](PUBLICATION_REVIEW.md).
 <!-- release-status:end -->
@@ -36,11 +38,8 @@ cd ChoiceForge
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e '.[model]'
-python scripts/fetch_decoder_base.py --output models/minicpm5-2b-base
-
 choiceforge predict-merged \
   --bundle models/choiceforge-local-bundle-v1 \
-  --base-path models/minicpm5-2b-base \
   --input examples/request.json \
   --device cpu
 ```

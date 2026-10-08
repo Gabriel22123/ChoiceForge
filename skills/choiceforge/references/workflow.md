@@ -21,16 +21,16 @@ The input may also use the typed Boolean, Choice, or Score schemas described in
 
 ## Use the released bundle
 
-Download the pinned public MiniCPM base, then run:
-
 ```bash
-python scripts/fetch_decoder_base.py --output models/minicpm5-2b-base
 choiceforge predict-merged \
   --bundle models/choiceforge-local-bundle-v1 \
-  --base-path models/minicpm5-2b-base \
   --input /path/to/request.json \
   --device auto
 ```
+
+When `--base-path` is omitted, the CLI downloads and verifies the pinned public
+MiniCPM base into `models/minicpm5-2b-base`. Pass an explicit path to reuse a
+previously verified base.
 
 The runtime returns a fixed schema with `choice_id`, `probabilities`,
 `requires_review`, `score_kind`, and `calibration`. It does not generate a

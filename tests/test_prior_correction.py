@@ -1,4 +1,3 @@
-import types
 import unittest
 
 import torch

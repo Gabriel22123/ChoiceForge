@@ -8,6 +8,8 @@
 首次公开源码的纳入范围、排除项和审查门槛见
 [`PUBLICATION_REVIEW.md`](PUBLICATION_REVIEW.md)。
 
+实验与复现文档索引见 [`docs/README.md`](docs/README.md)。
+
 ## 项目的研究亮点
 
 **从公开 RLCD 的校准决策目标出发，拆解原理，再用可复现实验检验。**
@@ -30,10 +32,8 @@ cd ChoiceForge
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e '.[model]'
-python scripts/fetch_decoder_base.py --output models/minicpm5-2b-base
 choiceforge predict-merged \
   --bundle models/choiceforge-local-bundle-v1 \
-  --base-path models/minicpm5-2b-base \
   --input examples/request.json \
   --device cpu
 ```

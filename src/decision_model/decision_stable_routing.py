@@ -6,7 +6,6 @@ def add_parent_choice_cost(costs, parent, parent_null, correction, null_correcti
                            gates, *, active, change_cost=1.0):
     """Penalize gates that change either frozen-parent top choice."""
     import math
-    import torch
     values = (parent, parent_null, correction, null_correction)
     if (costs.ndim != 1 or gates.ndim != 1 or costs.shape != gates.shape or
             any(value.ndim != 1 or value.shape != parent.shape for value in values) or
