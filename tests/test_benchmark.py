@@ -5,7 +5,7 @@ from pathlib import Path
 from types import SimpleNamespace
 
 from decision_model.benchmark import benchmark
-from decision_model.core import digest
+from decision_model.core import digest, load_rows
 
 
 def _row(case_id, family, label, soft=False):
@@ -35,6 +35,15 @@ def _row(case_id, family, label, soft=False):
 
 
 class BenchmarkTests(unittest.TestCase):
+    def test_architecture_benchmark_data_is_tracked_and_public(self):
+        root = Path(__file__).resolve().parents[1]
+        data = root / "data/architecture-benchmark-v1/cases.jsonl"
+        manifest = json.loads((data.parent / "manifest.json").read_text())
+        self.assertEqual(digest(data.read_bytes()), manifest["dataset_sha256"])
+        rows = load_rows(data)
+        self.assertEqual(len(rows), 1888)
+        self.assertEqual({row["split"] for row in rows}, {"train", "validation", "test"})
+
     def test_benchmark_reports_calibration_and_selective_risk(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

@@ -80,3 +80,15 @@ Benchmark v0.1 是审计协议，不是新的训练目标。它不会自动证�
 `scripts/benchmark_architecture_v1.py` 转换为这套协议的报告；对应的机器可读结果见
 [`architecture-benchmark-v1.json`](evidence/architecture-benchmark-v1.json)。这一步是对已冻结
 研究结果的统一审计，不会把旧结果伪装成新训练实验。
+
+## Architecture Benchmark v1 的公开数据边界
+
+匹配任务集已经随仓库发布在
+`data/architecture-benchmark-v1/cases.jsonl`，共 1,888 条，按固定哈希分为 1,024 条训练、
+288 条验证和 576 条测试；逐行来源、版本、许可证和变换记录在同目录的 `manifest.json`。
+因此 clone 后可以直接复核数据哈希、运行自有预测并调用通用 benchmark。
+
+ARC 是知识密集型的密封留出集。仓库只发布固定 revision、许可证、文件哈希和不读取答案的
+选择规则，不发布原文、标签或逐例预测。需要复现完整架构审计时，按
+`configs/architecture-benchmark-v1.json` 中的 `scripts/prepare_arc_blind.py` 和
+`configs/arc-blind-source.json` 从公开上游重新生成；它不得进入训练、校准、模型选择或协议调整。

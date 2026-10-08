@@ -11,6 +11,9 @@ data/*
 !data/release-candidate-v1/control.jsonl
 !data/release-candidate-v1/expanded.jsonl
 !data/release-candidate-v1/manifest.json
+!data/architecture-benchmark-v1/
+!data/architecture-benchmark-v1/cases.jsonl
+!data/architecture-benchmark-v1/manifest.json
 runs/
 models/
 .DS_Store

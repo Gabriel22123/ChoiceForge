@@ -8,16 +8,22 @@
   "study_result_manifest_sha256": "79b9abb9fde8317e9a10e7971400c0810aae2d45444c909188bb9280a088bc9a",
   "task_sets": {
     "matched_public_test": {
-      "path": "runs/architecture-comparison-v1/cases.jsonl",
+      "path": "data/architecture-benchmark-v1/cases.jsonl",
+      "sha256": "43ee6e1f736f8441d582bf932b5e05677e278c24297a74ef81213f5563f91bf7",
+      "manifest_sha256": "f224eda98390364af5a80e541a2df6f51bb1092400703d483b44b91fb422ece6",
       "split": "test",
       "rows": 576,
-      "role": "matched public task-family comparison"
+      "role": "matched public task-family comparison",
+      "manifest": "data/architecture-benchmark-v1/manifest.json"
     },
     "sealed_arc": {
-      "path": "runs/architecture-comparison-v1/arc-blind/cases.jsonl",
+      "generation_script": "scripts/prepare_arc_blind.py",
+      "source_record": "configs/arc-blind-source.json",
+      "cases_sha256": "16c1170c8b9f099616e29d90f9d84e088e0db9ff0cf2cd4aa45496030f64e7e6",
       "split": "test",
       "rows": 384,
-      "role": "answer-blind knowledge-intensive holdout"
+      "role": "answer-blind knowledge-intensive holdout",
+      "release_policy": "The raw and transformed ARC rows remain sealed and are generated locally from the pinned public source only."
     }
   },
   "arms": [

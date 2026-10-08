@@ -40,6 +40,22 @@ def run(study, output, manifest_path):
     output = Path(output)
     protocol = read(study / "protocol.json")
     manifest = read(manifest_path)
+    matched_data = Path(manifest["task_sets"]["matched_public_test"]["path"])
+    if not matched_data.is_absolute():
+        matched_data = Path.cwd() / matched_data
+    expected_matched_sha = manifest["task_sets"]["matched_public_test"]["sha256"]
+    if digest(matched_data.read_bytes()) != expected_matched_sha:
+        raise ValueError("Tracked matched benchmark data does not match its preregistered hash")
+    data_manifest = matched_data.parent / "manifest.json"
+    if digest(data_manifest.read_bytes()) != manifest["task_sets"]["matched_public_test"]["manifest_sha256"]:
+        raise ValueError("Tracked matched data manifest does not match its preregistered hash")
+    if read(data_manifest)["dataset_sha256"] != expected_matched_sha:
+        raise ValueError("Tracked matched data manifest names a different dataset hash")
+    if digest((study / "cases.jsonl").read_bytes()) != expected_matched_sha:
+        raise ValueError("Frozen study cases do not match the tracked matched benchmark data")
+    expected_arc_sha = manifest["task_sets"]["sealed_arc"]["cases_sha256"]
+    if digest((study / "arc-blind/cases.jsonl").read_bytes()) != expected_arc_sha:
+        raise ValueError("Frozen ARC cases do not match the preregistered hash")
     if (manifest["study_protocol_sha256"] != digest((study / "protocol.json").read_bytes()) or
             manifest["study_result_manifest_sha256"] !=
             digest((study / "result-manifest.json").read_bytes())):
@@ -52,7 +68,7 @@ def run(study, output, manifest_path):
         for arm in arms:
             reports[arm] = {}
             for name, data_path, source_path in (
-                ("test", study / "cases.jsonl", study / arm / "test-predictions.json"),
+                ("test", matched_data, study / arm / "test-predictions.json"),
                 ("arc", study / "arc-blind/cases.jsonl", study / "arc-results" / f"{arm}.json"),
             ):
                 predictions_path = temporary / f"{arm}-{name}-predictions.json"

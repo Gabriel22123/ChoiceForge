@@ -27,6 +27,8 @@ This page is the entry point for the public documentation.
   nondifferentiable result-feedback decomposition.
 - [Architecture benchmark evidence](evidence/architecture-benchmark-v1.json):
   the existing three-seed decoder/encoder study re-audited under Benchmark v0.1.
+- [Architecture Benchmark v1 data](../data/architecture-benchmark-v1/manifest.json):
+  the tracked matched public data and its provenance/hash manifest.
 - `evidence/`: machine-readable hashes, metrics and audit outputs.
 
 ## Reproduction conventions
