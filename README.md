@@ -68,6 +68,8 @@ explicit.
   same-budget EuroBERT-2.1B encoder route under matched public-data protocols.
 - A reusable audit surface for accuracy, proper probability loss, calibration,
   selective risk and abstention behavior.
+- A model-independent `benchmark` command that records metrics, task-family
+  strata and input/output hashes for third-party comparisons.
 - An RLCD-inspired outcome-learning pipeline: public outcome targets, proper
   scoring, full/null-context advantage, source-specialist experts, a
   source-balanced portfolio, and a decision-stable projection that preserves the

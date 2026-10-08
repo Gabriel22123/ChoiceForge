@@ -9,8 +9,9 @@ This page is the entry point for the public documentation.
 2. [Research direction](RESEARCH.md) / [研究主线](RESEARCH.zh-CN.md)
 3. [Algorithm and output contract](ALGORITHM.md) / [输出契约](OUTPUT_CONTRACT.zh-CN.md)
 4. [Data and provenance](DATA.md) / [发布数据审计](RELEASE_DATA_AUDIT.zh-CN.md)
-5. [Local model bundle](LOCAL_MODEL_BUNDLE_V1.zh-CN.md)
-6. [ChoiceForge Skill workflow](../skills/choiceforge/references/workflow.md)
+5. [Benchmark protocol](BENCHMARK_PROTOCOL.zh-CN.md) / [评测协议](BENCHMARK_PROTOCOL.zh-CN.md)
+6. [Local model bundle](LOCAL_MODEL_BUNDLE_V1.zh-CN.md)
+7. [ChoiceForge Skill workflow](../skills/choiceforge/references/workflow.md)
 
 ## Evidence path
 

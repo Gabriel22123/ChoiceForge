@@ -60,6 +60,17 @@ def _add_evaluation_parser(commands, name):
         parser.add_argument("--split", choices=("train", "validation", "test"), default="test")
 
 
+def _add_benchmark_parser(commands):
+    parser = commands.add_parser(
+        "benchmark", help="Score a prediction file with the public audit protocol"
+    )
+    parser.add_argument("--data", required=True)
+    parser.add_argument("--predictions", required=True)
+    parser.add_argument("--output", required=True)
+    parser.add_argument("--manifest")
+    parser.add_argument("--threshold", dest="thresholds", action="append", type=float)
+
+
 def _build_parser():
     parser = argparse.ArgumentParser(prog="decision-model")
     commands = parser.add_subparsers(dest="command", required=True)
@@ -71,6 +82,7 @@ def _build_parser():
     _add_merged_parser(commands)
     _add_evaluation_parser(commands, "evaluate")
     _add_evaluation_parser(commands, "audit")
+    _add_benchmark_parser(commands)
     return parser
 
 
@@ -91,6 +103,10 @@ def _run(args):
         from .evaluate import audit, evaluate
 
         return (audit if args.command == "audit" else evaluate)(args)
+    if args.command == "benchmark":
+        from .benchmark import benchmark
+
+        return benchmark(args)
     if args.command == "predict-merged":
         from .merged_runtime import load_merged_bundle
 

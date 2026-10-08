@@ -42,7 +42,7 @@ EuroBERT 对比属于架构研究，不是对所有 decoder 和 encoder 的普�
 
 ## 后续扩展
 
-- 增加有版本的 benchmark manifest，以及一条命令生成完整审计记录；
+- 将已加入的 Benchmark v0.1 扩展为有版本的 benchmark manifest 和完整审计记录；
 - 增加知识分层和可执行结果任务族；
 - 将 coverage-risk 与概率校准报告做成正式产物；
 - 在更多公开模型规模上重复 decoder/encoder 对比；
