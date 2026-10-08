@@ -1,0 +1,192 @@
+{
+  "format_version": 1,
+  "study": "qasc-retention-path-v1",
+  "protocol_sha256": "0040d4c158edb1c2fa7c483d000b407c63e0ff250dfe72d045832bec9d4cefb0",
+  "role": "consumed development path diagnostic; no release or multiseed claim",
+  "arms": {
+    "alpha-025": {
+      "alpha": 0.25,
+      "seen": {
+        "accuracy": 0.7521802325581395,
+        "nll": 0.8344991167312336
+      },
+      "development": {
+        "accuracy": 0.65625,
+        "context_advantage": {
+          "rows": 384,
+          "mean": 0.08576115580701166,
+          "positive": 235,
+          "by_source": {
+            "bigbench-causal_judgment": {
+              "rows": 128,
+              "mean": -0.1276031370407114,
+              "positive": 72
+            },
+            "bigbench-formal_fallacies_syllogisms_negation": {
+              "rows": 128,
+              "mean": 0.03100441021263207,
+              "positive": 57
+            },
+            "bigbench-movie_recommendation": {
+              "rows": 128,
+              "mean": 0.3538821942491143,
+              "positive": 106
+            }
+          }
+        },
+        "context_delta_vs_parent": {
+          "bigbench-causal_judgment": -0.11399435934486489,
+          "bigbench-formal_fallacies_syllogisms_negation": 0.0215153621545512,
+          "bigbench-movie_recommendation": 0.01690261995287251
+        }
+      },
+      "qasc": {
+        "accuracy": 0.859375,
+        "nll": 0.45818352352394437,
+        "context_advantage": 2.201893409286043
+      },
+      "audit": {
+        "cases": 24,
+        "stable_all_orders": 24,
+        "correct_all_orders": 20,
+        "max_reload_probability_difference": 5.960464477539063e-08,
+        "max_id_rename_probability_difference": 0.0
+      },
+      "checks": {
+        "seen.accuracy": true,
+        "seen.nll": true,
+        "development.accuracy": false,
+        "development.context_advantage_retention": false,
+        "qasc.accuracy": true,
+        "qasc.nll": true,
+        "qasc.context_advantage": true,
+        "audit": true
+      },
+      "passes": false
+    },
+    "alpha-050": {
+      "alpha": 0.5,
+      "seen": {
+        "accuracy": 0.7558139534883721,
+        "nll": 0.8451855301322518
+      },
+      "development": {
+        "accuracy": 0.6510416666666666,
+        "context_advantage": {
+          "rows": 384,
+          "mean": 0.08016132483753903,
+          "positive": 234,
+          "by_source": {
+            "bigbench-causal_judgment": {
+              "rows": 128,
+              "mean": -0.1460046445161356,
+              "positive": 72
+            },
+            "bigbench-formal_fallacies_syllogisms_negation": {
+              "rows": 128,
+              "mean": 0.03459645190519696,
+              "positive": 56
+            },
+            "bigbench-movie_recommendation": {
+              "rows": 128,
+              "mean": 0.3518921671235557,
+              "positive": 106
+            }
+          }
+        },
+        "context_delta_vs_parent": {
+          "bigbench-causal_judgment": -0.1323958668202891,
+          "bigbench-formal_fallacies_syllogisms_negation": 0.025107403847116093,
+          "bigbench-movie_recommendation": 0.014912592827313886
+        }
+      },
+      "qasc": {
+        "accuracy": 0.8828125,
+        "nll": 0.338894777288519,
+        "context_advantage": 2.342139498012458
+      },
+      "audit": {
+        "cases": 24,
+        "stable_all_orders": 24,
+        "correct_all_orders": 20,
+        "max_reload_probability_difference": 1.1920928955078125e-07,
+        "max_id_rename_probability_difference": 0.0
+      },
+      "checks": {
+        "seen.accuracy": true,
+        "seen.nll": false,
+        "development.accuracy": false,
+        "development.context_advantage_retention": false,
+        "qasc.accuracy": true,
+        "qasc.nll": true,
+        "qasc.context_advantage": true,
+        "audit": true
+      },
+      "passes": false
+    },
+    "alpha-075": {
+      "alpha": 0.75,
+      "seen": {
+        "accuracy": 0.7521802325581395,
+        "nll": 0.8563243618048707
+      },
+      "development": {
+        "accuracy": 0.65625,
+        "context_advantage": {
+          "rows": 384,
+          "mean": 0.07441932650037379,
+          "positive": 234,
+          "by_source": {
+            "bigbench-causal_judgment": {
+              "rows": 128,
+              "mean": -0.16589050103712544,
+              "positive": 72
+            },
+            "bigbench-formal_fallacies_syllogisms_negation": {
+              "rows": 128,
+              "mean": 0.038897278276687666,
+              "positive": 56
+            },
+            "bigbench-movie_recommendation": {
+              "rows": 128,
+              "mean": 0.35025120226155915,
+              "positive": 106
+            }
+          }
+        },
+        "context_delta_vs_parent": {
+          "bigbench-causal_judgment": -0.15228172334127893,
+          "bigbench-formal_fallacies_syllogisms_negation": 0.0294082302186068,
+          "bigbench-movie_recommendation": 0.013271627965317334
+        }
+      },
+      "qasc": {
+        "accuracy": 0.8984375,
+        "nll": 0.24177148938251308,
+        "context_advantage": 2.4561101505692537
+      },
+      "audit": {
+        "cases": 24,
+        "stable_all_orders": 24,
+        "correct_all_orders": 20,
+        "max_reload_probability_difference": 1.1920928955078125e-07,
+        "max_id_rename_probability_difference": 0.0
+      },
+      "checks": {
+        "seen.accuracy": true,
+        "seen.nll": false,
+        "development.accuracy": false,
+        "development.context_advantage_retention": false,
+        "qasc.accuracy": true,
+        "qasc.nll": true,
+        "qasc.context_advantage": true,
+        "audit": true
+      },
+      "passes": false
+    }
+  },
+  "eligible_arms": [],
+  "selected_training_dose_target": null,
+  "requires_gradient_training_replication": false,
+  "new_sealed_tasks_required_for_release": true
+}

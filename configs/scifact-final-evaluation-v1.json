@@ -1,0 +1,122 @@
+{
+  "study": "scifact-final-evaluation-v1",
+  "display_name": "SciFact sealed unseen-family final evaluation",
+  "status": "frozen_before_unsealing",
+  "source": {
+    "source_config": "configs/scifact-sealed-source.json",
+    "source_config_sha256": "db61feb420a75a1c9d72284dc639aac59cf1f3602b712dd3d6052ba137606b5c",
+    "archive_path": "cache/scifact-sealed-source/data.tar.gz",
+    "archive_bytes": 3115079,
+    "archive_sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be"
+  },
+  "data": {
+    "output": "runs/scifact-final-v1",
+    "cases": "runs/scifact-final-v1/cases.jsonl",
+    "protocol": "runs/scifact-final-v1/protocol.json",
+    "min_rows": 50,
+    "max_rows": 256
+  },
+  "feature_cache": {
+    "dataset": "scifact-final",
+    "path": "cache/scifact-final-features-v1",
+    "format": "scifact-final-minicpm5-candidate-features-v1",
+    "device": "cpu",
+    "shard_rows": 32,
+    "batch_rows": 2
+  },
+  "default_model": {
+    "residual_width": 256,
+    "router_width": 128,
+    "dropout": 0.0,
+    "initial_gate_probability": 0.25
+  },
+  "experts": {
+    "qasc": {
+      "weights": "runs/qasc-binary-route-screen-v1/binary-route.safetensors",
+      "weights_sha256": "a1b9d145e3532ddd0460aa3429420088cd74f8a3a56325249f227c5b846853ab"
+    },
+    "snli": {
+      "weights": "runs/snli-specialist-v1/specialist-seed-42.safetensors",
+      "weights_sha256": "b7fa22125e6c24e9b15532ba807bb47b2d2fc1bb28fb7d446312c4c0a71ed65b"
+    },
+    "paws-wiki": {
+      "weights": "runs/paws-wiki-specialist-v1/specialist-seed-42.safetensors",
+      "weights_sha256": "6d185df8a459041819abe6e3a48aed2df49bec335d468150d53b04931f8f2152"
+    },
+    "clinc": {
+      "weights": "runs/clinc-specialist-v1/specialist-seed-42.safetensors",
+      "weights_sha256": "1c1edff2735f173aca9e209e01029fad65c42c66d8840a64b086dafde3da2243"
+    },
+    "truthfulqa": {
+      "weights": "runs/truthfulqa-specialist-training-v1/specialist-seed-42.safetensors",
+      "weights_sha256": "489f5884e020636dd4dfd70aff0cdbea53de87299767fe109390682545a96de3"
+    },
+    "gsm8k": {
+      "weights": "runs/gsm8k-specialist-capacity-training-v2/specialist-seed-42.safetensors",
+      "weights_sha256": "ef3821c2e46d93f91f242b0d6f38c426b8995de590a83a39cc3ef2e1ea80d523",
+      "model": {
+        "residual_width": 512
+      }
+    }
+  },
+  "portfolios": [
+    {
+      "seed": 42,
+      "weights": "runs/full-expert-portfolio-v1/weights-seed-42.json",
+      "weights_sha256": "dd88050c599c1a36cccd3102c5fb3f8d724989ba5ea72c21157e28a72de3bc99"
+    },
+    {
+      "seed": 43,
+      "weights": "runs/full-expert-portfolio-v1/weights-seed-43.json",
+      "weights_sha256": "3f4b2ed81e7249a702df6236df5d92ebce0e34f7a6ddb5275c865d3d651d7ceb"
+    },
+    {
+      "seed": 44,
+      "weights": "runs/full-expert-portfolio-v1/weights-seed-44.json",
+      "weights_sha256": "6d1e75d52a9ae1c7dbae8a4f0ca0c2edcf0ae8142b146e45d26eb499f1db9d7e"
+    }
+  ],
+  "evaluation": {
+    "brier_weight": 0.5,
+    "projection_alphas": [0.125, 0.25, 0.5, 0.75, 1.0]
+  },
+  "screening_rule": {
+    "required_seeds": [42, 43, 44],
+    "cross_entropy_max_delta": 0.0,
+    "brier_max_delta": 0.0,
+    "proper_gain_min": 0.005,
+    "context_min_delta": -0.01,
+    "mean_alpha_min": 0.05,
+    "decision": "Pass only if every seed preserves every parent decision, improves both aggregate proper components, gains at least 0.005 proper loss, retains context utility, materially uses the portfolio, and passes every output-contract and permutation audit."
+  },
+  "source_files": {
+    "scripts/prepare_scifact_final.py": "5fa3fbfda89a745a00e99c7c84db986ba70b5c231e06f63f428e96e9cf277bc4",
+    "scripts/run_scifact_final_evaluation.py": "4509f46080b424713dfe7da59d4ffac10bb7874a96f081562e55379cf1cb887d",
+    "scripts/cache_public_specialist_features.py": "8775758ca9874bbb13b4ceb373d02971210a7046ae0f2f7e70b672afe220186e",
+    "scripts/run_heterogeneous_expert_bank.py": "19f3054ed5756885e939f5659e09d5a86df889bceb0f1413cc39f56df6f23f9c",
+    "scripts/run_extended_expert_bank.py": "0af24d85ce00741b556e6edc1dc6f64e9f264ae681337e5965d66aa934fa434b",
+    "scripts/run_semantic_factored_route_lofo.py": "bfd63770966e9782faf01234547f80d05879ce276efd3276bf5cefe2653ce746",
+    "scripts/run_factored_safe_route_lofo.py": "8428ca5a8e670dcbc711cfa5b4b334b74d047575ff9872b79250447d9430afad",
+    "scripts/run_safe_multi_expert_route_lofo.py": "362bf0a944cb6b39d9626cbf35932e0f8a1ec3b508745f0d1b5ced9ab3da4df9",
+    "scripts/run_distribution_safe_specialist_oracle.py": "68a9a9f4b4a096849bc54a29ee62d65ab52dee6454a4a774a384e0a7f26f971f",
+    "scripts/run_specialist_cross_matrix.py": "0d45851035c5631151702d351f2941f84a5b2c3522854a056a95294182f3a7e3",
+    "scripts/run_qasc_routed_residual_screen.py": "bd14916548a04465b33d0a1ed80e0fa9bd621a5ef0ca858670184ba911e64ba4",
+    "src/decision_model/core.py": "ed3eafaff30275e99bf4e7c970584d5bd3f2197d747d25b2ca20adbfb37621ae",
+    "src/decision_model/expert_portfolio.py": "f9a6ab512f91439c4a1480b5e366e7014849e5bace9134f593254f65decb4613",
+    "src/decision_model/output_contract.py": "72de3b66d1abffd483a3cb1fc2ef6bd6ef986c6997adda209dc0fda6894cfdc0",
+    "src/decision_model/feature_screen.py": "3b16e2b880e1e3c861c01988c19ac323818e8a5e7f0afd54b2991d35c36124e2",
+    "src/decision_model/decoder_model.py": "698f493b29d397d08184f2019d84c6fdaedfe03cf3fbe210008744e9074186db",
+    "src/decision_model/judge_factory.py": "0ca539cabef553f2ccbe2ebad2bc88d8b9e3b0fba9b76b23f0a2a9f9030f9443",
+    "src/decision_model/prior_correction.py": "0bba98926ad60a3646929822631ed4325a636449602821891c9b0af9fe26aa3b",
+    "src/decision_model/decoder_base.lock.json": "9a80b8721295fe6735b596fe61c62f69c736fa12ab2eb78d5d52e5b75af34ffa",
+    "docs/SCIFACT_FINAL_EVALUATION_V1_DESIGN.zh-CN.md": "905c5fcf2c8d8396c9f5b3d03c1b4c803e427a81301bfd58649d72fd8467b2a4"
+  },
+  "evidence_path": "docs/evidence/scifact-final-evaluation-v1.json",
+  "report_path": "docs/SCIFACT_FINAL_EVALUATION_V1_RESULT.zh-CN.md",
+  "limitations": [
+    "This evaluates scientific claim classification given gold rationale sentences, not evidence retrieval.",
+    "Decision stability guarantees hard-choice retention but not row-level probability improvement.",
+    "A single unseen family cannot establish universal task improvement.",
+    "The current endpoint is a parent plus six frozen experts and a tiny convex policy, not one distilled adapter."
+  ]
+}

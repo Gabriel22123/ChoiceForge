@@ -1,0 +1,63 @@
+{
+  "study": "canonical-merged-adapter-v1",
+  "display_name": "ChoiceForge canonical merged residual adapter",
+  "status": "frozen_before_merge",
+  "registered_seeds": [42, 43, 44],
+  "canonical_portfolio": {
+    "selection_rule": "lowest registered full-portfolio seed",
+    "seed": 42,
+    "weights": "runs/full-expert-portfolio-v1/weights-seed-42.json",
+    "weights_sha256": "dd88050c599c1a36cccd3102c5fb3f8d724989ba5ea72c21157e28a72de3bc99"
+  },
+  "full_portfolio_config": {
+    "path": "configs/full-expert-portfolio-v1.json",
+    "sha256": "cccd7e588a53e3151b663173478fe0573d5065fb4da5ba5ca1844adb701db91a"
+  },
+  "adapter": {
+    "hidden_size": 2048,
+    "total_width": 1792,
+    "format": "choiceforge-merged-residual-v1"
+  },
+  "parent": {
+    "path": "runs/functional-retention-screen-v1/warm-functional-context",
+    "weights_sha256": "24a64f1efa256e182049db117b8ce67495dd401326b1db5ebbba168a6f08c180",
+    "model_sha256": "b728b762e7f4d664fa37b3d6cb5976d8f6c731cebca502440f4814f26c052c6f",
+    "calibration_sha256": "e41aa1253886ad1ca0954219355d8f123a5ca62944fbc8ee4d03da05b2d486d9"
+  },
+  "base_lock_sha256": "9a80b8721295fe6735b596fe61c62f69c736fa12ab2eb78d5d52e5b75af34ffa",
+  "projection_alphas": [0.125, 0.25, 0.5, 0.75, 1.0],
+  "sealed_verification_group": {
+    "name": "scifact-sealed-final",
+    "data_path": "runs/scifact-final-v1/cases.jsonl",
+    "data_sha256": "0d51d1ae492521d1109c792dc6613def8f8166288e4392b5068be05974547e01",
+    "dataset": "scifact-final",
+    "feature_cache": "cache/scifact-final-features-v1",
+    "manifest_sha256": "ece1c5cf71f5767f936579fa15dbdb70e608a33a9d022493710127873e0c2a6e",
+    "sources": ["scifact"],
+    "splits": ["validation"],
+    "counts": {
+      "scifact|validation": 209
+    }
+  },
+  "screening_rule": {
+    "maximum_absolute_difference": 0.00002,
+    "minimum_rows": 5700,
+    "decision": "Pass only if the single fused adapter matches the canonical six-expert residual portfolio on every full/null cached row, preserves every projection alpha and hard choice, and passes every public output and permutation audit."
+  },
+  "source_files": {
+    "scripts/build_canonical_merged_adapter.py": "b51134c8895a508b7e77e8035dd9abe549ea9f20f75328e37ad3fc5f5ee81649",
+    "src/decision_model/merged_adapter.py": "c9ccf8e816eeafd0105e071d32c75f66130d3cf2d174b056751ba7806f3b4087",
+    "src/decision_model/output_contract.py": "72de3b66d1abffd483a3cb1fc2ef6bd6ef986c6997adda209dc0fda6894cfdc0",
+    "src/decision_model/expert_portfolio.py": "f9a6ab512f91439c4a1480b5e366e7014849e5bace9134f593254f65decb4613",
+    "src/decision_model/feature_screen.py": "3b16e2b880e1e3c861c01988c19ac323818e8a5e7f0afd54b2991d35c36124e2",
+    "docs/CANONICAL_MERGED_ADAPTER_V1_DESIGN.zh-CN.md": "f8527f5d23875922a3997b3e678f876d46e31c647bbff2d27e1642db2299f5b0"
+  },
+  "evidence_path": "docs/evidence/canonical-merged-adapter-v1.json",
+  "report_path": "docs/CANONICAL_MERGED_ADAPTER_V1_RESULT.zh-CN.md",
+  "limitations": [
+    "The adapter is exactly fused from the validated seed-42 portfolio; it is not a new independent model result.",
+    "The adapter still requires the pinned 2B parent to produce candidate features and parent logits.",
+    "Validation reuses consumed public caches and establishes implementation equivalence, not a second generalization claim.",
+    "Human review remains mandatory for every prediction."
+  ]
+}

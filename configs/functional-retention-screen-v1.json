@@ -1,0 +1,60 @@
+{
+  "format_version": 1,
+  "study": "functional-retention-screen-v1",
+  "status": "frozen_before_training",
+  "seed": 1701,
+  "parent": {
+    "study": "release-candidate-v1",
+    "expanded_data": "data/release-candidate-v1/expanded.jsonl",
+    "expanded_data_sha256": "b0079df73c00d45de69a8197c719ff16b398b11bc1f631fed440db39bc82de2f",
+    "checkpoint": "runs/release-candidate-v1/seed1701-expanded",
+    "weights_sha256": "8b7abc0e9533b89afe6d044aa43435f6dc21d10215dbfe5a6c130695bb148add",
+    "model_sha256": "776f869c86ffb4f011479fa0371d84084bdaa97fedf412ba43325fe5078d3b2e",
+    "train_predictions_sha256": "c90688549c40f167bf7a497935d79dd71fbdfaddae87c17d2b736733babdd178",
+    "calibration_sha256": "1bf5cf91be98ade635392f0b23f6ceb01c9f26e75b577b7f6e175faf8d6df0e7",
+    "selected_train_ids": 512,
+    "selected_train_ids_sha256": "3fbb318a766299acc78622957498d682601aeaf857a90f73ee50bb4a1b91295d"
+  },
+  "training": {
+    "epochs": 1,
+    "batch_size": 2,
+    "accumulation": 4,
+    "updates": 64,
+    "encoder_lr": 0.00001,
+    "head_lr": 0.0001,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05,
+    "teacher_field": "teacher_probabilities",
+    "teacher_distribution": "exact raw parent distribution reconstructed from saved temperature-scaled probabilities",
+    "gold_supervision_replaced": false
+  },
+  "arms": {
+    "warm-context": {
+      "distillation_weight": 0.0
+    },
+    "warm-functional-context": {
+      "distillation_weight": 1.0
+    }
+  },
+  "development_suite": {
+    "cases": "runs/release-candidate-v1/blind-suite/cases.jsonl",
+    "cases_sha256": "4890b3ba5f22af9de9e8c6a12a163154395a7a069125c9a0e5ed16dd27183d63",
+    "protocol_sha256": "4ae8c129e292f2a79e5d229b5a21a207eb96e1c56e97466db912d00173703b21",
+    "role": "Consumed Release Candidate v1 blind suite; development diagnostic only and permanently ineligible as a fresh test."
+  },
+  "screening_rule": {
+    "seen_combined_accuracy_vs_parent_expanded_min_delta": -0.005,
+    "seen_nll_vs_parent_expanded_max_delta": 0.01,
+    "seen_each_source_accuracy_vs_parent_control_min_delta": -0.02,
+    "development_combined_accuracy_vs_parent_expanded_min_delta": -0.005,
+    "development_each_source_accuracy_vs_parent_control_min_delta": -0.02,
+    "context_arm_positive_context_advantage_each_development_source": true,
+    "decision": "Only the functional arm may advance, and only if every frozen screen passes. Any later release study requires newly frozen and previously unread tasks."
+  },
+  "interpretation": {
+    "primary_question": "Can a warm-start context update preserve the parent function when KL anchoring is added without replacing public gold supervision?",
+    "single_seed_development_screen": true,
+    "public_data_only": true,
+    "github_publication": false
+  }
+}

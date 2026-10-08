@@ -1,0 +1,811 @@
+{
+  "kind": "Post-hoc diagnostic added after observing seed-42 label collapse; no training or checkpoint selection changes",
+  "script_sha256": "f12d4b452b5f35ee331d88823e87d0ce78e5191d9ea5a223c0fc1dd9998c8921",
+  "models": {
+    "initial": {
+      "predicted_counts": {
+        "entailment": 191,
+        "contradiction": 1
+      },
+      "raw_metrics": {
+        "n": 192,
+        "correct": 65,
+        "accuracy": 0.3385416666666667,
+        "uniform_random_accuracy": 0.3333333333333333,
+        "nll": 1.2597387566719227,
+        "brier": 0.7375271022936435,
+        "ece_10": 0.1450580688731671,
+        "selective": {
+          "0.5": {
+            "coverage": 0.125,
+            "accuracy": 0.4583333333333333,
+            "selected_count": 24
+          },
+          "0.7": {
+            "coverage": 0.0,
+            "accuracy": null,
+            "selected_count": 0
+          },
+          "0.9": {
+            "coverage": 0.0,
+            "accuracy": null,
+            "selected_count": 0
+          }
+        }
+      },
+      "raw_probability_moments": {
+        "contradiction": {
+          "mean": 0.397802105767697,
+          "std": 0.013491159031283695,
+          "min": 0.36688118636464884,
+          "max": 0.4401595293526082
+        },
+        "entailment": {
+          "mean": 0.4835835236482609,
+          "std": 0.014233456910632367,
+          "min": 0.43704684617062106,
+          "max": 0.5185353148351924
+        },
+        "neutral": {
+          "mean": 0.11861437058404212,
+          "std": 0.011720321468483685,
+          "min": 0.08929331198779855,
+          "max": 0.1547372707121941
+        }
+      },
+      "raw_score_gap_to_entailment": {
+        "contradiction": {
+          "mean": -0.19540803180455532,
+          "std": 0.057430829808873214,
+          "min": -0.3290548776241935,
+          "max": 0.0070968390861105846,
+          "mean_by_gold_label": {
+            "contradiction": -0.18579423963769634,
+            "entailment": -0.20418593876780228,
+            "neutral": -0.19624391700816737
+          }
+        },
+        "entailment": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "mean_by_gold_label": {
+            "contradiction": 0.0,
+            "entailment": 0.0,
+            "neutral": 0.0
+          }
+        },
+        "neutral": {
+          "mean": -1.4097765612472983,
+          "std": 0.11548499165024079,
+          "min": -1.729393470826334,
+          "max": -1.0899662007731405,
+          "mean_by_gold_label": {
+            "contradiction": -1.4027887934777112,
+            "entailment": -1.4140157089811476,
+            "neutral": -1.4125251812830362
+          }
+        }
+      }
+    },
+    "seed-42": {
+      "predicted_counts": {
+        "neutral": 192
+      },
+      "raw_metrics": {
+        "n": 192,
+        "correct": 64,
+        "accuracy": 0.3333333333333333,
+        "uniform_random_accuracy": 0.3333333333333333,
+        "nll": 1.0988087082662636,
+        "brier": 0.6668129143304992,
+        "ece_10": 0.02600168451888781,
+        "selective": {
+          "0.5": {
+            "coverage": 0.0,
+            "accuracy": null,
+            "selected_count": 0
+          },
+          "0.7": {
+            "coverage": 0.0,
+            "accuracy": null,
+            "selected_count": 0
+          },
+          "0.9": {
+            "coverage": 0.0,
+            "accuracy": null,
+            "selected_count": 0
+          }
+        }
+      },
+      "raw_probability_moments": {
+        "contradiction": {
+          "mean": 0.31758481199573524,
+          "std": 0.0027671561884935847,
+          "min": 0.31103540557273424,
+          "max": 0.33901301817411816
+        },
+        "entailment": {
+          "mean": 0.32308017015204366,
+          "std": 0.0018367061340424683,
+          "min": 0.3173440150978242,
+          "max": 0.3335280190763579
+        },
+        "neutral": {
+          "mean": 0.35933501785222116,
+          "std": 0.003784251071562931,
+          "min": 0.33943309882242356,
+          "max": 0.36797617526358195
+        }
+      },
+      "raw_score_gap_to_entailment": {
+        "contradiction": {
+          "mean": -0.01717684238901023,
+          "std": 0.008624961995647397,
+          "min": -0.03544096962810617,
+          "max": 0.06605210175739673,
+          "mean_by_gold_label": {
+            "contradiction": -0.0157774227309938,
+            "entailment": -0.01782777072785826,
+            "neutral": -0.017925333708178635
+          }
+        },
+        "entailment": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "mean_by_gold_label": {
+            "contradiction": 0.0,
+            "entailment": 0.0,
+            "neutral": 0.0
+          }
+        },
+        "neutral": {
+          "mean": 0.10631451812681071,
+          "std": 0.015230856719762684,
+          "min": 0.0209763939030716,
+          "max": 0.14616327675463703,
+          "mean_by_gold_label": {
+            "contradiction": 0.10523438140505932,
+            "entailment": 0.10474528339792008,
+            "neutral": 0.10896388957745276
+          }
+        }
+      },
+      "parameter_updates": {
+        "groups": {
+          "layer-0": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.03132778446888551,
+            "squared_initial": 18.657509697804926,
+            "max_absolute_change": 0.001468608737923205,
+            "relative_l2_change": 0.04097679651489918
+          },
+          "layer-1": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.03318274987395853,
+            "squared_initial": 18.693512607889716,
+            "max_absolute_change": 0.0014532762579619884,
+            "relative_l2_change": 0.04213186938069775
+          },
+          "layer-10": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.045346666942350566,
+            "squared_initial": 18.851067590992898,
+            "max_absolute_change": 0.0018853838555514812,
+            "relative_l2_change": 0.04904612608815644
+          },
+          "layer-11": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.05198756681056693,
+            "squared_initial": 18.821542436955497,
+            "max_absolute_change": 0.0018996282014995813,
+            "relative_l2_change": 0.052555980172977725
+          },
+          "layer-12": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.04904586018528789,
+            "squared_initial": 18.85457571654115,
+            "max_absolute_change": 0.0018490832298994064,
+            "relative_l2_change": 0.051002656354990426
+          },
+          "layer-13": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.04561881581321359,
+            "squared_initial": 18.75155300379265,
+            "max_absolute_change": 0.0018120519816875458,
+            "relative_l2_change": 0.049323442790066126
+          },
+          "layer-14": {
+            "parameters": 325632,
+            "changed_parameters": 325631,
+            "squared_change": 0.04055882908869535,
+            "squared_initial": 18.75139868055703,
+            "max_absolute_change": 0.0018207216635346413,
+            "relative_l2_change": 0.04650780796149518
+          },
+          "layer-15": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.04692439013160765,
+            "squared_initial": 18.816869562491775,
+            "max_absolute_change": 0.0017505879513919353,
+            "relative_l2_change": 0.04993736599323097
+          },
+          "layer-16": {
+            "parameters": 325632,
+            "changed_parameters": 325631,
+            "squared_change": 0.04283550666878,
+            "squared_initial": 18.73861175402999,
+            "max_absolute_change": 0.0019450867548584938,
+            "relative_l2_change": 0.04781159670526576
+          },
+          "layer-17": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.0470320979366079,
+            "squared_initial": 18.75827195122838,
+            "max_absolute_change": 0.0018127483781427145,
+            "relative_l2_change": 0.050072671402763794
+          },
+          "layer-18": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.042469500738661736,
+            "squared_initial": 18.76070323912427,
+            "max_absolute_change": 0.001889871433377266,
+            "relative_l2_change": 0.04757885878110719
+          },
+          "layer-19": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.04668213060358539,
+            "squared_initial": 18.734660876798443,
+            "max_absolute_change": 0.0018259001662954688,
+            "relative_l2_change": 0.04991745287094271
+          },
+          "layer-2": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.02813079598126933,
+            "squared_initial": 18.663441004697233,
+            "max_absolute_change": 0.0014653736725449562,
+            "relative_l2_change": 0.03882354167739625
+          },
+          "layer-20": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.04759914649184793,
+            "squared_initial": 18.72383033816004,
+            "max_absolute_change": 0.001863646786659956,
+            "relative_l2_change": 0.050419929500163926
+          },
+          "layer-21": {
+            "parameters": 325632,
+            "changed_parameters": 325631,
+            "squared_change": 0.03599956686957739,
+            "squared_initial": 18.734804984240327,
+            "max_absolute_change": 0.0019504502415657043,
+            "relative_l2_change": 0.04383530668959328
+          },
+          "layer-22": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.04649322741897777,
+            "squared_initial": 18.695070354733616,
+            "max_absolute_change": 0.0019008233211934566,
+            "relative_l2_change": 0.04986907300597287
+          },
+          "layer-23": {
+            "parameters": 325632,
+            "changed_parameters": 325631,
+            "squared_change": 0.04517455288441852,
+            "squared_initial": 18.73053021519445,
+            "max_absolute_change": 0.002046906156465411,
+            "relative_l2_change": 0.0491102218181592
+          },
+          "layer-24": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.03784544370137155,
+            "squared_initial": 18.625634473224636,
+            "max_absolute_change": 0.0018718671053647995,
+            "relative_l2_change": 0.04507661160222763
+          },
+          "layer-25": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.04028618180018384,
+            "squared_initial": 18.718128797831014,
+            "max_absolute_change": 0.0019101252546533942,
+            "relative_l2_change": 0.046392399806723196
+          },
+          "layer-26": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.04181698081083596,
+            "squared_initial": 18.785201973747462,
+            "max_absolute_change": 0.001835717586800456,
+            "relative_l2_change": 0.047181136974403744
+          },
+          "layer-27": {
+            "parameters": 325632,
+            "changed_parameters": 325631,
+            "squared_change": 0.039979948895052075,
+            "squared_initial": 18.719481446838472,
+            "max_absolute_change": 0.0018866127356886864,
+            "relative_l2_change": 0.046214069197238326
+          },
+          "layer-28": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.04954593471484259,
+            "squared_initial": 18.680181636940688,
+            "max_absolute_change": 0.0021339734084904194,
+            "relative_l2_change": 0.051500739560619
+          },
+          "layer-29": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.04689538571983576,
+            "squared_initial": 18.694724020373542,
+            "max_absolute_change": 0.0020801525097340345,
+            "relative_l2_change": 0.050084751926052655
+          },
+          "layer-3": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.02845953742507845,
+            "squared_initial": 18.691041970450897,
+            "max_absolute_change": 0.0014758426696062088,
+            "relative_l2_change": 0.03902088922792783
+          },
+          "layer-30": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.044344703550450504,
+            "squared_initial": 18.67294245888479,
+            "max_absolute_change": 0.001741541549563408,
+            "relative_l2_change": 0.048732029507556715
+          },
+          "layer-31": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.035682545276358724,
+            "squared_initial": 18.70084988657618,
+            "max_absolute_change": 0.0017631007358431816,
+            "relative_l2_change": 0.04368146955509559
+          },
+          "layer-4": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.03257886919891462,
+            "squared_initial": 18.72856556280749,
+            "max_absolute_change": 0.0015781121328473091,
+            "relative_l2_change": 0.041707652380700636
+          },
+          "layer-5": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.029874236905016005,
+            "squared_initial": 18.711761361686513,
+            "max_absolute_change": 0.0014934564242139459,
+            "relative_l2_change": 0.0399568345429595
+          },
+          "layer-6": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.031465400476008654,
+            "squared_initial": 18.658498590812087,
+            "max_absolute_change": 0.0015368597814813256,
+            "relative_l2_change": 0.04106561060722996
+          },
+          "layer-7": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.036545660463161767,
+            "squared_initial": 18.750003744964488,
+            "max_absolute_change": 0.0015761428512632847,
+            "relative_l2_change": 0.04414862967377107
+          },
+          "layer-8": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.04262936650775373,
+            "squared_initial": 18.73472008149838,
+            "max_absolute_change": 0.0017389138229191303,
+            "relative_l2_change": 0.04770136811335261
+          },
+          "layer-9": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.043614874652121216,
+            "squared_initial": 18.780219193547964,
+            "max_absolute_change": 0.0019116606563329697,
+            "relative_l2_change": 0.048191116243588586
+          },
+          "head": {
+            "parameters": 594945,
+            "changed_parameters": 594945,
+            "squared_change": 5.505169995289961,
+            "squared_initial": 2393.771145263687,
+            "max_absolute_change": 0.018738124519586563,
+            "relative_l2_change": 0.04795612165763317
+          }
+        },
+        "updated_layers": 32,
+        "total_changed_parameters": 11015164
+      }
+    },
+    "seed-43": {
+      "predicted_counts": {
+        "contradiction": 167,
+        "entailment": 25
+      },
+      "raw_metrics": {
+        "n": 192,
+        "correct": 70,
+        "accuracy": 0.3645833333333333,
+        "uniform_random_accuracy": 0.3333333333333333,
+        "nll": 1.0965055038158884,
+        "brier": 0.6652670691636263,
+        "ece_10": 0.020310578336675784,
+        "selective": {
+          "0.5": {
+            "coverage": 0.0,
+            "accuracy": null,
+            "selected_count": 0
+          },
+          "0.7": {
+            "coverage": 0.0,
+            "accuracy": null,
+            "selected_count": 0
+          },
+          "0.9": {
+            "coverage": 0.0,
+            "accuracy": null,
+            "selected_count": 0
+          }
+        }
+      },
+      "raw_probability_moments": {
+        "contradiction": {
+          "mean": 0.34376618839896583,
+          "std": 0.004124605748613788,
+          "min": 0.33135662842582375,
+          "max": 0.35259638209285865
+        },
+        "entailment": {
+          "mean": 0.3390049874367172,
+          "std": 0.0029980852883001847,
+          "min": 0.331853167769454,
+          "max": 0.34824846269319754
+        },
+        "neutral": {
+          "mean": 0.31722882416431686,
+          "std": 0.005398576905138718,
+          "min": 0.30320213088723036,
+          "max": 0.33170355412435015
+        }
+      },
+      "raw_score_gap_to_entailment": {
+        "contradiction": {
+          "mean": 0.013913622870417279,
+          "std": 0.014007412379137718,
+          "min": -0.040985242165913593,
+          "max": 0.04088504319683062,
+          "mean_by_gold_label": {
+            "contradiction": 0.018008485921614942,
+            "entailment": 0.013285497847265168,
+            "neutral": 0.010446884842371724
+          }
+        },
+        "entailment": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "mean_by_gold_label": {
+            "contradiction": 0.0,
+            "entailment": 0.0,
+            "neutral": 0.0
+          }
+        },
+        "neutral": {
+          "mean": -0.06649696267991208,
+          "std": 0.02373698925163052,
+          "min": -0.13851651653743158,
+          "max": -0.008753419399952556,
+          "mean_by_gold_label": {
+            "contradiction": -0.06676522257471426,
+            "entailment": -0.07053920335186863,
+            "neutral": -0.062186462113153367
+          }
+        }
+      },
+      "parameter_updates": {
+        "groups": {
+          "layer-0": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.028572577954037115,
+            "squared_initial": 18.657509697804926,
+            "max_absolute_change": 0.0013649193570017815,
+            "relative_l2_change": 0.039133426408192645
+          },
+          "layer-1": {
+            "parameters": 325632,
+            "changed_parameters": 325631,
+            "squared_change": 0.028753501130267978,
+            "squared_initial": 18.693512607889716,
+            "max_absolute_change": 0.0015082679456099868,
+            "relative_l2_change": 0.039219306428139575
+          },
+          "layer-10": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.035643042298033834,
+            "squared_initial": 18.851067590992898,
+            "max_absolute_change": 0.0016343649476766586,
+            "relative_l2_change": 0.043482990807613975
+          },
+          "layer-11": {
+            "parameters": 325632,
+            "changed_parameters": 325631,
+            "squared_change": 0.03579431009711698,
+            "squared_initial": 18.821542436955497,
+            "max_absolute_change": 0.0017499825917184353,
+            "relative_l2_change": 0.04360932780247021
+          },
+          "layer-12": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.038933555071707815,
+            "squared_initial": 18.85457571654115,
+            "max_absolute_change": 0.0017688111402094364,
+            "relative_l2_change": 0.0454416035872975
+          },
+          "layer-13": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.03523518843576312,
+            "squared_initial": 18.75155300379265,
+            "max_absolute_change": 0.0017160543939098716,
+            "relative_l2_change": 0.043348061245154994
+          },
+          "layer-14": {
+            "parameters": 325632,
+            "changed_parameters": 325631,
+            "squared_change": 0.034202633367385715,
+            "squared_initial": 18.75139868055703,
+            "max_absolute_change": 0.0016319411806762218,
+            "relative_l2_change": 0.042708364312966623
+          },
+          "layer-15": {
+            "parameters": 325632,
+            "changed_parameters": 325631,
+            "squared_change": 0.03877920872764662,
+            "squared_initial": 18.816869562491775,
+            "max_absolute_change": 0.0018046956975013018,
+            "relative_l2_change": 0.04539685683339877
+          },
+          "layer-16": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.037183753214776516,
+            "squared_initial": 18.73861175402999,
+            "max_absolute_change": 0.0017441855743527412,
+            "relative_l2_change": 0.044545917195584
+          },
+          "layer-17": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.040314328973181546,
+            "squared_initial": 18.75827195122838,
+            "max_absolute_change": 0.0018594209104776382,
+            "relative_l2_change": 0.04635891935130151
+          },
+          "layer-18": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.039495017379522324,
+            "squared_initial": 18.76070323912427,
+            "max_absolute_change": 0.0018259758362546563,
+            "relative_l2_change": 0.04588244976262476
+          },
+          "layer-19": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.04046653371187858,
+            "squared_initial": 18.734660876798443,
+            "max_absolute_change": 0.0019616056233644485,
+            "relative_l2_change": 0.046475608481414736
+          },
+          "layer-2": {
+            "parameters": 325632,
+            "changed_parameters": 325631,
+            "squared_change": 0.02903241745661944,
+            "squared_initial": 18.663441004697233,
+            "max_absolute_change": 0.0013832395197823644,
+            "relative_l2_change": 0.03944080231034136
+          },
+          "layer-20": {
+            "parameters": 325632,
+            "changed_parameters": 325631,
+            "squared_change": 0.04134560568490997,
+            "squared_initial": 18.72383033816004,
+            "max_absolute_change": 0.0017969537293538451,
+            "relative_l2_change": 0.04699128601997722
+          },
+          "layer-21": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.03130149393109605,
+            "squared_initial": 18.734804984240327,
+            "max_absolute_change": 0.0018753246404230595,
+            "relative_l2_change": 0.040875016827398136
+          },
+          "layer-22": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.040499761526007205,
+            "squared_initial": 18.695070354733616,
+            "max_absolute_change": 0.0018471662187948823,
+            "relative_l2_change": 0.046543890379966146
+          },
+          "layer-23": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.035219964891439304,
+            "squared_initial": 18.73053021519445,
+            "max_absolute_change": 0.001743358327075839,
+            "relative_l2_change": 0.04336301029783436
+          },
+          "layer-24": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.0342882985714823,
+            "squared_initial": 18.625634473224636,
+            "max_absolute_change": 0.0017946669831871986,
+            "relative_l2_change": 0.042905940864402387
+          },
+          "layer-25": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.03401579188357573,
+            "squared_initial": 18.718128797831014,
+            "max_absolute_change": 0.0018733725883066654,
+            "relative_l2_change": 0.042629385976908185
+          },
+          "layer-26": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.04271115257870406,
+            "squared_initial": 18.785201973747462,
+            "max_absolute_change": 0.0017885444685816765,
+            "relative_l2_change": 0.04768290554755915
+          },
+          "layer-27": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.03293455702078063,
+            "squared_initial": 18.719481446838472,
+            "max_absolute_change": 0.0018143311608582735,
+            "relative_l2_change": 0.041944884821413356
+          },
+          "layer-28": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.04649963433621451,
+            "squared_initial": 18.680181636940688,
+            "max_absolute_change": 0.001872080028988421,
+            "relative_l2_change": 0.04989238000191675
+          },
+          "layer-29": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.037929192680167034,
+            "squared_initial": 18.694724020373542,
+            "max_absolute_change": 0.0018400471890345216,
+            "relative_l2_change": 0.04504299607537315
+          },
+          "layer-3": {
+            "parameters": 325632,
+            "changed_parameters": 325630,
+            "squared_change": 0.0292701730504632,
+            "squared_initial": 18.691041970450897,
+            "max_absolute_change": 0.001267903600819409,
+            "relative_l2_change": 0.03957271877032848
+          },
+          "layer-30": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.034274636302143335,
+            "squared_initial": 18.67294245888479,
+            "max_absolute_change": 0.0016630832105875015,
+            "relative_l2_change": 0.042843017184508454
+          },
+          "layer-31": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.03159126522950828,
+            "squared_initial": 18.70084988657618,
+            "max_absolute_change": 0.0016302205622196198,
+            "relative_l2_change": 0.04110104252016653
+          },
+          "layer-4": {
+            "parameters": 325632,
+            "changed_parameters": 325631,
+            "squared_change": 0.030054478207603097,
+            "squared_initial": 18.72856556280749,
+            "max_absolute_change": 0.0014486797153949738,
+            "relative_l2_change": 0.04005920612043211
+          },
+          "layer-5": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.028541173203848302,
+            "squared_initial": 18.711761361686513,
+            "max_absolute_change": 0.0014352172147482634,
+            "relative_l2_change": 0.03905517386225101
+          },
+          "layer-6": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.030305028427392244,
+            "squared_initial": 18.658498590812087,
+            "max_absolute_change": 0.001398865133523941,
+            "relative_l2_change": 0.0403012949345991
+          },
+          "layer-7": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.03294935775920749,
+            "squared_initial": 18.750003744964488,
+            "max_absolute_change": 0.0014592858497053385,
+            "relative_l2_change": 0.0419201470596569
+          },
+          "layer-8": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.036714436835609376,
+            "squared_initial": 18.73472008149838,
+            "max_absolute_change": 0.001642339862883091,
+            "relative_l2_change": 0.044268502510145906
+          },
+          "layer-9": {
+            "parameters": 325632,
+            "changed_parameters": 325632,
+            "squared_change": 0.03696805296931416,
+            "squared_initial": 18.780219193547964,
+            "max_absolute_change": 0.0016009602695703506,
+            "relative_l2_change": 0.044367295936108074
+          },
+          "head": {
+            "parameters": 594945,
+            "changed_parameters": 594945,
+            "squared_change": 4.621236317447909,
+            "squared_initial": 2393.771145263687,
+            "max_absolute_change": 0.018607094883918762,
+            "relative_l2_change": 0.04393774611387326
+          }
+        },
+        "updated_layers": 32,
+        "total_changed_parameters": 11015160
+      }
+    }
+  },
+  "limitations": [
+    "Across-example margin variation is descriptive, not a causal context-ablation experiment",
+    "Parameter movement does not certify gradient correctness or semantic learning",
+    "Three-class SNLI development subset; not a conclusion about all unseen tasks"
+  ]
+}

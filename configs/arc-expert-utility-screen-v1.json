@@ -1,0 +1,60 @@
+{
+  "format_version": 1,
+  "study": "arc-expert-utility-screen-v1",
+  "status": "frozen_before_screen",
+  "data": {
+    "path": "runs/architecture-comparison-v1/arc-blind/cases.jsonl",
+    "sha256": "16c1170c8b9f099616e29d90f9d84e088e0db9ff0cf2cd4aa45496030f64e7e6",
+    "rows": 384,
+    "sources": [
+      "arc-challenge",
+      "arc-easy"
+    ]
+  },
+  "feature_cache": {
+    "path": "cache/arc-expert-features-v1",
+    "manifest_sha256": "4eb5c50483d5a3862a215c0996c597f08e62f064ccc8302395e6326fda19be28"
+  },
+  "expert": {
+    "weights": "runs/qasc-binary-route-screen-v1/binary-route.safetensors",
+    "weights_sha256": "a1b9d145e3532ddd0460aa3429420088cd74f8a3a56325249f227c5b846853ab",
+    "parameter_sha256": "bee29d3e310b292ba72848b0ee5b4f6c53d39d51c30380c91f98a7f2a88985df"
+  },
+  "model": {
+    "residual_width": 256,
+    "router_width": 128,
+    "dropout": 0.0,
+    "initial_gate_probability": 0.25
+  },
+  "cost": {
+    "brier_weight": 0.5,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05
+  },
+  "source_files": {
+    "scripts/screen_arc_expert_utility.py": "4a8e5f7b961dfb08c0728e07931f603f19756a4d217172ac96b6740f70a04e40",
+    "scripts/run_qasc_binary_route_screen.py": "4d809cf286159d22d959cb58ff500725c2b0a0f1a25d22a919b10f18b8d60937",
+    "scripts/run_qasc_counterfactual_router_screen.py": "ca47bf5b62e726a6402a7918da0f192458b64cff85c0b8bfc42e6bd188356b76",
+    "scripts/run_qasc_staged_router_screen.py": "9b030f3aa29f39a348f7d1db413a41ac0a28956c761c953f3b93d33af4c6c9d2",
+    "scripts/run_qasc_routed_residual_screen.py": "bd14916548a04465b33d0a1ed80e0fa9bd621a5ef0ca858670184ba911e64ba4",
+    "src/decision_model/route_utility.py": "be260aa82f322cbac68015129a3c08a46048f92e7b8c6d943c73d8f0820d9f37",
+    "src/decision_model/counterfactual_routing.py": "3f033b5a85fa6a57bcdc43c120de00f3f7a9c791727cc7e9d65049ddba1f37b5",
+    "src/decision_model/feature_screen.py": "3b16e2b880e1e3c861c01988c19ac323818e8a5e7f0afd54b2991d35c36124e2",
+    "src/decision_model/train.py": "485af4564a68d6e44dbb080e97b0a08ded6925ae0d2bac8d74215fd665fa0f51"
+  },
+  "screening_rule": {
+    "combined_mean_utility_min": 0.02,
+    "each_source_mean_utility_min": 0.01,
+    "combined_accuracy_min_delta": 0.01,
+    "each_source_nll_max_delta": 0.0,
+    "decision": "Count ARC as one consumed positive-utility family only if cache/weight integrity, coverage, combined and per-source utility, combined accuracy and per-source NLL checks all pass."
+  },
+  "interpretation": {
+    "existing_expert_only": true,
+    "router_training": false,
+    "arc_previously_consumed": true,
+    "fresh_release_evidence": false,
+    "public_data_only": true,
+    "github_publication": false
+  }
+}

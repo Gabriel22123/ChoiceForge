@@ -1,0 +1,22 @@
+{
+  "name": "TruthfulQA binary multiple-choice specialist source",
+  "repository": "https://github.com/sylinrl/TruthfulQA",
+  "revision": "d71c110897f5d31c5d7f309e7bc316c152f6f031",
+  "license": "Apache-2.0",
+  "files": {
+    "LICENSE": {
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "url": "https://raw.githubusercontent.com/sylinrl/TruthfulQA/d71c110897f5d31c5d7f309e7bc316c152f6f031/LICENSE"
+    },
+    "README.md": {
+      "sha256": "23834ca77c34e909cbdcceeaea89135c65b713a5d0c77be6bced7a637763ea44",
+      "url": "https://raw.githubusercontent.com/sylinrl/TruthfulQA/d71c110897f5d31c5d7f309e7bc316c152f6f031/README.md"
+    },
+    "TruthfulQA.csv": {
+      "sha256": "b8d8ef1e12f98b4f2a9f47abc9765da0640b182b6c5d9b92f0c1a1f2f1e02e5c",
+      "url": "https://raw.githubusercontent.com/sylinrl/TruthfulQA/d71c110897f5d31c5d7f309e7bc316c152f6f031/TruthfulQA.csv",
+      "rows": 790
+    }
+  },
+  "release_policy": "Download and conversion code plus exact provenance are public. Raw and transformed benchmark rows stay outside the source release and are reconstructed locally under Apache-2.0."
+}

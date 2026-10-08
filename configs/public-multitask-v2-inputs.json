@@ -1,0 +1,6 @@
+{
+  "inputs": [
+    {"path": "data/public-multitask-v1/cases.jsonl", "sha256": "10e866e14ffcc7507fa74c6cb816491ba0f1a77e8df9da939c06a981daaa695a"},
+    {"path": "data/public-snli-v1/cases.jsonl", "sha256": "d2e11f0e7b83a5a89c72d79b637cde9c6f5673fc398e4c6850b3063e11e75aec"}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "type": "score",
+  "task": "Rate the operational risk of this change.",
+  "context": "The patch changes authentication behavior and has one failing test.",
+  "levels": [
+    {"id": "low", "description": "Isolated change with no external behavior."},
+    {"id": "medium", "description": "A public contract or important behavior changed."},
+    {"id": "high", "description": "Security or production behavior may be bypassed."}
+  ]
+}

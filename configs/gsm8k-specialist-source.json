@@ -1,0 +1,18 @@
+{
+  "name": "GSM8K specialist source",
+  "repository": "https://huggingface.co/datasets/openai/gsm8k",
+  "upstream_repository": "https://github.com/openai/grade-school-math",
+  "dataset_id": "openai/gsm8k",
+  "revision": "740312add88f781978c0658806c59bc2815b9866",
+  "license": "MIT",
+  "files": {
+    "README.md": {
+      "sha256": "a17e882503578c9e324560630e31017617714ee025c87cf4fea6fd916895f3c1"
+    },
+    "main/train-00000-of-00001.parquet": {
+      "sha256": "ea82612ea9582142387730c793eb67d3b12849002bc0b7fa6f8efafa7351419d",
+      "rows": 7473
+    }
+  },
+  "release_policy": "Download and conversion code plus exact provenance are public. Raw and transformed GSM8K rows stay outside source release bundles and are reconstructed locally under MIT."
+}

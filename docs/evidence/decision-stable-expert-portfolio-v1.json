@@ -1,0 +1,1833 @@
+{
+  "format_version": 1,
+  "study": "decision-stable-expert-portfolio-v1",
+  "role": "source-robust decision-stable heterogeneous expert portfolio LOFO",
+  "protocol_sha256": "b5c222c2dc3bbc0770536c02585dd404553bcf40505c8e8df5d656a288852f2a",
+  "paths": [
+    "parent",
+    "clinc",
+    "gsm8k",
+    "paws-wiki",
+    "qasc",
+    "snli",
+    "truthfulqa"
+  ],
+  "runs": [
+    {
+      "seed": 42,
+      "heldout_source": "clinc",
+      "train_sources": [
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7560507919988595,
+      "weights": {
+        "parent": 0.0038466814439743757,
+        "gsm8k": 0.0032620064448565245,
+        "paws-wiki": 4.8707785026635975e-05,
+        "qasc": 0.8858820796012878,
+        "snli": 0.10677097737789154,
+        "truthfulqa": 0.00018947992066387087
+      },
+      "weights_sha256": "e943cc6bd8fe725eb9e4343112249d2c6b3479667f45d6f0a2a32e955caa0152",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 1.0551353693008423,
+          "proper_regression_max": 5.7220458984375e-06,
+          "context_regression_max": 5.167722702026367e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.9755223989486694,
+          "proper_regression_max": 0.017062664031982422,
+          "context_regression_max": 0.010974884033203125
+        }
+      ],
+      "evaluation": {
+        "rows": 42,
+        "parent_accuracy": 0.976190447807312,
+        "accuracy": 0.976190447807312,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.0002733806613832712,
+        "brier_delta": -3.1603226489096414e-06,
+        "proper_gain": 0.0002749612904153764,
+        "positive_proper_rate": 0.261904776096344,
+        "context_advantage_delta": -0.03863245248794556,
+        "context_regression_rate": 0.5714285969734192,
+        "mean_alpha": 0.9940476190476191,
+        "minimum_alpha": 0.75
+      }
+    },
+    {
+      "seed": 43,
+      "heldout_source": "clinc",
+      "train_sources": [
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7459170410002116,
+      "weights": {
+        "parent": 0.0038477759808301926,
+        "gsm8k": 0.003209747839719057,
+        "paws-wiki": 4.932393858325668e-05,
+        "qasc": 0.886082649230957,
+        "snli": 0.1066189780831337,
+        "truthfulqa": 0.00019149605941493064
+      },
+      "weights_sha256": "286c75115ca6ebdca917fb6aed8a6f63ba7404a02832dc5a4b8ba9ac5e73a660",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 1.0551352500915527,
+          "proper_regression_max": 5.841255187988281e-06,
+          "context_regression_max": 5.1975250244140625e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.9755233526229858,
+          "proper_regression_max": 0.017062902450561523,
+          "context_regression_max": 0.010963976383209229
+        }
+      ],
+      "evaluation": {
+        "rows": 42,
+        "parent_accuracy": 0.976190447807312,
+        "accuracy": 0.976190447807312,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.0002753749140538275,
+        "brier_delta": -3.6309343158791307e-06,
+        "proper_gain": 0.0002771890431176871,
+        "positive_proper_rate": 0.261904776096344,
+        "context_advantage_delta": -0.03857901692390442,
+        "context_regression_rate": 0.5714285969734192,
+        "mean_alpha": 0.9940476190476191,
+        "minimum_alpha": 0.75
+      }
+    },
+    {
+      "seed": 44,
+      "heldout_source": "clinc",
+      "train_sources": [
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7519449999963399,
+      "weights": {
+        "parent": 0.003843576181679964,
+        "gsm8k": 0.0032552105840295553,
+        "paws-wiki": 4.9702677642926574e-05,
+        "qasc": 0.8859109282493591,
+        "snli": 0.10675004869699478,
+        "truthfulqa": 0.00019057925965171307
+      },
+      "weights_sha256": "8a0ea0784b8aacd915b3940d9c20e968a38f5921756eb2660b59ee4860041a89",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 1.0551354885101318,
+          "proper_regression_max": 5.7220458984375e-06,
+          "context_regression_max": 5.143880844116211e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.9755224585533142,
+          "proper_regression_max": 0.017062902450561523,
+          "context_regression_max": 0.010973870754241943
+        }
+      ],
+      "evaluation": {
+        "rows": 42,
+        "parent_accuracy": 0.976190447807312,
+        "accuracy": 0.976190447807312,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.00027365004643797874,
+        "brier_delta": -3.2184859719563974e-06,
+        "proper_gain": 0.00027525817858986557,
+        "positive_proper_rate": 0.261904776096344,
+        "context_advantage_delta": -0.03862563893198967,
+        "context_regression_rate": 0.5714285969734192,
+        "mean_alpha": 0.9940476190476191,
+        "minimum_alpha": 0.75
+      }
+    },
+    {
+      "seed": 42,
+      "heldout_source": "gsm8k",
+      "train_sources": [
+        "clinc",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.6744594589981716,
+      "weights": {
+        "parent": 0.0035870629362761974,
+        "clinc": 0.03643099218606949,
+        "paws-wiki": 0.00012997596058994532,
+        "qasc": 0.9581670761108398,
+        "snli": 0.0012004927266389132,
+        "truthfulqa": 0.00048444795538671315
+      },
+      "weights_sha256": "90e8eaee7e9ead962b95979e60cb855256b8c83d3532092f68cda6efdf35a46f",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.8561926484107971,
+          "proper_regression_max": 1.811981201171875e-05,
+          "context_regression_max": 1.4483928680419922e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.7832955121994019,
+          "proper_regression_max": 0.013936638832092285,
+          "context_regression_max": 0.01128685474395752
+        }
+      ],
+      "evaluation": {
+        "rows": 256,
+        "parent_accuracy": 0.32421875,
+        "accuracy": 0.32421875,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.021772902458906174,
+        "brier_delta": -0.008873548358678818,
+        "proper_gain": 0.02620968036353588,
+        "positive_proper_rate": 0.56640625,
+        "context_advantage_delta": 0.024605493992567062,
+        "context_regression_rate": 0.37890625,
+        "mean_alpha": 0.87890625,
+        "minimum_alpha": 0.0
+      }
+    },
+    {
+      "seed": 43,
+      "heldout_source": "gsm8k",
+      "train_sources": [
+        "clinc",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.6709122910106089,
+      "weights": {
+        "parent": 0.0036044588778167963,
+        "clinc": 0.03683983534574509,
+        "paws-wiki": 0.00013021081394981593,
+        "qasc": 0.9577285051345825,
+        "snli": 0.0012140987673774362,
+        "truthfulqa": 0.0004828345263376832
+      },
+      "weights_sha256": "eb34325e2ec404c3ca65ce98f3fa095d5faab1c66ceb4f1d7ef97042666016d9",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.8561924695968628,
+          "proper_regression_max": 1.7642974853515625e-05,
+          "context_regression_max": 1.4126300811767578e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.7833040356636047,
+          "proper_regression_max": 0.013905048370361328,
+          "context_regression_max": 0.011230289936065674
+        }
+      ],
+      "evaluation": {
+        "rows": 256,
+        "parent_accuracy": 0.32421875,
+        "accuracy": 0.32421875,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.021761225536465645,
+        "brier_delta": -0.008862004615366459,
+        "proper_gain": 0.026192236691713333,
+        "positive_proper_rate": 0.56640625,
+        "context_advantage_delta": 0.02460074983537197,
+        "context_regression_rate": 0.37890625,
+        "mean_alpha": 0.87890625,
+        "minimum_alpha": 0.0
+      }
+    },
+    {
+      "seed": 44,
+      "heldout_source": "gsm8k",
+      "train_sources": [
+        "clinc",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.6639847079932224,
+      "weights": {
+        "parent": 0.0035782221239060163,
+        "clinc": 0.03634858876466751,
+        "paws-wiki": 0.0001303391036344692,
+        "qasc": 0.9582452178001404,
+        "snli": 0.001219575060531497,
+        "truthfulqa": 0.00047806318616494536
+      },
+      "weights_sha256": "9a8e34024a30d9e84bbd90a9fb2e7538e67dd500545309840b18fd3bc420073b",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.8561925888061523,
+          "proper_regression_max": 1.7404556274414062e-05,
+          "context_regression_max": 1.3887882232666016e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.7832947969436646,
+          "proper_regression_max": 0.013936758041381836,
+          "context_regression_max": 0.011285781860351562
+        }
+      ],
+      "evaluation": {
+        "rows": 256,
+        "parent_accuracy": 0.32421875,
+        "accuracy": 0.32421875,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.021775009110569954,
+        "brier_delta": -0.00887575838714838,
+        "proper_gain": 0.026212893426418304,
+        "positive_proper_rate": 0.56640625,
+        "context_advantage_delta": 0.02460637502372265,
+        "context_regression_rate": 0.37890625,
+        "mean_alpha": 0.87890625,
+        "minimum_alpha": 0.0
+      }
+    },
+    {
+      "seed": 42,
+      "heldout_source": "hellaswag",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.742083958000876,
+      "weights": {
+        "parent": 0.0038233057130128145,
+        "clinc": 0.03731616586446762,
+        "gsm8k": 0.00020382805087137967,
+        "paws-wiki": 3.601675052777864e-05,
+        "qasc": 0.9582520127296448,
+        "snli": 0.00025198585353791714,
+        "truthfulqa": 0.00011669528612401336
+      },
+      "weights_sha256": "5d578465e653e126ca2f61ea37e05f7219cfbc3a37e52d2de8cce0faec87b28f",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.9118003845214844,
+          "proper_regression_max": 3.5762786865234375e-07,
+          "context_regression_max": 2.384185791015625e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.8366991877555847,
+          "proper_regression_max": 0.013849020004272461,
+          "context_regression_max": 0.011269092559814453
+        }
+      ],
+      "evaluation": {
+        "rows": 256,
+        "parent_accuracy": 0.67578125,
+        "accuracy": 0.67578125,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.0232806745916605,
+        "brier_delta": -0.009447099640965462,
+        "proper_gain": 0.028004221618175507,
+        "positive_proper_rate": 0.4453125,
+        "context_advantage_delta": 0.030881596729159355,
+        "context_regression_rate": 0.44140625,
+        "mean_alpha": 0.955078125,
+        "minimum_alpha": 0.0
+      }
+    },
+    {
+      "seed": 43,
+      "heldout_source": "hellaswag",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7370787500112783,
+      "weights": {
+        "parent": 0.003798486664891243,
+        "clinc": 0.036841120570898056,
+        "gsm8k": 0.00020493683405220509,
+        "paws-wiki": 3.652162558864802e-05,
+        "qasc": 0.9587516188621521,
+        "snli": 0.0002523248258512467,
+        "truthfulqa": 0.00011498962703626603
+      },
+      "weights_sha256": "31b91ecb4552a0e8fd764428f25db2b10566f1445d8663a481b6aca16895ffbc",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.9118001461029053,
+          "proper_regression_max": 4.76837158203125e-07,
+          "context_regression_max": 2.47955322265625e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.836665689945221,
+          "proper_regression_max": 0.013920068740844727,
+          "context_regression_max": 0.011395037174224854
+        }
+      ],
+      "evaluation": {
+        "rows": 256,
+        "parent_accuracy": 0.67578125,
+        "accuracy": 0.67578125,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.023235302418470383,
+        "brier_delta": -0.009415697306394577,
+        "proper_gain": 0.027943149209022522,
+        "positive_proper_rate": 0.4453125,
+        "context_advantage_delta": 0.030764900147914886,
+        "context_regression_rate": 0.44140625,
+        "mean_alpha": 0.955078125,
+        "minimum_alpha": 0.0
+      }
+    },
+    {
+      "seed": 44,
+      "heldout_source": "hellaswag",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7399273329938296,
+      "weights": {
+        "parent": 0.003809230402112007,
+        "clinc": 0.037334002554416656,
+        "gsm8k": 0.0002074731164611876,
+        "paws-wiki": 3.6429981264518574e-05,
+        "qasc": 0.9582483768463135,
+        "snli": 0.00025093165459111333,
+        "truthfulqa": 0.00011364459351170808
+      },
+      "weights_sha256": "d379cf3a6b1b66f7c28c32c7642e4a90f4786bbff7a3edce1deffc912b4142ef",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.9118002653121948,
+          "proper_regression_max": 4.76837158203125e-07,
+          "context_regression_max": 2.47955322265625e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.8367000818252563,
+          "proper_regression_max": 0.013846397399902344,
+          "context_regression_max": 0.011265873908996582
+        }
+      ],
+      "evaluation": {
+        "rows": 256,
+        "parent_accuracy": 0.67578125,
+        "accuracy": 0.67578125,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.023283373564481735,
+        "brier_delta": -0.009448831900954247,
+        "proper_gain": 0.028007782995700836,
+        "positive_proper_rate": 0.44921875,
+        "context_advantage_delta": 0.030885804444551468,
+        "context_regression_rate": 0.44140625,
+        "mean_alpha": 0.955078125,
+        "minimum_alpha": 0.0
+      }
+    },
+    {
+      "seed": 42,
+      "heldout_source": "json-schema",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7687710000027437,
+      "weights": {
+        "parent": 0.003570617875084281,
+        "clinc": 0.0362079031765461,
+        "gsm8k": 0.0002625359338708222,
+        "paws-wiki": 5.1257018640171736e-05,
+        "qasc": 0.9596936106681824,
+        "snli": 0.00010105535329785198,
+        "truthfulqa": 0.00011302345956210047
+      },
+      "weights_sha256": "113327c20ee9f89c23c0c3b43d3f161be7fca58fb696134359721c862b08c85b",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.91819167137146,
+          "proper_regression_max": 0.0,
+          "context_regression_max": 2.384185791015625e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.8386242985725403,
+          "proper_regression_max": 0.010131433606147766,
+          "context_regression_max": 0.011505126953125
+        }
+      ],
+      "evaluation": {
+        "rows": 42,
+        "parent_accuracy": 0.4047619104385376,
+        "accuracy": 0.4047619104385376,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.01321064867079258,
+        "brier_delta": 0.012405717745423317,
+        "proper_gain": -0.019413501024246216,
+        "positive_proper_rate": 0.4047619104385376,
+        "context_advantage_delta": 0.030779054388403893,
+        "context_regression_rate": 0.5,
+        "mean_alpha": 0.9404761904761905,
+        "minimum_alpha": 0.25
+      }
+    },
+    {
+      "seed": 43,
+      "heldout_source": "json-schema",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7604599170153961,
+      "weights": {
+        "parent": 0.003581629367545247,
+        "clinc": 0.036637671291828156,
+        "gsm8k": 0.00026567550958134234,
+        "paws-wiki": 5.243538544164039e-05,
+        "qasc": 0.9592481851577759,
+        "snli": 0.00010220670083072037,
+        "truthfulqa": 0.0001123069305322133
+      },
+      "weights_sha256": "5be72e37fdc54ad0a1999d708ed532d9f3353fe4ec44f9a7e11b361bdcbbe3c6",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.9181913137435913,
+          "proper_regression_max": 0.0,
+          "context_regression_max": 2.47955322265625e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.8386234045028687,
+          "proper_regression_max": 0.0101318359375,
+          "context_regression_max": 0.011507630348205566
+        }
+      ],
+      "evaluation": {
+        "rows": 42,
+        "parent_accuracy": 0.4047619104385376,
+        "accuracy": 0.4047619104385376,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.013272617943584919,
+        "brier_delta": 0.012423231266438961,
+        "proper_gain": -0.019484220072627068,
+        "positive_proper_rate": 0.4047619104385376,
+        "context_advantage_delta": 0.03108331374824047,
+        "context_regression_rate": 0.5,
+        "mean_alpha": 0.9404761904761905,
+        "minimum_alpha": 0.25
+      }
+    },
+    {
+      "seed": 44,
+      "heldout_source": "json-schema",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7594952920044307,
+      "weights": {
+        "parent": 0.0035905675031244755,
+        "clinc": 0.03685707226395607,
+        "gsm8k": 0.0002678347227629274,
+        "paws-wiki": 5.2178660553181544e-05,
+        "qasc": 0.9590190649032593,
+        "snli": 0.00010235824447590858,
+        "truthfulqa": 0.0001109219592763111
+      },
+      "weights_sha256": "5b0fae0c6e32ec4e3721c6417ef3fe5e7461929cdea33fa7b01ef299e081beba",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.9181914329528809,
+          "proper_regression_max": 0.0,
+          "context_regression_max": 2.47955322265625e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.8386827111244202,
+          "proper_regression_max": 0.010104626417160034,
+          "context_regression_max": 0.011362731456756592
+        }
+      ],
+      "evaluation": {
+        "rows": 42,
+        "parent_accuracy": 0.4047619104385376,
+        "accuracy": 0.4047619104385376,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.013304276391863823,
+        "brier_delta": 0.012432190589606762,
+        "proper_gain": -0.019520364701747894,
+        "positive_proper_rate": 0.4047619104385376,
+        "context_advantage_delta": 0.031238621100783348,
+        "context_regression_rate": 0.523809552192688,
+        "mean_alpha": 0.9404761904761905,
+        "minimum_alpha": 0.25
+      }
+    },
+    {
+      "seed": 42,
+      "heldout_source": "paws-wiki",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7448456659913063,
+      "weights": {
+        "parent": 0.003349677426740527,
+        "clinc": 0.040433887392282486,
+        "gsm8k": 0.0004316646954976022,
+        "qasc": 0.9555675983428955,
+        "snli": 0.00010671639756765217,
+        "truthfulqa": 0.00011048460146412253
+      },
+      "weights_sha256": "bb0d4cfe5c27faba93a796dda02db32614bf7677b93873fe898df0de3dbea4c1",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 1.0321321487426758,
+          "proper_regression_max": 0.0,
+          "context_regression_max": 1.4781951904296875e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.9534727931022644,
+          "proper_regression_max": 0.013435840606689453,
+          "context_regression_max": 0.006539344787597656
+        }
+      ],
+      "evaluation": {
+        "rows": 96,
+        "parent_accuracy": 0.84375,
+        "accuracy": 0.84375,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.016749663278460503,
+        "brier_delta": -0.009662636555731297,
+        "proper_gain": 0.021580979228019714,
+        "positive_proper_rate": 0.2916666567325592,
+        "context_advantage_delta": 0.012232092209160328,
+        "context_regression_rate": 0.7395833134651184,
+        "mean_alpha": 0.9947916666666666,
+        "minimum_alpha": 0.5
+      }
+    },
+    {
+      "seed": 43,
+      "heldout_source": "paws-wiki",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7420639999909326,
+      "weights": {
+        "parent": 0.003347309771925211,
+        "clinc": 0.040434833616018295,
+        "gsm8k": 0.000432345928857103,
+        "qasc": 0.9555662274360657,
+        "snli": 0.00010900779307121411,
+        "truthfulqa": 0.00011035271018045023
+      },
+      "weights_sha256": "893b09931f488869ed95966364f61a4b82921c8ccaca3166c36e963dd5f2b5bb",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 1.0321317911148071,
+          "proper_regression_max": 0.0,
+          "context_regression_max": 1.5974044799804688e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.9534727334976196,
+          "proper_regression_max": 0.013435721397399902,
+          "context_regression_max": 0.006538867950439453
+        }
+      ],
+      "evaluation": {
+        "rows": 96,
+        "parent_accuracy": 0.84375,
+        "accuracy": 0.84375,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.01674950122833252,
+        "brier_delta": -0.009662595577538013,
+        "proper_gain": 0.02158079482614994,
+        "positive_proper_rate": 0.2916666567325592,
+        "context_advantage_delta": 0.012231983244419098,
+        "context_regression_rate": 0.7395833134651184,
+        "mean_alpha": 0.9947916666666666,
+        "minimum_alpha": 0.5
+      }
+    },
+    {
+      "seed": 44,
+      "heldout_source": "paws-wiki",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7548232080007438,
+      "weights": {
+        "parent": 0.0033467377070337534,
+        "clinc": 0.04043382406234741,
+        "gsm8k": 0.0004315364349167794,
+        "qasc": 0.955570638179779,
+        "snli": 0.00010848922829609364,
+        "truthfulqa": 0.00010880825720960274
+      },
+      "weights_sha256": "9bba51ad2639001c5ee802dee073c9bebb9bbbfeeaf3dc964c5c07c926ddcc65",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 1.0321319103240967,
+          "proper_regression_max": 0.0,
+          "context_regression_max": 1.6450881958007812e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.9534725546836853,
+          "proper_regression_max": 0.013435840606689453,
+          "context_regression_max": 0.006539344787597656
+        }
+      ],
+      "evaluation": {
+        "rows": 96,
+        "parent_accuracy": 0.84375,
+        "accuracy": 0.84375,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.016749687492847443,
+        "brier_delta": -0.00966263934969902,
+        "proper_gain": 0.021581003442406654,
+        "positive_proper_rate": 0.2916666567325592,
+        "context_advantage_delta": 0.012232360430061817,
+        "context_regression_rate": 0.7395833134651184,
+        "mean_alpha": 0.9947916666666666,
+        "minimum_alpha": 0.5
+      }
+    },
+    {
+      "seed": 42,
+      "heldout_source": "qasc",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7385760840261355,
+      "weights": {
+        "parent": 0.004240578040480614,
+        "clinc": 0.18678012490272522,
+        "gsm8k": 0.08736330270767212,
+        "paws-wiki": 0.0002825021219905466,
+        "snli": 0.20873457193374634,
+        "truthfulqa": 0.5125989317893982
+      },
+      "weights_sha256": "8fb8f3ad049fb21f9cbc59308fa85ec81f36abb1f145c24fb8904f113f335f8d",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.9387056827545166,
+          "proper_regression_max": 0.0,
+          "context_regression_max": 2.0265579223632812e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.9245924353599548,
+          "proper_regression_max": 0.008852243423461914,
+          "context_regression_max": 0.012955665588378906
+        }
+      ],
+      "evaluation": {
+        "rows": 128,
+        "parent_accuracy": 0.8203125,
+        "accuracy": 0.8203125,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.027951862663030624,
+        "brier_delta": -0.0072606937028467655,
+        "proper_gain": 0.031582221388816833,
+        "positive_proper_rate": 0.8046875,
+        "context_advantage_delta": 0.020598405972123146,
+        "context_regression_rate": 0.453125,
+        "mean_alpha": 1.0,
+        "minimum_alpha": 1.0
+      }
+    },
+    {
+      "seed": 43,
+      "heldout_source": "qasc",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7285197910096031,
+      "weights": {
+        "parent": 0.004204126540571451,
+        "clinc": 0.18617099523544312,
+        "gsm8k": 0.08669307082891464,
+        "paws-wiki": 0.0002711023553274572,
+        "snli": 0.20857489109039307,
+        "truthfulqa": 0.5140857696533203
+      },
+      "weights_sha256": "25fba80fa2d514ce69245b93f987de9e71cf9de5ee57310e77b3935f77b711ae",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.938705563545227,
+          "proper_regression_max": 0.0,
+          "context_regression_max": 2.1457672119140625e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.9244797825813293,
+          "proper_regression_max": 0.009635210037231445,
+          "context_regression_max": 0.010499954223632812
+        }
+      ],
+      "evaluation": {
+        "rows": 128,
+        "parent_accuracy": 0.8203125,
+        "accuracy": 0.8203125,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.02778366021811962,
+        "brier_delta": -0.007181223016232252,
+        "proper_gain": 0.03137427568435669,
+        "positive_proper_rate": 0.8046875,
+        "context_advantage_delta": 0.019937263801693916,
+        "context_regression_rate": 0.453125,
+        "mean_alpha": 1.0,
+        "minimum_alpha": 1.0
+      }
+    },
+    {
+      "seed": 44,
+      "heldout_source": "qasc",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7322523750190157,
+      "weights": {
+        "parent": 0.004215767607092857,
+        "clinc": 0.18663093447685242,
+        "gsm8k": 0.08684492856264114,
+        "paws-wiki": 0.00027384687564335763,
+        "snli": 0.20811893045902252,
+        "truthfulqa": 0.5139156579971313
+      },
+      "weights_sha256": "4440bc00facc1050cb7981a8cd01a5d2a35c37a3e14625399e7507a2d2c71c67",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.938705563545227,
+          "proper_regression_max": 0.0,
+          "context_regression_max": 2.1696090698242188e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.9244763255119324,
+          "proper_regression_max": 0.009690999984741211,
+          "context_regression_max": 0.01036691665649414
+        }
+      ],
+      "evaluation": {
+        "rows": 128,
+        "parent_accuracy": 0.8203125,
+        "accuracy": 0.8203125,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.027819015085697174,
+        "brier_delta": -0.007214253768324852,
+        "proper_gain": 0.03142614662647247,
+        "positive_proper_rate": 0.8046875,
+        "context_advantage_delta": 0.020504707470536232,
+        "context_regression_rate": 0.453125,
+        "mean_alpha": 1.0,
+        "minimum_alpha": 1.0
+      }
+    },
+    {
+      "seed": 42,
+      "heldout_source": "snli",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7515727909922134,
+      "weights": {
+        "parent": 0.0036918336991220713,
+        "clinc": 0.03658570349216461,
+        "gsm8k": 0.00031342150759883225,
+        "paws-wiki": 3.6588542570825666e-05,
+        "qasc": 0.9592642784118652,
+        "truthfulqa": 0.00010822059266502038
+      },
+      "weights_sha256": "4d5b86799e70ca52adf191f86bf0f7b598b91aef957e37b5628cb55796bee53c",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.9779176115989685,
+          "proper_regression_max": 3.5762786865234375e-07,
+          "context_regression_max": 2.372264862060547e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.900658905506134,
+          "proper_regression_max": 0.013928890228271484,
+          "context_regression_max": 0.011472225189208984
+        }
+      ],
+      "evaluation": {
+        "rows": 96,
+        "parent_accuracy": 0.6666666865348816,
+        "accuracy": 0.6666666865348816,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.024382496252655983,
+        "brier_delta": -0.017419856041669846,
+        "proper_gain": 0.03309242054820061,
+        "positive_proper_rate": 0.40625,
+        "context_advantage_delta": 0.021494431421160698,
+        "context_regression_rate": 0.59375,
+        "mean_alpha": 0.9739583333333334,
+        "minimum_alpha": 0.25
+      }
+    },
+    {
+      "seed": 43,
+      "heldout_source": "snli",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7453062499989755,
+      "weights": {
+        "parent": 0.003696229076012969,
+        "clinc": 0.0369192436337471,
+        "gsm8k": 0.000316913821734488,
+        "paws-wiki": 3.729703166754916e-05,
+        "qasc": 0.9589214324951172,
+        "truthfulqa": 0.00010903340444201604
+      },
+      "weights_sha256": "00e28a6d3b7949c572483d7515a728f39b40f6c338ec77bc31c3548f30dbcf2a",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.9779171943664551,
+          "proper_regression_max": 4.76837158203125e-07,
+          "context_regression_max": 2.4259090423583984e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.9006679654121399,
+          "proper_regression_max": 0.013906478881835938,
+          "context_regression_max": 0.01143413782119751
+        }
+      ],
+      "evaluation": {
+        "rows": 96,
+        "parent_accuracy": 0.6666666865348816,
+        "accuracy": 0.6666666865348816,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.024327879771590233,
+        "brier_delta": -0.017384571954607964,
+        "proper_gain": 0.033020153641700745,
+        "positive_proper_rate": 0.40625,
+        "context_advantage_delta": 0.021542325615882874,
+        "context_regression_rate": 0.59375,
+        "mean_alpha": 0.9739583333333334,
+        "minimum_alpha": 0.25
+      }
+    },
+    {
+      "seed": 44,
+      "heldout_source": "snli",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7512937079882249,
+      "weights": {
+        "parent": 0.0036595994606614113,
+        "clinc": 0.03622378408908844,
+        "gsm8k": 0.00031539431074634194,
+        "paws-wiki": 3.659055073512718e-05,
+        "qasc": 0.9596572518348694,
+        "truthfulqa": 0.000107365041912999
+      },
+      "weights_sha256": "6528ae3d31b1c6e97567aa9c0442d5bf3e7589c428da2cb357e211fc2f376912",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.9779171943664551,
+          "proper_regression_max": 5.960464477539062e-07,
+          "context_regression_max": 2.4199485778808594e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.9006431698799133,
+          "proper_regression_max": 0.013965845108032227,
+          "context_regression_max": 0.011538505554199219
+        }
+      ],
+      "evaluation": {
+        "rows": 96,
+        "parent_accuracy": 0.6666666865348816,
+        "accuracy": 0.6666666865348816,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.024442734196782112,
+        "brier_delta": -0.01745888963341713,
+        "proper_gain": 0.033172186464071274,
+        "positive_proper_rate": 0.40625,
+        "context_advantage_delta": 0.021440604701638222,
+        "context_regression_rate": 0.59375,
+        "mean_alpha": 0.9739583333333334,
+        "minimum_alpha": 0.25
+      }
+    },
+    {
+      "seed": 42,
+      "heldout_source": "truthfulqa",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7342777909943834,
+      "weights": {
+        "parent": 0.003705339040607214,
+        "clinc": 0.048305362462997437,
+        "gsm8k": 0.0002431329048704356,
+        "paws-wiki": 2.6941670512314886e-05,
+        "qasc": 0.947665274143219,
+        "snli": 5.393987157731317e-05
+      },
+      "weights_sha256": "ad6c646a5d3f83e3ddbc321949049db837a1551bf1a7d2a3a58f49c8e98b8a48",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.8697820901870728,
+          "proper_regression_max": 0.0,
+          "context_regression_max": 1.7762184143066406e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.8018367290496826,
+          "proper_regression_max": 0.012290477752685547,
+          "context_regression_max": 0.008511841297149658
+        }
+      ],
+      "evaluation": {
+        "rows": 256,
+        "parent_accuracy": 0.53125,
+        "accuracy": 0.53125,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.031040064990520477,
+        "brier_delta": 0.0039788358844816685,
+        "proper_gain": 0.02905064821243286,
+        "positive_proper_rate": 0.40625,
+        "context_advantage_delta": 0.04132148250937462,
+        "context_regression_rate": 0.5078125,
+        "mean_alpha": 0.9501953125,
+        "minimum_alpha": 0.125
+      }
+    },
+    {
+      "seed": 43,
+      "heldout_source": "truthfulqa",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7306330830033403,
+      "weights": {
+        "parent": 0.0037072484847158194,
+        "clinc": 0.04829660803079605,
+        "gsm8k": 0.00024275138275697827,
+        "paws-wiki": 2.7451813366496935e-05,
+        "qasc": 0.9476718306541443,
+        "snli": 5.4124873713590205e-05
+      },
+      "weights_sha256": "e14397d1fe415577720464e3e52f565569cd509ddba5e98f8b2913acb3582447",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.8697817921638489,
+          "proper_regression_max": 0.0,
+          "context_regression_max": 1.823902130126953e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.8018368482589722,
+          "proper_regression_max": 0.012291669845581055,
+          "context_regression_max": 0.008513927459716797
+        }
+      ],
+      "evaluation": {
+        "rows": 256,
+        "parent_accuracy": 0.53125,
+        "accuracy": 0.53125,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.031047765165567398,
+        "brier_delta": 0.0039775436744093895,
+        "proper_gain": 0.029058976098895073,
+        "positive_proper_rate": 0.40625,
+        "context_advantage_delta": 0.041327882558107376,
+        "context_regression_rate": 0.5078125,
+        "mean_alpha": 0.9501953125,
+        "minimum_alpha": 0.125
+      }
+    },
+    {
+      "seed": 44,
+      "heldout_source": "truthfulqa",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7325496250123251,
+      "weights": {
+        "parent": 0.0037056102883070707,
+        "clinc": 0.04829246550798416,
+        "gsm8k": 0.00024224250228144228,
+        "paws-wiki": 2.721218334045261e-05,
+        "qasc": 0.9476786851882935,
+        "snli": 5.384657924878411e-05
+      },
+      "weights_sha256": "f6c3b0725a613c8373fedcfcd5b8d8aea84837d41bc18f64244fc988909e9ba6",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.8697818517684937,
+          "proper_regression_max": 0.0,
+          "context_regression_max": 1.817941665649414e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.8018367290496826,
+          "proper_regression_max": 0.012292265892028809,
+          "context_regression_max": 0.008514821529388428
+        }
+      ],
+      "evaluation": {
+        "rows": 256,
+        "parent_accuracy": 0.53125,
+        "accuracy": 0.53125,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.031051408499479294,
+        "brier_delta": 0.003976971842348576,
+        "proper_gain": 0.029062921181321144,
+        "positive_proper_rate": 0.40625,
+        "context_advantage_delta": 0.04133092239499092,
+        "context_regression_rate": 0.5078125,
+        "mean_alpha": 0.9501953125,
+        "minimum_alpha": 0.125
+      }
+    },
+    {
+      "seed": 42,
+      "heldout_source": "typed-decisions",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7572477080102544,
+      "weights": {
+        "parent": 0.003964318428188562,
+        "clinc": 0.037524331361055374,
+        "gsm8k": 0.00021548620134126395,
+        "paws-wiki": 1.3889759429730475e-05,
+        "qasc": 0.9577101469039917,
+        "snli": 0.00047697906848043203,
+        "truthfulqa": 9.48701417655684e-05
+      },
+      "weights_sha256": "d357d05c9b28b20ba8bbf6be8fb74d1090918879b71b152953c423420648254f",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.9190640449523926,
+          "proper_regression_max": 3.5762786865234375e-07,
+          "context_regression_max": 2.384185791015625e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.8457021117210388,
+          "proper_regression_max": 0.01380014419555664,
+          "context_regression_max": 0.011173069477081299
+        }
+      ],
+      "evaluation": {
+        "rows": 320,
+        "parent_accuracy": 0.6875,
+        "accuracy": 0.6875,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.012025406584143639,
+        "brier_delta": -0.002832328900694847,
+        "proper_gain": 0.01344157475978136,
+        "positive_proper_rate": 0.596875011920929,
+        "context_advantage_delta": 0.057431019842624664,
+        "context_regression_rate": 0.3499999940395355,
+        "mean_alpha": 0.983984375,
+        "minimum_alpha": 0.0
+      }
+    },
+    {
+      "seed": 43,
+      "heldout_source": "typed-decisions",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.759896250005113,
+      "weights": {
+        "parent": 0.0039561097510159016,
+        "clinc": 0.037526972591876984,
+        "gsm8k": 0.0002181705494876951,
+        "paws-wiki": 1.4166096661938354e-05,
+        "qasc": 0.9577088356018066,
+        "snli": 0.0004815687134396285,
+        "truthfulqa": 9.418893023394048e-05
+      },
+      "weights_sha256": "b08a967e25e02689ed00c216597c6a82dd1ef5b12880854590712b2be49bca70",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.9190636873245239,
+          "proper_regression_max": 4.76837158203125e-07,
+          "context_regression_max": 2.47955322265625e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.8457018733024597,
+          "proper_regression_max": 0.01380002498626709,
+          "context_regression_max": 0.011173486709594727
+        }
+      ],
+      "evaluation": {
+        "rows": 320,
+        "parent_accuracy": 0.6875,
+        "accuracy": 0.6875,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.012024989351630211,
+        "brier_delta": -0.0028322606813162565,
+        "proper_gain": 0.013441121205687523,
+        "positive_proper_rate": 0.596875011920929,
+        "context_advantage_delta": 0.05743096023797989,
+        "context_regression_rate": 0.3499999940395355,
+        "mean_alpha": 0.983984375,
+        "minimum_alpha": 0.0
+      }
+    },
+    {
+      "seed": 44,
+      "heldout_source": "typed-decisions",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7531067090167198,
+      "weights": {
+        "parent": 0.003947719000279903,
+        "clinc": 0.03752920776605606,
+        "gsm8k": 0.00021953933173790574,
+        "paws-wiki": 1.4055186511541251e-05,
+        "qasc": 0.9577153921127319,
+        "snli": 0.00048136356053873897,
+        "truthfulqa": 9.272372699342668e-05
+      },
+      "weights_sha256": "78a00dd91003304749b771a6508ed478ed134c9c7cae0eeb79f2cfb82e4f380a",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.9190638065338135,
+          "proper_regression_max": 4.76837158203125e-07,
+          "context_regression_max": 2.47955322265625e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.8457015752792358,
+          "proper_regression_max": 0.01380002498626709,
+          "context_regression_max": 0.01117396354675293
+        }
+      ],
+      "evaluation": {
+        "rows": 320,
+        "parent_accuracy": 0.6875,
+        "accuracy": 0.6875,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.012024286203086376,
+        "brier_delta": -0.002832098165526986,
+        "proper_gain": 0.013440340757369995,
+        "positive_proper_rate": 0.596875011920929,
+        "context_advantage_delta": 0.05743120238184929,
+        "context_regression_rate": 0.3499999940395355,
+        "mean_alpha": 0.983984375,
+        "minimum_alpha": 0.0
+      }
+    }
+  ],
+  "by_source": {
+    "clinc": {
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": -0.0002741352072916925,
+      "brier_delta": -3.3365809789150567e-06,
+      "proper_gain": 0.0002758028373743097,
+      "positive_proper_rate": 0.261904776096344,
+      "context_advantage_delta": -0.03861236944794655,
+      "context_regression_rate": 0.5714285969734192,
+      "mean_alpha": 0.9940476190476191
+    },
+    "gsm8k": {
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": -0.02176971236864726,
+      "brier_delta": -0.008870437120397886,
+      "proper_gain": 0.026204936827222507,
+      "positive_proper_rate": 0.56640625,
+      "context_advantage_delta": 0.024604206283887226,
+      "context_regression_rate": 0.37890625,
+      "mean_alpha": 0.87890625
+    },
+    "hellaswag": {
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": -0.02326645019153754,
+      "brier_delta": -0.009437209616104761,
+      "proper_gain": 0.02798505127429962,
+      "positive_proper_rate": 0.4466145833333333,
+      "context_advantage_delta": 0.030844100440541904,
+      "context_regression_rate": 0.44140625,
+      "mean_alpha": 0.955078125
+    },
+    "json-schema": {
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": 0.013262514335413774,
+      "brier_delta": 0.012420379867156347,
+      "proper_gain": -0.019472695266207058,
+      "positive_proper_rate": 0.4047619104385376,
+      "context_advantage_delta": 0.03103366307914257,
+      "context_regression_rate": 0.5079365173975626,
+      "mean_alpha": 0.9404761904761904
+    },
+    "paws-wiki": {
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": -0.01674961733321349,
+      "brier_delta": -0.00966262382765611,
+      "proper_gain": 0.021580925832192104,
+      "positive_proper_rate": 0.2916666567325592,
+      "context_advantage_delta": 0.012232145294547081,
+      "context_regression_rate": 0.7395833134651184,
+      "mean_alpha": 0.9947916666666666
+    },
+    "qasc": {
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": -0.027851512655615807,
+      "brier_delta": -0.00721872349580129,
+      "proper_gain": 0.03146088123321533,
+      "positive_proper_rate": 0.8046875,
+      "context_advantage_delta": 0.02034679241478443,
+      "context_regression_rate": 0.453125,
+      "mean_alpha": 1.0
+    },
+    "snli": {
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": -0.02438437007367611,
+      "brier_delta": -0.01742110587656498,
+      "proper_gain": 0.033094920217990875,
+      "positive_proper_rate": 0.40625,
+      "context_advantage_delta": 0.021492453912893932,
+      "context_regression_rate": 0.59375,
+      "mean_alpha": 0.9739583333333334
+    },
+    "truthfulqa": {
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": -0.031046412885189056,
+      "brier_delta": 0.003977783800413211,
+      "proper_gain": 0.02905751516421636,
+      "positive_proper_rate": 0.40625,
+      "context_advantage_delta": 0.041326762487490974,
+      "context_regression_rate": 0.5078125,
+      "mean_alpha": 0.9501953125
+    },
+    "typed-decisions": {
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": -0.012024894046286741,
+      "brier_delta": -0.0028322292491793633,
+      "proper_gain": 0.013441012240946293,
+      "positive_proper_rate": 0.596875011920929,
+      "context_advantage_delta": 0.05743106082081795,
+      "context_regression_rate": 0.3499999940395355,
+      "mean_alpha": 0.983984375
+    }
+  },
+  "macro": {
+    "accuracy_delta": 0.0,
+    "cross_entropy_delta": -0.016011621158449327,
+    "brier_delta": -0.004338611344345972,
+    "proper_gain": 0.018180927817916706,
+    "positive_proper_rate": 0.46504629872463366,
+    "context_advantage_delta": 0.022299868365128834,
+    "context_regression_rate": 0.5048831579861818,
+    "mean_alpha": 0.9634930968915343
+  },
+  "checks": {
+    "coverage.folds_seeds": true,
+    "coverage.no_outer_data": true,
+    "coverage.no_matching_expert": true,
+    "decision.exact_each_run": true,
+    "calibration.cross_entropy": true,
+    "calibration.brier": true,
+    "utility.proper_gain": true,
+    "context.aggregate": true,
+    "sources.cross_entropy": true,
+    "sources.proper_gain": true,
+    "sources.context": true,
+    "coverage.material_projection": true
+  },
+  "advances_to_full_portfolio": true,
+  "limitations": [
+    "All nine outer validation sources are consumed and cannot establish a fresh release claim.",
+    "The frozen expert bank is shared, but an outer source and its same-named expert are both removed in each fold.",
+    "The decision-stable projection guarantees hard-choice retention, not per-row probability improvement.",
+    "The fixed penalties and tolerances were selected after consumed exploratory probes and require a sealed-family test.",
+    "SciFact remains sealed until a full-source portfolio and final protocol are frozen."
+  ]
+}

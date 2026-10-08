@@ -1,0 +1,22 @@
+{
+  "name": "HellaSwag specialist source",
+  "repository": "https://huggingface.co/datasets/Rowan/hellaswag",
+  "upstream_repository": "https://github.com/rowanz/hellaswag",
+  "dataset_id": "Rowan/hellaswag",
+  "revision": "218ec52e09a7e7462a5400043bb9a69a41d06b76",
+  "license": "MIT",
+  "files": {
+    "README.md": {
+      "sha256": "cfe6e26e7e936a447a12f7eee50f2bffb0355c3b97459496d8c7296f65c5b353"
+    },
+    "data/train-00000-of-00001.parquet": {
+      "sha256": "cacb12587faa63d7f723a72d61d12bfa94b140446f5a6a0a2e1c6906ab88bf02",
+      "rows": 39905
+    },
+    "data/validation-00000-of-00001.parquet": {
+      "sha256": "899813071e1e95efafec90f856e1987d2150fa4d020fc005df6962c259f660cd",
+      "rows": 10042
+    }
+  },
+  "release_policy": "Download and conversion code plus exact provenance are public. Raw and transformed HellaSwag rows stay outside source release bundles and are reconstructed locally under MIT."
+}

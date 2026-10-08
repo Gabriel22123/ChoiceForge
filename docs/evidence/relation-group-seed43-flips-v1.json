@@ -1,0 +1,562 @@
+{
+  "kind": "Post-hoc, authored evidence-flip probe after seed-42 failure; not training or a blind benchmark",
+  "script_sha256": "d052cb43d2f83e1813b834bb9af1ecc29a8614bae7346edd2f147cd6e79a79a4",
+  "cases_sha256": "2472f0fb4951c7a28d78bdc116bac8982233e34487aed33bdd110f2b420b5cff",
+  "cases": 18,
+  "groups": 6,
+  "selection": "Explicit fixed checkpoints; diagnostic only, no fitting or checkpoint selection",
+  "inference": "Raw probabilities, no extra temperature fit",
+  "models": {
+    "grouped": {
+      "metrics": {
+        "n": 18,
+        "correct": 13,
+        "accuracy": 0.7222222222222222,
+        "uniform_random_accuracy": 0.3333333333333333,
+        "nll": 0.6939685108906972,
+        "brier": 0.41890991945567313,
+        "ece_10": 0.1986293229791853,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.7222222222222222,
+            "selected_count": 18
+          },
+          "0.7": {
+            "coverage": 0.7777777777777778,
+            "accuracy": 0.7857142857142857,
+            "selected_count": 14
+          },
+          "0.9": {
+            "coverage": 0.3888888888888889,
+            "accuracy": 0.7142857142857143,
+            "selected_count": 7
+          }
+        }
+      },
+      "groups": {
+        "count": {
+          "all_three_correct": false,
+          "distinct_choices": 2
+        },
+        "color": {
+          "all_three_correct": true,
+          "distinct_choices": 3
+        },
+        "transfer": {
+          "all_three_correct": false,
+          "distinct_choices": 2
+        },
+        "location": {
+          "all_three_correct": false,
+          "distinct_choices": 2
+        },
+        "state": {
+          "all_three_correct": false,
+          "distinct_choices": 2
+        },
+        "quantifier": {
+          "all_three_correct": false,
+          "distinct_choices": 2
+        }
+      },
+      "details": [
+        {
+          "id": "count-entailment",
+          "group": "count",
+          "expected": "entailment",
+          "choice": "entailment",
+          "probabilities": {
+            "contradiction": 0.00418827123939991,
+            "neutral": 0.25206515192985535,
+            "entailment": 0.7437466382980347
+          },
+          "correct": true
+        },
+        {
+          "id": "count-contradiction",
+          "group": "count",
+          "expected": "contradiction",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.9496685862541199,
+            "neutral": 0.047770727425813675,
+            "entailment": 0.0025606558192521334
+          },
+          "correct": true
+        },
+        {
+          "id": "count-neutral",
+          "group": "count",
+          "expected": "neutral",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.6382535696029663,
+            "neutral": 0.34789252281188965,
+            "entailment": 0.013853909447789192
+          },
+          "correct": false
+        },
+        {
+          "id": "color-entailment",
+          "group": "color",
+          "expected": "entailment",
+          "choice": "entailment",
+          "probabilities": {
+            "contradiction": 0.007769506890326738,
+            "neutral": 0.4042682647705078,
+            "entailment": 0.58796226978302
+          },
+          "correct": true
+        },
+        {
+          "id": "color-contradiction",
+          "group": "color",
+          "expected": "contradiction",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.8162304759025574,
+            "neutral": 0.1790734827518463,
+            "entailment": 0.004695993382483721
+          },
+          "correct": true
+        },
+        {
+          "id": "color-neutral",
+          "group": "color",
+          "expected": "neutral",
+          "choice": "neutral",
+          "probabilities": {
+            "contradiction": 0.12913969159126282,
+            "neutral": 0.8022885322570801,
+            "entailment": 0.06857176125049591
+          },
+          "correct": true
+        },
+        {
+          "id": "transfer-entailment",
+          "group": "transfer",
+          "expected": "entailment",
+          "choice": "neutral",
+          "probabilities": {
+            "contradiction": 0.005054451059550047,
+            "neutral": 0.6143062114715576,
+            "entailment": 0.38063937425613403
+          },
+          "correct": false
+        },
+        {
+          "id": "transfer-contradiction",
+          "group": "transfer",
+          "expected": "contradiction",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.9214838147163391,
+            "neutral": 0.07749307155609131,
+            "entailment": 0.0010231641354039311
+          },
+          "correct": true
+        },
+        {
+          "id": "transfer-neutral",
+          "group": "transfer",
+          "expected": "neutral",
+          "choice": "neutral",
+          "probabilities": {
+            "contradiction": 0.21652328968048096,
+            "neutral": 0.7712380290031433,
+            "entailment": 0.012238724157214165
+          },
+          "correct": true
+        },
+        {
+          "id": "location-entailment",
+          "group": "location",
+          "expected": "entailment",
+          "choice": "entailment",
+          "probabilities": {
+            "contradiction": 0.0035979156382381916,
+            "neutral": 0.28336188197135925,
+            "entailment": 0.7130401730537415
+          },
+          "correct": true
+        },
+        {
+          "id": "location-contradiction",
+          "group": "location",
+          "expected": "contradiction",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.968713104724884,
+            "neutral": 0.029990727081894875,
+            "entailment": 0.0012961910106241703
+          },
+          "correct": true
+        },
+        {
+          "id": "location-neutral",
+          "group": "location",
+          "expected": "neutral",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.7358214259147644,
+            "neutral": 0.24688775837421417,
+            "entailment": 0.017290830612182617
+          },
+          "correct": false
+        },
+        {
+          "id": "state-entailment",
+          "group": "state",
+          "expected": "entailment",
+          "choice": "entailment",
+          "probabilities": {
+            "contradiction": 0.004102185368537903,
+            "neutral": 0.1648743897676468,
+            "entailment": 0.8310233950614929
+          },
+          "correct": true
+        },
+        {
+          "id": "state-contradiction",
+          "group": "state",
+          "expected": "contradiction",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.9860820770263672,
+            "neutral": 0.013002809137105942,
+            "entailment": 0.0009151738486252725
+          },
+          "correct": true
+        },
+        {
+          "id": "state-neutral",
+          "group": "state",
+          "expected": "neutral",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.9456826448440552,
+            "neutral": 0.051521677523851395,
+            "entailment": 0.002795653883367777
+          },
+          "correct": false
+        },
+        {
+          "id": "quantifier-entailment",
+          "group": "quantifier",
+          "expected": "entailment",
+          "choice": "entailment",
+          "probabilities": {
+            "contradiction": 0.032422229647636414,
+            "neutral": 0.3369547724723816,
+            "entailment": 0.6306230425834656
+          },
+          "correct": true
+        },
+        {
+          "id": "quantifier-contradiction",
+          "group": "quantifier",
+          "expected": "contradiction",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.9574044942855835,
+            "neutral": 0.035249389708042145,
+            "entailment": 0.007346081081777811
+          },
+          "correct": true
+        },
+        {
+          "id": "quantifier-neutral",
+          "group": "quantifier",
+          "expected": "neutral",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.9644612073898315,
+            "neutral": 0.033785026520490646,
+            "entailment": 0.0017538382671773434
+          },
+          "correct": false
+        }
+      ],
+      "weight_sha256": "aca842ce9a47886d16e6896d0b3aeb802396dd5d0880ee00c041a36afd001306"
+    },
+    "dispersed": {
+      "metrics": {
+        "n": 18,
+        "correct": 11,
+        "accuracy": 0.6111111111111112,
+        "uniform_random_accuracy": 0.3333333333333333,
+        "nll": 1.0469946199033335,
+        "brier": 0.6023181660572093,
+        "ece_10": 0.24617590010166168,
+        "selective": {
+          "0.5": {
+            "coverage": 0.3888888888888889,
+            "accuracy": 1.0,
+            "selected_count": 7
+          },
+          "0.7": {
+            "coverage": 0.0,
+            "accuracy": null,
+            "selected_count": 0
+          },
+          "0.9": {
+            "coverage": 0.0,
+            "accuracy": null,
+            "selected_count": 0
+          }
+        }
+      },
+      "groups": {
+        "count": {
+          "all_three_correct": false,
+          "distinct_choices": 2
+        },
+        "color": {
+          "all_three_correct": false,
+          "distinct_choices": 2
+        },
+        "transfer": {
+          "all_three_correct": false,
+          "distinct_choices": 2
+        },
+        "location": {
+          "all_three_correct": false,
+          "distinct_choices": 2
+        },
+        "state": {
+          "all_three_correct": false,
+          "distinct_choices": 2
+        },
+        "quantifier": {
+          "all_three_correct": false,
+          "distinct_choices": 2
+        }
+      },
+      "details": [
+        {
+          "id": "count-entailment",
+          "group": "count",
+          "expected": "entailment",
+          "choice": "entailment",
+          "probabilities": {
+            "contradiction": 0.34363290667533875,
+            "neutral": 0.1992320716381073,
+            "entailment": 0.45713499188423157
+          },
+          "correct": true
+        },
+        {
+          "id": "count-contradiction",
+          "group": "count",
+          "expected": "contradiction",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.5457581877708435,
+            "neutral": 0.15831109881401062,
+            "entailment": 0.29593074321746826
+          },
+          "correct": true
+        },
+        {
+          "id": "count-neutral",
+          "group": "count",
+          "expected": "neutral",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.4689006507396698,
+            "neutral": 0.1447790414094925,
+            "entailment": 0.3863203227519989
+          },
+          "correct": false
+        },
+        {
+          "id": "color-entailment",
+          "group": "color",
+          "expected": "entailment",
+          "choice": "entailment",
+          "probabilities": {
+            "contradiction": 0.3376632332801819,
+            "neutral": 0.2821969985961914,
+            "entailment": 0.3801397681236267
+          },
+          "correct": true
+        },
+        {
+          "id": "color-contradiction",
+          "group": "color",
+          "expected": "contradiction",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.5016982555389404,
+            "neutral": 0.2312241643667221,
+            "entailment": 0.2670775055885315
+          },
+          "correct": true
+        },
+        {
+          "id": "color-neutral",
+          "group": "color",
+          "expected": "neutral",
+          "choice": "entailment",
+          "probabilities": {
+            "contradiction": 0.380370557308197,
+            "neutral": 0.18589900434017181,
+            "entailment": 0.4337303936481476
+          },
+          "correct": false
+        },
+        {
+          "id": "transfer-entailment",
+          "group": "transfer",
+          "expected": "entailment",
+          "choice": "entailment",
+          "probabilities": {
+            "contradiction": 0.3552563190460205,
+            "neutral": 0.16909053921699524,
+            "entailment": 0.47565317153930664
+          },
+          "correct": true
+        },
+        {
+          "id": "transfer-contradiction",
+          "group": "transfer",
+          "expected": "contradiction",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.5265458226203918,
+            "neutral": 0.194766104221344,
+            "entailment": 0.27868810296058655
+          },
+          "correct": true
+        },
+        {
+          "id": "transfer-neutral",
+          "group": "transfer",
+          "expected": "neutral",
+          "choice": "entailment",
+          "probabilities": {
+            "contradiction": 0.3817538619041443,
+            "neutral": 0.20633867383003235,
+            "entailment": 0.41190749406814575
+          },
+          "correct": false
+        },
+        {
+          "id": "location-entailment",
+          "group": "location",
+          "expected": "entailment",
+          "choice": "entailment",
+          "probabilities": {
+            "contradiction": 0.3114956319332123,
+            "neutral": 0.17953521013259888,
+            "entailment": 0.5089691877365112
+          },
+          "correct": true
+        },
+        {
+          "id": "location-contradiction",
+          "group": "location",
+          "expected": "contradiction",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.5486066937446594,
+            "neutral": 0.15719327330589294,
+            "entailment": 0.2942001223564148
+          },
+          "correct": true
+        },
+        {
+          "id": "location-neutral",
+          "group": "location",
+          "expected": "neutral",
+          "choice": "entailment",
+          "probabilities": {
+            "contradiction": 0.3640621304512024,
+            "neutral": 0.2204318642616272,
+            "entailment": 0.41550612449645996
+          },
+          "correct": false
+        },
+        {
+          "id": "state-entailment",
+          "group": "state",
+          "expected": "entailment",
+          "choice": "entailment",
+          "probabilities": {
+            "contradiction": 0.267943799495697,
+            "neutral": 0.18163572251796722,
+            "entailment": 0.5504204034805298
+          },
+          "correct": true
+        },
+        {
+          "id": "state-contradiction",
+          "group": "state",
+          "expected": "contradiction",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.5892705321311951,
+            "neutral": 0.15783467888832092,
+            "entailment": 0.25289487838745117
+          },
+          "correct": true
+        },
+        {
+          "id": "state-neutral",
+          "group": "state",
+          "expected": "neutral",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.41583746671676636,
+            "neutral": 0.17208006978034973,
+            "entailment": 0.41208240389823914
+          },
+          "correct": false
+        },
+        {
+          "id": "quantifier-entailment",
+          "group": "quantifier",
+          "expected": "entailment",
+          "choice": "entailment",
+          "probabilities": {
+            "contradiction": 0.3935905396938324,
+            "neutral": 0.16351816058158875,
+            "entailment": 0.44289126992225647
+          },
+          "correct": true
+        },
+        {
+          "id": "quantifier-contradiction",
+          "group": "quantifier",
+          "expected": "contradiction",
+          "choice": "entailment",
+          "probabilities": {
+            "contradiction": 0.37713268399238586,
+            "neutral": 0.23215337097644806,
+            "entailment": 0.3907139301300049
+          },
+          "correct": false
+        },
+        {
+          "id": "quantifier-neutral",
+          "group": "quantifier",
+          "expected": "neutral",
+          "choice": "contradiction",
+          "probabilities": {
+            "contradiction": 0.45172742009162903,
+            "neutral": 0.17212723195552826,
+            "entailment": 0.3761453628540039
+          },
+          "correct": false
+        }
+      ],
+      "weight_sha256": "6bbc37a661776328a656654fe59133e396b1dfd89164de42388930e42089adfc"
+    }
+  },
+  "limitations": [
+    "Hand-authored English examples under the project code license; not an external internet benchmark",
+    "Only six elementary relation groups; success would not establish general reasoning",
+    "Counterfactual text intervention probes these specific cases, not whether every context is ignored"
+  ]
+}

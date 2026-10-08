@@ -1,0 +1,93 @@
+{
+  "format_version": 1,
+  "study": "counterfactual-evidence-screen-v1",
+  "protocol_sha256": "beba1a74cdb99c4c1ed6eb0a1122c0db58be8077ccfe562360e7fceb1fb51d29",
+  "generated_validation_is_fresh_for_this_screen": true,
+  "development_suite_is_fresh": false,
+  "development_suite_release_eligible": false,
+  "summary": {
+    "seen": {
+      "candidate_accuracy": 0.7543604651162791,
+      "parent_accuracy": 0.7565406976744186,
+      "accuracy_delta": -0.0021802325581394832,
+      "candidate_nll": 0.8431619225002128,
+      "parent_nll": 0.8245061041841787,
+      "nll_delta": 0.018655818316034134,
+      "source_accuracy_delta_vs_release_control": {
+        "bandit": 0.0,
+        "clinc": 0.0,
+        "goemotions": 0.0,
+        "json-schema": 0.2333333333333334,
+        "paws-wiki": 0.02083333333333326,
+        "snli": -0.015625,
+        "typed-decisions": 0.21750000000000003
+      },
+      "minimum_source_delta": -0.015625
+    },
+    "consumed_development": {
+      "candidate_accuracy": 0.6510416666666666,
+      "parent_accuracy": 0.6614583333333334,
+      "accuracy_delta": -0.01041666666666674,
+      "source_accuracy_delta_vs_release_control": {
+        "bigbench-causal_judgment": -0.0390625,
+        "bigbench-formal_fallacies_syllogisms_negation": 0.03125,
+        "bigbench-movie_recommendation": 0.0546875
+      },
+      "minimum_source_delta": -0.0390625,
+      "context_advantage": {
+        "rows": 384,
+        "mean": 0.08366433957445914,
+        "positive": 240,
+        "by_source": {
+          "bigbench-causal_judgment": {
+            "rows": 128,
+            "mean": -0.06276875386935102,
+            "positive": 70
+          },
+          "bigbench-formal_fallacies_syllogisms_negation": {
+            "rows": 128,
+            "mean": -0.017464820207107705,
+            "positive": 60
+          },
+          "bigbench-movie_recommendation": {
+            "rows": 128,
+            "mean": 0.3312265927998362,
+            "positive": 110
+          }
+        }
+      }
+    },
+    "generated_validation": {
+      "candidate": {
+        "rows": 128,
+        "correct": 128,
+        "accuracy": 1.0,
+        "groups": 64,
+        "complete_groups": 64,
+        "complete_group_rate": 1.0
+      },
+      "parent": {
+        "rows": 128,
+        "correct": 113,
+        "accuracy": 0.8828125,
+        "groups": 64,
+        "complete_groups": 49,
+        "complete_group_rate": 0.765625
+      },
+      "accuracy_delta": 0.1171875,
+      "complete_group_rate_delta": 0.234375
+    }
+  },
+  "checks": {
+    "seen.accuracy": true,
+    "seen.nll": false,
+    "seen.each_source_accuracy": true,
+    "development.accuracy": false,
+    "development.each_source_accuracy": false,
+    "development.context_advantage_each_source": false,
+    "generated.validation_accuracy": true,
+    "generated.validation_complete_group_rate": true
+  },
+  "advances_to_multiseed": false,
+  "new_fresh_blind_required_for_any_release_claim": true
+}

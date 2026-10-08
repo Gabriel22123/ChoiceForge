@@ -1,0 +1,86 @@
+{
+  "format_version": 1,
+  "study": "utility-route-lofo-v1",
+  "status": "frozen_before_training",
+  "feature_cache": "cache/qasc-routed-residual-features-v1",
+  "feature_manifest_sha256": "b6d2b5def9bf913cb7c06d80747e4a63976a07c21cbc60fe1df9deb7b107db53",
+  "data": {
+    "cases": "runs/qasc-dual-function-screen-v1/cases.jsonl",
+    "cases_sha256": "1e3085e934f30ab50f7258e8ad2cd28de87423f8ed4649a7403cff57e17b8381"
+  },
+  "source_files": {
+    "src/decision_model/route_utility.py": "be260aa82f322cbac68015129a3c08a46048f92e7b8c6d943c73d8f0820d9f37",
+    "src/decision_model/behavioral_route_features.py": "47f36974e5353c377a36d730f2b5bf613ed0d82458fd3a8b7f18cc23e7302c63",
+    "src/decision_model/router_cross_validation.py": "d3d0dee8004c5145c2b81f9b05b0dc8c0a3fbaa4541844eb15b398e68f72d0a0",
+    "src/decision_model/binary_routing.py": "709c114802784ca5c1b0bb9b7f06ef9d3bc7ac821300e90fcfbd2d9aa2ac687d",
+    "src/decision_model/counterfactual_routing.py": "3f033b5a85fa6a57bcdc43c120de00f3f7a9c791727cc7e9d65049ddba1f37b5",
+    "src/decision_model/decision_stable_routing.py": "2b4af65c29424935268581c1ae7a82f3dbcdcfa36e8fd84cc0c7a4ff6b2e79a3",
+    "src/decision_model/feature_screen.py": "3b16e2b880e1e3c861c01988c19ac323818e8a5e7f0afd54b2991d35c36124e2",
+    "src/decision_model/training_objective.py": "d333afd12452b85dfff67100e65b5e59074a610b560665f041f2f4a9b576ec8b",
+    "src/decision_model/objective.py": "2405e683f108c9c2c6bf75d180ee6a0f7d0cfc95217b923f8a9dfddef0877b81",
+    "src/decision_model/train.py": "485af4564a68d6e44dbb080e97b0a08ded6925ae0d2bac8d74215fd665fa0f51",
+    "scripts/run_qasc_routed_residual_screen.py": "bd14916548a04465b33d0a1ed80e0fa9bd621a5ef0ca858670184ba911e64ba4",
+    "scripts/run_qasc_staged_router_screen.py": "9b030f3aa29f39a348f7d1db413a41ac0a28956c761c953f3b93d33af4c6c9d2",
+    "scripts/run_qasc_counterfactual_router_screen.py": "ca47bf5b62e726a6402a7918da0f192458b64cff85c0b8bfc42e6bd188356b76",
+    "scripts/run_qasc_binary_route_screen.py": "4d809cf286159d22d959cb58ff500725c2b0a0f1a25d22a919b10f18b8d60937",
+    "scripts/run_binary_route_lofo.py": "e92185e578d48841bad771f0e38dfafbe2c32121c3011ac96a2747566c4146af",
+    "scripts/run_utility_route_lofo.py": "94eb6339b8968b5364ae1314aa2c77da3d7b7df55c617975a731f5d76eaffc0c",
+    "docs/UTILITY_ROUTE_LOFO_DESIGN.zh-CN.md": "e1be4ac5fe852904a55587871d271d804ef9521897b143ed159e70e6d9a340d7"
+  },
+  "expected_sources": 7,
+  "arms": [
+    "utility_row_weighted",
+    "utility_source_balanced"
+  ],
+  "router_seeds": [
+    2001,
+    2002,
+    2003
+  ],
+  "training": {
+    "expert_seed": 1701,
+    "residual_width": 256,
+    "semantic_router_width": 128,
+    "behavior_router_width": 32,
+    "dropout": 0.0,
+    "initial_gate_probability": 0.25,
+    "batch_size": 2,
+    "accumulation": 4,
+    "updates_per_stage": 128,
+    "updates": 128,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "brier_weight": 0.5,
+    "distillation_weight": 1.0,
+    "null_distillation_weight": 1.0,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05,
+    "counterfactual_gate_grid": [
+      0.0,
+      1.0
+    ],
+    "parent_choice_change_cost": 1.0,
+    "replay_weight": 1.0,
+    "qasc_weight": 0.5
+  },
+  "screening_rule": {
+    "regret_vs_parent_min_improvement": 0.01,
+    "mae_vs_zero_min_improvement": 0.02,
+    "balanced_accuracy_min": 0.55,
+    "each_source_regret_max_regression": 0.02,
+    "decision": "Select the utility arm with lower macro regret, breaking ties toward row weighting; advance only if coverage, isolation, parent-regret and zero-MAE improvements, balanced accuracy and every-source regret noninferiority all pass."
+  },
+  "interpretation": {
+    "primary_question": "Does signed counterfactual utility regression transfer the natural parent-versus-expert zero boundary across held-out public task families?",
+    "target_transform": "asinh",
+    "decision_boundary": 0.0,
+    "heldout_family_features_used_to_fit_standardization": false,
+    "heldout_family_targets_used_for_training": false,
+    "route_input_uses_source_family_id_text_or_label": false,
+    "three_router_seeds": true,
+    "consumed_development_suite_used_for_selection": false,
+    "public_data_only": true,
+    "github_publication": false
+  }
+}

@@ -1,0 +1,1251 @@
+{
+  "format_version": 1,
+  "study": "safe-multi-expert-route-lofo-v1",
+  "role": "public-data multi-seed leave-one-family-out safe multi-expert route validation",
+  "protocol_sha256": "ba633bbcbbd43478f92113b04252abfdb4230311c120a79a0bb024a0b482ab2d",
+  "paths": [
+    "parent",
+    "clinc",
+    "paws-wiki",
+    "qasc",
+    "snli"
+  ],
+  "feature_names": [
+    "candidate_count_log",
+    "parent_entropy_norm",
+    "parent_top_probability",
+    "parent_margin",
+    "parent_null_entropy_norm",
+    "parent_null_top_probability",
+    "parent_null_margin",
+    "clinc.expert_entropy_norm",
+    "clinc.expert_top_probability",
+    "clinc.expert_margin",
+    "clinc.expert_null_entropy_norm",
+    "clinc.expert_null_top_probability",
+    "clinc.expert_null_margin",
+    "clinc.parent_expert_js",
+    "clinc.parent_null_expert_null_js",
+    "clinc.parent_full_null_js",
+    "clinc.expert_full_null_js",
+    "clinc.full_argmax_flip",
+    "clinc.null_argmax_flip",
+    "clinc.residual_centered_rms",
+    "clinc.residual_range",
+    "clinc.null_residual_centered_rms",
+    "clinc.null_residual_range",
+    "clinc.residual_path_difference_rms",
+    "paws-wiki.expert_entropy_norm",
+    "paws-wiki.expert_top_probability",
+    "paws-wiki.expert_margin",
+    "paws-wiki.expert_null_entropy_norm",
+    "paws-wiki.expert_null_top_probability",
+    "paws-wiki.expert_null_margin",
+    "paws-wiki.parent_expert_js",
+    "paws-wiki.parent_null_expert_null_js",
+    "paws-wiki.parent_full_null_js",
+    "paws-wiki.expert_full_null_js",
+    "paws-wiki.full_argmax_flip",
+    "paws-wiki.null_argmax_flip",
+    "paws-wiki.residual_centered_rms",
+    "paws-wiki.residual_range",
+    "paws-wiki.null_residual_centered_rms",
+    "paws-wiki.null_residual_range",
+    "paws-wiki.residual_path_difference_rms",
+    "qasc.expert_entropy_norm",
+    "qasc.expert_top_probability",
+    "qasc.expert_margin",
+    "qasc.expert_null_entropy_norm",
+    "qasc.expert_null_top_probability",
+    "qasc.expert_null_margin",
+    "qasc.parent_expert_js",
+    "qasc.parent_null_expert_null_js",
+    "qasc.parent_full_null_js",
+    "qasc.expert_full_null_js",
+    "qasc.full_argmax_flip",
+    "qasc.null_argmax_flip",
+    "qasc.residual_centered_rms",
+    "qasc.residual_range",
+    "qasc.null_residual_centered_rms",
+    "qasc.null_residual_range",
+    "qasc.residual_path_difference_rms",
+    "snli.expert_entropy_norm",
+    "snli.expert_top_probability",
+    "snli.expert_margin",
+    "snli.expert_null_entropy_norm",
+    "snli.expert_null_top_probability",
+    "snli.expert_null_margin",
+    "snli.parent_expert_js",
+    "snli.parent_null_expert_null_js",
+    "snli.parent_full_null_js",
+    "snli.expert_full_null_js",
+    "snli.full_argmax_flip",
+    "snli.null_argmax_flip",
+    "snli.residual_centered_rms",
+    "snli.residual_range",
+    "snli.null_residual_centered_rms",
+    "snli.null_residual_range",
+    "snli.residual_path_difference_rms"
+  ],
+  "target_distribution": {
+    "qasc": 380,
+    "parent": 319,
+    "clinc": 679,
+    "paws-wiki": 185,
+    "snli": 153
+  },
+  "runs": [
+    {
+      "seed": 42,
+      "heldout_source": "clinc",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.13926858300692402,
+      "plan_sha256": "90c67530052a9ea42e5dbbdcedd5e88669f7fa0b32ffe0541da34b1dcad1c513",
+      "class_counts": {
+        "clinc": 406,
+        "paws-wiki": 50,
+        "parent": 150,
+        "qasc": 246,
+        "snli": 44
+      },
+      "class_weights": {
+        "parent": 0.8379247784614563,
+        "clinc": 0.5093163847923279,
+        "paws-wiki": 1.4513282775878906,
+        "qasc": 0.6543093323707581,
+        "snli": 1.5471211671829224
+      },
+      "loss_first": 1.5885037183761597,
+      "loss_last": 0.9639890789985657,
+      "gradient_norm_mean": 0.7807362233288586,
+      "gradient_norm_maximum": 1.2822346687316895,
+      "router_sha256": "b36b356f98a7cadf2f6a3e86b683478514644ade6ab49a992b3f47c03bf8b640",
+      "evaluation": {
+        "rows": 42,
+        "path_match": 0.5,
+        "selection": {
+          "clinc": 15,
+          "parent": 21,
+          "paws-wiki": 4,
+          "qasc": 1,
+          "snli": 1
+        },
+        "mean_proper_gain": 0.0036837943443822703,
+        "mean_oracle_improvement": 0.0240615099391972,
+        "mean_regret": 0.02037771559481493,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.003578909289364267,
+        "violation_count": 14,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 6,
+          "brier_regressed": 6,
+          "context_regressed": 2
+        }
+      },
+      "train_sources": [
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "9bacb94ce74779396903f9ee3485976416c0e08ac186128c49e2c973728ce49e",
+        "scale_sha256": "2687643e047036f7071f11246dd43bfd9dfa2270dbc92a9ca2010592b0e8e498"
+      }
+    },
+    {
+      "seed": 43,
+      "heldout_source": "clinc",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.11479695801972412,
+      "plan_sha256": "d96b39cc064207d21c3d3085110ae1b6acf3ca0c6eab5d86349a2818d8e0a66f",
+      "class_counts": {
+        "clinc": 406,
+        "paws-wiki": 50,
+        "parent": 150,
+        "qasc": 246,
+        "snli": 44
+      },
+      "class_weights": {
+        "parent": 0.8379247784614563,
+        "clinc": 0.5093163847923279,
+        "paws-wiki": 1.4513282775878906,
+        "qasc": 0.6543093323707581,
+        "snli": 1.5471211671829224
+      },
+      "loss_first": 1.6445040702819824,
+      "loss_last": 0.927177906036377,
+      "gradient_norm_mean": 0.7477393142180517,
+      "gradient_norm_maximum": 1.100334882736206,
+      "router_sha256": "834f0b682fce1b660f26b5954055f9df677c858a88ede47a1f1ca24f9a0c91e9",
+      "evaluation": {
+        "rows": 42,
+        "path_match": 0.5952380952380952,
+        "selection": {
+          "clinc": 16,
+          "parent": 25,
+          "qasc": 1
+        },
+        "mean_proper_gain": 0.005327929559279895,
+        "mean_oracle_improvement": 0.0240615099391972,
+        "mean_regret": 0.018733580379917306,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.005127302581469574,
+        "violation_count": 3,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 1,
+          "brier_regressed": 1,
+          "context_regressed": 1
+        }
+      },
+      "train_sources": [
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "9bacb94ce74779396903f9ee3485976416c0e08ac186128c49e2c973728ce49e",
+        "scale_sha256": "2687643e047036f7071f11246dd43bfd9dfa2270dbc92a9ca2010592b0e8e498"
+      }
+    },
+    {
+      "seed": 44,
+      "heldout_source": "clinc",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.11149954097345471,
+      "plan_sha256": "00eb86f9ccf523372be6e3500728deef8287c5cf490be89ffd7c6704858817ac",
+      "class_counts": {
+        "clinc": 406,
+        "paws-wiki": 50,
+        "parent": 150,
+        "qasc": 246,
+        "snli": 44
+      },
+      "class_weights": {
+        "parent": 0.8379247784614563,
+        "clinc": 0.5093163847923279,
+        "paws-wiki": 1.4513282775878906,
+        "qasc": 0.6543093323707581,
+        "snli": 1.5471211671829224
+      },
+      "loss_first": 1.571321964263916,
+      "loss_last": 1.0085289478302002,
+      "gradient_norm_mean": 0.7282890749629587,
+      "gradient_norm_maximum": 1.2563936710357666,
+      "router_sha256": "2cf3a335fc5db1e62a91e187a594ac7244bb40dc31fe04ae2738119772f20886",
+      "evaluation": {
+        "rows": 42,
+        "path_match": 0.5476190476190477,
+        "selection": {
+          "clinc": 15,
+          "parent": 24,
+          "paws-wiki": 2,
+          "qasc": 1
+        },
+        "mean_proper_gain": 0.0037973197141522004,
+        "mean_oracle_improvement": 0.0240615099391972,
+        "mean_regret": 0.020264190225045,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.003691560992077625,
+        "violation_count": 8,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 3,
+          "brier_regressed": 3,
+          "context_regressed": 2
+        }
+      },
+      "train_sources": [
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "9bacb94ce74779396903f9ee3485976416c0e08ac186128c49e2c973728ce49e",
+        "scale_sha256": "2687643e047036f7071f11246dd43bfd9dfa2270dbc92a9ca2010592b0e8e498"
+      }
+    },
+    {
+      "seed": 42,
+      "heldout_source": "json-schema",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.10883712500799447,
+      "plan_sha256": "3283a0bf648bd01355993feac208a0fb2d3984a7a54651c83f94d0181e765809",
+      "class_counts": {
+        "parent": 159,
+        "clinc": 425,
+        "paws-wiki": 39,
+        "qasc": 234,
+        "snli": 39
+      },
+      "class_weights": {
+        "parent": 0.7722914218902588,
+        "clinc": 0.47237324714660645,
+        "paws-wiki": 1.559363842010498,
+        "qasc": 0.6366076469421387,
+        "snli": 1.559363842010498
+      },
+      "loss_first": 1.5949677228927612,
+      "loss_last": 0.8064982891082764,
+      "gradient_norm_mean": 0.8089781834278256,
+      "gradient_norm_maximum": 1.2232518196105957,
+      "router_sha256": "e8e7167b6e9a4a8a304fb759febce90c229b9cf6b8fef18d3c25ac0f1ee3af7f",
+      "evaluation": {
+        "rows": 42,
+        "path_match": 0.16666666666666666,
+        "selection": {
+          "parent": 42
+        },
+        "mean_proper_gain": 0.0,
+        "mean_oracle_improvement": 0.20638839843863946,
+        "mean_regret": 0.20638839843863946,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      },
+      "train_sources": [
+        "clinc",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "286aa7bdbef3708fd07f96d925b09e6ceb640b2c497ac1adbd6f42587170a692",
+        "scale_sha256": "c27ce9407f70e284f3a9bcacbb26b27b49ef8fb4250848abff104bb4e4cf96ba"
+      }
+    },
+    {
+      "seed": 43,
+      "heldout_source": "json-schema",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.10600970801897347,
+      "plan_sha256": "926a9bfb9176550133d54ba74abf5e266cb7ad496e573bcde1edaf571252724c",
+      "class_counts": {
+        "parent": 159,
+        "clinc": 425,
+        "paws-wiki": 39,
+        "qasc": 234,
+        "snli": 39
+      },
+      "class_weights": {
+        "parent": 0.7722914218902588,
+        "clinc": 0.47237324714660645,
+        "paws-wiki": 1.559363842010498,
+        "qasc": 0.6366076469421387,
+        "snli": 1.559363842010498
+      },
+      "loss_first": 1.6166584491729736,
+      "loss_last": 0.7684783339500427,
+      "gradient_norm_mean": 0.7900338885374367,
+      "gradient_norm_maximum": 1.1586406230926514,
+      "router_sha256": "4a4cb8a727d79c0731adf2789ca11b4e818a55baf90bad3fb6d9f9c37d503169",
+      "evaluation": {
+        "rows": 42,
+        "path_match": 0.16666666666666666,
+        "selection": {
+          "parent": 39,
+          "snli": 3
+        },
+        "mean_proper_gain": -0.005594231352933529,
+        "mean_oracle_improvement": 0.20638839843863946,
+        "mean_regret": 0.21198262979157295,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.004220615698919072,
+        "violation_count": 4,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 2,
+          "brier_regressed": 2,
+          "context_regressed": 0
+        }
+      },
+      "train_sources": [
+        "clinc",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "286aa7bdbef3708fd07f96d925b09e6ceb640b2c497ac1adbd6f42587170a692",
+        "scale_sha256": "c27ce9407f70e284f3a9bcacbb26b27b49ef8fb4250848abff104bb4e4cf96ba"
+      }
+    },
+    {
+      "seed": 44,
+      "heldout_source": "json-schema",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.108648458000971,
+      "plan_sha256": "5e5bbeedf5b5c565214d1b6f129b70b5ac5f84c0df8ebefd1dad7a0663a9ca20",
+      "class_counts": {
+        "parent": 159,
+        "clinc": 425,
+        "paws-wiki": 39,
+        "qasc": 234,
+        "snli": 39
+      },
+      "class_weights": {
+        "parent": 0.7722914218902588,
+        "clinc": 0.47237324714660645,
+        "paws-wiki": 1.559363842010498,
+        "qasc": 0.6366076469421387,
+        "snli": 1.559363842010498
+      },
+      "loss_first": 1.5783498287200928,
+      "loss_last": 0.7885088920593262,
+      "gradient_norm_mean": 0.7662046873010695,
+      "gradient_norm_maximum": 1.232983946800232,
+      "router_sha256": "6200be24829683f6daddf3837fe80ff1dafd1236c0e49cd3a132aeaf71cc2de6",
+      "evaluation": {
+        "rows": 42,
+        "path_match": 0.14285714285714285,
+        "selection": {
+          "parent": 33,
+          "snli": 9
+        },
+        "mean_proper_gain": -0.00132511026155284,
+        "mean_oracle_improvement": 0.20638839843863946,
+        "mean_regret": 0.20771350870019228,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0011909371287548431,
+        "violation_count": 10,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 4,
+          "brier_regressed": 4,
+          "context_regressed": 2
+        }
+      },
+      "train_sources": [
+        "clinc",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "286aa7bdbef3708fd07f96d925b09e6ceb640b2c497ac1adbd6f42587170a692",
+        "scale_sha256": "c27ce9407f70e284f3a9bcacbb26b27b49ef8fb4250848abff104bb4e4cf96ba"
+      }
+    },
+    {
+      "seed": 42,
+      "heldout_source": "paws-wiki",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.11019475001376122,
+      "plan_sha256": "01007bd693f8f114c0bd8905f2350b6bf427f2a6b5a4bc2b71be32e55da92fd3",
+      "class_counts": {
+        "parent": 126,
+        "clinc": 434,
+        "paws-wiki": 50,
+        "qasc": 247,
+        "snli": 39
+      },
+      "class_weights": {
+        "parent": 0.8868505358695984,
+        "clinc": 0.47784918546676636,
+        "paws-wiki": 1.4078315496444702,
+        "qasc": 0.6334133744239807,
+        "snli": 1.594055414199829
+      },
+      "loss_first": 1.5805611610412598,
+      "loss_last": 1.0978277921676636,
+      "gradient_norm_mean": 0.7723991796374321,
+      "gradient_norm_maximum": 1.082532286643982,
+      "router_sha256": "3e8a0c4d098519ff0c47258cecb09d7e49ef0c61ac16ca411384ea2cc80893dc",
+      "evaluation": {
+        "rows": 96,
+        "path_match": 0.4270833333333333,
+        "selection": {
+          "parent": 86,
+          "snli": 10
+        },
+        "mean_proper_gain": -0.019949546655628248,
+        "mean_oracle_improvement": 0.13547363800583115,
+        "mean_regret": 0.15542318466145938,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.014856860426975427,
+        "violation_count": 20,
+        "violations": {
+          "parent_correct_lost": 1,
+          "cross_entropy_regressed": 8,
+          "brier_regressed": 8,
+          "context_regressed": 3
+        }
+      },
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "9ddd34977f6ec7e59e2c3a4c885f1e6e6a86bb700de31fbbe0b0a02dcd161907",
+        "scale_sha256": "49622932a39a00033d0b5276f7f0ba11cf09b680a0714c7c07e517088e0a8ae0"
+      }
+    },
+    {
+      "seed": 43,
+      "heldout_source": "paws-wiki",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.11158487500506453,
+      "plan_sha256": "f53cc7bbec2982cbbb6468023fecfd0573d24cb64bb1641ec9be25b5984772f0",
+      "class_counts": {
+        "parent": 126,
+        "clinc": 434,
+        "paws-wiki": 50,
+        "qasc": 247,
+        "snli": 39
+      },
+      "class_weights": {
+        "parent": 0.8868505358695984,
+        "clinc": 0.47784918546676636,
+        "paws-wiki": 1.4078315496444702,
+        "qasc": 0.6334133744239807,
+        "snli": 1.594055414199829
+      },
+      "loss_first": 1.6106468439102173,
+      "loss_last": 0.9209749102592468,
+      "gradient_norm_mean": 0.749183036852628,
+      "gradient_norm_maximum": 1.1064088344573975,
+      "router_sha256": "f8db6e29e2099ac31c59cafd9a54f4534f045cc84b5e8191748dca638c69ac6e",
+      "evaluation": {
+        "rows": 96,
+        "path_match": 0.4375,
+        "selection": {
+          "parent": 93,
+          "snli": 3
+        },
+        "mean_proper_gain": 0.00800773842524258,
+        "mean_oracle_improvement": 0.13547363800583115,
+        "mean_regret": 0.12746589958058854,
+        "accuracy_delta": 0.01041666666666663,
+        "cross_entropy_delta": -0.0053764625625182805,
+        "violation_count": 3,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 1,
+          "brier_regressed": 1,
+          "context_regressed": 1
+        }
+      },
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "9ddd34977f6ec7e59e2c3a4c885f1e6e6a86bb700de31fbbe0b0a02dcd161907",
+        "scale_sha256": "49622932a39a00033d0b5276f7f0ba11cf09b680a0714c7c07e517088e0a8ae0"
+      }
+    },
+    {
+      "seed": 44,
+      "heldout_source": "paws-wiki",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.11058791700634174,
+      "plan_sha256": "6a37df5149a6fe8c1cc6ef3e2c745d12e3f255ab4cb3200fbff38e0ae4803749",
+      "class_counts": {
+        "parent": 126,
+        "clinc": 434,
+        "paws-wiki": 50,
+        "qasc": 247,
+        "snli": 39
+      },
+      "class_weights": {
+        "parent": 0.8868505358695984,
+        "clinc": 0.47784918546676636,
+        "paws-wiki": 1.4078315496444702,
+        "qasc": 0.6334133744239807,
+        "snli": 1.594055414199829
+      },
+      "loss_first": 1.6064389944076538,
+      "loss_last": 0.9524049758911133,
+      "gradient_norm_mean": 0.744406376965344,
+      "gradient_norm_maximum": 1.2023241519927979,
+      "router_sha256": "d237a5be8c1acba899bcd27d8ec8c5957c2773685ea57996740405070794097a",
+      "evaluation": {
+        "rows": 96,
+        "path_match": 0.4375,
+        "selection": {
+          "parent": 86,
+          "snli": 10
+        },
+        "mean_proper_gain": -0.012578414528381494,
+        "mean_oracle_improvement": 0.13547363800583115,
+        "mean_regret": 0.14805205253421264,
+        "accuracy_delta": 0.01041666666666663,
+        "cross_entropy_delta": 0.009722251266558957,
+        "violation_count": 18,
+        "violations": {
+          "parent_correct_lost": 1,
+          "cross_entropy_regressed": 7,
+          "brier_regressed": 7,
+          "context_regressed": 3
+        }
+      },
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "9ddd34977f6ec7e59e2c3a4c885f1e6e6a86bb700de31fbbe0b0a02dcd161907",
+        "scale_sha256": "49622932a39a00033d0b5276f7f0ba11cf09b680a0714c7c07e517088e0a8ae0"
+      }
+    },
+    {
+      "seed": 42,
+      "heldout_source": "qasc",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.10790412500500679,
+      "plan_sha256": "82848d4deef1a63782a9317c06b9420a4c8e7257903ad1201d3f5bd14604d83b",
+      "class_counts": {
+        "parent": 147,
+        "clinc": 205,
+        "paws-wiki": 47,
+        "qasc": 37,
+        "snli": 44
+      },
+      "class_weights": {
+        "parent": 0.6723712682723999,
+        "clinc": 0.5693651437759399,
+        "paws-wiki": 1.1891013383865356,
+        "qasc": 1.3401917219161987,
+        "snli": 1.2289705276489258
+      },
+      "loss_first": 1.569500207901001,
+      "loss_last": 0.9271296858787537,
+      "gradient_norm_mean": 0.7123017169069499,
+      "gradient_norm_maximum": 1.0768691301345825,
+      "router_sha256": "1965f56c74c6bb0d5164ce962f59daf973f0e48cb2e44fe15b8757529482942d",
+      "evaluation": {
+        "rows": 128,
+        "path_match": 0.546875,
+        "selection": {
+          "clinc": 75,
+          "qasc": 6,
+          "parent": 47
+        },
+        "mean_proper_gain": 0.03020116022982209,
+        "mean_oracle_improvement": 0.44695155551101046,
+        "mean_regret": 0.41675039528118835,
+        "accuracy_delta": 0.0234375,
+        "cross_entropy_delta": -0.016284400153082634,
+        "violation_count": 20,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 6,
+          "brier_regressed": 7,
+          "context_regressed": 7
+        }
+      },
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "snli",
+        "typed-decisions"
+      ],
+      "standardization": {
+        "fit_rows": 480,
+        "mean_sha256": "b6b5ee4096771908a3801a18e751496a2a2e1c8c49271470eae793c0d1d637f0",
+        "scale_sha256": "a073be4bb87c2dcd5822656453aafba89ba66c210623bc93f9843aa004142b99"
+      }
+    },
+    {
+      "seed": 43,
+      "heldout_source": "qasc",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.11149879201548174,
+      "plan_sha256": "b7a1dbb14283c7273f09c823a019fdd021ebcd75a242e40904de256dca1b6380",
+      "class_counts": {
+        "parent": 147,
+        "clinc": 205,
+        "paws-wiki": 47,
+        "qasc": 37,
+        "snli": 44
+      },
+      "class_weights": {
+        "parent": 0.6723712682723999,
+        "clinc": 0.5693651437759399,
+        "paws-wiki": 1.1891013383865356,
+        "qasc": 1.3401917219161987,
+        "snli": 1.2289705276489258
+      },
+      "loss_first": 1.5849918127059937,
+      "loss_last": 0.9415392875671387,
+      "gradient_norm_mean": 0.6968930044677109,
+      "gradient_norm_maximum": 0.9813165068626404,
+      "router_sha256": "1a576a6e4901ac508fd8c74248acc4464d59b556542eaf706e053e3ed9594982",
+      "evaluation": {
+        "rows": 128,
+        "path_match": 0.6484375,
+        "selection": {
+          "clinc": 89,
+          "parent": 30,
+          "qasc": 9
+        },
+        "mean_proper_gain": -0.08262926196130106,
+        "mean_oracle_improvement": 0.44695155551101046,
+        "mean_regret": 0.5295808174723116,
+        "accuracy_delta": 0.0234375,
+        "cross_entropy_delta": 0.09346664233835944,
+        "violation_count": 31,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 10,
+          "brier_regressed": 11,
+          "context_regressed": 10
+        }
+      },
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "snli",
+        "typed-decisions"
+      ],
+      "standardization": {
+        "fit_rows": 480,
+        "mean_sha256": "b6b5ee4096771908a3801a18e751496a2a2e1c8c49271470eae793c0d1d637f0",
+        "scale_sha256": "a073be4bb87c2dcd5822656453aafba89ba66c210623bc93f9843aa004142b99"
+      }
+    },
+    {
+      "seed": 44,
+      "heldout_source": "qasc",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.10550395902828313,
+      "plan_sha256": "992ed4b81f628f421687ad956942a653bc85964aaee767f5d3749aba851a7155",
+      "class_counts": {
+        "parent": 147,
+        "clinc": 205,
+        "paws-wiki": 47,
+        "qasc": 37,
+        "snli": 44
+      },
+      "class_weights": {
+        "parent": 0.6723712682723999,
+        "clinc": 0.5693651437759399,
+        "paws-wiki": 1.1891013383865356,
+        "qasc": 1.3401917219161987,
+        "snli": 1.2289705276489258
+      },
+      "loss_first": 1.617455005645752,
+      "loss_last": 1.0110445022583008,
+      "gradient_norm_mean": 0.6940725618042052,
+      "gradient_norm_maximum": 0.9904530048370361,
+      "router_sha256": "25d17194fcc9d74d5d2c712cd00ab41e2a1c55a5cc94043003a0a50ca591981e",
+      "evaluation": {
+        "rows": 128,
+        "path_match": 0.671875,
+        "selection": {
+          "clinc": 69,
+          "parent": 40,
+          "qasc": 16,
+          "paws-wiki": 3
+        },
+        "mean_proper_gain": 0.2612460158028472,
+        "mean_oracle_improvement": 0.44695155551101046,
+        "mean_regret": 0.18570553970816328,
+        "accuracy_delta": 0.078125,
+        "cross_entropy_delta": -0.21361861095301016,
+        "violation_count": 11,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 4,
+          "brier_regressed": 4,
+          "context_regressed": 3
+        }
+      },
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "snli",
+        "typed-decisions"
+      ],
+      "standardization": {
+        "fit_rows": 480,
+        "mean_sha256": "b6b5ee4096771908a3801a18e751496a2a2e1c8c49271470eae793c0d1d637f0",
+        "scale_sha256": "a073be4bb87c2dcd5822656453aafba89ba66c210623bc93f9843aa004142b99"
+      }
+    },
+    {
+      "seed": 42,
+      "heldout_source": "snli",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.10524695797357708,
+      "plan_sha256": "fc97318b0383abb6951dca5787d74ee87d69f0f24ff7c69d480be1c8749b8962",
+      "class_counts": {
+        "parent": 133,
+        "clinc": 446,
+        "paws-wiki": 48,
+        "qasc": 241,
+        "snli": 28
+      },
+      "class_weights": {
+        "parent": 0.8152627944946289,
+        "clinc": 0.4452008605003357,
+        "paws-wiki": 1.3570717573165894,
+        "qasc": 0.6056405305862427,
+        "snli": 1.7768239974975586
+      },
+      "loss_first": 1.5554391145706177,
+      "loss_last": 0.8836112022399902,
+      "gradient_norm_mean": 0.7932555128354579,
+      "gradient_norm_maximum": 1.2853749990463257,
+      "router_sha256": "86a9c87a40ed40ae76c1a7f0c03364d70d41b87e01eb9a1a5c95c07c5eeea780",
+      "evaluation": {
+        "rows": 96,
+        "path_match": 0.23958333333333334,
+        "selection": {
+          "parent": 67,
+          "clinc": 29
+        },
+        "mean_proper_gain": -0.14214415167996175,
+        "mean_oracle_improvement": 0.25523427146045125,
+        "mean_regret": 0.397378423140413,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.1312353865091016,
+        "violation_count": 36,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 7,
+          "brier_regressed": 7,
+          "context_regressed": 22
+        }
+      },
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "typed-decisions"
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "0ee8eadd49d2fcf0f741176a8be2346b387e8bb5c0d951210241d102104a6fc9",
+        "scale_sha256": "4ba9f1653d005a732265addbb1f98afc559ac976406228fb38a87389be3f73bf"
+      }
+    },
+    {
+      "seed": 43,
+      "heldout_source": "snli",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.1087024169974029,
+      "plan_sha256": "3141cc8d62882892386ad95cad66bb61654003533ed83cb74e83ca45691a2986",
+      "class_counts": {
+        "parent": 133,
+        "clinc": 446,
+        "paws-wiki": 48,
+        "qasc": 241,
+        "snli": 28
+      },
+      "class_weights": {
+        "parent": 0.8152627944946289,
+        "clinc": 0.4452008605003357,
+        "paws-wiki": 1.3570717573165894,
+        "qasc": 0.6056405305862427,
+        "snli": 1.7768239974975586
+      },
+      "loss_first": 1.6422756910324097,
+      "loss_last": 0.8354913592338562,
+      "gradient_norm_mean": 0.7846439874265343,
+      "gradient_norm_maximum": 1.1983141899108887,
+      "router_sha256": "300d79f9929a52e3fd5c3b90f652ea5a30e7fc1b412772e581de26acef693a4a",
+      "evaluation": {
+        "rows": 96,
+        "path_match": 0.22916666666666666,
+        "selection": {
+          "parent": 66,
+          "clinc": 30
+        },
+        "mean_proper_gain": -0.1421003538503556,
+        "mean_oracle_improvement": 0.25523427146045125,
+        "mean_regret": 0.3973346253108068,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.1311917332726814,
+        "violation_count": 37,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 7,
+          "brier_regressed": 7,
+          "context_regressed": 23
+        }
+      },
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "typed-decisions"
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "0ee8eadd49d2fcf0f741176a8be2346b387e8bb5c0d951210241d102104a6fc9",
+        "scale_sha256": "4ba9f1653d005a732265addbb1f98afc559ac976406228fb38a87389be3f73bf"
+      }
+    },
+    {
+      "seed": 44,
+      "heldout_source": "snli",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.10842908400809392,
+      "plan_sha256": "541bc3597cab46681831be2457a63ed0b9d2eda4cb34e4f25bd108b08d957bc5",
+      "class_counts": {
+        "parent": 133,
+        "clinc": 446,
+        "paws-wiki": 48,
+        "qasc": 241,
+        "snli": 28
+      },
+      "class_weights": {
+        "parent": 0.8152627944946289,
+        "clinc": 0.4452008605003357,
+        "paws-wiki": 1.3570717573165894,
+        "qasc": 0.6056405305862427,
+        "snli": 1.7768239974975586
+      },
+      "loss_first": 1.5818605422973633,
+      "loss_last": 0.9166159629821777,
+      "gradient_norm_mean": 0.7572727461811155,
+      "gradient_norm_maximum": 1.227729082107544,
+      "router_sha256": "40e47e006f7da0620a6689037591db639dd30ebaa045448314dd7c8907a78aac",
+      "evaluation": {
+        "rows": 96,
+        "path_match": 0.2604166666666667,
+        "selection": {
+          "parent": 66,
+          "clinc": 27,
+          "snli": 3
+        },
+        "mean_proper_gain": -0.12529499171181155,
+        "mean_oracle_improvement": 0.25523427146045125,
+        "mean_regret": 0.38052926317226277,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.11874783097226138,
+        "violation_count": 33,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 6,
+          "brier_regressed": 6,
+          "context_regressed": 21
+        }
+      },
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "typed-decisions"
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "0ee8eadd49d2fcf0f741176a8be2346b387e8bb5c0d951210241d102104a6fc9",
+        "scale_sha256": "4ba9f1653d005a732265addbb1f98afc559ac976406228fb38a87389be3f73bf"
+      }
+    },
+    {
+      "seed": 42,
+      "heldout_source": "typed-decisions",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.10904041700996459,
+      "plan_sha256": "3f7ee435642be6574f0245cf895a2f3101fe0f4512c499503a83dde0dac92594",
+      "class_counts": {
+        "parent": 150,
+        "clinc": 469,
+        "paws-wiki": 21,
+        "qasc": 230,
+        "snli": 26
+      },
+      "class_weights": {
+        "parent": 0.6713533997535706,
+        "clinc": 0.3796736001968384,
+        "paws-wiki": 1.7942674160003662,
+        "qasc": 0.5421667695045471,
+        "snli": 1.6125386953353882
+      },
+      "loss_first": 1.580932378768921,
+      "loss_last": 0.7756233215332031,
+      "gradient_norm_mean": 0.8496081128250808,
+      "gradient_norm_maximum": 1.393522024154663,
+      "router_sha256": "965bf2eb33817f92d6ee709f5103907fcf218773b246e2b32144128ac941419c",
+      "evaluation": {
+        "rows": 320,
+        "path_match": 0.14375,
+        "selection": {
+          "parent": 243,
+          "qasc": 28,
+          "clinc": 49
+        },
+        "mean_proper_gain": -0.10327012678594186,
+        "mean_oracle_improvement": 0.12530514967722964,
+        "mean_regret": 0.2285752764631715,
+        "accuracy_delta": -0.0031250000000000444,
+        "cross_entropy_delta": 0.0989481723631882,
+        "violation_count": 126,
+        "violations": {
+          "parent_correct_lost": 1,
+          "cross_entropy_regressed": 57,
+          "brier_regressed": 53,
+          "context_regressed": 15
+        }
+      },
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli"
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "70e601cf6e5e019a30220bf4f8e08da05b6598fdafd1e180092d55e930dfef04",
+        "scale_sha256": "20e9dfbaa8f59c29f561480664d22aa2d8ac151e56eb57c3ae0f555d235f68a8"
+      }
+    },
+    {
+      "seed": 43,
+      "heldout_source": "typed-decisions",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.10658004198921844,
+      "plan_sha256": "9b04e8c299dfba33fd3e57d72c5c042d7701e2ccf731f01cff110af058f8f1fc",
+      "class_counts": {
+        "parent": 150,
+        "clinc": 469,
+        "paws-wiki": 21,
+        "qasc": 230,
+        "snli": 26
+      },
+      "class_weights": {
+        "parent": 0.6713533997535706,
+        "clinc": 0.3796736001968384,
+        "paws-wiki": 1.7942674160003662,
+        "qasc": 0.5421667695045471,
+        "snli": 1.6125386953353882
+      },
+      "loss_first": 1.660718560218811,
+      "loss_last": 0.660326361656189,
+      "gradient_norm_mean": 0.8371151325991377,
+      "gradient_norm_maximum": 1.4358512163162231,
+      "router_sha256": "c85fd1a6373695ed1c928dac91614e96f39c50d885241f4794a5b2aeb9fadb2a",
+      "evaluation": {
+        "rows": 320,
+        "path_match": 0.140625,
+        "selection": {
+          "parent": 250,
+          "qasc": 14,
+          "clinc": 40,
+          "paws-wiki": 16
+        },
+        "mean_proper_gain": -0.08386698686249935,
+        "mean_oracle_improvement": 0.12530514967722964,
+        "mean_regret": 0.209172136539729,
+        "accuracy_delta": -0.0031250000000000444,
+        "cross_entropy_delta": 0.08071010534646095,
+        "violation_count": 108,
+        "violations": {
+          "parent_correct_lost": 1,
+          "cross_entropy_regressed": 45,
+          "brier_regressed": 45,
+          "context_regressed": 17
+        }
+      },
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli"
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "70e601cf6e5e019a30220bf4f8e08da05b6598fdafd1e180092d55e930dfef04",
+        "scale_sha256": "20e9dfbaa8f59c29f561480664d22aa2d8ac151e56eb57c3ae0f555d235f68a8"
+      }
+    },
+    {
+      "seed": 44,
+      "heldout_source": "typed-decisions",
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.10661479202099144,
+      "plan_sha256": "9a640f16e650c96d53721311e1790d8818ddae472509f69679fb56a3e7fd310a",
+      "class_counts": {
+        "parent": 150,
+        "clinc": 469,
+        "paws-wiki": 21,
+        "qasc": 230,
+        "snli": 26
+      },
+      "class_weights": {
+        "parent": 0.6713533997535706,
+        "clinc": 0.3796736001968384,
+        "paws-wiki": 1.7942674160003662,
+        "qasc": 0.5421667695045471,
+        "snli": 1.6125386953353882
+      },
+      "loss_first": 1.5761991739273071,
+      "loss_last": 0.9044992327690125,
+      "gradient_norm_mean": 0.8130195958074182,
+      "gradient_norm_maximum": 1.3648842573165894,
+      "router_sha256": "715a5d74ae85b28f77b1b683015515313d719cd9117efb7758648ade3eb963be",
+      "evaluation": {
+        "rows": 320,
+        "path_match": 0.140625,
+        "selection": {
+          "parent": 260,
+          "qasc": 20,
+          "clinc": 40
+        },
+        "mean_proper_gain": -0.0831465391447134,
+        "mean_oracle_improvement": 0.12530514967722964,
+        "mean_regret": 0.20845168882194304,
+        "accuracy_delta": -0.0031250000000000444,
+        "cross_entropy_delta": 0.08011642746391967,
+        "violation_count": 98,
+        "violations": {
+          "parent_correct_lost": 1,
+          "cross_entropy_regressed": 45,
+          "brier_regressed": 42,
+          "context_regressed": 10
+        }
+      },
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli"
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "70e601cf6e5e019a30220bf4f8e08da05b6598fdafd1e180092d55e930dfef04",
+        "scale_sha256": "20e9dfbaa8f59c29f561480664d22aa2d8ac151e56eb57c3ae0f555d235f68a8"
+      }
+    }
+  ],
+  "aggregate": {
+    "path_match": 0.35791583994709,
+    "mean_proper_gain": -0.027201986484408584,
+    "mean_regret": 0.22610440698980178,
+    "accuracy_delta": 0.007581018518518507,
+    "cross_entropy_delta": 0.028707206458647692,
+    "violation_rate": 0.26703499079189685
+  },
+  "by_source": {
+    "clinc": {
+      "path_match": 0.5476190476190476,
+      "mean_proper_gain": 0.0042696812059381225,
+      "mean_regret": 0.01979182873325908,
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": -0.004132590954303822,
+      "violation_count": 8.333333333333334
+    },
+    "json-schema": {
+      "path_match": 0.15873015873015872,
+      "mean_proper_gain": -0.0023064472048287894,
+      "mean_regret": 0.2086948456434682,
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": 0.0018038509425579718,
+      "violation_count": 4.666666666666667
+    },
+    "paws-wiki": {
+      "path_match": 0.43402777777777773,
+      "mean_proper_gain": -0.00817340758625572,
+      "mean_regret": 0.14364704559208685,
+      "accuracy_delta": 0.00694444444444442,
+      "cross_entropy_delta": 0.006400883043672034,
+      "violation_count": 13.666666666666666
+    },
+    "qasc": {
+      "path_match": 0.6223958333333334,
+      "mean_proper_gain": 0.06960597135712274,
+      "mean_regret": 0.37734558415388775,
+      "accuracy_delta": 0.041666666666666664,
+      "cross_entropy_delta": -0.04547878958924445,
+      "violation_count": 20.666666666666668
+    },
+    "snli": {
+      "path_match": 0.24305555555555558,
+      "mean_proper_gain": -0.1365131657473763,
+      "mean_regret": 0.3917474372078275,
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": 0.1270583169180148,
+      "violation_count": 35.333333333333336
+    },
+    "typed-decisions": {
+      "path_match": 0.14166666666666666,
+      "mean_proper_gain": -0.09009455093105152,
+      "mean_regret": 0.21539970060828117,
+      "accuracy_delta": -0.0031250000000000444,
+      "cross_entropy_delta": 0.0865915683911896,
+      "violation_count": 110.66666666666667
+    }
+  },
+  "checks": {
+    "coverage.folds_seeds": true,
+    "coverage.no_heldout_training": true,
+    "combined.accuracy": true,
+    "combined.cross_entropy": false,
+    "sources.accuracy": true,
+    "sources.cross_entropy": false,
+    "safety.violation_rate": false,
+    "utility.proper_gain": false,
+    "target.path_match": false
+  },
+  "advances_to_full_router_training": false,
+  "limitations": [
+    "All train and validation rows are consumed public data and cannot support a fresh release claim.",
+    "The frozen specialist bank is shared across folds; only router training sources are held out.",
+    "The router sees inference-time behavior summaries, not source identity, labels or text hidden states.",
+    "Passing this study would authorize full consumed-data router training, not a release endpoint."
+  ]
+}

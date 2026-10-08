@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Decision Model Typed Prediction",
+  "oneOf": [
+    {"$ref": "#/$defs/boolean"},
+    {"$ref": "#/$defs/choice"},
+    {"$ref": "#/$defs/score"}
+  ],
+  "$defs": {
+    "probabilities": {
+      "type": "object",
+      "minProperties": 2,
+      "maxProperties": 32,
+      "propertyNames": {"type": "string", "minLength": 1},
+      "additionalProperties": {"type": "number", "minimum": 0, "maximum": 1}
+    },
+    "scoreKind": {
+      "enum": [
+        "candidate_probability_not_a_guarantee",
+        "contextual_prior_corrected_candidate_probability_not_a_guarantee"
+      ]
+    },
+    "calibration": {"enum": ["uncalibrated", "validation_temperature"]},
+    "boolean": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "value", "probability_true", "probabilities", "top_probability", "margin", "requires_review", "score_kind", "calibration"],
+      "properties": {
+        "type": {"const": "boolean"},
+        "value": {"type": "boolean"},
+        "probability_true": {"type": "number", "minimum": 0, "maximum": 1},
+        "probabilities": {"$ref": "#/$defs/probabilities"},
+        "top_probability": {"type": "number", "minimum": 0, "maximum": 1},
+        "margin": {"type": "number", "minimum": 0, "maximum": 1},
+        "requires_review": {"const": true},
+        "score_kind": {"$ref": "#/$defs/scoreKind"},
+        "calibration": {"$ref": "#/$defs/calibration"}
+      }
+    },
+    "choice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "value", "probabilities", "top_probability", "margin", "requires_review", "score_kind", "calibration"],
+      "properties": {
+        "type": {"const": "choice"},
+        "value": {"type": "string", "minLength": 1},
+        "probabilities": {"$ref": "#/$defs/probabilities"},
+        "top_probability": {"type": "number", "minimum": 0, "maximum": 1},
+        "margin": {"type": "number", "minimum": 0, "maximum": 1},
+        "requires_review": {"const": true},
+        "score_kind": {"$ref": "#/$defs/scoreKind"},
+        "calibration": {"$ref": "#/$defs/calibration"}
+      }
+    },
+    "score": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "value", "level_index", "expected_score", "probabilities", "top_probability", "margin", "requires_review", "score_kind", "calibration"],
+      "properties": {
+        "type": {"const": "score"},
+        "value": {"type": "string", "minLength": 1},
+        "level_index": {"type": "integer", "minimum": 0, "maximum": 9},
+        "expected_score": {"type": "number", "minimum": 0, "maximum": 9},
+        "probabilities": {"$ref": "#/$defs/probabilities"},
+        "top_probability": {"type": "number", "minimum": 0, "maximum": 1},
+        "margin": {"type": "number", "minimum": 0, "maximum": 1},
+        "requires_review": {"const": true},
+        "score_kind": {"$ref": "#/$defs/scoreKind"},
+        "calibration": {"$ref": "#/$defs/calibration"}
+      }
+    }
+  }
+}

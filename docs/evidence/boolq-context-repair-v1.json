@@ -1,0 +1,77 @@
+{
+  "format_version": 1,
+  "study": "boolq-context-repair-v1",
+  "protocol_sha256": "9ad6492f67919a1c8cb50d0eef631ff269b4c12ac64cac5eed00bceec28f6fc7",
+  "development_suite_is_fresh": false,
+  "development_suite_release_eligible": false,
+  "summary": {
+    "seen": {
+      "candidate_accuracy": 0.7558139534883721,
+      "parent_accuracy": 0.7565406976744186,
+      "accuracy_delta": -0.0007267441860464574,
+      "candidate_nll": 0.8373557404265857,
+      "parent_nll": 0.8245061041841787,
+      "nll_delta": 0.012849636242406981,
+      "source_accuracy_delta_vs_release_control": {
+        "bandit": 0.0,
+        "clinc": 0.0,
+        "goemotions": 0.032786885245901676,
+        "json-schema": 0.2333333333333334,
+        "paws-wiki": 0.015625,
+        "snli": -0.02083333333333337,
+        "typed-decisions": 0.21999999999999997
+      },
+      "minimum_source_delta": -0.02083333333333337
+    },
+    "consumed_development": {
+      "candidate_accuracy": 0.6640625,
+      "parent_accuracy": 0.6614583333333334,
+      "accuracy_delta": 0.0026041666666666297,
+      "source_accuracy_delta_vs_release_control": {
+        "bigbench-causal_judgment": 0.0,
+        "bigbench-formal_fallacies_syllogisms_negation": 0.0234375,
+        "bigbench-movie_recommendation": 0.0625
+      },
+      "minimum_source_delta": 0.0,
+      "context_advantage": {
+        "rows": 384,
+        "mean": 0.1167388836947516,
+        "positive": 243,
+        "by_source": {
+          "bigbench-causal_judgment": {
+            "rows": 128,
+            "mean": -0.019710912885696697,
+            "positive": 73
+          },
+          "bigbench-formal_fallacies_syllogisms_negation": {
+            "rows": 128,
+            "mean": 0.023527155814265833,
+            "positive": 57
+          },
+          "bigbench-movie_recommendation": {
+            "rows": 128,
+            "mean": 0.3464004081556857,
+            "positive": 113
+          }
+        }
+      }
+    },
+    "boolq_validation": {
+      "candidate_accuracy": 0.7421875,
+      "parent_accuracy": 0.7265625,
+      "accuracy_delta": 0.015625,
+      "rows": 128
+    }
+  },
+  "checks": {
+    "seen.accuracy": true,
+    "seen.nll": false,
+    "seen.each_source_accuracy": false,
+    "development.accuracy": true,
+    "development.each_source_accuracy": true,
+    "development.context_advantage_each_source": false,
+    "boolq.validation_accuracy": false
+  },
+  "advances_to_multiseed": false,
+  "new_fresh_blind_required_for_any_release_claim": true
+}

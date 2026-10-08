@@ -1,0 +1,99 @@
+{
+  "format_version": 1,
+  "study": "heterogeneous-expert-bank-v2",
+  "status": "frozen_before_evaluation",
+  "display_name": "六专家九来源异构专家库",
+  "groups": [
+    {
+      "name": "consumed-six",
+      "data_path": "runs/qasc-dual-function-screen-v1/cases.jsonl",
+      "data_sha256": "1e3085e934f30ab50f7258e8ad2cd28de87423f8ed4649a7403cff57e17b8381",
+      "dataset": "cases",
+      "feature_cache": "cache/qasc-routed-residual-features-v1",
+      "manifest_sha256": "b6d2b5def9bf913cb7c06d80747e4a63976a07c21cbc60fe1df9deb7b107db53",
+      "sources": ["qasc", "snli", "paws-wiki", "clinc", "typed-decisions", "json-schema"],
+      "splits": ["train", "validation"],
+      "counts": {
+        "qasc|train": 512, "qasc|validation": 128,
+        "snli|train": 96, "snli|validation": 96,
+        "paws-wiki|train": 96, "paws-wiki|validation": 96,
+        "clinc|train": 96, "clinc|validation": 42,
+        "typed-decisions|train": 96, "typed-decisions|validation": 320,
+        "json-schema|train": 96, "json-schema|validation": 42
+      }
+    },
+    {
+      "name": "truthfulqa",
+      "data_path": "runs/truthfulqa-specialist-v1/cases.jsonl",
+      "data_sha256": "b78df2154baa9078d3225a5d195a2c2423c3d98fbb029e83bff6ac29879f9d27",
+      "dataset": "truthfulqa",
+      "feature_cache": "cache/truthfulqa-specialist-features-v1",
+      "manifest_sha256": "3c74aaf923f9bad82c21c8e7e6cba29db88cd76082a8c99f694b5f911574afe6",
+      "sources": ["truthfulqa"],
+      "splits": ["train", "validation"],
+      "counts": {"truthfulqa|train": 512, "truthfulqa|validation": 256}
+    },
+    {
+      "name": "hellaswag",
+      "data_path": "runs/hellaswag-specialist-v1/cases.jsonl",
+      "data_sha256": "9afb297de0b3d7fa4684c747057149c6a904904e25e32d0523848d07db507edd",
+      "dataset": "hellaswag",
+      "feature_cache": "cache/hellaswag-specialist-features-v1",
+      "manifest_sha256": "4544300276e18dbbc51f5d32841b947dc7fdaeaaae0c46fef2e83a700414dbc9",
+      "sources": ["hellaswag"],
+      "splits": ["train", "validation"],
+      "counts": {"hellaswag|train": 512, "hellaswag|validation": 256}
+    },
+    {
+      "name": "gsm8k",
+      "data_path": "runs/gsm8k-specialist-capacity-v2/cases.jsonl",
+      "data_sha256": "efc49cb858ac451dd907353a120970c1e65f0d31fd99bc05279cf108b47959ac",
+      "dataset": "gsm8k-capacity-v2",
+      "feature_cache": "cache/gsm8k-specialist-capacity-features-v2",
+      "manifest_sha256": "f88f0b65c1284736b757c74fc9250ac0a4a230a9f0654d70e7c7c9b030af13df",
+      "sources": ["gsm8k"],
+      "splits": ["train", "validation"],
+      "counts": {"gsm8k|train": 2048, "gsm8k|validation": 256}
+    }
+  ],
+  "default_model": {
+    "residual_width": 256,
+    "router_width": 128,
+    "dropout": 0.0,
+    "initial_gate_probability": 0.25
+  },
+  "experts": {
+    "qasc": {"weights": "runs/qasc-binary-route-screen-v1/binary-route.safetensors", "weights_sha256": "a1b9d145e3532ddd0460aa3429420088cd74f8a3a56325249f227c5b846853ab"},
+    "snli": {"weights": "runs/snli-specialist-v1/specialist-seed-42.safetensors", "weights_sha256": "b7fa22125e6c24e9b15532ba807bb47b2d2fc1bb28fb7d446312c4c0a71ed65b"},
+    "paws-wiki": {"weights": "runs/paws-wiki-specialist-v1/specialist-seed-42.safetensors", "weights_sha256": "6d185df8a459041819abe6e3a48aed2df49bec335d468150d53b04931f8f2152"},
+    "clinc": {"weights": "runs/clinc-specialist-v1/specialist-seed-42.safetensors", "weights_sha256": "1c1edff2735f173aca9e209e01029fad65c42c66d8840a64b086dafde3da2243"},
+    "truthfulqa": {"weights": "runs/truthfulqa-specialist-training-v1/specialist-seed-42.safetensors", "weights_sha256": "489f5884e020636dd4dfd70aff0cdbea53de87299767fe109390682545a96de3"},
+    "gsm8k": {
+      "weights": "runs/gsm8k-specialist-capacity-training-v2/specialist-seed-42.safetensors",
+      "weights_sha256": "ef3821c2e46d93f91f242b0d6f38c426b8995de590a83a39cc3ef2e1ea80d523",
+      "model": {"residual_width": 512}
+    }
+  },
+  "proper_loss": {"brier_weight": 0.5},
+  "screening_rule": {
+    "required_sources": ["qasc", "snli", "paws-wiki", "clinc", "typed-decisions", "json-schema", "truthfulqa", "hellaswag", "gsm8k"],
+    "decision": "Accept the heterogeneous bank only if all six experts cover all nine consumed validation sources and the full-distribution safe oracle has zero row-level and source-level regressions."
+  },
+  "source_files": {
+    "scripts/run_heterogeneous_expert_bank.py": "19f3054ed5756885e939f5659e09d5a86df889bceb0f1413cc39f56df6f23f9c",
+    "scripts/run_extended_expert_bank.py": "0af24d85ce00741b556e6edc1dc6f64e9f264ae681337e5965d66aa934fa434b",
+    "scripts/run_semantic_factored_route_lofo.py": "bfd63770966e9782faf01234547f80d05879ce276efd3276bf5cefe2653ce746",
+    "scripts/run_factored_safe_route_lofo.py": "8428ca5a8e670dcbc711cfa5b4b334b74d047575ff9872b79250447d9430afad",
+    "src/decision_model/safe_routing.py": "5b6287a7e4e938a34613f11ae48bda01017d4a0aeac2183b728ea25106fb3478",
+    "src/decision_model/expert_bank_features.py": "9a4efbb48d9539ba77c8d518a2a4d6f06515053718a547470e19bd45aea6fa1b",
+    "docs/HETEROGENEOUS_EXPERT_BANK_V2_DESIGN.zh-CN.md": "bfcbbce9e26c73760cdc44780db2e42a91ae96abfce16df2fbcf4667fc6e118b"
+  },
+  "evidence_path": "docs/evidence/heterogeneous-expert-bank-v2.json",
+  "report_path": "docs/HETEROGENEOUS_EXPERT_BANK_V2_RESULT.zh-CN.md",
+  "limitations": [
+    "All nine validation sources are consumed and cannot support a fresh release claim.",
+    "Canonical seed-42 experts are fixed before cross evaluation.",
+    "HellaSwag contributes rows but no expert because its specialist failed the frozen gate.",
+    "The safe oracle measures available headroom; it is not an inference-time router."
+  ]
+}

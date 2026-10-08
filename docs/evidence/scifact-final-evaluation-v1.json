@@ -1,0 +1,89 @@
+{
+  "format_version": 1,
+  "study": "scifact-final-evaluation-v1",
+  "role": "one-time sealed unseen-family public evaluation",
+  "protocol_sha256": "970ece48db9aa9ad353da4007cf188666e4a1d20346695e39bf39ac9d13f1056",
+  "source_archive_sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+  "prepared_data": {
+    "rows": 209,
+    "cases_sha256": "0d51d1ae492521d1109c792dc6613def8f8166288e4392b5068be05974547e01",
+    "selection_sha256": "0d7bd7f903dc4453eaebc80aa1e133e7e200755ed0fb8668f44dc41f452f5a73"
+  },
+  "feature_manifest_sha256": "ece1c5cf71f5767f936579fa15dbdb70e608a33a9d022493710127873e0c2a6e",
+  "runs": [
+    {
+      "seed": 42,
+      "rows": 209,
+      "parent_accuracy": 0.7464114832535885,
+      "accuracy": 0.7464114832535885,
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": -0.07304561495162776,
+      "brier_delta": -0.01491010443990426,
+      "proper_gain": 0.08050066717157989,
+      "context_advantage_delta": 0.08089973448847167,
+      "mean_alpha": 0.9647129186602871,
+      "minimum_alpha": 0.125,
+      "exact_decision_rate": 1.0,
+      "output_contract_rate": 1.0,
+      "permutation_equivariance_rate": 1.0,
+      "weights_file": "runs/full-expert-portfolio-v1/weights-seed-42.json",
+      "weights_file_sha256": "dd88050c599c1a36cccd3102c5fb3f8d724989ba5ea72c21157e28a72de3bc99"
+    },
+    {
+      "seed": 43,
+      "rows": 209,
+      "parent_accuracy": 0.7464114832535885,
+      "accuracy": 0.7464114832535885,
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": -0.07304637114793966,
+      "brier_delta": -0.014910268440914698,
+      "proper_gain": 0.08050150536839695,
+      "context_advantage_delta": 0.0809005915340155,
+      "mean_alpha": 0.9647129186602871,
+      "minimum_alpha": 0.125,
+      "exact_decision_rate": 1.0,
+      "output_contract_rate": 1.0,
+      "permutation_equivariance_rate": 1.0,
+      "weights_file": "runs/full-expert-portfolio-v1/weights-seed-43.json",
+      "weights_file_sha256": "3f4b2ed81e7249a702df6236df5d92ebce0e34f7a6ddb5275c865d3d651d7ceb"
+    },
+    {
+      "seed": 44,
+      "rows": 209,
+      "parent_accuracy": 0.7464114832535885,
+      "accuracy": 0.7464114832535885,
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": -0.07385389085682259,
+      "brier_delta": -0.015042091789002177,
+      "proper_gain": 0.08137493675132368,
+      "context_advantage_delta": 0.08183612605266997,
+      "mean_alpha": 0.9647129186602871,
+      "minimum_alpha": 0.125,
+      "exact_decision_rate": 1.0,
+      "output_contract_rate": 1.0,
+      "permutation_equivariance_rate": 1.0,
+      "weights_file": "runs/full-expert-portfolio-v1/weights-seed-44.json",
+      "weights_file_sha256": "6d1e75d52a9ae1c7dbae8a4f0ca0c2edcf0ae8142b146e45d26eb499f1db9d7e"
+    }
+  ],
+  "checks": {
+    "coverage.seeds": true,
+    "integrity.rows": true,
+    "integrity.cache": true,
+    "decision.exact_each_seed": true,
+    "calibration.cross_entropy_each_seed": true,
+    "calibration.brier_each_seed": true,
+    "utility.proper_each_seed": true,
+    "context.each_seed": true,
+    "contract.each_row_seed": true,
+    "permutation.each_row_seed": true,
+    "projection.material_each_seed": true
+  },
+  "passed": true,
+  "limitations": [
+    "This evaluates scientific claim classification given gold rationale sentences, not evidence retrieval.",
+    "Decision stability guarantees hard-choice retention but not row-level probability improvement.",
+    "A single unseen family cannot establish universal task improvement.",
+    "The current endpoint is a parent plus six frozen experts and a tiny convex policy, not one distilled adapter."
+  ]
+}

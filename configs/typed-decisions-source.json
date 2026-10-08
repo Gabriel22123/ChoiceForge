@@ -1,0 +1,39 @@
+{
+  "dataset": "LocalLLaMA/typed-decisions",
+  "revision": "ea9306458d6e9563628369a3d1e72e362fb381d2",
+  "license": "Apache-2.0",
+  "source_url": "https://huggingface.co/datasets/LocalLLaMA/typed-decisions",
+  "split_seed": 20260926,
+  "expected": {
+    "workflows": [
+      "agent_trace_observability",
+      "customer_service",
+      "invoice_processing",
+      "security_incidents"
+    ],
+    "train_cases_per_workflow": 300,
+    "test_cases_per_workflow": 100,
+    "questions_per_case": 5,
+    "seen_train_cases_per_workflow": 240
+  },
+  "files": [
+    {
+      "path": "all/train-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/LocalLLaMA/typed-decisions/resolve/ea9306458d6e9563628369a3d1e72e362fb381d2/all/train-00000-of-00001.parquet",
+      "bytes": 598824,
+      "sha256": "46a58d63edfd86e23229c78afe8b72307bb4ca9fb0e8df180cabb3c67ec9dcd5"
+    },
+    {
+      "path": "all/test-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/LocalLLaMA/typed-decisions/resolve/ea9306458d6e9563628369a3d1e72e362fb381d2/all/test-00000-of-00001.parquet",
+      "bytes": 222140,
+      "sha256": "4f294f218ea1da27f3efef936359389c62ea4d3973a41457732990f1d31b647c"
+    },
+    {
+      "path": "README.md",
+      "url": "https://huggingface.co/datasets/LocalLLaMA/typed-decisions/resolve/ea9306458d6e9563628369a3d1e72e362fb381d2/README.md",
+      "bytes": 14053,
+      "sha256": "b22b2b778f75574c5f7fc832e9d5b4cfe5b02e51e2a308913cd3cabfb0049a49"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "format_version": 1,
+  "study": "truthfulqa-specialist-v1",
+  "status": "frozen_before_training",
+  "display_name": "TruthfulQA",
+  "data": {
+    "train": "runs/truthfulqa-specialist-v1/cases.jsonl",
+    "train_sha256": "b78df2154baa9078d3225a5d195a2c2423c3d98fbb029e83bff6ac29879f9d27",
+    "train_rows": 512,
+    "train_splits": ["train"],
+    "train_sources": ["truthfulqa"],
+    "train_dataset": "truthfulqa",
+    "validation": "runs/truthfulqa-specialist-v1/cases.jsonl",
+    "validation_sha256": "b78df2154baa9078d3225a5d195a2c2423c3d98fbb029e83bff6ac29879f9d27",
+    "validation_rows": 256,
+    "validation_splits": ["validation"],
+    "validation_sources": ["truthfulqa"],
+    "validation_dataset": "truthfulqa"
+  },
+  "feature_cache": {
+    "path": "cache/truthfulqa-specialist-features-v1",
+    "manifest_sha256": "3c74aaf923f9bad82c21c8e7e6cba29db88cd76082a8c99f694b5f911574afe6"
+  },
+  "training": {
+    "seeds": [42, 43, 44],
+    "epochs": 1,
+    "residual_width": 256,
+    "router_width": 128,
+    "dropout": 0.0,
+    "initial_gate_probability": 0.25,
+    "batch_size": 32,
+    "updates": 16,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "brier_weight": 0.5,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05
+  },
+  "cost": {
+    "brier_weight": 0.5,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05
+  },
+  "screening_rule": {
+    "combined_mean_utility_min": 0.02,
+    "each_source_mean_utility_min": 0.02,
+    "combined_accuracy_min_delta": 0.01,
+    "combined_nll_max_delta": -0.02,
+    "each_source_nll_max_delta": -0.02,
+    "decision": "Count TruthfulQA as one consumed positive-utility specialist family only if every seed passes exact initialization, utility, accuracy, NLL and context-advantage gates."
+  },
+  "evidence_path": "docs/evidence/truthfulqa-specialist-v1.json",
+  "report_path": "docs/TRUTHFULQA_SPECIALIST_RESULT.zh-CN.md",
+  "limitations": [
+    "TruthfulQA validation becomes consumed after this first run and is not fresh release evidence.",
+    "The decoder representation and parent decision head are frozen.",
+    "This screen trains a TruthfulQA specialist only; it does not train or evaluate a router."
+  ],
+  "source_files": {
+    "scripts/run_public_specialist.py": "bc33926c96ba1a2700b2d522eb4e221f177fe195ea7b1259789fd48887596de6",
+    "scripts/run_qasc_routed_residual_screen.py": "bd14916548a04465b33d0a1ed80e0fa9bd621a5ef0ca858670184ba911e64ba4",
+    "src/decision_model/core.py": "ed3eafaff30275e99bf4e7c970584d5bd3f2197d747d25b2ca20adbfb37621ae",
+    "src/decision_model/counterfactual_routing.py": "3f033b5a85fa6a57bcdc43c120de00f3f7a9c791727cc7e9d65049ddba1f37b5",
+    "src/decision_model/feature_screen.py": "3b16e2b880e1e3c861c01988c19ac323818e8a5e7f0afd54b2991d35c36124e2",
+    "src/decision_model/route_utility.py": "be260aa82f322cbac68015129a3c08a46048f92e7b8c6d943c73d8f0820d9f37",
+    "src/decision_model/train.py": "485af4564a68d6e44dbb080e97b0a08ded6925ae0d2bac8d74215fd665fa0f51",
+    "docs/TRUTHFULQA_SPECIALIST_DESIGN.zh-CN.md": "a0b97e5e1f4a58b275ced7cf03c9f13152a66b26b7e588d3306bcbd5f47c76b9"
+  },
+  "interpretation": {
+    "public_data_only": true,
+    "consumed_mechanism_screen": true,
+    "source_balanced_training": true,
+    "router_training": false,
+    "github_publication": false
+  }
+}

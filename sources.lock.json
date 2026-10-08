@@ -1,0 +1,305 @@
+{
+  "format_version": 1,
+  "sources": [
+    {
+      "id": "json-schema",
+      "repository": "https://github.com/json-schema-org/JSON-Schema-Test-Suite",
+      "revision": "ab079cc2bace029fdbb483be28a6ade526bcfbc2",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "837402bd25fad9b704265801ca3f92566a98157c1f9a7acd6f446299ba1c305a"
+        },
+        {
+          "path": "tests/draft2020-12/additionalProperties.json",
+          "sha256": "b96bd533416386ac6421737b48c5c072870ab5dbea910585e9e8fa6305c7ca91"
+        },
+        {
+          "path": "tests/draft2020-12/allOf.json",
+          "sha256": "81045b06706a28f6aa337b485b41a764098e10ac73bb1d346ba0a4285a63e970"
+        },
+        {
+          "path": "tests/draft2020-12/anchor.json",
+          "sha256": "6f60e0782be6072733701459684cadf3741ddd60d96b14698b4d9a19075e9f1e"
+        },
+        {
+          "path": "tests/draft2020-12/anyOf.json",
+          "sha256": "7a6fe41602496c256334ffa3e6fb457b26ac23b97ca03cb16b724ad21a7d216d"
+        },
+        {
+          "path": "tests/draft2020-12/boolean_schema.json",
+          "sha256": "9c8828d325b88a0c632fca22405d5481548b49fb0f9f5536ee401e4d66aa8582"
+        },
+        {
+          "path": "tests/draft2020-12/const.json",
+          "sha256": "83a148d2589cbd211e7e64b31763290f8869d763f513de4658e8d25f0fcc025e"
+        },
+        {
+          "path": "tests/draft2020-12/contains.json",
+          "sha256": "086782fc8b54ac77a4a2afe8b84f8cc7fc9ca7b22473ebd8db3480f2eb8d0ab6"
+        },
+        {
+          "path": "tests/draft2020-12/content.json",
+          "sha256": "9b08c408d32cf64f1966aa300cc246355799d883ed278a61d720493f61711bab"
+        },
+        {
+          "path": "tests/draft2020-12/default.json",
+          "sha256": "db4a8382727f6c687a0fc7bb24347e010c3fcfabd1207150ce025e1a763f6094"
+        },
+        {
+          "path": "tests/draft2020-12/defs.json",
+          "sha256": "5a352f0b1ad9aa906758fa4d363a77c4c4b29cfc193e8d6f7ab1e184be2a75d5"
+        },
+        {
+          "path": "tests/draft2020-12/dependentRequired.json",
+          "sha256": "0824c393115498ac1a62551c3174a3ccd54ee4ef323d5eb9de0dfe3a185ad666"
+        },
+        {
+          "path": "tests/draft2020-12/dependentSchemas.json",
+          "sha256": "f77df8d5243c0f58e04053a14a30706f5a6d5a9e7eccbfd17f8d6445841f8752"
+        },
+        {
+          "path": "tests/draft2020-12/dynamicRef.json",
+          "sha256": "dabad36a92ad5747f6b4f77907addf64795422589bbebdea7af8ff1a2b61879d"
+        },
+        {
+          "path": "tests/draft2020-12/enum.json",
+          "sha256": "1abe7eb883bde4a78c62f08e484e16f32b72ca5c1be725aa54d85cc4546b5031"
+        },
+        {
+          "path": "tests/draft2020-12/exclusiveMaximum.json",
+          "sha256": "e37fc110c48e2a9de564579ceba3e8ab098a36f904dcc1ef02f8cf7b59dc0473"
+        },
+        {
+          "path": "tests/draft2020-12/exclusiveMinimum.json",
+          "sha256": "0395a2423606d07943d3d355d1c9c4a474cc7cb544d3c8f266ceab801c5f0a6d"
+        },
+        {
+          "path": "tests/draft2020-12/format.json",
+          "sha256": "3baf934e2aeace523012f92994e3c9f4b6142d68ba9ece0c12becaffa52eaf5f"
+        },
+        {
+          "path": "tests/draft2020-12/if-then-else.json",
+          "sha256": "4bc76318e6df0e8294cb9aa8a3bf95f04fa9cfea96f295a3b55e725d1289c809"
+        },
+        {
+          "path": "tests/draft2020-12/infinite-loop-detection.json",
+          "sha256": "9fffe850049048a0e411133f7e5fec347f97c077bde65b34c67dadf96e046bcc"
+        },
+        {
+          "path": "tests/draft2020-12/items.json",
+          "sha256": "d924a8171f1f1d04ff026a4e3491d1376297145563158543005b7073b69ab913"
+        },
+        {
+          "path": "tests/draft2020-12/maxContains.json",
+          "sha256": "2d7cf7557b87b15a08457badc66905593834bbdda98f325a22d136dfdefe81ed"
+        },
+        {
+          "path": "tests/draft2020-12/maxItems.json",
+          "sha256": "59fa6236c0766aaac5fb7c9ef82e205c230efa94271485f614218291be7cbc5c"
+        },
+        {
+          "path": "tests/draft2020-12/maxLength.json",
+          "sha256": "ac43a3991586f2d2d1e7e37cad01bb1a7b1c5d9ad7b558d6029d24b41a04d1a9"
+        },
+        {
+          "path": "tests/draft2020-12/maxProperties.json",
+          "sha256": "4f1d14ac74862f134e6769884a7e72d47328daf91e2c6b475ae5f99891e3477d"
+        },
+        {
+          "path": "tests/draft2020-12/maximum.json",
+          "sha256": "dfbc88ef4ede2966250fb2ad44076856d51481ea01ce679cca70efe47606ee90"
+        },
+        {
+          "path": "tests/draft2020-12/minContains.json",
+          "sha256": "2aca05e48dbdf605fe14c775f5470061cf4c8b679e3e6a955a18334ea97d3c23"
+        },
+        {
+          "path": "tests/draft2020-12/minItems.json",
+          "sha256": "9792cedc446be654836b42d0312eca12051e9e2f24cd5d95dcd3f3fc9adccd0a"
+        },
+        {
+          "path": "tests/draft2020-12/minLength.json",
+          "sha256": "999e9731c57a1296e06e8b9b36b0531614ab7a6ac3c20db6fed50badbf3850ab"
+        },
+        {
+          "path": "tests/draft2020-12/minProperties.json",
+          "sha256": "00f641408d1dc3ff81743e0c730eb430ff818e3bbe37007a64138bd513ade05a"
+        },
+        {
+          "path": "tests/draft2020-12/minimum.json",
+          "sha256": "f6a29cb574b76621da23636a636cf12cb31b01646b89543e6ce1a813376439a3"
+        },
+        {
+          "path": "tests/draft2020-12/multipleOf.json",
+          "sha256": "ada35b586efe55186d35d8888a4e4954724c313253b59bd47ec03637a44cb4ad"
+        },
+        {
+          "path": "tests/draft2020-12/not.json",
+          "sha256": "1fd6ef263efd365680c6aaf8f23aa5430d7b9f80b84f46b1208b1ed8353c28b4"
+        },
+        {
+          "path": "tests/draft2020-12/oneOf.json",
+          "sha256": "a8d80a786d07769cb9b8b9a8903ca4f7aa564446ae6b781c7f7f6ffea11ed363"
+        },
+        {
+          "path": "tests/draft2020-12/pattern.json",
+          "sha256": "60713a3b01957fad54f00ab30b378463b3e07b35242c945a9325f8d6ae7080fc"
+        },
+        {
+          "path": "tests/draft2020-12/patternProperties.json",
+          "sha256": "0ffca33f7c234490248c8a1cb6a68c8cd25e1ff96cffa116ed13bf27d0f88871"
+        },
+        {
+          "path": "tests/draft2020-12/prefixItems.json",
+          "sha256": "5b2006fb0d99f9df8e25e384d665edc57427e7849ac0f963f541626fd82bb522"
+        },
+        {
+          "path": "tests/draft2020-12/properties.json",
+          "sha256": "58f01566cfe3e1fc4fb851d3b2eab13768d65ba5dbc4e9f9387ceaf4244a0522"
+        },
+        {
+          "path": "tests/draft2020-12/propertyNames.json",
+          "sha256": "54469f831102465060d0db9a9611e827fb7e87df38179d8a28ac45c10576ef83"
+        },
+        {
+          "path": "tests/draft2020-12/ref.json",
+          "sha256": "ae53f3f57c220879729225eb416cecac909f06b5adaf15f799b4f3e7c0612998"
+        },
+        {
+          "path": "tests/draft2020-12/refRemote.json",
+          "sha256": "8fcb97acb2b76308cab9d82eccd7388dd7d6ca59cf68f6d03281bc40adc9c7ee"
+        },
+        {
+          "path": "tests/draft2020-12/required.json",
+          "sha256": "3e3900dd0e546c1cb4aaab6b24ea0e06a8f7f8c05b272dcc87e85332501ed42e"
+        },
+        {
+          "path": "tests/draft2020-12/type.json",
+          "sha256": "4c5cbe6cbcd28af73761091367b20e07d0403847e236c06c31fc27061bd81192"
+        },
+        {
+          "path": "tests/draft2020-12/unevaluatedItems.json",
+          "sha256": "477e7e734ba86a76fc605d34afa6867ab25081b072792c2d853cbe666e42b7da"
+        },
+        {
+          "path": "tests/draft2020-12/unevaluatedProperties.json",
+          "sha256": "cdf9b1c6253470b01da5482c6833553f56e1fb652bf466476faa19c8f0cd2c7c"
+        },
+        {
+          "path": "tests/draft2020-12/uniqueItems.json",
+          "sha256": "ed84ef6ddc827659e257ba64cbe9679f06932b6320bea5c07622bf3d2cc4daa5"
+        },
+        {
+          "path": "tests/draft2020-12/vocabulary.json",
+          "sha256": "7c753d28de2d551fe0329b5a0ac939de921ffe1dfd1c82336e8d4a78d904ce8a"
+        }
+      ]
+    },
+    {
+      "id": "bandit",
+      "repository": "https://github.com/PyCQA/bandit",
+      "revision": "1d3053df070c91fe0fde002a21536c277d67e5d9",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+        },
+        {
+          "path": "examples/requests-missing-timeout.py",
+          "sha256": "f86fa5ef266c361d77dbcb4b74538ad118441ad7853362215b0226bb1ceb9c4f"
+        },
+        {
+          "path": "examples/requests-ssl-verify-disabled.py",
+          "sha256": "7da634f602141c1331242a7d681ebf2ac128dd9d23973d4b7268845a63848e21"
+        },
+        {
+          "path": "examples/subprocess_shell.py",
+          "sha256": "e57fa980c54aff45b49883db2ebc4b6ddbe6fa85cee9d860cf826b0feaa2ad2c"
+        },
+        {
+          "path": "examples/yaml_load.py",
+          "sha256": "c2a880d76e7a15199674d494ee191b15386ac3c33151a0afdc99f206e7aec435"
+        }
+      ]
+    },
+    {
+      "id": "clinc",
+      "repository": "https://github.com/clinc/oos-eval",
+      "revision": "828f8093932c8fe6ca7936c3d2e52903b1c523de",
+      "license": "CC-BY-3.0",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76"
+        },
+        {
+          "path": "README.md",
+          "sha256": "8a8df26c4de3d25b6c4cff385ca23602c30e4e56828b015206cbc202f6db363a"
+        },
+        {
+          "path": "data/data_full.json",
+          "sha256": "36923c3705a59e08fe9c3883d8bc2dd966ef93e22cb78ac41171782a698d56e0"
+        },
+        {
+          "path": "data/domains.json",
+          "sha256": "b947b579d3b8e74b06f93b01083d8efaff2888b43a3e362533bd88a6e1211b3a"
+        }
+      ]
+    },
+    {
+      "id": "goemotions",
+      "repository": "https://github.com/google-research/google-research",
+      "revision": "4700efb9afa54286b0e04473ba80a13e8461e25f",
+      "license": "CC-BY-4.0",
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "1022d37738b52c672304dbe71038a4a1f0d2cac5de3c9178652873a5698a8674"
+        },
+        {
+          "path": "goemotions/README.md",
+          "sha256": "c882c69be9f400129bce8535319606434481a085be9c20263930670890e171a7"
+        },
+        {
+          "path": "goemotions/data/emotions.txt",
+          "sha256": "45c3ef86782d2a4d7fedcd6d8c111aa0d0e94720689bd164fac94fefb4495a89"
+        },
+        {
+          "path": "goemotions/data/test.tsv",
+          "sha256": "0587b2dd8b27b97352adbfc3fb083d46005c8946657fdc2b1ca8b1cc7f1f8be4"
+        }
+      ]
+    },
+    {
+      "id": "bigbench-logical-deduction",
+      "repository": "https://github.com/google/BIG-bench",
+      "revision": "092b196c1f8f14a54bbc62f24759d43bde46dd3b",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "bigbench/benchmark_tasks/logical_deduction/README.md",
+          "sha256": "d3d0e20ba020525c44f59c6d348f02d84167bb59dc210e39585e5d8de5cd7f4a"
+        },
+        {
+          "path": "bigbench/benchmark_tasks/logical_deduction/three_objects/task.json",
+          "sha256": "5e3f4a7569cb70bb1469374d3d34fb7883445a9d5743e1a81fd8dcdaf6fcb40f"
+        },
+        {
+          "path": "bigbench/benchmark_tasks/logical_deduction/five_objects/task.json",
+          "sha256": "552dec4d5067bdbe033e78e80fdf1f5a8061d17b385379b8ec5104fa17d07918"
+        },
+        {
+          "path": "bigbench/benchmark_tasks/logical_deduction/seven_objects/task.json",
+          "sha256": "5e24146d600b1b2e2d8958e23851e7c958b1a7644a2540fa0de7fa3e51a68cf7"
+        }
+      ]
+    }
+  ]
+}

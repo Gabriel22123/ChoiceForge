@@ -1,0 +1,9 @@
+{
+  "task": "Select the tool that can satisfy the user's request.",
+  "context": "Remind me tomorrow morning to submit my application.",
+  "choices": [
+    {"id": "calendar", "description": "Create reminders and scheduled events."},
+    {"id": "search", "description": "Search public web pages for information."},
+    {"id": "calculator", "description": "Perform arithmetic calculations."}
+  ]
+}

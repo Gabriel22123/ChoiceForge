@@ -1,0 +1,122 @@
+{
+  "objective": "population binary CE with independent Gaussian noise on two logits",
+  "inference_modes": [
+    "softmax of unperturbed logits",
+    "expectation of perturbed softmax"
+  ],
+  "quadrature_orders": [
+    96,
+    192
+  ],
+  "results": [
+    {
+      "true_probability": 0.5,
+      "sigma_per_logit": 0.0,
+      "optimum_logit_difference": -5.551115123127834e-17,
+      "clean_inference_probability": 0.49999999999999994,
+      "noise_averaged_probability": 0.49999999999999994,
+      "clean_probability_error": -5.551115123125783e-17,
+      "quadrature_probability_difference": 5.551115123125783e-17
+    },
+    {
+      "true_probability": 0.5,
+      "sigma_per_logit": 0.1,
+      "optimum_logit_difference": 2.0816681711726418e-17,
+      "clean_inference_probability": 0.5,
+      "noise_averaged_probability": 0.5,
+      "clean_probability_error": 0.0,
+      "quadrature_probability_difference": 1.1102230246251565e-16
+    },
+    {
+      "true_probability": 0.5,
+      "sigma_per_logit": 0.4,
+      "optimum_logit_difference": 2.7755575615627336e-17,
+      "clean_inference_probability": 0.5,
+      "noise_averaged_probability": 0.49999999999999994,
+      "clean_probability_error": 0.0,
+      "quadrature_probability_difference": 1.1102230246251565e-16
+    },
+    {
+      "true_probability": 0.5,
+      "sigma_per_logit": 1.0,
+      "optimum_logit_difference": 5.551115123127834e-17,
+      "clean_inference_probability": 0.5,
+      "noise_averaged_probability": 0.5,
+      "clean_probability_error": 0.0,
+      "quadrature_probability_difference": 1.1102230246251565e-16
+    },
+    {
+      "true_probability": 0.7,
+      "sigma_per_logit": 0.0,
+      "optimum_logit_difference": 0.847297860387203,
+      "clean_inference_probability": 0.6999999999999998,
+      "noise_averaged_probability": 0.6999999999999997,
+      "clean_probability_error": -1.1102230246251565e-16,
+      "quadrature_probability_difference": 0.0
+    },
+    {
+      "true_probability": 0.7,
+      "sigma_per_logit": 0.1,
+      "optimum_logit_difference": 0.8512812284451075,
+      "clean_inference_probability": 0.7008358402950483,
+      "noise_averaged_probability": 0.7,
+      "clean_probability_error": 0.0008358402950483512,
+      "quadrature_probability_difference": 1.1102230246251565e-16
+    },
+    {
+      "true_probability": 0.7,
+      "sigma_per_logit": 0.4,
+      "optimum_logit_difference": 0.907575479942283,
+      "clean_inference_probability": 0.7125037748533979,
+      "noise_averaged_probability": 0.7,
+      "clean_probability_error": 0.012503774853397931,
+      "quadrature_probability_difference": 1.1102230246251565e-16
+    },
+    {
+      "true_probability": 0.7,
+      "sigma_per_logit": 1.0,
+      "optimum_logit_difference": 1.1563317537050266,
+      "clean_inference_probability": 0.7606655365408052,
+      "noise_averaged_probability": 0.6999999999999997,
+      "clean_probability_error": 0.0606655365408052,
+      "quadrature_probability_difference": 0.0
+    },
+    {
+      "true_probability": 0.9,
+      "sigma_per_logit": 0.0,
+      "optimum_logit_difference": 2.19722457733622,
+      "clean_inference_probability": 0.9,
+      "noise_averaged_probability": 0.8999999999999999,
+      "clean_probability_error": 0.0,
+      "quadrature_probability_difference": 0.0
+    },
+    {
+      "true_probability": 0.9,
+      "sigma_per_logit": 0.1,
+      "optimum_logit_difference": 2.205210185603491,
+      "clean_inference_probability": 0.9007164125409625,
+      "noise_averaged_probability": 0.9000000000000001,
+      "clean_probability_error": 0.0007164125409624411,
+      "quadrature_probability_difference": 1.1102230246251565e-16
+    },
+    {
+      "true_probability": 0.9,
+      "sigma_per_logit": 0.4,
+      "optimum_logit_difference": 2.3216021060311123,
+      "clean_inference_probability": 0.9106503838372979,
+      "noise_averaged_probability": 0.8999999999999999,
+      "clean_probability_error": 0.010650383837297883,
+      "quadrature_probability_difference": 0.0
+    },
+    {
+      "true_probability": 0.9,
+      "sigma_per_logit": 1.0,
+      "optimum_logit_difference": 2.879915674028341,
+      "clean_inference_probability": 0.9468446196453222,
+      "noise_averaged_probability": 0.8999999999999999,
+      "clean_probability_error": 0.04684461964532216,
+      "quadrature_probability_difference": 1.1102230246251565e-16
+    }
+  ],
+  "scope": "Illustrates a train/inference mismatch for a known binary population; not an undisclosed algorithm or a model accuracy benchmark"
+}

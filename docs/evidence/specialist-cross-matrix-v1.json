@@ -1,0 +1,573 @@
+{
+  "format_version": 1,
+  "study": "specialist-cross-matrix-v1",
+  "role": "consumed frozen expert-bank cross-utility screen",
+  "protocol_sha256": "b450ca80d7c5c12c0e3dd23b9253b932e36b8773a19d72ec9c6a37bb0636c45c",
+  "parameter_sha256": {
+    "qasc:1701": "bee29d3e310b292ba72848b0ee5b4f6c53d39d51c30380c91f98a7f2a88985df",
+    "snli:42": "30a957d28d99341ae40da8eaee0a981bd5957e34ab9e49cb1cb533fea670830c",
+    "snli:43": "d1ed4f535d1e62ac029b7904f0b4f52bcd01403052a934d9d997e21393d9408f",
+    "snli:44": "f01afe8d09f453c72ff1595f92e3f982f4177294faf5b606b48c2b41e24a9896",
+    "paws-wiki:42": "db5f65675c863d87b66dca577ab3b16e9decc03ee8db76d4eb876e395f85b5e3",
+    "paws-wiki:43": "796a7fae7fd22d50fa693726586c6e43e962124459e607e093d011b4885bfac2",
+    "paws-wiki:44": "6b3114dd16961dd1894e320b596a90ba24f489627571d1fd3a4dcc4dd60cef3a",
+    "clinc:42": "5160d90c6e297b8540dc3949298b1be12368dfe7de3f5d80c2c63c9a77bf9522",
+    "clinc:43": "855273d31983a703ed503abbab0b97abbecf80468a23aaf7fe75a942bd611a32",
+    "clinc:44": "b5c548fb213d272a4668e56f19f9dba42c6d6249d2c3c766ccf53879a1a385c5"
+  },
+  "matrix": {
+    "qasc": {
+      "1701": {
+        "clinc": {
+          "rows": 42,
+          "mean_utility": 8.074366892937437e-05,
+          "open_rate": 0.40476190476190477,
+          "accuracy_delta": 0.0,
+          "nll_delta": -0.0007769288753210757
+        },
+        "json-schema": {
+          "rows": 42,
+          "mean_utility": -0.024069268433820633,
+          "open_rate": 0.42857142857142855,
+          "accuracy_delta": -0.047619047619047616,
+          "nll_delta": 0.01297990560639728
+        },
+        "paws-wiki": {
+          "rows": 96,
+          "mean_utility": 0.04341218517098847,
+          "open_rate": 0.25,
+          "accuracy_delta": 0.01041666666666663,
+          "nll_delta": -0.029212981344600875
+        },
+        "qasc": {
+          "rows": 128,
+          "mean_utility": 0.4560816379971584,
+          "open_rate": 0.8359375,
+          "accuracy_delta": 0.109375,
+          "nll_delta": -0.3514322552698924
+        },
+        "snli": {
+          "rows": 96,
+          "mean_utility": 0.044760980982876696,
+          "open_rate": 0.3958333333333333,
+          "accuracy_delta": -0.01041666666666663,
+          "nll_delta": -0.027415002445006054
+        },
+        "typed-decisions": {
+          "rows": 320,
+          "mean_utility": 0.00883595862906077,
+          "open_rate": 0.471875,
+          "accuracy_delta": 0.0,
+          "nll_delta": -0.030526413740286973
+        }
+      }
+    },
+    "snli": {
+      "42": {
+        "clinc": {
+          "rows": 42,
+          "mean_utility": -0.008283692553266605,
+          "open_rate": 0.047619047619047616,
+          "accuracy_delta": 0.0,
+          "nll_delta": 0.00839828796625993
+        },
+        "json-schema": {
+          "rows": 42,
+          "mean_utility": 0.016345627251125518,
+          "open_rate": 0.47619047619047616,
+          "accuracy_delta": 0.0,
+          "nll_delta": -0.008250989859878821
+        },
+        "paws-wiki": {
+          "rows": 96,
+          "mean_utility": 0.03782569254932847,
+          "open_rate": 0.15625,
+          "accuracy_delta": 0.01041666666666663,
+          "nll_delta": -0.025910654223190277
+        },
+        "qasc": {
+          "rows": 128,
+          "mean_utility": -0.05890937319054501,
+          "open_rate": 0.1015625,
+          "accuracy_delta": -0.0234375,
+          "nll_delta": 0.046518198245807496
+        },
+        "snli": {
+          "rows": 96,
+          "mean_utility": 0.06934768599361026,
+          "open_rate": 0.4479166666666667,
+          "accuracy_delta": 0.0,
+          "nll_delta": -0.044198775328151196
+        },
+        "typed-decisions": {
+          "rows": 320,
+          "mean_utility": 0.01463325308432104,
+          "open_rate": 0.434375,
+          "accuracy_delta": 0.006249999999999978,
+          "nll_delta": -0.03521167502928213
+        }
+      },
+      "43": {
+        "clinc": {
+          "rows": 42,
+          "mean_utility": -0.011224113360575367,
+          "open_rate": 0.047619047619047616,
+          "accuracy_delta": 0.0,
+          "nll_delta": 0.010964333339242315
+        },
+        "json-schema": {
+          "rows": 42,
+          "mean_utility": 0.021548226475715637,
+          "open_rate": 0.47619047619047616,
+          "accuracy_delta": 0.047619047619047616,
+          "nll_delta": -0.011165522940790318
+        },
+        "paws-wiki": {
+          "rows": 96,
+          "mean_utility": 0.04622083368243087,
+          "open_rate": 0.14583333333333334,
+          "accuracy_delta": 0.02083333333333337,
+          "nll_delta": -0.03179011720544067
+        },
+        "qasc": {
+          "rows": 128,
+          "mean_utility": -0.06071059543319279,
+          "open_rate": 0.109375,
+          "accuracy_delta": -0.0234375,
+          "nll_delta": 0.048787130284809965
+        },
+        "snli": {
+          "rows": 96,
+          "mean_utility": 0.07207365052211874,
+          "open_rate": 0.4166666666666667,
+          "accuracy_delta": 0.01041666666666674,
+          "nll_delta": -0.04530818729353325
+        },
+        "typed-decisions": {
+          "rows": 320,
+          "mean_utility": 0.019826584115799052,
+          "open_rate": 0.421875,
+          "accuracy_delta": 0.006249999999999978,
+          "nll_delta": -0.04698039553468236
+        }
+      },
+      "44": {
+        "clinc": {
+          "rows": 42,
+          "mean_utility": -0.010810593649564128,
+          "open_rate": 0.047619047619047616,
+          "accuracy_delta": 0.0,
+          "nll_delta": 0.010737556875044206
+        },
+        "json-schema": {
+          "rows": 42,
+          "mean_utility": 0.018588895599047344,
+          "open_rate": 0.47619047619047616,
+          "accuracy_delta": 0.02380952380952378,
+          "nll_delta": -0.009413983402627002
+        },
+        "paws-wiki": {
+          "rows": 96,
+          "mean_utility": 0.04304206655918582,
+          "open_rate": 0.15625,
+          "accuracy_delta": 0.02083333333333337,
+          "nll_delta": -0.029319849359430994
+        },
+        "qasc": {
+          "rows": 128,
+          "mean_utility": -0.06879946015396854,
+          "open_rate": 0.09375,
+          "accuracy_delta": -0.0234375,
+          "nll_delta": 0.054667496514746894
+        },
+        "snli": {
+          "rows": 96,
+          "mean_utility": 0.07200545619707555,
+          "open_rate": 0.4479166666666667,
+          "accuracy_delta": 0.01041666666666674,
+          "nll_delta": -0.04462556972543119
+        },
+        "typed-decisions": {
+          "rows": 320,
+          "mean_utility": 0.01829880105215125,
+          "open_rate": 0.425,
+          "accuracy_delta": 0.006249999999999978,
+          "nll_delta": -0.043602536924109536
+        }
+      }
+    },
+    "paws-wiki": {
+      "42": {
+        "clinc": {
+          "rows": 42,
+          "mean_utility": -0.007189734019318296,
+          "open_rate": 0.07142857142857142,
+          "accuracy_delta": 0.0,
+          "nll_delta": 0.006790869137162758
+        },
+        "json-schema": {
+          "rows": 42,
+          "mean_utility": 0.043102825326578956,
+          "open_rate": 0.5476190476190477,
+          "accuracy_delta": 0.02380952380952378,
+          "nll_delta": -0.029766481621969598
+        },
+        "paws-wiki": {
+          "rows": 96,
+          "mean_utility": 0.060402310818365855,
+          "open_rate": 0.16666666666666666,
+          "accuracy_delta": 0.01041666666666663,
+          "nll_delta": -0.045085549157122706
+        },
+        "qasc": {
+          "rows": 128,
+          "mean_utility": -0.0063312415513792075,
+          "open_rate": 0.25,
+          "accuracy_delta": 0.0,
+          "nll_delta": 0.008162025352484226
+        },
+        "snli": {
+          "rows": 96,
+          "mean_utility": 0.039377370126506626,
+          "open_rate": 0.3125,
+          "accuracy_delta": -0.02083333333333326,
+          "nll_delta": -0.019364218520921406
+        },
+        "typed-decisions": {
+          "rows": 320,
+          "mean_utility": 0.026532938926538917,
+          "open_rate": 0.29375,
+          "accuracy_delta": 0.006249999999999978,
+          "nll_delta": -0.08463474843898644
+        }
+      },
+      "43": {
+        "clinc": {
+          "rows": 42,
+          "mean_utility": -0.0071294684819891005,
+          "open_rate": 0.07142857142857142,
+          "accuracy_delta": 0.0,
+          "nll_delta": 0.00678310669016436
+        },
+        "json-schema": {
+          "rows": 42,
+          "mean_utility": 0.04418522616227468,
+          "open_rate": 0.5238095238095238,
+          "accuracy_delta": 0.047619047619047616,
+          "nll_delta": -0.03002710738923331
+        },
+        "paws-wiki": {
+          "rows": 96,
+          "mean_utility": 0.06315898836570948,
+          "open_rate": 0.15625,
+          "accuracy_delta": 0.01041666666666663,
+          "nll_delta": -0.0469944992000732
+        },
+        "qasc": {
+          "rows": 128,
+          "mean_utility": -0.004817142779756978,
+          "open_rate": 0.2265625,
+          "accuracy_delta": 0.0,
+          "nll_delta": 0.007069464619901655
+        },
+        "snli": {
+          "rows": 96,
+          "mean_utility": 0.04235503473804177,
+          "open_rate": 0.3229166666666667,
+          "accuracy_delta": -0.01041666666666663,
+          "nll_delta": -0.021313412425258638
+        },
+        "typed-decisions": {
+          "rows": 320,
+          "mean_utility": 0.028884083536104298,
+          "open_rate": 0.296875,
+          "accuracy_delta": 0.006249999999999978,
+          "nll_delta": -0.08683238610524846
+        }
+      },
+      "44": {
+        "clinc": {
+          "rows": 42,
+          "mean_utility": -0.007746733677430754,
+          "open_rate": 0.047619047619047616,
+          "accuracy_delta": 0.0,
+          "nll_delta": 0.00726794702683272
+        },
+        "json-schema": {
+          "rows": 42,
+          "mean_utility": 0.044664341069403146,
+          "open_rate": 0.5476190476190477,
+          "accuracy_delta": 0.02380952380952378,
+          "nll_delta": -0.030589067264024772
+        },
+        "paws-wiki": {
+          "rows": 96,
+          "mean_utility": 0.06461417196017767,
+          "open_rate": 0.16666666666666666,
+          "accuracy_delta": 0.01041666666666663,
+          "nll_delta": -0.04795012155401829
+        },
+        "qasc": {
+          "rows": 128,
+          "mean_utility": 0.0037583394687317195,
+          "open_rate": 0.21875,
+          "accuracy_delta": 0.0,
+          "nll_delta": 0.0006366413388271264
+        },
+        "snli": {
+          "rows": 96,
+          "mean_utility": 0.04122175608063117,
+          "open_rate": 0.3125,
+          "accuracy_delta": -0.02083333333333326,
+          "nll_delta": -0.02025442626704399
+        },
+        "typed-decisions": {
+          "rows": 320,
+          "mean_utility": 0.02601635778119089,
+          "open_rate": 0.2875,
+          "accuracy_delta": 0.006249999999999978,
+          "nll_delta": -0.08275194703562616
+        }
+      }
+    },
+    "clinc": {
+      "42": {
+        "clinc": {
+          "rows": 42,
+          "mean_utility": 0.01467908828514434,
+          "open_rate": 0.9047619047619048,
+          "accuracy_delta": 0.0,
+          "nll_delta": -0.01794656040397708
+        },
+        "json-schema": {
+          "rows": 42,
+          "mean_utility": -0.35965920204208013,
+          "open_rate": 0.47619047619047616,
+          "accuracy_delta": 0.02380952380952378,
+          "nll_delta": 0.25706652545159314
+        },
+        "paws-wiki": {
+          "rows": 96,
+          "mean_utility": -0.42575406414228684,
+          "open_rate": 0.8333333333333334,
+          "accuracy_delta": 0.0,
+          "nll_delta": 0.3335260016996762
+        },
+        "qasc": {
+          "rows": 128,
+          "mean_utility": -0.2776571936392429,
+          "open_rate": 0.8359375,
+          "accuracy_delta": 0.0,
+          "nll_delta": 0.22091012219343686
+        },
+        "snli": {
+          "rows": 96,
+          "mean_utility": -0.47413138165817753,
+          "open_rate": 0.6354166666666666,
+          "accuracy_delta": -0.03125,
+          "nll_delta": 0.35556022358939365
+        },
+        "typed-decisions": {
+          "rows": 320,
+          "mean_utility": -0.3977067068306496,
+          "open_rate": 0.671875,
+          "accuracy_delta": -0.012499999999999956,
+          "nll_delta": 0.6521868305294842
+        }
+      },
+      "43": {
+        "clinc": {
+          "rows": 42,
+          "mean_utility": 0.015302970124182701,
+          "open_rate": 0.9047619047619048,
+          "accuracy_delta": 0.0,
+          "nll_delta": -0.018240483169756246
+        },
+        "json-schema": {
+          "rows": 42,
+          "mean_utility": -0.350162311678841,
+          "open_rate": 0.5,
+          "accuracy_delta": 0.02380952380952378,
+          "nll_delta": 0.2493876413117393
+        },
+        "paws-wiki": {
+          "rows": 96,
+          "mean_utility": -0.4162387645543883,
+          "open_rate": 0.8333333333333334,
+          "accuracy_delta": 0.0,
+          "nll_delta": 0.3258622601505676
+        },
+        "qasc": {
+          "rows": 128,
+          "mean_utility": -0.27429704451242287,
+          "open_rate": 0.84375,
+          "accuracy_delta": 0.0,
+          "nll_delta": 0.2178603556962082
+        },
+        "snli": {
+          "rows": 96,
+          "mean_utility": -0.4637335147272097,
+          "open_rate": 0.6354166666666666,
+          "accuracy_delta": -0.01041666666666663,
+          "nll_delta": 0.3467764743712848
+        },
+        "typed-decisions": {
+          "rows": 320,
+          "mean_utility": -0.3867897149946657,
+          "open_rate": 0.675,
+          "accuracy_delta": -0.015625,
+          "nll_delta": 0.6344443968777378
+        }
+      },
+      "44": {
+        "clinc": {
+          "rows": 42,
+          "mean_utility": 0.015786355965766625,
+          "open_rate": 0.9047619047619048,
+          "accuracy_delta": 0.0,
+          "nll_delta": -0.01858760015930102
+        },
+        "json-schema": {
+          "rows": 42,
+          "mean_utility": -0.34706451814799083,
+          "open_rate": 0.47619047619047616,
+          "accuracy_delta": 0.02380952380952378,
+          "nll_delta": 0.2473324752617989
+        },
+        "paws-wiki": {
+          "rows": 96,
+          "mean_utility": -0.41724997995455243,
+          "open_rate": 0.8333333333333334,
+          "accuracy_delta": 0.0,
+          "nll_delta": 0.32665935897747217
+        },
+        "qasc": {
+          "rows": 128,
+          "mean_utility": -0.2735675754465774,
+          "open_rate": 0.8359375,
+          "accuracy_delta": 0.0,
+          "nll_delta": 0.21734506988747893
+        },
+        "snli": {
+          "rows": 96,
+          "mean_utility": -0.4618535347544821,
+          "open_rate": 0.6458333333333334,
+          "accuracy_delta": -0.01041666666666663,
+          "nll_delta": 0.3450085347527293
+        },
+        "typed-decisions": {
+          "rows": 320,
+          "mean_utility": -0.3823746375186602,
+          "open_rate": 0.671875,
+          "accuracy_delta": -0.006249999999999978,
+          "nll_delta": 0.6311461334994841
+        }
+      }
+    }
+  },
+  "oracle": {
+    "rows": 724,
+    "mean_utility": 0.2773304292814873,
+    "selection": {
+      "qasc": 101,
+      "paws-wiki": 64,
+      "snli": 69,
+      "clinc": 484,
+      "parent": 6
+    },
+    "parent_accuracy": 0.7292817679558011,
+    "oracle_accuracy": 0.7790055248618785,
+    "accuracy_delta": 0.04972375690607733,
+    "parent_nll": 0.8217971668386246,
+    "oracle_nll": 0.8016072617476803,
+    "nll_delta": -0.020189905090944316,
+    "by_source": {
+      "clinc": {
+        "rows": 42,
+        "mean_utility": 0.026513267258754542,
+        "selection": {
+          "clinc": 38,
+          "parent": 3,
+          "snli": 1
+        },
+        "accuracy_delta": 0.0,
+        "nll_delta": -0.022402783171060266
+      },
+      "json-schema": {
+        "rows": 42,
+        "mean_utility": 0.2543871019567762,
+        "selection": {
+          "clinc": 18,
+          "paws-wiki": 11,
+          "snli": 6,
+          "qasc": 7
+        },
+        "accuracy_delta": 0.0714285714285714,
+        "nll_delta": -0.19084839034495604
+      },
+      "paws-wiki": {
+        "rows": 96,
+        "mean_utility": 0.16492620289864135,
+        "selection": {
+          "clinc": 80,
+          "snli": 6,
+          "paws-wiki": 5,
+          "qasc": 5
+        },
+        "accuracy_delta": 0.03125,
+        "nll_delta": -0.12520963068360214
+      },
+      "qasc": {
+        "rows": 128,
+        "mean_utility": 0.48905764780829486,
+        "selection": {
+          "clinc": 83,
+          "qasc": 42,
+          "paws-wiki": 2,
+          "parent": 1
+        },
+        "accuracy_delta": 0.109375,
+        "nll_delta": -0.37961889016049055
+      },
+      "snli": {
+        "rows": 96,
+        "mean_utility": 0.3269663177828382,
+        "selection": {
+          "qasc": 15,
+          "paws-wiki": 6,
+          "snli": 19,
+          "clinc": 56
+        },
+        "accuracy_delta": 0.03125,
+        "nll_delta": -0.2433415433136602
+      },
+      "typed-decisions": {
+        "rows": 320,
+        "mean_utility": 0.24740110746206484,
+        "selection": {
+          "paws-wiki": 40,
+          "snli": 37,
+          "clinc": 209,
+          "qasc": 32,
+          "parent": 2
+        },
+        "accuracy_delta": 0.04062500000000002,
+        "nll_delta": 0.2447224645190893
+      }
+    }
+  },
+  "checks": {
+    "experts.own_family_utility": true,
+    "oracle.mean_utility": true,
+    "oracle.accuracy": true,
+    "oracle.nll": true,
+    "routing.needed": true
+  },
+  "advances_to_multi_expert_router_design": true,
+  "limitations": [
+    "All task-family validation rows are consumed and cannot support a fresh release claim.",
+    "The oracle reads gold counterfactual costs and is not an inference-time router.",
+    "QASC has one frozen endpoint while SNLI, PAWS-Wiki and CLINC retain three seeds.",
+    "The expert bank uses a frozen decoder representation and frozen parent head."
+  ]
+}

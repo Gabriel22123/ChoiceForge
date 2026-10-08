@@ -1,0 +1,132 @@
+{
+  "format_version": 1,
+  "study": "qasc-dual-function-screen-v1",
+  "protocol_sha256": "40864f8eab2aba51d93d81123fc1edd111797a5e0fbc9bcf79d1e1d2e21bf33e",
+  "role": "consumed single-seed development screen; no multiseed or release claim",
+  "arms": {
+    "half-qasc-evidence-only": {
+      "null_distillation_weight": 0.0,
+      "seen": {
+        "accuracy": 0.752906976744186,
+        "nll": 0.8569105151555679
+      },
+      "development": {
+        "accuracy": 0.6536458333333334,
+        "context_advantage": {
+          "rows": 384,
+          "mean": 0.10973301260049227,
+          "positive": 236,
+          "by_source": {
+            "bigbench-causal_judgment": {
+              "rows": 128,
+              "mean": -0.039206052717309016,
+              "positive": 72
+            },
+            "bigbench-formal_fallacies_syllogisms_negation": {
+              "rows": 128,
+              "mean": 0.01469739244050454,
+              "positive": 56
+            },
+            "bigbench-movie_recommendation": {
+              "rows": 128,
+              "mean": 0.3537076980782813,
+              "positive": 108
+            }
+          }
+        },
+        "context_delta_vs_parent": {
+          "bigbench-causal_judgment": -0.025597275021462498,
+          "bigbench-formal_fallacies_syllogisms_negation": 0.005208344382423671,
+          "bigbench-movie_recommendation": 0.016728123782039472
+        }
+      },
+      "qasc": {
+        "accuracy": 0.90625,
+        "nll": 0.21028205472127437,
+        "context_advantage": 1.9636580227136
+      },
+      "audit": {
+        "cases": 24,
+        "stable_all_orders": 24,
+        "correct_all_orders": 21,
+        "max_reload_probability_difference": 5.960464477539063e-08,
+        "max_id_rename_probability_difference": 0.0
+      },
+      "absolute_checks": {
+        "seen.accuracy": true,
+        "seen.nll": false,
+        "development.accuracy": false,
+        "development.context_retention": false,
+        "qasc.accuracy": true,
+        "qasc.nll": true,
+        "qasc.context": true,
+        "audit": true
+      },
+      "passes_absolute": false
+    },
+    "half-qasc-dual-function": {
+      "null_distillation_weight": 1.0,
+      "seen": {
+        "accuracy": 0.752906976744186,
+        "nll": 0.8474416461732283
+      },
+      "development": {
+        "accuracy": 0.65625,
+        "context_advantage": {
+          "rows": 384,
+          "mean": 0.1095147317971813,
+          "positive": 236,
+          "by_source": {
+            "bigbench-causal_judgment": {
+              "rows": 128,
+              "mean": -0.03960036981091637,
+              "positive": 72
+            },
+            "bigbench-formal_fallacies_syllogisms_negation": {
+              "rows": 128,
+              "mean": 0.012726583150907678,
+              "positive": 56
+            },
+            "bigbench-movie_recommendation": {
+              "rows": 128,
+              "mean": 0.35541798205155256,
+              "positive": 108
+            }
+          }
+        },
+        "context_delta_vs_parent": {
+          "bigbench-causal_judgment": -0.025991592115069854,
+          "bigbench-formal_fallacies_syllogisms_negation": 0.00323753509282681,
+          "bigbench-movie_recommendation": 0.01843840775531075
+        }
+      },
+      "qasc": {
+        "accuracy": 0.90625,
+        "nll": 0.21476614784138517,
+        "context_advantage": 1.9655332526561125
+      },
+      "audit": {
+        "cases": 24,
+        "stable_all_orders": 24,
+        "correct_all_orders": 20,
+        "max_reload_probability_difference": 1.1920928955078125e-07,
+        "max_id_rename_probability_difference": 0.0
+      },
+      "absolute_checks": {
+        "seen.accuracy": true,
+        "seen.nll": false,
+        "development.accuracy": false,
+        "development.context_retention": false,
+        "qasc.accuracy": true,
+        "qasc.nll": true,
+        "qasc.context": true,
+        "audit": true
+      },
+      "passes_absolute": false
+    }
+  },
+  "dual_causal_context_advantage_delta_vs_control": -0.00039431709360735617,
+  "dual_mechanism_check": false,
+  "selects_next_data_expansion_route": false,
+  "new_sealed_tasks_required_for_release": true
+}

@@ -1,0 +1,36 @@
+{
+  "study": "local-model-bundle-v1",
+  "display_name": "ChoiceForge portable local model bundle",
+  "status": "frozen_before_assembly",
+  "adapter": {
+    "metadata": "runs/canonical-merged-adapter-v1/adapter.json",
+    "weights": "runs/canonical-merged-adapter-v1/adapter.safetensors",
+    "sha256": {
+      "adapter.json": "b85b843a0d5d1bf3aa866d54d1c1f9fceed37ef337f71294330a79d5bebca368",
+      "adapter.safetensors": "8e4c816e43ea70ccac43145646583e6466357455bc794761faecbe0fe23f196a"
+    }
+  },
+  "parent": {
+    "model": "runs/functional-retention-screen-v1/warm-functional-context/model.json",
+    "weights": "runs/functional-retention-screen-v1/warm-functional-context/decision.safetensors",
+    "calibration": "runs/functional-retention-screen-v1/warm-functional-context/calibration.json",
+    "sha256": {
+      "parent/model.json": "b728b762e7f4d664fa37b3d6cb5976d8f6c731cebca502440f4814f26c052c6f",
+      "parent/decision.safetensors": "24a64f1efa256e182049db117b8ce67495dd401326b1db5ebbba168a6f08c180",
+      "parent/calibration.json": "e41aa1253886ad1ca0954219355d8f123a5ca62944fbc8ee4d03da05b2d486d9"
+    }
+  },
+  "public_base": {
+    "repository": "https://huggingface.co/openbmb/MiniCPM5-2B-Base",
+    "revision": "96a57cd572a02506b4500f54427dca24970c1bac",
+    "license": "Apache-2.0",
+    "included": false
+  },
+  "source_files": {
+    "scripts/build_local_model_bundle.py": "09bf2315c77d3f13bd6b302d4772fbd19ff6e07e918bda54c593230e5c32773b",
+    "src/decision_model/merged_runtime.py": "a5f47b32d154a29d5814ed402bb64a5689816e230d1052c24f03758aab9e4fb0",
+    "src/decision_model/cli.py": "0a3106787eac6751cec4a73a8b55e026c808a3dee461284b2dccdd29bda24848",
+    "docs/LOCAL_MODEL_BUNDLE_V1.zh-CN.md": "adb4c66389f43bc61551e4729c3562c82345bd384b3e9939973236baeacd4d74"
+  },
+  "evidence_path": "docs/evidence/local-model-bundle-v1.json"
+}

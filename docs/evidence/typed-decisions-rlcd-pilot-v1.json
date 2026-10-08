@@ -1,0 +1,461 @@
+{
+  "status": "complete_pilot_no_method_advancement",
+  "protocol": {
+    "created_utc": "2026-09-26T15:09:10.545431+00:00",
+    "protocol_id": "typed-decisions-rlcd-pilot-v1",
+    "pilot_only": true,
+    "question": "Which RLCD ingredients are implemented correctly and show enough directional signal for a multi-seed four-fold study?",
+    "dataset_sha256": "6d837cf8ee62b053d83b570d1ff3a90182a30c0a5eaec249b3449919e8cfa9eb",
+    "rows": {
+      "train": 30,
+      "validation": 15,
+      "test": 20
+    },
+    "held_out_workflow": "security_incidents",
+    "seed": 20260926,
+    "arms": {
+      "H-hard": {
+        "training_target_mode": "hard",
+        "gradient_estimator": "clean",
+        "ranked_probability_weight": 0.0,
+        "clean_anchor_weight": 0.0
+      },
+      "S-soft": {
+        "training_target_mode": "distribution",
+        "gradient_estimator": "clean",
+        "ranked_probability_weight": 0.0,
+        "clean_anchor_weight": 0.0
+      },
+      "T-typed-rps": {
+        "training_target_mode": "distribution",
+        "gradient_estimator": "clean",
+        "ranked_probability_weight": 1.0,
+        "clean_anchor_weight": 0.0
+      },
+      "R-rlcd-loo": {
+        "training_target_mode": "distribution",
+        "gradient_estimator": "score_function",
+        "ranked_probability_weight": 1.0,
+        "clean_anchor_weight": 1.0
+      }
+    },
+    "config_sha256": {
+      "H-hard": "5b82cd2bac6a48def8af8803343363f486f49e1337e175dc285648338249c0db",
+      "S-soft": "99388c5e22632dfbd6274dc5c547b2fb517c70fde10f58585dffaa82f3207a59",
+      "T-typed-rps": "303a313f4351fad23929f947d64542365a2b64c8cfbb5d91c580bbba22fb1df4",
+      "R-rlcd-loo": "da8f66f57a8bfd76b5e1fbba13f3703690d92d3ad77b12eb41f2c563ccfdc37f"
+    },
+    "source_files": {
+      "src/decision_model/core.py": "3ec89d17733b39c2208cb7e2f7a3c3d8cbe82900fcaf5ed07cadeeff7d8529e4",
+      "src/decision_model/objective.py": "2405e683f108c9c2c6bf75d180ee6a0f7d0cfc95217b923f8a9dfddef0877b81",
+      "src/decision_model/training_objective.py": "5b7afd03f288d93d11ac9108da4af82fd01eb5e87f23d1d2ebfb1823906f0d96",
+      "src/decision_model/train.py": "1740993460dd249d73da30a9ed54adbc69f5e11c1176dbb1612cd1779b161e10",
+      "src/decision_model/decoder_model.py": "fe94a8f3f9ecef393bd376f76868643be7abecf0a476df2d7248d88e28120d2f",
+      "scripts/run_typed_decisions_rlcd_pilot.py": "06be1f314514f6dd314606869159bcefa71e34dd1b7caa21a42a856afe8f0037",
+      "scripts/prepare_typed_decisions_pilot.py": "df80ade8db869d75b1fb05a1f14e86d2430e32aebee5c7fc2ecd8dc0b18cc1f7",
+      "configs/typed-decisions-rlcd-pilot-v1.json": "dd4d9d99624e623ba59f67c357a947f5382e14fcd0846bf50abcd747f89208f2"
+    },
+    "matched": [
+      "same fresh MiniCPM trainable initialization",
+      "same 30/15/20 question IDs",
+      "same row and candidate permutation plan",
+      "same encoder forwards and optimizer budget",
+      "same CE+0.5 Brier base proper score",
+      "fixed final update; test unused for selection"
+    ],
+    "contrasts": {
+      "H_to_S": "replace argmax hard supervision with the full teacher distribution",
+      "S_to_T": "add ordered RPS only to Score questions; retain exact gradients",
+      "T_to_R": "replace exact typed proper-risk gradient with four Gaussian actions, zero-sum projection, independent leave-one-out score-function baseline and a unit soft-CE anchor"
+    },
+    "rlcd_boundary": "R is an independent public-principle implementation. It omits stochastic advantage standard-deviation normalization because prior stationary-point checks found that normalization can move the proper-risk optimum.",
+    "advancement": "None. One seed, 20 test questions and tiny adapters are implementation/directional evidence only. Full advancement requires all folds and seeds 42/43/44."
+  },
+  "matched_controls": {
+    "initial_trainable_sha256": "8b620e55caab2afd448aa19c530eefba2c397bcd0833a6af4ab778b1d70cbef6",
+    "selected_ids_sha256": "94675c7b5bce51ab39ba781a56f6dcffeba66a77ab8e8372899cb47aeb1a0dc9",
+    "training_plan_sha256": "75268e9d15f3f907a011553fac300122ac0d365c4ad4f93b805ec3b6eb9c4340",
+    "updates": 8,
+    "forward_sequences": 30,
+    "forward_batches": 8,
+    "training_views": 1,
+    "encoder_work": {
+      "encoder_calls": 16,
+      "encoder_sequences": 108,
+      "unpadded_tokens": 22002,
+      "padded_token_slots": 27817,
+      "attention_token_pairs": 3656174,
+      "shared_prefix_requests": 0,
+      "shared_prefix_tokens": 0
+    }
+  },
+  "weights_sha256": {
+    "H-hard": "228fbec58acea771969d31958d4f4e22b373eb487e08cfb0c82ef9f6bcfeddd3",
+    "S-soft": "760965c549316c6c1e32f8a72146e70cc2800f8be35e77c26f3dcdcca941c56f",
+    "T-typed-rps": "b1cfaca3e9fa40d494ce93fff52a8b7d016b14bc5f3634ac2b073db0497deee2",
+    "R-rlcd-loo": "5cb3db965359c6083e34dcc812e5655534dfc3928fe8820b9558adf854dd11a3"
+  },
+  "objectives": {
+    "H-hard": {
+      "gradient_estimator": "clean",
+      "noise_seed": 20260926,
+      "noise_sigma": 0.4,
+      "noise_samples": 4,
+      "center_score_logits": true,
+      "ranked_probability_weight": 0.0,
+      "clean_anchor_weight": 0.0,
+      "noise_calls": 0,
+      "noise_elements": 0,
+      "noise_plan_sha256": null,
+      "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+      "risk": "clean CE+Brier+optional ordered RPS",
+      "surrogate_is_risk": true,
+      "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+    },
+    "S-soft": {
+      "gradient_estimator": "clean",
+      "noise_seed": 20260926,
+      "noise_sigma": 0.4,
+      "noise_samples": 4,
+      "center_score_logits": true,
+      "ranked_probability_weight": 0.0,
+      "clean_anchor_weight": 0.0,
+      "noise_calls": 0,
+      "noise_elements": 0,
+      "noise_plan_sha256": null,
+      "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+      "risk": "clean CE+Brier+optional ordered RPS",
+      "surrogate_is_risk": true,
+      "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+    },
+    "T-typed-rps": {
+      "gradient_estimator": "clean",
+      "noise_seed": 20260926,
+      "noise_sigma": 0.4,
+      "noise_samples": 4,
+      "center_score_logits": true,
+      "ranked_probability_weight": 1.0,
+      "clean_anchor_weight": 0.0,
+      "noise_calls": 0,
+      "noise_elements": 0,
+      "noise_plan_sha256": null,
+      "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+      "risk": "clean CE+Brier+optional ordered RPS",
+      "surrogate_is_risk": true,
+      "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+    },
+    "R-rlcd-loo": {
+      "gradient_estimator": "score_function",
+      "noise_seed": 20260926,
+      "noise_sigma": 0.4,
+      "noise_samples": 4,
+      "center_score_logits": true,
+      "ranked_probability_weight": 1.0,
+      "clean_anchor_weight": 1.0,
+      "noise_calls": 8,
+      "noise_elements": 528,
+      "noise_plan_sha256": "34be256f59731e516f03a400642d3f885de60e8c0e9c7669dd8afc4aa6024376",
+      "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+      "risk": "Monte Carlo Gaussian-smoothed CE+Brier+optional ordered RPS plus optional clean CE anchor",
+      "surrogate_is_risk": false,
+      "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+    }
+  },
+  "results": {
+    "H-hard": {
+      "validation": {
+        "n": 15,
+        "argmax_agreement": 0.2,
+        "soft_cross_entropy": 1.2385199792103043,
+        "soft_brier": 0.21354825863199658,
+        "total_variation": 0.35887935969940266,
+        "expected_top_label_mass": 0.26377769644450355
+      },
+      "test_all": {
+        "n": 20,
+        "argmax_agreement": 0.1,
+        "soft_cross_entropy": 1.232332095276043,
+        "soft_brier": 0.2210231127582334,
+        "total_variation": 0.36091784354549306,
+        "expected_top_label_mass": 0.18433326283331883
+      },
+      "test_seen": {
+        "n": 15,
+        "argmax_agreement": 0.06666666666666667,
+        "soft_cross_entropy": 1.2650093821211867,
+        "soft_brier": 0.26258563433700866,
+        "total_variation": 0.39618482140468714,
+        "expected_top_label_mass": 0.13644437155551067
+      },
+      "test_heldout": {
+        "n": 5,
+        "argmax_agreement": 0.2,
+        "soft_cross_entropy": 1.1343002347406117,
+        "soft_brier": 0.09633554802190747,
+        "total_variation": 0.255116909967911,
+        "expected_top_label_mass": 0.3279999366667433
+      },
+      "test_by_type": {
+        "boolean": {
+          "n": 6,
+          "argmax_agreement": 0.16666666666666666,
+          "soft_cross_entropy": 0.7401939438579221,
+          "soft_brier": 0.2119982099732488,
+          "total_variation": 0.26553431272506717,
+          "expected_top_label_mass": 0.27999999999999997
+        },
+        "choice": {
+          "n": 6,
+          "argmax_agreement": 0.0,
+          "soft_cross_entropy": 1.4786861431576706,
+          "soft_brier": 0.31861242819410723,
+          "total_variation": 0.48920677650138344,
+          "expected_top_label_mass": 0.09777751222218223
+        },
+        "score": {
+          "n": 8,
+          "argmax_agreement": 0.125,
+          "soft_cross_entropy": 1.416670172928413,
+          "soft_brier": 0.15459980327006645,
+          "total_variation": 0.33623879194389483,
+          "expected_top_label_mass": 0.17750002291666042
+        }
+      }
+    },
+    "S-soft": {
+      "validation": {
+        "n": 15,
+        "argmax_agreement": 0.26666666666666666,
+        "soft_cross_entropy": 1.243230150453217,
+        "soft_brier": 0.21693557326233168,
+        "total_variation": 0.3613690258434558,
+        "expected_top_label_mass": 0.31444436311117024
+      },
+      "test_all": {
+        "n": 20,
+        "argmax_agreement": 0.05,
+        "soft_cross_entropy": 1.2375544261261673,
+        "soft_brier": 0.2241163514656864,
+        "total_variation": 0.3658435844282474,
+        "expected_top_label_mass": 0.15733327883329484
+      },
+      "test_seen": {
+        "n": 15,
+        "argmax_agreement": 0.06666666666666667,
+        "soft_cross_entropy": 1.2718502353804282,
+        "soft_brier": 0.2664413580435396,
+        "total_variation": 0.40193687327471533,
+        "expected_top_label_mass": 0.12711103288883865
+      },
+      "test_heldout": {
+        "n": 5,
+        "argmax_agreement": 0.0,
+        "soft_cross_entropy": 1.1346669983633848,
+        "soft_brier": 0.0971413317321268,
+        "total_variation": 0.25756371788884375,
+        "expected_top_label_mass": 0.24800001666666333
+      },
+      "test_by_type": {
+        "boolean": {
+          "n": 6,
+          "argmax_agreement": 0.16666666666666666,
+          "soft_cross_entropy": 0.7397871690680863,
+          "soft_brier": 0.21156047472839615,
+          "total_variation": 0.2685203266143799,
+          "expected_top_label_mass": 0.27999999999999997
+        },
+        "choice": {
+          "n": 6,
+          "argmax_agreement": 0.0,
+          "soft_cross_entropy": 1.4887427930578514,
+          "soft_brier": 0.32357117350101977,
+          "total_variation": 0.49320258123839505,
+          "expected_top_label_mass": 0.07444416555550222
+        },
+        "score": {
+          "n": 8,
+          "argmax_agreement": 0.0,
+          "soft_cross_entropy": 1.4224885937209653,
+          "soft_brier": 0.1589421424921541,
+          "total_variation": 0.3433167801810374,
+          "expected_top_label_mass": 0.12750007291661042
+        }
+      }
+    },
+    "T-typed-rps": {
+      "validation": {
+        "n": 15,
+        "argmax_agreement": 0.2,
+        "soft_cross_entropy": 1.246353138108732,
+        "soft_brier": 0.2194070584229962,
+        "total_variation": 0.3623288707307124,
+        "expected_top_label_mass": 0.2526666297778369
+      },
+      "test_all": {
+        "n": 20,
+        "argmax_agreement": 0.05,
+        "soft_cross_entropy": 1.2402938042148945,
+        "soft_brier": 0.22655186128888305,
+        "total_variation": 0.36867907535534755,
+        "expected_top_label_mass": 0.15733327883329484
+      },
+      "test_seen": {
+        "n": 15,
+        "argmax_agreement": 0.06666666666666667,
+        "soft_cross_entropy": 1.2757645228428656,
+        "soft_brier": 0.26939669545800743,
+        "total_variation": 0.40463185556498327,
+        "expected_top_label_mass": 0.12711103288883865
+      },
+      "test_heldout": {
+        "n": 5,
+        "argmax_agreement": 0.0,
+        "soft_cross_entropy": 1.1338816483309815,
+        "soft_brier": 0.09801735878150974,
+        "total_variation": 0.26082073472644063,
+        "expected_top_label_mass": 0.24800001666666333
+      },
+      "test_by_type": {
+        "boolean": {
+          "n": 6,
+          "argmax_agreement": 0.16666666666666666,
+          "soft_cross_entropy": 0.7442344120080172,
+          "soft_brier": 0.2159780329884482,
+          "total_variation": 0.2722694935401281,
+          "expected_top_label_mass": 0.27999999999999997
+        },
+        "choice": {
+          "n": 6,
+          "argmax_agreement": 0.0,
+          "soft_cross_entropy": 1.4883303014859859,
+          "soft_brier": 0.3234685453497454,
+          "total_variation": 0.4937200700060984,
+          "expected_top_label_mass": 0.07444416555550222
+        },
+        "score": {
+          "n": 8,
+          "argmax_agreement": 0.0,
+          "soft_cross_entropy": 1.4263109754167334,
+          "soft_brier": 0.16179471946856236,
+          "total_variation": 0.3472055157286992,
+          "expected_top_label_mass": 0.12750007291661042
+        }
+      }
+    },
+    "R-rlcd-loo": {
+      "validation": {
+        "n": 15,
+        "argmax_agreement": 0.26666666666666666,
+        "soft_cross_entropy": 1.2370137435861295,
+        "soft_brier": 0.2120620693976834,
+        "total_variation": 0.3572557420900607,
+        "expected_top_label_mass": 0.2641110947777719
+      },
+      "test_all": {
+        "n": 20,
+        "argmax_agreement": 0.2,
+        "soft_cross_entropy": 1.2346269675522812,
+        "soft_brier": 0.22037584724925288,
+        "total_variation": 0.3613772500703897,
+        "expected_top_label_mass": 0.2246665954999615
+      },
+      "test_seen": {
+        "n": 15,
+        "argmax_agreement": 0.2,
+        "soft_cross_entropy": 1.2672799420893919,
+        "soft_brier": 0.26153207608739065,
+        "total_variation": 0.3969335376994526,
+        "expected_top_label_mass": 0.194666566222172
+      },
+      "test_heldout": {
+        "n": 5,
+        "argmax_agreement": 0.2,
+        "soft_cross_entropy": 1.1366680439409502,
+        "soft_brier": 0.09690716073483946,
+        "total_variation": 0.25470838718320105,
+        "expected_top_label_mass": 0.31466668333333
+      },
+      "test_by_type": {
+        "boolean": {
+          "n": 6,
+          "argmax_agreement": 0.3333333333333333,
+          "soft_cross_entropy": 0.7312196951767649,
+          "soft_brier": 0.2031513558891591,
+          "total_variation": 0.26080461710691455,
+          "expected_top_label_mass": 0.4344443333333334
+        },
+        "choice": {
+          "n": 6,
+          "argmax_agreement": 0.16666666666666666,
+          "soft_cross_entropy": 1.4940320561203182,
+          "soft_brier": 0.3251198784051379,
+          "total_variation": 0.4935342786030432,
+          "expected_top_label_mass": 0.08888866555550222
+        },
+        "score": {
+          "n": 8,
+          "argmax_agreement": 0.125,
+          "soft_cross_entropy": 1.417628605407891,
+          "soft_brier": 0.15473619240240943,
+          "total_variation": 0.337688953393506,
+          "expected_top_label_mass": 0.16916673958327708
+        }
+      }
+    }
+  },
+  "contrasts": {
+    "soft_minus_hard": {
+      "validation": {
+        "argmax_agreement_delta": 0.06666666666666665,
+        "soft_cross_entropy_delta": 0.004710171242912731,
+        "soft_brier_delta": 0.003387314630335092
+      },
+      "test_seen": {
+        "argmax_agreement_delta": 0.0,
+        "soft_cross_entropy_delta": 0.006840853259241442,
+        "soft_brier_delta": 0.0038557237065309224
+      },
+      "test_heldout": {
+        "argmax_agreement_delta": -0.2,
+        "soft_cross_entropy_delta": 0.00036676362277310304,
+        "soft_brier_delta": 0.0008057837102193321
+      }
+    },
+    "typed_rps_minus_soft": {
+      "validation": {
+        "argmax_agreement_delta": -0.06666666666666665,
+        "soft_cross_entropy_delta": 0.003122987655514997,
+        "soft_brier_delta": 0.0024714851606645327
+      },
+      "test_seen": {
+        "argmax_agreement_delta": 0.0,
+        "soft_cross_entropy_delta": 0.0039142874624373825,
+        "soft_brier_delta": 0.0029553374144678513
+      },
+      "test_heldout": {
+        "argmax_agreement_delta": 0.0,
+        "soft_cross_entropy_delta": -0.0007853500324033202,
+        "soft_brier_delta": 0.0008760270493829436
+      }
+    },
+    "rlcd_loo_minus_typed_rps": {
+      "validation": {
+        "argmax_agreement_delta": 0.06666666666666665,
+        "soft_cross_entropy_delta": -0.009339394522602573,
+        "soft_brier_delta": -0.007344989025312804
+      },
+      "test_seen": {
+        "argmax_agreement_delta": 0.13333333333333336,
+        "soft_cross_entropy_delta": -0.008484580753473692,
+        "soft_brier_delta": -0.007864619370616777
+      },
+      "test_heldout": {
+        "argmax_agreement_delta": 0.2,
+        "soft_cross_entropy_delta": 0.0027863956099687393,
+        "soft_brier_delta": -0.0011101980466702854
+      }
+    }
+  },
+  "interpretation_rule": "Directional implementation evidence only; do not select or reject an arm from this one-seed 20-question test.",
+  "next_gate": "Freeze all four workflow folds and seeds 42/43/44 only after checking numerical stability, gradient norms and target alignment here."
+}

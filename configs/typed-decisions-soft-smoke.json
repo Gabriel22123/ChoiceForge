@@ -1,0 +1,23 @@
+{
+  "model_id": "openbmb/MiniCPM5-2B-Base",
+  "revision": "96a57cd572a02506b4500f54427dca24970c1bac",
+  "architecture": "causal_decoder",
+  "seed": 20260926,
+  "lora_layers": 1,
+  "lora_rank": 2,
+  "head_width": 64,
+  "dropout": 0.0,
+  "max_tokens": 768,
+  "encoder_lr": 0.00003,
+  "head_lr": 0.0003,
+  "epochs": 1,
+  "batch_size": 2,
+  "accumulation": 1,
+  "brier_weight": 0.5,
+  "consistency_weight": 0.0,
+  "candidate_encoding": "independent",
+  "candidate_chunk_size": 8,
+  "training_views": 1,
+  "gradient_estimator": "clean",
+  "require_all_rows": true
+}

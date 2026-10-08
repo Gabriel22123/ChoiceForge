@@ -1,0 +1,9 @@
+{
+  "type": "boolean",
+  "task": "Have all required tests passed?",
+  "context": "The test report says 23 passed and 1 failed.",
+  "criteria": {
+    "true": "The complete required test suite has no failures.",
+    "false": "At least one required test is failing or has not run."
+  }
+}

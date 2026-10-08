@@ -1,0 +1,112 @@
+{
+  "format_version": 1,
+  "study": "release-candidate-v1",
+  "status": "frozen_before_training",
+  "model": {
+    "model_id": "openbmb/MiniCPM5-2B-Base",
+    "revision": "96a57cd572a02506b4500f54427dca24970c1bac",
+    "architecture": "causal_decoder",
+    "candidate_encoding": "independent",
+    "lora_layers": 32,
+    "lora_rank": 8,
+    "head_width": 256
+  },
+  "seeds": [1701, 1702, 1703],
+  "canonical_release_seed": 1701,
+  "canonical_seed_rule": "Seed 1701 is the only release candidate; replication seeds cannot replace it after results are observed.",
+  "data": {
+    "selection_seed": 20260927,
+    "typed_train_cases_per_workflow": 64,
+    "typed_validation_cases_per_workflow": 16,
+    "typed_test_cases_per_workflow": 40,
+    "questions_per_typed_case": 5,
+    "control_train_rows": 1024,
+    "expanded_train_rows": 3072,
+    "common_validation_rows": 608,
+    "common_test_rows": 1376,
+    "max_tokens": 768,
+    "inputs": [
+      {
+        "path": "runs/architecture-comparison-v1/cases.jsonl",
+        "sha256": "43ee6e1f736f8441d582bf932b5e05677e278c24297a74ef81213f5563f91bf7"
+      },
+      {
+        "path": "data/public-relation-groups-v1/cases.jsonl",
+        "sha256": "efdd7a33a3640c3a4ad08a7e1e19df6c4259771d25327317b37f27577922768c"
+      },
+      {
+        "path": "runs/task-expansion-v1/cases.jsonl",
+        "sha256": "16ae90a610971b616e460054ba3945e8bfa7dbc9d4159b3458126add8d48f5d2"
+      },
+      {
+        "path": "cache/typed-decisions-ea930645/all/train-00000-of-00001.parquet",
+        "sha256": "46a58d63edfd86e23229c78afe8b72307bb4ca9fb0e8df180cabb3c67ec9dcd5"
+      },
+      {
+        "path": "cache/typed-decisions-ea930645/all/test-00000-of-00001.parquet",
+        "sha256": "4f294f218ea1da27f3efef936359389c62ea4d3973a41457732990f1d31b647c"
+      },
+      {
+        "path": "configs/typed-decisions-source.json",
+        "sha256": "a0cf712cb39cf545d83ea4cde233179e96bac217384e79ab8b8560ccb7d59da8"
+      },
+      {
+        "path": "src/decision_model/decoder_base.lock.json",
+        "sha256": "9a80b8721295fe6735b596fe61c62f69c736fa12ab2eb78d5d52e5b75af34ffa"
+      }
+    ]
+  },
+  "arms": {
+    "control": "The selected 1,024-row architecture-study training set repeated for three epochs.",
+    "expanded": "3,072 distinct public rows: 768 SNLI, 768 PAWS, 256 retained public rows and 1,280 Typed Decisions questions; one epoch."
+  },
+  "matched": {
+    "example_exposures": 3072,
+    "optimizer_updates": 384,
+    "batch_size": 2,
+    "accumulation": 4,
+    "dropout": 0.05,
+    "encoder_lr": 0.00003,
+    "head_lr": 0.0003,
+    "brier_weight": 0.5,
+    "training_target_mode": "hard",
+    "checkpoint_selection": "fixed final endpoint; no early stopping"
+  },
+  "blind_suite": {
+    "source_config": "configs/release-blind-suite-v1.json",
+    "tasks": ["causal_judgment", "formal_fallacies_syllogisms_negation", "movie_recommendation"],
+    "selection_is_answer_blind": true,
+    "seal_only_after_all_six_endpoints_and_audits": true,
+    "never_used_for_training_calibration_or_endpoint_selection": true
+  },
+  "advancement_rule": {
+    "seen_tasks": {
+      "expanded_combined_accuracy_beats_control_in_at_least_two_seeds": true,
+      "expanded_mean_raw_nll_not_worse": true,
+      "maximum_task_seed_accuracy_regression": 0.02,
+      "retained_task_mean_accuracy_not_worse": true
+    },
+    "fresh_blind_tasks": {
+      "expanded_combined_accuracy_beats_control_in_at_least_two_seeds": true,
+      "expanded_mean_accuracy_strictly_higher": true,
+      "expanded_mean_raw_nll_not_worse": true,
+      "maximum_task_seed_accuracy_regression": 0.02
+    },
+    "candidate_prior_and_contract": {
+      "full_context_gold_log_probability_advantage_positive_every_seed_task": true,
+      "expanded_mean_cross_seed_null_prediction_js_not_above_control_by_more_than": 0.01,
+      "order_and_id_rename_audits_complete": true,
+      "maximum_reload_or_rename_probability_difference": 0.000002,
+      "strict_typed_contract_pass_rate": 1.0,
+      "review_marker_pass_rate": 1.0,
+      "free_form_output_fields_allowed": 0
+    },
+    "decision": "The expanded route is eligible only if every seen-task, fresh-blind, candidate-prior and output-contract condition passes. If eligible, the predesignated seed1701 expanded checkpoint is the sole release candidate."
+  },
+  "interpretation": {
+    "typed_decisions_labels": "Public teacher argmax supervision, not measured action success.",
+    "blind_task_contamination": "The protocol prevents project-level tuning leakage but cannot prove absence from base pretraining.",
+    "compute_matching": "Arms match example exposures and optimizer updates, not tokens or FLOPs.",
+    "github_publication": false
+  }
+}

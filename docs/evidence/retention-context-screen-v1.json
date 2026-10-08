@@ -1,0 +1,140 @@
+{
+  "format_version": 1,
+  "study": "retention-context-screen-v1",
+  "protocol_sha256": "9251523e9aa4d20985b62c6a39777c91a89e0cd2ab8be2b0e9a6bece22333f0a",
+  "development_suite_is_fresh": false,
+  "development_suite_release_eligible": false,
+  "arms": {
+    "retention": {
+      "seen": {
+        "candidate_accuracy": 0.7165697674418605,
+        "parent_control_accuracy": 0.6170058139534884,
+        "parent_expanded_accuracy": 0.7412790697674418,
+        "accuracy_delta_vs_parent_expanded": -0.024709302325581328,
+        "nll": 0.8735901653876577,
+        "nll_delta_vs_parent_expanded": 0.0242524513061787,
+        "source_accuracy_delta_vs_parent_control": {
+          "bandit": 0.0,
+          "clinc": 0.0,
+          "goemotions": 0.0,
+          "json-schema": 0.06666666666666671,
+          "paws-wiki": 0.0,
+          "snli": -0.04166666666666663,
+          "typed-decisions": 0.17625000000000002
+        },
+        "minimum_source_accuracy_delta_vs_parent_control": -0.04166666666666663
+      },
+      "consumed_development_suite": {
+        "candidate_accuracy": 0.6328125,
+        "parent_control_accuracy": 0.6354166666666666,
+        "parent_expanded_accuracy": 0.6432291666666666,
+        "accuracy_delta_vs_parent_expanded": -0.01041666666666663,
+        "nll": 0.710585335339979,
+        "nll_delta_vs_parent_expanded": 0.02276082550937275,
+        "source_accuracy_delta_vs_parent_control": {
+          "bigbench-causal_judgment": -0.0390625,
+          "bigbench-formal_fallacies_syllogisms_negation": -0.0234375,
+          "bigbench-movie_recommendation": 0.0546875
+        },
+        "minimum_source_accuracy_delta_vs_parent_control": -0.0390625
+      },
+      "context_advantage": {
+        "rows": 384,
+        "mean": 0.09191989735078536,
+        "positive": 246,
+        "by_source": {
+          "bigbench-causal_judgment": {
+            "rows": 128,
+            "mean": 0.0011250483281668507,
+            "positive": 73
+          },
+          "bigbench-formal_fallacies_syllogisms_negation": {
+            "rows": 128,
+            "mean": -0.015629531292627515,
+            "positive": 63
+          },
+          "bigbench-movie_recommendation": {
+            "rows": 128,
+            "mean": 0.29026417501681673,
+            "positive": 110
+          }
+        }
+      },
+      "checks": {
+        "seen.combined_accuracy": false,
+        "seen.each_source_accuracy": false,
+        "seen.nll": false,
+        "development.combined_accuracy": false,
+        "development.each_source_accuracy": false
+      },
+      "advances_to_multiseed": false
+    },
+    "retention-context": {
+      "seen": {
+        "candidate_accuracy": 0.721656976744186,
+        "parent_control_accuracy": 0.6170058139534884,
+        "parent_expanded_accuracy": 0.7412790697674418,
+        "accuracy_delta_vs_parent_expanded": -0.019622093023255793,
+        "nll": 0.8470271375297541,
+        "nll_delta_vs_parent_expanded": -0.002310576551724841,
+        "source_accuracy_delta_vs_parent_control": {
+          "bandit": 0.0,
+          "clinc": 0.0,
+          "goemotions": 0.032786885245901676,
+          "json-schema": 0.06666666666666671,
+          "paws-wiki": -0.00520833333333337,
+          "snli": -0.05208333333333337,
+          "typed-decisions": 0.18625000000000003
+        },
+        "minimum_source_accuracy_delta_vs_parent_control": -0.05208333333333337
+      },
+      "consumed_development_suite": {
+        "candidate_accuracy": 0.6354166666666666,
+        "parent_control_accuracy": 0.6354166666666666,
+        "parent_expanded_accuracy": 0.6432291666666666,
+        "accuracy_delta_vs_parent_expanded": -0.0078125,
+        "nll": 0.7057701882010551,
+        "nll_delta_vs_parent_expanded": 0.017945678370448803,
+        "source_accuracy_delta_vs_parent_control": {
+          "bigbench-causal_judgment": -0.0390625,
+          "bigbench-formal_fallacies_syllogisms_negation": -0.0234375,
+          "bigbench-movie_recommendation": 0.0625
+        },
+        "minimum_source_accuracy_delta_vs_parent_control": -0.0390625
+      },
+      "context_advantage": {
+        "rows": 384,
+        "mean": 0.09465517703360875,
+        "positive": 244,
+        "by_source": {
+          "bigbench-causal_judgment": {
+            "rows": 128,
+            "mean": 0.006268052333087539,
+            "positive": 72
+          },
+          "bigbench-formal_fallacies_syllogisms_negation": {
+            "rows": 128,
+            "mean": -0.018332900633723594,
+            "positive": 61
+          },
+          "bigbench-movie_recommendation": {
+            "rows": 128,
+            "mean": 0.29603037940146226,
+            "positive": 111
+          }
+        }
+      },
+      "checks": {
+        "seen.combined_accuracy": false,
+        "seen.each_source_accuracy": false,
+        "seen.nll": true,
+        "development.combined_accuracy": true,
+        "development.each_source_accuracy": false,
+        "development.context_advantage_each_source": false
+      },
+      "advances_to_multiseed": false
+    }
+  },
+  "advancing_arms": [],
+  "new_fresh_blind_required_for_any_release_claim": true
+}

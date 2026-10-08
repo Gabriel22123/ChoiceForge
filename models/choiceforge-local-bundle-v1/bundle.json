@@ -1,0 +1,21 @@
+{
+  "format_version": 1,
+  "format": "choiceforge-local-bundle-v1",
+  "project": "ChoiceForge",
+  "files": {
+    "adapter.json": "b85b843a0d5d1bf3aa866d54d1c1f9fceed37ef337f71294330a79d5bebca368",
+    "adapter.safetensors": "8e4c816e43ea70ccac43145646583e6466357455bc794761faecbe0fe23f196a",
+    "parent/model.json": "b728b762e7f4d664fa37b3d6cb5976d8f6c731cebca502440f4814f26c052c6f",
+    "parent/decision.safetensors": "24a64f1efa256e182049db117b8ce67495dd401326b1db5ebbba168a6f08c180",
+    "parent/calibration.json": "e41aa1253886ad1ca0954219355d8f123a5ca62944fbc8ee4d03da05b2d486d9"
+  },
+  "public_base": {
+    "repository": "https://huggingface.co/openbmb/MiniCPM5-2B-Base",
+    "revision": "96a57cd572a02506b4500f54427dca24970c1bac",
+    "license": "Apache-2.0",
+    "included": false
+  },
+  "contains_training_data": false,
+  "requires_human_review": true,
+  "protocol_sha256": "a14decc6dccc51bb580f3ef3baa7abc48e50a22ecdca9afc5523dfd8c6506e94"
+}

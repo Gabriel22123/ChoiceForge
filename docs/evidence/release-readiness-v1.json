@@ -1,0 +1,80 @@
+{
+  "kind": "release_readiness_audit",
+  "source_study": "runs/architecture-comparison-v1",
+  "source_protocol_sha256": "1e3e646a78c4b8b71ce7740c71352207b51a350ff9acff7265bdda9291044e5a",
+  "route_decision": {
+    "decoder_selected": true,
+    "base": {
+      "model_id": "openbmb/MiniCPM5-2B-Base",
+      "revision": "96a57cd572a02506b4500f54427dca24970c1bac"
+    },
+    "architecture": {
+      "lora_layers": 32,
+      "lora_rank": 8,
+      "head_width": 256,
+      "candidate_encoding": "independent"
+    }
+  },
+  "verified_endpoints": {
+    "seed42-decoder": {
+      "path": "runs/architecture-comparison-v1/seed42-decoder",
+      "seed": 42,
+      "weights_sha256": "e6bb5bee5bbb9bd8f43770f98a2476e4e0367c42caa726b5396759be325df78d",
+      "weights_bytes": 40452596,
+      "temperature": 1.1746849688138716,
+      "training_rows": 1024,
+      "updates": 128,
+      "checkpoint_selection": "fixed final epoch; test never used for selection",
+      "test_accuracy": 0.7586805555555556,
+      "test_nll": 0.5453320763799197,
+      "test_brier": 0.31593928388421594
+    },
+    "seed43-decoder": {
+      "path": "runs/architecture-comparison-v1/seed43-decoder",
+      "seed": 43,
+      "weights_sha256": "71997f108a11c56c7c95ff5d222c90fdca290d4808a10238cc9af43a21049b2e",
+      "weights_bytes": 40452596,
+      "temperature": 1.5840739849944818,
+      "training_rows": 1024,
+      "updates": 128,
+      "checkpoint_selection": "fixed final epoch; test never used for selection",
+      "test_accuracy": 0.7552083333333334,
+      "test_nll": 0.5346545572897068,
+      "test_brier": 0.3170166750537596
+    },
+    "seed44-decoder": {
+      "path": "runs/architecture-comparison-v1/seed44-decoder",
+      "seed": 44,
+      "weights_sha256": "985d137410fe8aa86113f5e855d5ec12d0c1bf73675f422891814e0b9b03101b",
+      "weights_bytes": 40452596,
+      "temperature": 1.8607878996621081,
+      "training_rows": 1024,
+      "updates": 128,
+      "checkpoint_selection": "fixed final epoch; test never used for selection",
+      "test_accuracy": 0.7465277777777778,
+      "test_nll": 0.5769433131325058,
+      "test_brier": 0.3318504192853412
+    }
+  },
+  "repository_checks": {
+    "LICENSE": true,
+    "THIRD_PARTY.md": true,
+    "MODEL_CARD.md": true,
+    "sources.lock.json": true,
+    "src/decision_model/schemas/prediction.schema.json": true,
+    "src/decision_model/schemas/typed-prediction.schema.json": true
+  },
+  "decision": {
+    "research_bundle_eligible": true,
+    "single_release_checkpoint_selected": false,
+    "final_model_release_ready": false,
+    "reason": "The frozen study selected the decoder route and retained all three fixed seed endpoints. It did not preregister a rule for selecting one endpoint as the published model."
+  },
+  "blockers": [
+    "Freeze a final public-data training protocol and seed before training; do not select seed42/43/44 from inspected endpoint metrics.",
+    "Train the final adapter on the declared public training corpus with no sealed-test checkpoint selection.",
+    "Evaluate the immutable final adapter once on a fresh task-family blind suite; ARC, logical deduction, disambiguation, BoolQ and WinoGrande are already consumed diagnostics.",
+    "Export one environment-independent adapter bundle with calibration, checksums, source/data provenance, install metadata and an exact reproduction command."
+  ],
+  "packaging_lesson": "Retain the useful weights-plus-temperature-plus-client packaging pattern, while requiring a reproducible public starting point, pinned dependencies and no missing predecessor checkpoint."
+}

@@ -1,0 +1,77 @@
+{
+  "format_version": 1,
+  "study": "executable-outcome-feedback-consolidation-v1",
+  "status": "development_followup_on_consumed_validation",
+  "source_protocol": {
+    "path": "configs/executable-outcome-screen-v1.json",
+    "sha256": "f572179c04e6569f768de7348e5c4818329fe389940c53450520ac33bfc504f8"
+  },
+  "data": {
+    "path": "data/mbpp-outcome-screen-v1/data.jsonl",
+    "sha256": "8870e94c674b2a8d1c851462990818e4b06969056fd61b0157f7fe38dd5027b1",
+    "validation_is_fresh_confirmation": false,
+    "official_test_included": false
+  },
+  "endpoints": [
+    {
+      "id": "seed42-decoder",
+      "seed": 42,
+      "checkpoint": "runs/architecture-comparison-v1/seed42-decoder",
+      "feature_cache": "cache/mbpp-outcome-features-v2/seed42-decoder",
+      "behavior_log": "runs/executable-outcome-screen-v1/seed42-decoder/behavior-log.jsonl",
+      "behavior_log_sha256": "22c3b7db243c43d1dec8e3938d51a577ad8a57d3081184a99d23ccb4a3fa1f1b"
+    },
+    {
+      "id": "seed43-decoder",
+      "seed": 43,
+      "checkpoint": "runs/architecture-comparison-v1/seed43-decoder",
+      "feature_cache": "cache/mbpp-outcome-features-v2/seed43-decoder",
+      "behavior_log": "runs/executable-outcome-screen-v1/seed43-decoder/behavior-log.jsonl",
+      "behavior_log_sha256": "5daab50a3aad3ba48bee8c672a74df3eab4cb56c8be423480c205b741e1b5921"
+    },
+    {
+      "id": "seed44-decoder",
+      "seed": 44,
+      "checkpoint": "runs/architecture-comparison-v1/seed44-decoder",
+      "feature_cache": "cache/mbpp-outcome-features-v2/seed44-decoder",
+      "behavior_log": "runs/executable-outcome-screen-v1/seed44-decoder/behavior-log.jsonl",
+      "behavior_log_sha256": "c91135c24e169bef7cb7f544694c307568d4941748287ff90c3ba6f0a49000d7"
+    }
+  ],
+  "feedback": {
+    "source_log_epochs": 20,
+    "actions_per_row_per_log_epoch": 8,
+    "queries_per_endpoint": 32480,
+    "new_environment_queries": 0,
+    "deterministic_repeated_rewards_must_agree": true,
+    "consolidated_arm_requires_complete_candidate_coverage": true,
+    "incomplete_rows_are_excluded_from_consolidated_loss": true
+  },
+  "optimization": {
+    "epochs": 200,
+    "batch_size": 16,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "early_stopping": false,
+    "checkpoint_epochs_for_diagnostics": [0, 20, 50, 100, 200]
+  },
+  "arms": {
+    "R-ips-loo-replay": "Replay the same chosen-action IPS-LOO feedback for 200 optimizer epochs.",
+    "D-doubly-robust-replay": "Replay the same doubly robust objective and learned reward head for 200 optimizer epochs.",
+    "A-consolidated-optimal-set": "Consolidate only observed deterministic rewards; after complete coverage, maximize probability mass on every observed reward-maximizing candidate."
+  },
+  "development_success_rule": {
+    "A_mean_regret_lower_than_R": true,
+    "A_mean_regret_lower_than_D": true,
+    "A_seed_wins_required_against_each": 2,
+    "maximum_single_seed_regret_regression": 0.02,
+    "A_mean_expected_reward_must_not_decline": true,
+    "integrity_violations_allowed": 0
+  },
+  "interpretation": {
+    "validation_can_select_a_confirmatory_protocol": true,
+    "validation_cannot_be_reported_as_fresh_confirmation": true,
+    "official_test_may_be_opened_only_after_a_separate_locked_protocol_and_all_weights": true
+  }
+}

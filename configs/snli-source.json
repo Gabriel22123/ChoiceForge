@@ -1,0 +1,10 @@
+{
+  "source": "Stanford Natural Language Inference Corpus",
+  "version": "1.0",
+  "url": "https://nlp.stanford.edu/projects/snli/snli_1.0.zip",
+  "sha256": "afb3d70a5af5d8de0d9d81e2637e0fb8c22d1235c2749d83125ca43dab0dbd3e",
+  "bytes": 94550081,
+  "license": "CC-BY-SA-4.0",
+  "source_page": "https://nlp.stanford.edu/projects/snli/",
+  "verified_date": "2026-09-21"
+}

@@ -1,0 +1,68 @@
+{
+  "format_version": 1,
+  "study": "qasc-residual-expert-screen-v1",
+  "status": "frozen_before_training",
+  "seed": 1701,
+  "parent": {
+    "checkpoint": "runs/functional-retention-screen-v1/warm-functional-context",
+    "weights_sha256": "24a64f1efa256e182049db117b8ce67495dd401326b1db5ebbba168a6f08c180",
+    "model_sha256": "b728b762e7f4d664fa37b3d6cb5976d8f6c731cebca502440f4814f26c052c6f"
+  },
+  "data": {
+    "cases": "runs/qasc-dual-function-screen-v1/cases.jsonl",
+    "cases_sha256": "1e3085e934f30ab50f7258e8ad2cd28de87423f8ed4649a7403cff57e17b8381",
+    "qasc_development": "runs/qasc-evidence-screen-v1/qasc-development.jsonl",
+    "qasc_development_sha256": "ee1f206aeaa8dfe253c2df847020df147fe9553b2bbc4f4a539f8073a0667224",
+    "consumed_development": "runs/release-candidate-v1/blind-suite/cases.jsonl",
+    "consumed_development_sha256": "4890b3ba5f22af9de9e8c6a12a163154395a7a069125c9a0e5ed16dd27183d63"
+  },
+  "baselines": {
+    "qasc_screen_evidence": "docs/evidence/qasc-evidence-screen-v1.json",
+    "qasc_screen_evidence_sha256": "93b115649dd5d2cfe4f319a4592120a76470e4f26807d926eaa4fec004e7685e",
+    "functional_retention_evidence": "docs/evidence/functional-retention-screen-v1.json",
+    "functional_retention_evidence_sha256": "00d4cbf55d84c193c7057870e8d20fb4ee60d3bc90332e2f750b4e269d5ff7e6",
+    "dual_function_evidence": "docs/evidence/qasc-dual-function-screen-v1.json",
+    "dual_function_evidence_sha256": "8506a67005b08799b800f75355cadcbbb5677ca5bcfa8f34c9b202e836a3c857"
+  },
+  "training": {
+    "epochs": 1,
+    "batch_size": 2,
+    "accumulation": 4,
+    "updates": 128,
+    "encoder_lr": 0.0000025,
+    "head_lr": 0.0001,
+    "residual_head_width": 256,
+    "candidate_chunk_size": 32,
+    "track_frozen_parent_gradients": true,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05,
+    "distillation_weight": 1.0,
+    "distillation_target_field": "teacher_probabilities",
+    "null_distillation_weight": 1.0,
+    "null_distillation_target_field": "teacher_null_probabilities",
+    "training_weight_field": "training_weight",
+    "replay_weight": 1.0,
+    "qasc_weight": 0.5
+  },
+  "screening_rule": {
+    "initial_max_probability_difference": 0.0,
+    "parent_parameter_max_difference": 0.0,
+    "residual_parameter_min_absolute_change": 0.0,
+    "seen_accuracy_vs_parent_min_delta": -0.005,
+    "seen_nll_vs_parent_max_delta": 0.01,
+    "development_accuracy_vs_parent_min_delta": -0.005,
+    "development_each_context_advantage_vs_parent_min_delta": -0.005,
+    "qasc_accuracy_vs_parent_min_delta": 0.03,
+    "qasc_nll_vs_parent_max_delta": -0.02,
+    "qasc_context_advantage_vs_parent_min_delta": 0.02,
+    "decision": "Advance the residual-expert mechanism only if its initial composition is exactly the parent, every parent parameter stays bit-identical, the residual changes, and every retention, QASC and audit gate passes. Advancement permits a later new-task-family screen only; it is not a multiseed or release result."
+  },
+  "interpretation": {
+    "primary_question": "Can a zero-initialized additive expert learn QASC while a bit-frozen parent preserves the old decision function?",
+    "single_seed_development_screen": true,
+    "all_evaluation_tasks_consumed": true,
+    "new_data_used": false,
+    "public_data_only": true,
+    "github_publication": false
+  }
+}

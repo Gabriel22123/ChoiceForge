@@ -1,0 +1,1465 @@
+{
+  "protocol": {
+    "question": "Does relation-training recipe progress transfer to an untouched public coreference/commonsense task?",
+    "source": {
+      "name": "WinoGrande",
+      "version": "1.1",
+      "url": "https://storage.googleapis.com/ai2-mosaic/public/winogrande/winogrande_1.1.zip",
+      "archive_sha256": "3619ab104d8be2977b25c90ff420cb42d491707dcc75362a1e5d22bc082b7318",
+      "official_dev_rows": 1267,
+      "license": "Dataset CC-BY per official README; version unspecified; raw text is not redistributed in release bundles"
+    },
+    "selection": {
+      "rows": 384,
+      "method": "first 384 by SHA-256(qID, sentence, option1, option2); answer excluded",
+      "selection_key_sha256": "355f5ea0e5d5c10bd6937c841320fdd256f0e9bba5625c61a470e8c16de29e6d",
+      "selected_ids_sha256": "e757340d1c6cab80840c8acb2130163f54c1698a108fb7432b7382e73db2537a",
+      "label_counts_recorded_after_freeze": {
+        "option1": 193,
+        "option2": 191
+      }
+    },
+    "dataset_sha256": "a878f3dca82f5b3ece9e52bf2a8955392cedd741f981ad997a8d2890af83687f",
+    "exact_prior_finetuning_input_overlap": 0,
+    "checkpoints": [
+      {
+        "name": "initial",
+        "path": "runs/architecture-study-v1/D-independent",
+        "weights_sha256": "8d5475f12df673591ce10a189058e26ae805ce78425a0b3f7df2fc08ceadf10e",
+        "model_sha256": "1b7d1dfc8174dbff23471ce332604b16f4993bb6697b51c8315a33b1752c4fe6"
+      },
+      {
+        "name": "seed42-one",
+        "path": "runs/relation-second-epoch-v1/seed-42",
+        "weights_sha256": "63effe8edb94ec5ab0009e13e525ad4605e0650593d98f188ade6d2f091c96cb",
+        "model_sha256": "50f27944a78b9b315de7769484ca7545800e3db68adfa15d6e2b45eb3db529f8"
+      },
+      {
+        "name": "seed42-variable",
+        "path": "runs/relation-label-balance-v1/seed-42",
+        "weights_sha256": "16534cf530d12d24fd62752bb4107ae4a3536cc9e96921c4b2f5fa74e094b3e7",
+        "model_sha256": "cd6ef6947bf65012c7d0b972dc2bf944275e90c3498ac00e6129d4f63e771aab"
+      },
+      {
+        "name": "seed42-balanced",
+        "path": "runs/relation-group-v1/dispersed",
+        "weights_sha256": "3699e2350fa70e53f00947c2aab73f9c91efa3f3a75badb33f7929fd7761b8a9",
+        "model_sha256": "f8533a8604fd315fabb14d3cb8310e56e659175adc9dea5ff502179ea452145f"
+      },
+      {
+        "name": "seed42-grouped",
+        "path": "runs/relation-group-v1/grouped",
+        "weights_sha256": "eaa8f26ab42902dd66e6ef2d08295875c1213d1799929a05da3864d81195118b",
+        "model_sha256": "8e650feb2c4ccd34203e453ad57057d90200170c4936a268cc5fba6c2cca4b4e"
+      },
+      {
+        "name": "seed43-one",
+        "path": "runs/relation-second-epoch-v1/seed-43",
+        "weights_sha256": "6e58870266d7ce79287ec3fe182de9b490340c48ef0166dbbc95b1450074d5c3",
+        "model_sha256": "40e6a87b318c55547b5c9db05d51fa77197cb566216acf7a0a8205b11c40f97a"
+      },
+      {
+        "name": "seed43-variable",
+        "path": "runs/relation-label-balance-v1/seed-43",
+        "weights_sha256": "e963714c392b4a9979feb2fc95bc1d617fd16edd4142542026af4b5aee1c81ff",
+        "model_sha256": "f7be0e866551fadd6d3a8b8461f02ac55516566cd5290da40cc9b6e8f872c0fb"
+      },
+      {
+        "name": "seed43-balanced",
+        "path": "runs/relation-group-seed43-v1/dispersed",
+        "weights_sha256": "6bbc37a661776328a656654fe59133e396b1dfd89164de42388930e42089adfc",
+        "model_sha256": "e9dcc431b03337b2c5876a4e984ec7ade97ed83d462ebf1a478ba6637a571195"
+      },
+      {
+        "name": "seed43-grouped",
+        "path": "runs/relation-group-seed43-v1/grouped",
+        "weights_sha256": "aca842ce9a47886d16e6896d0b3aeb802396dd5d0880ee00c041a36afd001306",
+        "model_sha256": "ab5daa0bac266e9bb08668b483f5c0421560176f9334b3177b58fa36fc56df91"
+      }
+    ],
+    "primary_endpoint": "Raw accuracy on all frozen rows",
+    "secondary_endpoints": [
+      "Raw NLL",
+      "Brier",
+      "ECE",
+      "inherited-temperature metrics",
+      "paired case bootstrap"
+    ],
+    "checkpoint_selection": "All nine predeclared endpoints retained; no tuning, calibration fitting, or winner selection on WinoGrande",
+    "source_files": {
+      "scripts/prepare_winogrande_blind.py": "895b46c56dfbb9cec59a3819ffb78392d76f116f251720c5fc983b7274657f83",
+      "scripts/run_winogrande_blind.py": "e34c5d63fd65cc9185d99f365930117f95256034571426a7a67bd52257488617"
+    },
+    "limitations": [
+      "One 384-row label-independent subset of the public development split",
+      "Development labels are public; this is a locally frozen blind evaluation, not the hidden leaderboard test",
+      "Project fine-tuning has no exact input overlap; possible public-base pretraining contamination cannot be ruled out",
+      "Dataset license version is not specified by the official README, so raw text is excluded from release bundles"
+    ]
+  },
+  "truth_option1_fraction": 0.5026041666666666,
+  "models": {
+    "initial": {
+      "weights_sha256": "8d5475f12df673591ce10a189058e26ae805ce78425a0b3f7df2fc08ceadf10e",
+      "raw": {
+        "n": 384,
+        "correct": 194,
+        "accuracy": 0.5052083333333334,
+        "uniform_random_accuracy": 0.5,
+        "nll": 0.9353261158900729,
+        "brier": 0.6443393870112074,
+        "ece_10": 0.2396518165866534,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.5052083333333334,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.6041666666666666,
+            "accuracy": 0.5172413793103449,
+            "selected_count": 232
+          },
+          "0.9": {
+            "coverage": 0.17708333333333334,
+            "accuracy": 0.5147058823529411,
+            "selected_count": 68
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 194,
+            "accuracy": 0.5052083333333334,
+            "uniform_random_accuracy": 0.5,
+            "nll": 0.9353261158900729,
+            "brier": 0.6443393870112074,
+            "ece_10": 0.2396518165866534,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.5052083333333334,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.6041666666666666,
+                "accuracy": 0.5172413793103449,
+                "selected_count": 232
+              },
+              "0.9": {
+                "coverage": 0.17708333333333334,
+                "accuracy": 0.5147058823529411,
+                "selected_count": 68
+              }
+            }
+          }
+        }
+      },
+      "inherited_temperature": 1.3798847759572466,
+      "inherited_temperature_metrics": {
+        "n": 384,
+        "correct": 194,
+        "accuracy": 0.5052083333333334,
+        "uniform_random_accuracy": 0.5,
+        "nll": 0.8286349407479997,
+        "brier": 0.595715196738921,
+        "ece_10": 0.1911918578358988,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.5052083333333334,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.4505208333333333,
+            "accuracy": 0.49710982658959535,
+            "selected_count": 173
+          },
+          "0.9": {
+            "coverage": 0.07291666666666667,
+            "accuracy": 0.5357142857142857,
+            "selected_count": 28
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 194,
+            "accuracy": 0.5052083333333334,
+            "uniform_random_accuracy": 0.5,
+            "nll": 0.8286349407479997,
+            "brier": 0.595715196738921,
+            "ece_10": 0.1911918578358988,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.5052083333333334,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.4505208333333333,
+                "accuracy": 0.49710982658959535,
+                "selected_count": 173
+              },
+              "0.9": {
+                "coverage": 0.07291666666666667,
+                "accuracy": 0.5357142857142857,
+                "selected_count": 28
+              }
+            }
+          }
+        }
+      },
+      "predicted_option1_fraction": 0.7630208333333334,
+      "encoder_work": {
+        "encoder_calls": 768,
+        "encoder_sequences": 768,
+        "unpadded_tokens": 43046,
+        "padded_token_slots": 43046,
+        "attention_token_pairs": 2423400
+      }
+    },
+    "seed42-one": {
+      "weights_sha256": "63effe8edb94ec5ab0009e13e525ad4605e0650593d98f188ade6d2f091c96cb",
+      "raw": {
+        "n": 384,
+        "correct": 197,
+        "accuracy": 0.5130208333333334,
+        "uniform_random_accuracy": 0.5,
+        "nll": 0.8670857296121216,
+        "brier": 0.6122621966901147,
+        "ece_10": 0.20751378778368235,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.5130208333333334,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.5546875,
+            "accuracy": 0.539906103286385,
+            "selected_count": 213
+          },
+          "0.9": {
+            "coverage": 0.11197916666666667,
+            "accuracy": 0.46511627906976744,
+            "selected_count": 43
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 197,
+            "accuracy": 0.5130208333333334,
+            "uniform_random_accuracy": 0.5,
+            "nll": 0.8670857296121216,
+            "brier": 0.6122621966901147,
+            "ece_10": 0.20751378778368235,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.5130208333333334,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.5546875,
+                "accuracy": 0.539906103286385,
+                "selected_count": 213
+              },
+              "0.9": {
+                "coverage": 0.11197916666666667,
+                "accuracy": 0.46511627906976744,
+                "selected_count": 43
+              }
+            }
+          }
+        }
+      },
+      "inherited_temperature": 1.2878832768346304,
+      "inherited_temperature_metrics": {
+        "n": 384,
+        "correct": 197,
+        "accuracy": 0.5130208333333334,
+        "uniform_random_accuracy": 0.5,
+        "nll": 0.8013942464161423,
+        "brier": 0.5788685193373425,
+        "ece_10": 0.1699411425118645,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.5130208333333334,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.4036458333333333,
+            "accuracy": 0.5161290322580645,
+            "selected_count": 155
+          },
+          "0.9": {
+            "coverage": 0.0390625,
+            "accuracy": 0.5333333333333333,
+            "selected_count": 15
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 197,
+            "accuracy": 0.5130208333333334,
+            "uniform_random_accuracy": 0.5,
+            "nll": 0.8013942464161423,
+            "brier": 0.5788685193373425,
+            "ece_10": 0.1699411425118645,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.5130208333333334,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.4036458333333333,
+                "accuracy": 0.5161290322580645,
+                "selected_count": 155
+              },
+              "0.9": {
+                "coverage": 0.0390625,
+                "accuracy": 0.5333333333333333,
+                "selected_count": 15
+              }
+            }
+          }
+        }
+      },
+      "predicted_option1_fraction": 0.6875,
+      "encoder_work": {
+        "encoder_calls": 768,
+        "encoder_sequences": 768,
+        "unpadded_tokens": 43046,
+        "padded_token_slots": 43046,
+        "attention_token_pairs": 2423400
+      }
+    },
+    "seed42-variable": {
+      "weights_sha256": "16534cf530d12d24fd62752bb4107ae4a3536cc9e96921c4b2f5fa74e094b3e7",
+      "raw": {
+        "n": 384,
+        "correct": 199,
+        "accuracy": 0.5182291666666666,
+        "uniform_random_accuracy": 0.5,
+        "nll": 0.8068820131323503,
+        "brier": 0.5766693926404531,
+        "ece_10": 0.16585177943731347,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.5182291666666666,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.4244791666666667,
+            "accuracy": 0.5153374233128835,
+            "selected_count": 163
+          },
+          "0.9": {
+            "coverage": 0.07552083333333333,
+            "accuracy": 0.6206896551724138,
+            "selected_count": 29
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 199,
+            "accuracy": 0.5182291666666666,
+            "uniform_random_accuracy": 0.5,
+            "nll": 0.8068820131323503,
+            "brier": 0.5766693926404531,
+            "ece_10": 0.16585177943731347,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.5182291666666666,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.4244791666666667,
+                "accuracy": 0.5153374233128835,
+                "selected_count": 163
+              },
+              "0.9": {
+                "coverage": 0.07552083333333333,
+                "accuracy": 0.6206896551724138,
+                "selected_count": 29
+              }
+            }
+          }
+        }
+      },
+      "inherited_temperature": 0.831935803826672,
+      "inherited_temperature_metrics": {
+        "n": 384,
+        "correct": 199,
+        "accuracy": 0.5182291666666666,
+        "uniform_random_accuracy": 0.5,
+        "nll": 0.8549606397743158,
+        "brier": 0.599192477575735,
+        "ece_10": 0.19134954394151768,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.5182291666666666,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.4791666666666667,
+            "accuracy": 0.5163043478260869,
+            "selected_count": 184
+          },
+          "0.9": {
+            "coverage": 0.12239583333333333,
+            "accuracy": 0.574468085106383,
+            "selected_count": 47
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 199,
+            "accuracy": 0.5182291666666666,
+            "uniform_random_accuracy": 0.5,
+            "nll": 0.8549606397743158,
+            "brier": 0.599192477575735,
+            "ece_10": 0.19134954394151768,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.5182291666666666,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.4791666666666667,
+                "accuracy": 0.5163043478260869,
+                "selected_count": 184
+              },
+              "0.9": {
+                "coverage": 0.12239583333333333,
+                "accuracy": 0.574468085106383,
+                "selected_count": 47
+              }
+            }
+          }
+        }
+      },
+      "predicted_option1_fraction": 0.6979166666666666,
+      "encoder_work": {
+        "encoder_calls": 768,
+        "encoder_sequences": 768,
+        "unpadded_tokens": 43046,
+        "padded_token_slots": 43046,
+        "attention_token_pairs": 2423400
+      }
+    },
+    "seed42-balanced": {
+      "weights_sha256": "3699e2350fa70e53f00947c2aab73f9c91efa3f3a75badb33f7929fd7761b8a9",
+      "raw": {
+        "n": 384,
+        "correct": 200,
+        "accuracy": 0.5208333333333334,
+        "uniform_random_accuracy": 0.5,
+        "nll": 1.0886496692055727,
+        "brier": 0.6933003999650458,
+        "ece_10": 0.2722443384118378,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.5208333333333334,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.6953125,
+            "accuracy": 0.5168539325842697,
+            "selected_count": 267
+          },
+          "0.9": {
+            "coverage": 0.3177083333333333,
+            "accuracy": 0.5081967213114754,
+            "selected_count": 122
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 200,
+            "accuracy": 0.5208333333333334,
+            "uniform_random_accuracy": 0.5,
+            "nll": 1.0886496692055727,
+            "brier": 0.6933003999650458,
+            "ece_10": 0.2722443384118378,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.5208333333333334,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.6953125,
+                "accuracy": 0.5168539325842697,
+                "selected_count": 267
+              },
+              "0.9": {
+                "coverage": 0.3177083333333333,
+                "accuracy": 0.5081967213114754,
+                "selected_count": 122
+              }
+            }
+          }
+        }
+      },
+      "inherited_temperature": 1.1746849688138716,
+      "inherited_temperature_metrics": {
+        "n": 384,
+        "correct": 200,
+        "accuracy": 0.5208333333333334,
+        "uniform_random_accuracy": 0.5,
+        "nll": 0.9956049926613374,
+        "brier": 0.6660521831791667,
+        "ece_10": 0.24734703653181594,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.5208333333333334,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.640625,
+            "accuracy": 0.508130081300813,
+            "selected_count": 246
+          },
+          "0.9": {
+            "coverage": 0.234375,
+            "accuracy": 0.4777777777777778,
+            "selected_count": 90
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 200,
+            "accuracy": 0.5208333333333334,
+            "uniform_random_accuracy": 0.5,
+            "nll": 0.9956049926613374,
+            "brier": 0.6660521831791667,
+            "ece_10": 0.24734703653181594,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.5208333333333334,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.640625,
+                "accuracy": 0.508130081300813,
+                "selected_count": 246
+              },
+              "0.9": {
+                "coverage": 0.234375,
+                "accuracy": 0.4777777777777778,
+                "selected_count": 90
+              }
+            }
+          }
+        }
+      },
+      "predicted_option1_fraction": 0.7109375,
+      "encoder_work": {
+        "encoder_calls": 768,
+        "encoder_sequences": 768,
+        "unpadded_tokens": 43046,
+        "padded_token_slots": 43046,
+        "attention_token_pairs": 2423400
+      }
+    },
+    "seed42-grouped": {
+      "weights_sha256": "eaa8f26ab42902dd66e6ef2d08295875c1213d1799929a05da3864d81195118b",
+      "raw": {
+        "n": 384,
+        "correct": 188,
+        "accuracy": 0.4895833333333333,
+        "uniform_random_accuracy": 0.5,
+        "nll": 1.0868116030954857,
+        "brier": 0.7073948197853182,
+        "ece_10": 0.3078539638469616,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.4895833333333333,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.7291666666666666,
+            "accuracy": 0.5107142857142857,
+            "selected_count": 280
+          },
+          "0.9": {
+            "coverage": 0.3333333333333333,
+            "accuracy": 0.546875,
+            "selected_count": 128
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 188,
+            "accuracy": 0.4895833333333333,
+            "uniform_random_accuracy": 0.5,
+            "nll": 1.0868116030954857,
+            "brier": 0.7073948197853182,
+            "ece_10": 0.3078539638469616,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.4895833333333333,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.7291666666666666,
+                "accuracy": 0.5107142857142857,
+                "selected_count": 280
+              },
+              "0.9": {
+                "coverage": 0.3333333333333333,
+                "accuracy": 0.546875,
+                "selected_count": 128
+              }
+            }
+          }
+        }
+      },
+      "inherited_temperature": 0.7764678818237377,
+      "inherited_temperature_metrics": {
+        "n": 384,
+        "correct": 188,
+        "accuracy": 0.4895833333333333,
+        "uniform_random_accuracy": 0.5,
+        "nll": 1.2839150751857138,
+        "brier": 0.7556951385637328,
+        "ece_10": 0.34465668024495244,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.4895833333333333,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.7682291666666666,
+            "accuracy": 0.511864406779661,
+            "selected_count": 295
+          },
+          "0.9": {
+            "coverage": 0.484375,
+            "accuracy": 0.5053763440860215,
+            "selected_count": 186
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 188,
+            "accuracy": 0.4895833333333333,
+            "uniform_random_accuracy": 0.5,
+            "nll": 1.2839150751857138,
+            "brier": 0.7556951385637328,
+            "ece_10": 0.34465668024495244,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.4895833333333333,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.7682291666666666,
+                "accuracy": 0.511864406779661,
+                "selected_count": 295
+              },
+              "0.9": {
+                "coverage": 0.484375,
+                "accuracy": 0.5053763440860215,
+                "selected_count": 186
+              }
+            }
+          }
+        }
+      },
+      "predicted_option1_fraction": 0.7786458333333334,
+      "encoder_work": {
+        "encoder_calls": 768,
+        "encoder_sequences": 768,
+        "unpadded_tokens": 43046,
+        "padded_token_slots": 43046,
+        "attention_token_pairs": 2423400
+      }
+    },
+    "seed43-one": {
+      "weights_sha256": "6e58870266d7ce79287ec3fe182de9b490340c48ef0166dbbc95b1450074d5c3",
+      "raw": {
+        "n": 384,
+        "correct": 194,
+        "accuracy": 0.5052083333333334,
+        "uniform_random_accuracy": 0.5,
+        "nll": 0.7869700877506592,
+        "brier": 0.5678507285960853,
+        "ece_10": 0.1657984269162019,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.5052083333333334,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.3567708333333333,
+            "accuracy": 0.5328467153284672,
+            "selected_count": 137
+          },
+          "0.9": {
+            "coverage": 0.036458333333333336,
+            "accuracy": 0.5,
+            "selected_count": 14
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 194,
+            "accuracy": 0.5052083333333334,
+            "uniform_random_accuracy": 0.5,
+            "nll": 0.7869700877506592,
+            "brier": 0.5678507285960853,
+            "ece_10": 0.1657984269162019,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.5052083333333334,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.3567708333333333,
+                "accuracy": 0.5328467153284672,
+                "selected_count": 137
+              },
+              "0.9": {
+                "coverage": 0.036458333333333336,
+                "accuracy": 0.5,
+                "selected_count": 14
+              }
+            }
+          }
+        }
+      },
+      "inherited_temperature": 1.5480560770563405,
+      "inherited_temperature_metrics": {
+        "n": 384,
+        "correct": 194,
+        "accuracy": 0.5052083333333334,
+        "uniform_random_accuracy": 0.5,
+        "nll": 0.7309890014562118,
+        "brier": 0.5316391413374003,
+        "ece_10": 0.11468924442306161,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.5052083333333334,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.15885416666666666,
+            "accuracy": 0.5245901639344263,
+            "selected_count": 61
+          },
+          "0.9": {
+            "coverage": 0.0078125,
+            "accuracy": 1.0,
+            "selected_count": 3
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 194,
+            "accuracy": 0.5052083333333334,
+            "uniform_random_accuracy": 0.5,
+            "nll": 0.7309890014562118,
+            "brier": 0.5316391413374003,
+            "ece_10": 0.11468924442306161,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.5052083333333334,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.15885416666666666,
+                "accuracy": 0.5245901639344263,
+                "selected_count": 61
+              },
+              "0.9": {
+                "coverage": 0.0078125,
+                "accuracy": 1.0,
+                "selected_count": 3
+              }
+            }
+          }
+        }
+      },
+      "predicted_option1_fraction": 0.6536458333333334,
+      "encoder_work": {
+        "encoder_calls": 768,
+        "encoder_sequences": 768,
+        "unpadded_tokens": 43046,
+        "padded_token_slots": 43046,
+        "attention_token_pairs": 2423400
+      }
+    },
+    "seed43-variable": {
+      "weights_sha256": "e963714c392b4a9979feb2fc95bc1d617fd16edd4142542026af4b5aee1c81ff",
+      "raw": {
+        "n": 384,
+        "correct": 196,
+        "accuracy": 0.5104166666666666,
+        "uniform_random_accuracy": 0.5,
+        "nll": 0.8087639667896392,
+        "brier": 0.5757628114380703,
+        "ece_10": 0.1747557663669189,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.5104166666666666,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.4166666666666667,
+            "accuracy": 0.525,
+            "selected_count": 160
+          },
+          "0.9": {
+            "coverage": 0.08072916666666667,
+            "accuracy": 0.5161290322580645,
+            "selected_count": 31
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 196,
+            "accuracy": 0.5104166666666666,
+            "uniform_random_accuracy": 0.5,
+            "nll": 0.8087639667896392,
+            "brier": 0.5757628114380703,
+            "ece_10": 0.1747557663669189,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.5104166666666666,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.4166666666666667,
+                "accuracy": 0.525,
+                "selected_count": 160
+              },
+              "0.9": {
+                "coverage": 0.08072916666666667,
+                "accuracy": 0.5161290322580645,
+                "selected_count": 31
+              }
+            }
+          }
+        }
+      },
+      "inherited_temperature": 1.9937155332430831,
+      "inherited_temperature_metrics": {
+        "n": 384,
+        "correct": 196,
+        "accuracy": 0.5104166666666666,
+        "uniform_random_accuracy": 0.5,
+        "nll": 0.7187359350205133,
+        "brier": 0.5215152794276144,
+        "ece_10": 0.09487240047504505,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.5104166666666666,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.140625,
+            "accuracy": 0.5185185185185185,
+            "selected_count": 54
+          },
+          "0.9": {
+            "coverage": 0.0,
+            "accuracy": null,
+            "selected_count": 0
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 196,
+            "accuracy": 0.5104166666666666,
+            "uniform_random_accuracy": 0.5,
+            "nll": 0.7187359350205133,
+            "brier": 0.5215152794276144,
+            "ece_10": 0.09487240047504505,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.5104166666666666,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.140625,
+                "accuracy": 0.5185185185185185,
+                "selected_count": 54
+              },
+              "0.9": {
+                "coverage": 0.0,
+                "accuracy": null,
+                "selected_count": 0
+              }
+            }
+          }
+        }
+      },
+      "predicted_option1_fraction": 0.7265625,
+      "encoder_work": {
+        "encoder_calls": 768,
+        "encoder_sequences": 768,
+        "unpadded_tokens": 43046,
+        "padded_token_slots": 43046,
+        "attention_token_pairs": 2423400
+      }
+    },
+    "seed43-balanced": {
+      "weights_sha256": "6bbc37a661776328a656654fe59133e396b1dfd89164de42388930e42089adfc",
+      "raw": {
+        "n": 384,
+        "correct": 195,
+        "accuracy": 0.5078125,
+        "uniform_random_accuracy": 0.5,
+        "nll": 0.8970378209460343,
+        "brier": 0.6230654888670334,
+        "ece_10": 0.22224196915825206,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.5078125,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.5598958333333334,
+            "accuracy": 0.5069767441860465,
+            "selected_count": 215
+          },
+          "0.9": {
+            "coverage": 0.1484375,
+            "accuracy": 0.5263157894736842,
+            "selected_count": 57
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 195,
+            "accuracy": 0.5078125,
+            "uniform_random_accuracy": 0.5,
+            "nll": 0.8970378209460343,
+            "brier": 0.6230654888670334,
+            "ece_10": 0.22224196915825206,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.5078125,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.5598958333333334,
+                "accuracy": 0.5069767441860465,
+                "selected_count": 215
+              },
+              "0.9": {
+                "coverage": 0.1484375,
+                "accuracy": 0.5263157894736842,
+                "selected_count": 57
+              }
+            }
+          }
+        }
+      },
+      "inherited_temperature": 1.658643334750305,
+      "inherited_temperature_metrics": {
+        "n": 384,
+        "correct": 195,
+        "accuracy": 0.5078125,
+        "uniform_random_accuracy": 0.5,
+        "nll": 0.7700981545252316,
+        "brier": 0.5592429251728702,
+        "ece_10": 0.1516323414010306,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.5078125,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.3203125,
+            "accuracy": 0.5691056910569106,
+            "selected_count": 123
+          },
+          "0.9": {
+            "coverage": 0.018229166666666668,
+            "accuracy": 0.5714285714285714,
+            "selected_count": 7
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 195,
+            "accuracy": 0.5078125,
+            "uniform_random_accuracy": 0.5,
+            "nll": 0.7700981545252316,
+            "brier": 0.5592429251728702,
+            "ece_10": 0.1516323414010306,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.5078125,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.3203125,
+                "accuracy": 0.5691056910569106,
+                "selected_count": 123
+              },
+              "0.9": {
+                "coverage": 0.018229166666666668,
+                "accuracy": 0.5714285714285714,
+                "selected_count": 7
+              }
+            }
+          }
+        }
+      },
+      "predicted_option1_fraction": 0.6614583333333334,
+      "encoder_work": {
+        "encoder_calls": 768,
+        "encoder_sequences": 768,
+        "unpadded_tokens": 43046,
+        "padded_token_slots": 43046,
+        "attention_token_pairs": 2423400
+      }
+    },
+    "seed43-grouped": {
+      "weights_sha256": "aca842ce9a47886d16e6896d0b3aeb802396dd5d0880ee00c041a36afd001306",
+      "raw": {
+        "n": 384,
+        "correct": 194,
+        "accuracy": 0.5052083333333334,
+        "uniform_random_accuracy": 0.5,
+        "nll": 1.2468339980107082,
+        "brier": 0.7445829263326379,
+        "ece_10": 0.31411859268943465,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.5052083333333334,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.7265625,
+            "accuracy": 0.5125448028673835,
+            "selected_count": 279
+          },
+          "0.9": {
+            "coverage": 0.4583333333333333,
+            "accuracy": 0.5056818181818182,
+            "selected_count": 176
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 194,
+            "accuracy": 0.5052083333333334,
+            "uniform_random_accuracy": 0.5,
+            "nll": 1.2468339980107082,
+            "brier": 0.7445829263326379,
+            "ece_10": 0.31411859268943465,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.5052083333333334,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.7265625,
+                "accuracy": 0.5125448028673835,
+                "selected_count": 279
+              },
+              "0.9": {
+                "coverage": 0.4583333333333333,
+                "accuracy": 0.5056818181818182,
+                "selected_count": 176
+              }
+            }
+          }
+        }
+      },
+      "inherited_temperature": 1.818478204599051,
+      "inherited_temperature_metrics": {
+        "n": 384,
+        "correct": 194,
+        "accuracy": 0.5052083333333334,
+        "uniform_random_accuracy": 0.5,
+        "nll": 0.8962501101978805,
+        "brier": 0.6369469616377853,
+        "ece_10": 0.2257374225494762,
+        "selective": {
+          "0.5": {
+            "coverage": 1.0,
+            "accuracy": 0.5052083333333334,
+            "selected_count": 384
+          },
+          "0.7": {
+            "coverage": 0.5911458333333334,
+            "accuracy": 0.4889867841409692,
+            "selected_count": 227
+          },
+          "0.9": {
+            "coverage": 0.1171875,
+            "accuracy": 0.4888888888888889,
+            "selected_count": 45
+          }
+        },
+        "by_source": {
+          "winogrande-1.1": {
+            "n": 384,
+            "correct": 194,
+            "accuracy": 0.5052083333333334,
+            "uniform_random_accuracy": 0.5,
+            "nll": 0.8962501101978805,
+            "brier": 0.6369469616377853,
+            "ece_10": 0.2257374225494762,
+            "selective": {
+              "0.5": {
+                "coverage": 1.0,
+                "accuracy": 0.5052083333333334,
+                "selected_count": 384
+              },
+              "0.7": {
+                "coverage": 0.5911458333333334,
+                "accuracy": 0.4889867841409692,
+                "selected_count": 227
+              },
+              "0.9": {
+                "coverage": 0.1171875,
+                "accuracy": 0.4888888888888889,
+                "selected_count": 45
+              }
+            }
+          }
+        }
+      },
+      "predicted_option1_fraction": 0.7786458333333334,
+      "encoder_work": {
+        "encoder_calls": 768,
+        "encoder_sequences": 768,
+        "unpadded_tokens": 43046,
+        "padded_token_slots": 43046,
+        "attention_token_pairs": 2423400
+      }
+    }
+  },
+  "paired": {
+    "seed42 标签均衡": {
+      "n": 384,
+      "groups": 384,
+      "both_correct": 176,
+      "both_wrong": 161,
+      "fixed": 24,
+      "regressed": 23,
+      "accuracy_change": 0.0026041666666666665,
+      "paired_group_bootstrap_95_percentile": [
+        -0.03125,
+        0.036458333333333336
+      ],
+      "confusion": {
+        "initial": {
+          "option1": {
+            "option2": 55,
+            "option1": 138
+          },
+          "option2": {
+            "option2": 61,
+            "option1": 130
+          }
+        },
+        "trained": {
+          "option1": {
+            "option2": 52,
+            "option1": 141
+          },
+          "option2": {
+            "option2": 59,
+            "option1": 132
+          }
+        }
+      }
+    },
+    "seed43 标签均衡": {
+      "n": 384,
+      "groups": 384,
+      "both_correct": 173,
+      "both_wrong": 166,
+      "fixed": 22,
+      "regressed": 23,
+      "accuracy_change": -0.0026041666666666665,
+      "paired_group_bootstrap_95_percentile": [
+        -0.036458333333333336,
+        0.03125
+      ],
+      "confusion": {
+        "initial": {
+          "option1": {
+            "option2": 51,
+            "option1": 142
+          },
+          "option2": {
+            "option2": 54,
+            "option1": 137
+          }
+        },
+        "trained": {
+          "option1": {
+            "option2": 64,
+            "option1": 129
+          },
+          "option2": {
+            "option2": 66,
+            "option1": 125
+          }
+        }
+      }
+    },
+    "seed42 第二轮": {
+      "n": 384,
+      "groups": 384,
+      "both_correct": 179,
+      "both_wrong": 166,
+      "fixed": 21,
+      "regressed": 18,
+      "accuracy_change": 0.0078125,
+      "paired_group_bootstrap_95_percentile": [
+        -0.0234375,
+        0.041666666666666664
+      ],
+      "confusion": {
+        "initial": {
+          "option1": {
+            "option2": 58,
+            "option1": 135
+          },
+          "option2": {
+            "option2": 62,
+            "option1": 129
+          }
+        },
+        "trained": {
+          "option1": {
+            "option2": 52,
+            "option1": 141
+          },
+          "option2": {
+            "option2": 59,
+            "option1": 132
+          }
+        }
+      }
+    },
+    "seed43 第二轮": {
+      "n": 384,
+      "groups": 384,
+      "both_correct": 170,
+      "both_wrong": 165,
+      "fixed": 25,
+      "regressed": 24,
+      "accuracy_change": 0.0026041666666666665,
+      "paired_group_bootstrap_95_percentile": [
+        -0.033854166666666664,
+        0.036458333333333336
+      ],
+      "confusion": {
+        "initial": {
+          "option1": {
+            "option2": 66,
+            "option1": 127
+          },
+          "option2": {
+            "option2": 67,
+            "option1": 124
+          }
+        },
+        "trained": {
+          "option1": {
+            "option2": 64,
+            "option1": 129
+          },
+          "option2": {
+            "option2": 66,
+            "option1": 125
+          }
+        }
+      }
+    },
+    "seed42 均衡训练相对起点": {
+      "n": 384,
+      "groups": 384,
+      "both_correct": 174,
+      "both_wrong": 164,
+      "fixed": 26,
+      "regressed": 20,
+      "accuracy_change": 0.015625,
+      "paired_group_bootstrap_95_percentile": [
+        -0.020833333333333332,
+        0.049479166666666664
+      ],
+      "confusion": {
+        "initial": {
+          "option1": {
+            "option2": 45,
+            "option1": 148
+          },
+          "option2": {
+            "option2": 46,
+            "option1": 145
+          }
+        },
+        "trained": {
+          "option1": {
+            "option2": 52,
+            "option1": 141
+          },
+          "option2": {
+            "option2": 59,
+            "option1": 132
+          }
+        }
+      }
+    },
+    "seed43 均衡训练相对起点": {
+      "n": 384,
+      "groups": 384,
+      "both_correct": 164,
+      "both_wrong": 159,
+      "fixed": 31,
+      "regressed": 30,
+      "accuracy_change": 0.0026041666666666665,
+      "paired_group_bootstrap_95_percentile": [
+        -0.0390625,
+        0.041666666666666664
+      ],
+      "confusion": {
+        "initial": {
+          "option1": {
+            "option2": 45,
+            "option1": 148
+          },
+          "option2": {
+            "option2": 46,
+            "option1": 145
+          }
+        },
+        "trained": {
+          "option1": {
+            "option2": 64,
+            "option1": 129
+          },
+          "option2": {
+            "option2": 66,
+            "option1": 125
+          }
+        }
+      }
+    },
+    "seed42 前提成组": {
+      "n": 384,
+      "groups": 384,
+      "both_correct": 171,
+      "both_wrong": 167,
+      "fixed": 17,
+      "regressed": 29,
+      "accuracy_change": -0.03125,
+      "paired_group_bootstrap_95_percentile": [
+        -0.06770833333333333,
+        0.0026041666666666665
+      ],
+      "confusion": {
+        "initial": {
+          "option1": {
+            "option2": 52,
+            "option1": 141
+          },
+          "option2": {
+            "option2": 59,
+            "option1": 132
+          }
+        },
+        "trained": {
+          "option1": {
+            "option2": 45,
+            "option1": 148
+          },
+          "option2": {
+            "option2": 40,
+            "option1": 151
+          }
+        }
+      }
+    },
+    "seed43 前提成组": {
+      "n": 384,
+      "groups": 384,
+      "both_correct": 155,
+      "both_wrong": 150,
+      "fixed": 39,
+      "regressed": 40,
+      "accuracy_change": -0.0026041666666666665,
+      "paired_group_bootstrap_95_percentile": [
+        -0.049479166666666664,
+        0.044270833333333336
+      ],
+      "confusion": {
+        "initial": {
+          "option1": {
+            "option2": 64,
+            "option1": 129
+          },
+          "option2": {
+            "option2": 66,
+            "option1": 125
+          }
+        },
+        "trained": {
+          "option1": {
+            "option2": 42,
+            "option1": 151
+          },
+          "option2": {
+            "option2": 43,
+            "option1": 148
+          }
+        }
+      }
+    }
+  }
+}

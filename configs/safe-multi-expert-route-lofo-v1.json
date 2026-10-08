@@ -1,0 +1,115 @@
+{
+  "format_version": 1,
+  "study": "safe-multi-expert-route-lofo-v1",
+  "status": "frozen_before_training",
+  "data": {
+    "path": "runs/qasc-dual-function-screen-v1/cases.jsonl",
+    "sha256": "1e3085e934f30ab50f7258e8ad2cd28de87423f8ed4649a7403cff57e17b8381",
+    "dataset": "cases",
+    "sources": [
+      "qasc",
+      "snli",
+      "paws-wiki",
+      "clinc",
+      "typed-decisions",
+      "json-schema"
+    ],
+    "counts": {
+      "qasc|train": 512,
+      "qasc|validation": 128,
+      "snli|train": 96,
+      "snli|validation": 96,
+      "paws-wiki|train": 96,
+      "paws-wiki|validation": 96,
+      "clinc|train": 96,
+      "clinc|validation": 42,
+      "typed-decisions|train": 96,
+      "typed-decisions|validation": 320,
+      "json-schema|train": 96,
+      "json-schema|validation": 42
+    }
+  },
+  "feature_cache": {
+    "path": "cache/qasc-routed-residual-features-v1",
+    "manifest_sha256": "b6d2b5def9bf913cb7c06d80747e4a63976a07c21cbc60fe1df9deb7b107db53"
+  },
+  "model": {
+    "residual_width": 256,
+    "router_width": 128,
+    "dropout": 0.0,
+    "initial_gate_probability": 0.25
+  },
+  "experts": {
+    "qasc": {
+      "weights": "runs/qasc-binary-route-screen-v1/binary-route.safetensors",
+      "weights_sha256": "a1b9d145e3532ddd0460aa3429420088cd74f8a3a56325249f227c5b846853ab"
+    },
+    "snli": {
+      "weights": "runs/snli-specialist-v1/specialist-seed-42.safetensors",
+      "weights_sha256": "b7fa22125e6c24e9b15532ba807bb47b2d2fc1bb28fb7d446312c4c0a71ed65b"
+    },
+    "paws-wiki": {
+      "weights": "runs/paws-wiki-specialist-v1/specialist-seed-42.safetensors",
+      "weights_sha256": "6d185df8a459041819abe6e3a48aed2df49bec335d468150d53b04931f8f2152"
+    },
+    "clinc": {
+      "weights": "runs/clinc-specialist-v1/specialist-seed-42.safetensors",
+      "weights_sha256": "1c1edff2735f173aca9e209e01029fad65c42c66d8840a64b086dafde3da2243"
+    }
+  },
+  "proper_loss": {
+    "brier_weight": 0.5
+  },
+  "router_seeds": [
+    42,
+    43,
+    44
+  ],
+  "training": {
+    "hidden_width": 128,
+    "updates": 256,
+    "batch_size": 64,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "class_weight_cap": 3.0,
+    "confidence_threshold": 0.5
+  },
+  "screening_rule": {
+    "accuracy_min_delta": 0.0,
+    "cross_entropy_max_delta": 0.0,
+    "each_source_accuracy_min_delta": -0.01,
+    "each_source_cross_entropy_max_delta": 0.02,
+    "violation_rate_max": 0.05,
+    "proper_gain_min": 0.01,
+    "path_match_min": 0.4,
+    "decision": "Advance only if multi-seed leave-family-out routing has no aggregate regression, bounded per-source regression and safety violations, positive proper gain and material safe-oracle path agreement."
+  },
+  "source_files": {
+    "scripts/run_safe_multi_expert_route_lofo.py": "362bf0a944cb6b39d9626cbf35932e0f8a1ec3b508745f0d1b5ced9ab3da4df9",
+    "scripts/run_distribution_safe_specialist_oracle.py": "68a9a9f4b4a096849bc54a29ee62d65ab52dee6454a4a774a384e0a7f26f971f",
+    "scripts/run_specialist_cross_matrix.py": "0d45851035c5631151702d351f2941f84a5b2c3522854a056a95294182f3a7e3",
+    "scripts/run_qasc_routed_residual_screen.py": "bd14916548a04465b33d0a1ed80e0fa9bd621a5ef0ca858670184ba911e64ba4",
+    "src/decision_model/core.py": "ed3eafaff30275e99bf4e7c970584d5bd3f2197d747d25b2ca20adbfb37621ae",
+    "src/decision_model/expert_bank_features.py": "9a4efbb48d9539ba77c8d518a2a4d6f06515053718a547470e19bd45aea6fa1b",
+    "src/decision_model/safe_routing.py": "5b6287a7e4e938a34613f11ae48bda01017d4a0aeac2183b728ea25106fb3478",
+    "src/decision_model/behavioral_route_features.py": "47f36974e5353c377a36d730f2b5bf613ed0d82458fd3a8b7f18cc23e7302c63",
+    "src/decision_model/feature_screen.py": "3b16e2b880e1e3c861c01988c19ac323818e8a5e7f0afd54b2991d35c36124e2",
+    "src/decision_model/train.py": "485af4564a68d6e44dbb080e97b0a08ded6925ae0d2bac8d74215fd665fa0f51",
+    "docs/SAFE_MULTI_EXPERT_ROUTE_LOFO_DESIGN.zh-CN.md": "dfeacb20918f6736893d3b217a5a21e1a01b4a85bdaa7416494a7a6b20009bf0"
+  },
+  "limitations": [
+    "All train and validation rows are consumed public data and cannot support a fresh release claim.",
+    "The frozen specialist bank is shared across folds; only router training sources are held out.",
+    "The router sees inference-time behavior summaries, not source identity, labels or text hidden states.",
+    "Passing this study would authorize full consumed-data router training, not a release endpoint."
+  ],
+  "interpretation": {
+    "public_data_only": true,
+    "multi_seed": true,
+    "leave_one_family_out": true,
+    "distribution_safe_targets": true,
+    "source_feature_forbidden": true,
+    "github_publication": false
+  }
+}

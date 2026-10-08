@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "study": "release-candidate-v1",
+  "stage": "blind_selection_before_any_endpoint_inference",
+  "failure": "two duplicate semantic model inputs in the selected causal_judgment rows",
+  "attempted_rows": 384,
+  "unique_model_inputs": 382,
+  "duplicate_groups": 2,
+  "failed_cases_sha256": "e822520b597a3d50fe1dbd31efab1f49adecd619bc1aaf72f8339bd1e36b8e9b",
+  "locked_endpoints_sha256": "6403844ecacf14b59c2af7bf73315aa013c153fb9569d73eb4bdd91953b2aecb",
+  "endpoint_inference_started": false,
+  "label_based_filtering_performed": false,
+  "remedy": "sort by the frozen input-only selection key and source index, then keep the first row for each hash of task, context and sorted candidate descriptions",
+  "remedy_uses_labels": false,
+  "source_record_changed": false,
+  "endpoint_lock_changed": false
+}

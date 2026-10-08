@@ -1,0 +1,53 @@
+{
+  "format_version": 1,
+  "study": "qasc-retention-path-v1",
+  "status": "frozen_before_interpolation_or_evaluation",
+  "parent": {
+    "checkpoint": "runs/functional-retention-screen-v1/warm-functional-context",
+    "weights_sha256": "24a64f1efa256e182049db117b8ce67495dd401326b1db5ebbba168a6f08c180",
+    "model_sha256": "b728b762e7f4d664fa37b3d6cb5976d8f6c731cebca502440f4814f26c052c6f"
+  },
+  "qasc_endpoint": {
+    "checkpoint": "runs/qasc-evidence-screen-v1/qasc-functional",
+    "weights_sha256": "ab40963b702ef5e24579979b0069949839c4a10abcfa7577fac8751493209e34",
+    "model_sha256": "aed6b23c19a8e17af58520a1742c3f49ff8338745ab7ae4dd72e0184a3ec9594"
+  },
+  "data": {
+    "cases": "runs/qasc-evidence-screen-v1/cases.jsonl",
+    "cases_sha256": "c905abe996ff63dce96c363da2c932f0635ff2c11ef75448395cb1dbbb835783",
+    "qasc_development": "runs/qasc-evidence-screen-v1/qasc-development.jsonl",
+    "qasc_development_sha256": "ee1f206aeaa8dfe253c2df847020df147fe9553b2bbc4f4a539f8073a0667224",
+    "consumed_development": "runs/release-candidate-v1/blind-suite/cases.jsonl",
+    "consumed_development_sha256": "4890b3ba5f22af9de9e8c6a12a163154395a7a069125c9a0e5ed16dd27183d63"
+  },
+  "baselines": {
+    "qasc_screen_evidence": "docs/evidence/qasc-evidence-screen-v1.json",
+    "qasc_screen_evidence_sha256": "93b115649dd5d2cfe4f319a4592120a76470e4f26807d926eaa4fec004e7685e",
+    "functional_retention_evidence": "docs/evidence/functional-retention-screen-v1.json",
+    "functional_retention_evidence_sha256": "00d4cbf55d84c193c7057870e8d20fb4ee60d3bc90332e2f750b4e269d5ff7e6"
+  },
+  "arms": {
+    "alpha-025": 0.25,
+    "alpha-050": 0.5,
+    "alpha-075": 0.75
+  },
+  "interpolation": "For every adapter and scoring-head tensor, theta(alpha)=(1-alpha)*theta(parent)+alpha*theta(qasc_endpoint). No optimizer state or calibration temperature is interpolated; every gate uses raw probabilities.",
+  "screening_rule": {
+    "seen_accuracy_vs_parent_min_delta": -0.005,
+    "seen_nll_vs_parent_max_delta": 0.01,
+    "development_accuracy_vs_parent_min_delta": -0.005,
+    "development_each_context_advantage_vs_parent_min_delta": -0.005,
+    "qasc_accuracy_vs_parent_min_delta": 0.03,
+    "qasc_nll_vs_parent_max_delta": -0.02,
+    "qasc_context_advantage_vs_parent_min_delta": 0.02,
+    "selection": "Among arms passing every gate, choose maximum QASC accuracy, then lower alpha. The result only chooses a target update dose for a later training replication."
+  },
+  "interpretation": {
+    "development_only": true,
+    "single_path_diagnostic": true,
+    "qasc_validation_already_consumed": true,
+    "consumed_development_release_eligible": false,
+    "interpolated_checkpoint_release_eligible": false,
+    "github_publication": false
+  }
+}

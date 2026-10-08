@@ -1,0 +1,410 @@
+{
+  "format_version": 1,
+  "study": "truthfulqa-specialist-v1",
+  "role": "consumed multi-seed public-family specialist screen",
+  "protocol_sha256": "53d4c13a6c6b767bde87f4097e822e58a07f564776ebbaaa2e4f31b736362f5c",
+  "seeds": [
+    {
+      "seed": 42,
+      "run": {
+        "seed": 42,
+        "updates": 16,
+        "seconds": 0.11461954098194838,
+        "initial_residual_sha256": "995b8d3fd86fa34cf8979bb37500063415a122630df6951b62dac729c3a29422",
+        "final_residual_sha256": "52e7421b238e92b35f900456ac25da6d2db786b946a18206bfc96d2256db5066",
+        "initial_max_logit_difference": 0.0,
+        "weights_sha256": "489f5884e020636dd4dfd70aff0cdbea53de87299767fe109390682545a96de3",
+        "training_plan_sha256": "f2b1b839c55e13476de8e93bfe9102c2093d957f08c40eba317deb31d0752e79",
+        "gradient_norm": {
+          "mean": 1.8452084232121706,
+          "maximum": 4.945001125335693,
+          "clipped_updates": 10
+        },
+        "curve": [
+          {
+            "update": 1,
+            "loss": 2.7470450401306152
+          },
+          {
+            "update": 2,
+            "loss": 1.687741994857788
+          },
+          {
+            "update": 3,
+            "loss": 1.2025785446166992
+          },
+          {
+            "update": 4,
+            "loss": 1.3928395509719849
+          },
+          {
+            "update": 5,
+            "loss": 1.8642659187316895
+          },
+          {
+            "update": 6,
+            "loss": 1.4667012691497803
+          },
+          {
+            "update": 7,
+            "loss": 1.8134108781814575
+          },
+          {
+            "update": 8,
+            "loss": 1.7854877710342407
+          },
+          {
+            "update": 9,
+            "loss": 1.2189619541168213
+          },
+          {
+            "update": 10,
+            "loss": 1.6366232633590698
+          },
+          {
+            "update": 11,
+            "loss": 1.3256773948669434
+          },
+          {
+            "update": 12,
+            "loss": 1.8794350624084473
+          },
+          {
+            "update": 13,
+            "loss": 1.8707587718963623
+          },
+          {
+            "update": 14,
+            "loss": 1.8295818567276
+          },
+          {
+            "update": 15,
+            "loss": 1.2883329391479492
+          },
+          {
+            "update": 16,
+            "loss": 0.8815536499023438
+          }
+        ]
+      },
+      "evaluation": {
+        "rows": 256,
+        "mean_utility": 0.3134988307710955,
+        "open_rate": 0.5390625,
+        "parent_accuracy": 0.53125,
+        "expert_accuracy": 0.546875,
+        "accuracy_delta": 0.015625,
+        "parent_nll": 1.1799635907544366,
+        "expert_nll": 0.9496550092999207,
+        "nll_delta": -0.23030858145451583,
+        "context_advantage": {
+          "truthfulqa": {
+            "rows": 256,
+            "mean": -0.3439880091827945,
+            "positive": 117
+          }
+        },
+        "parent_context_advantage": {
+          "truthfulqa": {
+            "rows": 256,
+            "mean": -0.5234067741585022,
+            "positive": 112
+          }
+        },
+        "by_source": {
+          "truthfulqa": {
+            "rows": 256,
+            "mean_utility": 0.3134988307710955,
+            "open_rate": 0.5390625,
+            "parent_accuracy": 0.53125,
+            "expert_accuracy": 0.546875,
+            "accuracy_delta": 0.015625,
+            "parent_nll": 1.1799635907544366,
+            "expert_nll": 0.9496550092999207,
+            "nll_delta": -0.23030858145451583
+          }
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "run": {
+        "seed": 43,
+        "updates": 16,
+        "seconds": 0.0976244590128772,
+        "initial_residual_sha256": "9a8b6fd2e4368a16819f9c31eeb71e967d6787d8e5a0e891322fed70fd4958d9",
+        "final_residual_sha256": "68f8773422a6f5d56f5ea342a39c8a3322504a5668f36c75b3cdc73abf876a03",
+        "initial_max_logit_difference": 0.0,
+        "weights_sha256": "a2a353152d9d49f9660398d9cd84e58df916961cdccfa8cf6765634ed02c1302",
+        "training_plan_sha256": "e2c1112c85bb86286e15866586e45e95745cc291aa649ca0acafda4259569794",
+        "gradient_norm": {
+          "mean": 1.9085265025496483,
+          "maximum": 4.826708793640137,
+          "clipped_updates": 11
+        },
+        "curve": [
+          {
+            "update": 1,
+            "loss": 1.8913369178771973
+          },
+          {
+            "update": 2,
+            "loss": 1.7408560514450073
+          },
+          {
+            "update": 3,
+            "loss": 1.5815542936325073
+          },
+          {
+            "update": 4,
+            "loss": 1.8206751346588135
+          },
+          {
+            "update": 5,
+            "loss": 1.3609544038772583
+          },
+          {
+            "update": 6,
+            "loss": 1.939199447631836
+          },
+          {
+            "update": 7,
+            "loss": 2.2419493198394775
+          },
+          {
+            "update": 8,
+            "loss": 1.7766069173812866
+          },
+          {
+            "update": 9,
+            "loss": 1.6684149503707886
+          },
+          {
+            "update": 10,
+            "loss": 1.4353621006011963
+          },
+          {
+            "update": 11,
+            "loss": 1.3081324100494385
+          },
+          {
+            "update": 12,
+            "loss": 1.6096203327178955
+          },
+          {
+            "update": 13,
+            "loss": 1.2557486295700073
+          },
+          {
+            "update": 14,
+            "loss": 1.1709365844726562
+          },
+          {
+            "update": 15,
+            "loss": 1.6771067380905151
+          },
+          {
+            "update": 16,
+            "loss": 1.3056858777999878
+          }
+        ]
+      },
+      "evaluation": {
+        "rows": 256,
+        "mean_utility": 0.335512032135739,
+        "open_rate": 0.53515625,
+        "parent_accuracy": 0.53125,
+        "expert_accuracy": 0.55078125,
+        "accuracy_delta": 0.01953125,
+        "parent_nll": 1.1799635907544366,
+        "expert_nll": 0.9338175222052435,
+        "nll_delta": -0.24614606854919308,
+        "context_advantage": {
+          "truthfulqa": {
+            "rows": 256,
+            "mean": -0.3303347461296653,
+            "positive": 117
+          }
+        },
+        "parent_context_advantage": {
+          "truthfulqa": {
+            "rows": 256,
+            "mean": -0.5234067741585022,
+            "positive": 112
+          }
+        },
+        "by_source": {
+          "truthfulqa": {
+            "rows": 256,
+            "mean_utility": 0.335512032135739,
+            "open_rate": 0.53515625,
+            "parent_accuracy": 0.53125,
+            "expert_accuracy": 0.55078125,
+            "accuracy_delta": 0.01953125,
+            "parent_nll": 1.1799635907544366,
+            "expert_nll": 0.9338175222052435,
+            "nll_delta": -0.24614606854919308
+          }
+        }
+      }
+    },
+    {
+      "seed": 44,
+      "run": {
+        "seed": 44,
+        "updates": 16,
+        "seconds": 0.09813220798969269,
+        "initial_residual_sha256": "d02d8ddaf86a37b07eab3a50da39217fdf0679d4f08736deb7a827f3eece7c47",
+        "final_residual_sha256": "296b45f6fca4068dbcb831cf00922c84a71652268fab7d0830945b4c04e8b688",
+        "initial_max_logit_difference": 0.0,
+        "weights_sha256": "261e1d1a0105e8fbbbcae6c6a5db090cc503d912d1d3109a5078b32251e0df1a",
+        "training_plan_sha256": "25a73d797e2260972c7b891e04d144775883cdfcf04cf33e8cebde99a447d9a5",
+        "gradient_norm": {
+          "mean": 1.9073126846924424,
+          "maximum": 4.6475749015808105,
+          "clipped_updates": 12
+        },
+        "curve": [
+          {
+            "update": 1,
+            "loss": 1.2912858724594116
+          },
+          {
+            "update": 2,
+            "loss": 2.190186023712158
+          },
+          {
+            "update": 3,
+            "loss": 1.2335954904556274
+          },
+          {
+            "update": 4,
+            "loss": 1.354850172996521
+          },
+          {
+            "update": 5,
+            "loss": 2.002953052520752
+          },
+          {
+            "update": 6,
+            "loss": 2.1803531646728516
+          },
+          {
+            "update": 7,
+            "loss": 1.8085572719573975
+          },
+          {
+            "update": 8,
+            "loss": 1.9555957317352295
+          },
+          {
+            "update": 9,
+            "loss": 1.6759593486785889
+          },
+          {
+            "update": 10,
+            "loss": 0.9941679239273071
+          },
+          {
+            "update": 11,
+            "loss": 1.8262546062469482
+          },
+          {
+            "update": 12,
+            "loss": 1.7937793731689453
+          },
+          {
+            "update": 13,
+            "loss": 0.9462143182754517
+          },
+          {
+            "update": 14,
+            "loss": 1.5730040073394775
+          },
+          {
+            "update": 15,
+            "loss": 1.4884837865829468
+          },
+          {
+            "update": 16,
+            "loss": 1.5326459407806396
+          }
+        ]
+      },
+      "evaluation": {
+        "rows": 256,
+        "mean_utility": 0.307721665736608,
+        "open_rate": 0.55078125,
+        "parent_accuracy": 0.53125,
+        "expert_accuracy": 0.546875,
+        "accuracy_delta": 0.015625,
+        "parent_nll": 1.1799635907544366,
+        "expert_nll": 0.9537309831559979,
+        "nll_delta": -0.22623260759843866,
+        "context_advantage": {
+          "truthfulqa": {
+            "rows": 256,
+            "mean": -0.3486410601544776,
+            "positive": 117
+          }
+        },
+        "parent_context_advantage": {
+          "truthfulqa": {
+            "rows": 256,
+            "mean": -0.5234067741585022,
+            "positive": 112
+          }
+        },
+        "by_source": {
+          "truthfulqa": {
+            "rows": 256,
+            "mean_utility": 0.307721665736608,
+            "open_rate": 0.55078125,
+            "parent_accuracy": 0.53125,
+            "expert_accuracy": 0.546875,
+            "accuracy_delta": 0.015625,
+            "parent_nll": 1.1799635907544366,
+            "expert_nll": 0.9537309831559979,
+            "nll_delta": -0.22623260759843866
+          }
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "mean_utility": {
+      "mean": 0.3189108428811475,
+      "minimum": 0.307721665736608,
+      "maximum": 0.335512032135739
+    },
+    "open_rate": {
+      "mean": 0.5416666666666666,
+      "minimum": 0.53515625,
+      "maximum": 0.55078125
+    },
+    "accuracy_delta": {
+      "mean": 0.016927083333333332,
+      "minimum": 0.015625,
+      "maximum": 0.01953125
+    },
+    "nll_delta": {
+      "mean": -0.23422908586738253,
+      "minimum": -0.24614606854919308,
+      "maximum": -0.22623260759843866
+    }
+  },
+  "checks": {
+    "mechanism.initial_exact_each_seed": true,
+    "utility.combined_each_seed": true,
+    "utility.each_source_each_seed": true,
+    "accuracy.combined_each_seed": true,
+    "nll.combined_each_seed": true,
+    "nll.each_source_each_seed": true
+  },
+  "qualifies_as_positive_utility_family": true,
+  "limitations": [
+    "TruthfulQA validation becomes consumed after this first run and is not fresh release evidence.",
+    "The decoder representation and parent decision head are frozen.",
+    "This screen trains a TruthfulQA specialist only; it does not train or evaluate a router."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "WinoGrande",
+  "version": "1.1",
+  "archive_url": "https://storage.googleapis.com/ai2-mosaic/public/winogrande/winogrande_1.1.zip",
+  "archive_sha256": "3619ab104d8be2977b25c90ff420cb42d491707dcc75362a1e5d22bc082b7318",
+  "official_repository": "https://github.com/allenai/winogrande",
+  "source_split": "dev",
+  "official_dev_rows": 1267,
+  "frozen_subset_rows": 384,
+  "license": "CC-BY (dataset; version unspecified by official repository README)",
+  "redistribution": "Raw text is downloaded and verified locally; release bundles contain no WinoGrande rows."
+}

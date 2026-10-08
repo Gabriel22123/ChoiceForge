@@ -1,0 +1,55 @@
+{
+  "format_version": 1,
+  "role": "aggregate diagnostic over a consumed development suite; no private case content",
+  "release_eligible": false,
+  "source": "bigbench-causal_judgment",
+  "rows": 128,
+  "gold_counts": {
+    "Yes": 67,
+    "No": 61
+  },
+  "null_context_prediction_counts": {
+    "warm-context": {
+      "Yes": 128,
+      "No": 0
+    },
+    "warm-functional-context": {
+      "Yes": 128,
+      "No": 0
+    }
+  },
+  "endpoints": {
+    "warm-context": {
+      "evidence_correct": {
+        "Yes": 45,
+        "No": 27
+      },
+      "null_wrong_to_evidence_right": 27,
+      "null_right_to_evidence_wrong": 22,
+      "mean_context_advantage": {
+        "Yes": 0.08867318206983463,
+        "No": -0.1229914094945946,
+        "all": -0.01219822484758868
+      }
+    },
+    "warm-functional-context": {
+      "evidence_correct": {
+        "Yes": 46,
+        "No": 26
+      },
+      "null_wrong_to_evidence_right": 26,
+      "null_right_to_evidence_wrong": 21,
+      "mean_context_advantage": {
+        "Yes": 0.06908285333355464,
+        "No": -0.10443401177732012,
+        "all": -0.013608777695846518
+      }
+    }
+  },
+  "fixed_training_subset": {
+    "rows": 512,
+    "literal_yes_no_choice_rows": 0
+  },
+  "interpretation": "The remaining failure is concentrated in a Yes/No candidate prior and evidence-flip coverage gap. This aggregate diagnosis does not establish causality or release eligibility.",
+  "next_hypothesis": "Add answer-blind selected public BoolQ training and validation rows while retaining the functional KL anchor, then require a new fresh task family for any release claim."
+}

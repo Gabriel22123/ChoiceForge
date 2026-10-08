@@ -1,0 +1,89 @@
+{
+  "format_version": 1,
+  "study": "snli-specialist-v1",
+  "status": "frozen_before_training",
+  "display_name": "SNLI",
+  "data": {
+    "train": "runs/qasc-dual-function-screen-v1/cases.jsonl",
+    "train_sha256": "1e3085e934f30ab50f7258e8ad2cd28de87423f8ed4649a7403cff57e17b8381",
+    "train_rows": 96,
+    "train_splits": [
+      "train"
+    ],
+    "train_sources": [
+      "snli"
+    ],
+    "train_dataset": "cases",
+    "validation": "runs/qasc-dual-function-screen-v1/cases.jsonl",
+    "validation_sha256": "1e3085e934f30ab50f7258e8ad2cd28de87423f8ed4649a7403cff57e17b8381",
+    "validation_rows": 96,
+    "validation_splits": [
+      "validation"
+    ],
+    "validation_sources": [
+      "snli"
+    ],
+    "validation_dataset": "cases"
+  },
+  "feature_cache": {
+    "path": "cache/qasc-routed-residual-features-v1",
+    "manifest_sha256": "b6d2b5def9bf913cb7c06d80747e4a63976a07c21cbc60fe1df9deb7b107db53"
+  },
+  "training": {
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "epochs": 16,
+    "residual_width": 256,
+    "router_width": 128,
+    "dropout": 0.0,
+    "initial_gate_probability": 0.25,
+    "batch_size": 32,
+    "updates": 48,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "brier_weight": 0.5,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05
+  },
+  "cost": {
+    "brier_weight": 0.5,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05
+  },
+  "screening_rule": {
+    "combined_mean_utility_min": 0.01,
+    "each_source_mean_utility_min": 0.01,
+    "combined_accuracy_min_delta": 0.0,
+    "combined_nll_max_delta": -0.005,
+    "each_source_nll_max_delta": -0.005,
+    "decision": "Count this consumed source as a positive-utility specialist family only if every seed passes exact initialization, utility, non-regressing accuracy and improving NLL gates."
+  },
+  "evidence_path": "docs/evidence/snli-specialist-v1.json",
+  "report_path": "docs/SNLI_SPECIALIST_RESULT.zh-CN.md",
+  "limitations": [
+    "All validation rows were consumed by earlier project studies and are not fresh release evidence.",
+    "The decoder representation and parent decision head are frozen.",
+    "This screen trains one source specialist only; it does not train or evaluate a router."
+  ],
+  "source_files": {
+    "scripts/run_public_specialist.py": "bc33926c96ba1a2700b2d522eb4e221f177fe195ea7b1259789fd48887596de6",
+    "scripts/run_qasc_routed_residual_screen.py": "bd14916548a04465b33d0a1ed80e0fa9bd621a5ef0ca858670184ba911e64ba4",
+    "src/decision_model/core.py": "ed3eafaff30275e99bf4e7c970584d5bd3f2197d747d25b2ca20adbfb37621ae",
+    "src/decision_model/counterfactual_routing.py": "3f033b5a85fa6a57bcdc43c120de00f3f7a9c791727cc7e9d65049ddba1f37b5",
+    "src/decision_model/feature_screen.py": "3b16e2b880e1e3c861c01988c19ac323818e8a5e7f0afd54b2991d35c36124e2",
+    "src/decision_model/route_utility.py": "be260aa82f322cbac68015129a3c08a46048f92e7b8c6d943c73d8f0820d9f37",
+    "src/decision_model/train.py": "485af4564a68d6e44dbb080e97b0a08ded6925ae0d2bac8d74215fd665fa0f51",
+    "docs/CONSUMED_SOURCE_SPECIALISTS_DESIGN.zh-CN.md": "3a435909cd3386adf2904b24a6685f01b6de4e305777588dc83f56d22f4c965d"
+  },
+  "interpretation": {
+    "public_data_only": true,
+    "consumed_mechanism_screen": true,
+    "source_specific_expert": true,
+    "router_training": false,
+    "github_publication": false
+  }
+}

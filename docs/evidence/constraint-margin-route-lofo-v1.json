@@ -1,0 +1,5174 @@
+{
+  "format_version": 1,
+  "study": "constraint-margin-route-lofo-v1",
+  "role": "nested public-data constraint-margin route validation",
+  "protocol_sha256": "3381850543f254201236d07b98b2584243c56b982f2e1b04fcba57c45b91353b",
+  "experts": [
+    "clinc",
+    "paws-wiki",
+    "qasc",
+    "snli"
+  ],
+  "runs": [
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.09919812501175329,
+      "plan_sha256": "90c67530052a9ea42e5dbbdcedd5e88669f7fa0b32ffe0541da34b1dcad1c513",
+      "risk_positive_counts": {
+        "clinc": 11,
+        "paws-wiki": 19,
+        "qasc": 13,
+        "snli": 30
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.7863585352897644,
+      "loss_last": 0.15580666065216064,
+      "risk_loss_last": 0.09790655225515366,
+      "margin_loss_last": 0.23160044848918915,
+      "gradient_norm_mean": 0.3379312122124247,
+      "gradient_norm_maximum": 0.5815895795822144,
+      "router_sha256": "777c371f45768e4951c94aa2aab06c4965fa01018208846704b309cd4792aac6",
+      "seed": 42,
+      "heldout_source": "clinc",
+      "train_sources": [
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "calibration": {
+        "support_cutoff": 67.51005554199219,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.023848634043335915,
+            "risk_violations": 11,
+            "residual_bounds": [
+              5.035791873931885,
+              0.4948517680168152,
+              4.257523059844971,
+              4.815886974334717
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.0,
+            "risk_violations": 19,
+            "residual_bounds": [
+              0.49488985538482666,
+              0.22047659754753113,
+              1.1219019889831543,
+              0.49861276149749756
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.012481897899508477,
+            "risk_violations": 13,
+            "residual_bounds": [
+              0.5227404236793518,
+              0.2417355626821518,
+              0.6341952681541443,
+              0.5954614281654358
+            ]
+          },
+          "snli": {
+            "risk_threshold": 0.0,
+            "risk_violations": 30,
+            "residual_bounds": [
+              0.5098501443862915,
+              0.3141361474990845,
+              0.9627736806869507,
+              0.4827895164489746
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "json-schema",
+          "train_sources": [
+            "paws-wiki",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "d2500482a8d74b58155cececbbe1cff7f138fecc04dda555ddb5ddca46a8f3b0",
+          "standardization_scale_sha256": "cb6196cc17bee5ce2e72801696b5337665f7b2f3c184381fffce024d3e663569",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.06038512499071658,
+          "plan_sha256": "545a84320406e79ba77d227a1a654ac644d6e7e7473223481de11f6bca420d2d",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 17,
+            "qasc": 7,
+            "snli": 30
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7995731830596924,
+          "loss_last": 0.31448161602020264,
+          "risk_loss_last": 0.2535409927368164,
+          "margin_loss_last": 0.24376246333122253,
+          "gradient_norm_mean": 0.4280949716921896,
+          "gradient_norm_maximum": 0.6063123345375061,
+          "router_sha256": "34388e37c06f2f32ab9c05c61fc6828c3ca0744e1fcd2893bfff1f204dd1dc5c"
+        },
+        {
+          "heldout_source": "paws-wiki",
+          "train_sources": [
+            "json-schema",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "16c2c69dcce047512cc7e7f6bdbe501f68a7773be5b2f639376f24be6c44b62c",
+          "standardization_scale_sha256": "6c4d93cbf8a25833538f1ad597f87b03c61ad297c76f343c61863ba7dcf85cc6",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.049947749997954816,
+          "plan_sha256": "820a9c51ae233987069d7fd5ef7eab6c8ea214696a1ade33e2d86adf26746cfd",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 18,
+            "qasc": 11,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8109423518180847,
+          "loss_last": 0.25735345482826233,
+          "risk_loss_last": 0.192818284034729,
+          "margin_loss_last": 0.2581406831741333,
+          "gradient_norm_mean": 0.4297054372727871,
+          "gradient_norm_maximum": 0.6535232067108154,
+          "router_sha256": "f874cd5406cc796cc4db485a287ce538b66b4d74abd43718b2f688efb2e595f2"
+        },
+        {
+          "heldout_source": "qasc",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 512,
+          "standardization_mean_sha256": "b142fe327ff3f97aaa17792a083a4ed5c227e31400897363b59c63fc34f589b1",
+          "standardization_scale_sha256": "6e04b2e9ba2445f0e182ac4411c7a39e363470eeed6dbdbe5d78ab3524f4f83b",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.05003479099832475,
+          "plan_sha256": "8e251772a49e6faecadaffad70287d07855133be574395dbf86c037e09b0c6f9",
+          "risk_positive_counts": {
+            "clinc": 4,
+            "paws-wiki": 6,
+            "qasc": 12,
+            "snli": 9
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7835172414779663,
+          "loss_last": 0.2831515371799469,
+          "risk_loss_last": 0.19226831197738647,
+          "margin_loss_last": 0.3635328710079193,
+          "gradient_norm_mean": 0.4173934117425233,
+          "gradient_norm_maximum": 0.5854347944259644,
+          "router_sha256": "b41e90994ddc3c8e1070ff60dc34216e4d866a862810b53b1b877867a06967bc"
+        },
+        {
+          "heldout_source": "snli",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "8520bd8bb6d16c22b47cef0dda17bb926617a07b6bf668f99f34f5b8342a984b",
+          "standardization_scale_sha256": "dd9b39703f5d95df4f7e24827604149f4d31f7e22493b041d6f9dd1b763a3709",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.050377999985357746,
+          "plan_sha256": "63043f595e3f49e31a5e5c7fd0d90c15d7c4415fbcdb513aac9e334fb2a67a68",
+          "risk_positive_counts": {
+            "clinc": 11,
+            "paws-wiki": 19,
+            "qasc": 12,
+            "snli": 29
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7679283022880554,
+          "loss_last": 0.2656126618385315,
+          "risk_loss_last": 0.22819474339485168,
+          "margin_loss_last": 0.14967162907123566,
+          "gradient_norm_mean": 0.42021442600525916,
+          "gradient_norm_maximum": 0.6246363520622253,
+          "router_sha256": "d63f064b5f85f6cd1f91da708fec57ca795c2205f423fcdeac7103429722afd0"
+        },
+        {
+          "heldout_source": "typed-decisions",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "bea59f24aca13c18da8f035343d1e306d532958ff9b7a32664b23cda6d9217ec",
+          "standardization_scale_sha256": "bd77e4230725a89bb317a9c7368b8238aa4caa21f69e9697eea3f9d95677bd26",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.0495553340006154,
+          "plan_sha256": "483df022eaf2e016eb12c454884fe5b7b6e55728cbeef5b650659e4eb43cb30c",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 10,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7692891955375671,
+          "loss_last": 0.2722296714782715,
+          "risk_loss_last": 0.23477327823638916,
+          "margin_loss_last": 0.14982563257217407,
+          "gradient_norm_mean": 0.418799850391224,
+          "gradient_norm_maximum": 0.6263700723648071,
+          "router_sha256": "dadfaf4a10a9408cd357cdaa81539b2d7eb0a761fb6bf2f2bc2941926d7fe098"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "9bacb94ce74779396903f9ee3485976416c0e08ac186128c49e2c973728ce49e",
+        "scale_sha256": "2687643e047036f7071f11246dd43bfd9dfa2270dbc92a9ca2010592b0e8e498"
+      },
+      "evaluation": {
+        "rows": 42,
+        "selection": {
+          "parent": 42
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.0240615099391972,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    },
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.09850733302300796,
+      "plan_sha256": "d96b39cc064207d21c3d3085110ae1b6acf3ca0c6eab5d86349a2818d8e0a66f",
+      "risk_positive_counts": {
+        "clinc": 11,
+        "paws-wiki": 19,
+        "qasc": 13,
+        "snli": 30
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.7625212669372559,
+      "loss_last": 0.12341096252202988,
+      "risk_loss_last": 0.05898929387331009,
+      "margin_loss_last": 0.25768667459487915,
+      "gradient_norm_mean": 0.32255276053911075,
+      "gradient_norm_maximum": 0.6702263951301575,
+      "router_sha256": "8119d16a046a9cad3ef7844962bd4c4f4457b54c62865c3c3a9ed42e42292696",
+      "seed": 43,
+      "heldout_source": "clinc",
+      "train_sources": [
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "calibration": {
+        "support_cutoff": 67.51005554199219,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.0013143161242827773,
+            "risk_violations": 11,
+            "residual_bounds": [
+              4.989770412445068,
+              0.5265734791755676,
+              4.473291873931885,
+              5.038154125213623
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.0,
+            "risk_violations": 19,
+            "residual_bounds": [
+              0.5140576362609863,
+              0.20337888598442078,
+              1.0592703819274902,
+              0.5590186715126038
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.0068205444306135175,
+            "risk_violations": 13,
+            "residual_bounds": [
+              0.5164803266525269,
+              0.2624942660331726,
+              0.7209827303886414,
+              0.5504220724105835
+            ]
+          },
+          "snli": {
+            "risk_threshold": 0.005241020878404379,
+            "risk_violations": 30,
+            "residual_bounds": [
+              0.4294602870941162,
+              0.38103187084198,
+              0.8019373416900635,
+              0.46635693311691284
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "json-schema",
+          "train_sources": [
+            "paws-wiki",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "d2500482a8d74b58155cececbbe1cff7f138fecc04dda555ddb5ddca46a8f3b0",
+          "standardization_scale_sha256": "cb6196cc17bee5ce2e72801696b5337665f7b2f3c184381fffce024d3e663569",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.05007420899346471,
+          "plan_sha256": "af56301dbc50fbb4e814c9bf90ee9cc17b15ad84b9c20af7dd054ba9a155d5ff",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 17,
+            "qasc": 7,
+            "snli": 30
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7745383381843567,
+          "loss_last": 0.2642480134963989,
+          "risk_loss_last": 0.20253416895866394,
+          "margin_loss_last": 0.24685540795326233,
+          "gradient_norm_mean": 0.4008550386643037,
+          "gradient_norm_maximum": 0.6799337863922119,
+          "router_sha256": "f0fcc507b1cb975b5ec6d1e37e97a7a702433d650819948b1001c11af7f00500"
+        },
+        {
+          "heldout_source": "paws-wiki",
+          "train_sources": [
+            "json-schema",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "16c2c69dcce047512cc7e7f6bdbe501f68a7773be5b2f639376f24be6c44b62c",
+          "standardization_scale_sha256": "6c4d93cbf8a25833538f1ad597f87b03c61ad297c76f343c61863ba7dcf85cc6",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.048993582982802764,
+          "plan_sha256": "ef9ad069f6ee10009066ea4f112834fe5b5535c62a9bbe95d197fdf45b09a695",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 18,
+            "qasc": 11,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7432963848114014,
+          "loss_last": 0.2467978149652481,
+          "risk_loss_last": 0.18202409148216248,
+          "margin_loss_last": 0.25909489393234253,
+          "gradient_norm_mean": 0.39551099645905197,
+          "gradient_norm_maximum": 0.582994818687439,
+          "router_sha256": "150b084043f24f8ac0b681d83930896bd74cadd30f3b8d2e74d59c264973bb3b"
+        },
+        {
+          "heldout_source": "qasc",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 512,
+          "standardization_mean_sha256": "b142fe327ff3f97aaa17792a083a4ed5c227e31400897363b59c63fc34f589b1",
+          "standardization_scale_sha256": "6e04b2e9ba2445f0e182ac4411c7a39e363470eeed6dbdbe5d78ab3524f4f83b",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04800333399907686,
+          "plan_sha256": "62db8ab0bc9e6fd181ae72d6e210dae8737042b9ec74203cddf0ffb259214dec",
+          "risk_positive_counts": {
+            "clinc": 4,
+            "paws-wiki": 6,
+            "qasc": 12,
+            "snli": 9
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8045872449874878,
+          "loss_last": 0.24755798280239105,
+          "risk_loss_last": 0.1879044622182846,
+          "margin_loss_last": 0.23861408233642578,
+          "gradient_norm_mean": 0.38836707966402173,
+          "gradient_norm_maximum": 0.5038678050041199,
+          "router_sha256": "a9ebab725d3aa2fd49fa65d8d46b01b3257c1d5009f461a06efc6a96d63ee63e"
+        },
+        {
+          "heldout_source": "snli",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "8520bd8bb6d16c22b47cef0dda17bb926617a07b6bf668f99f34f5b8342a984b",
+          "standardization_scale_sha256": "dd9b39703f5d95df4f7e24827604149f4d31f7e22493b041d6f9dd1b763a3709",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.049992292013484985,
+          "plan_sha256": "260537e4b462f879b3291f4ec668381807cfa2248da848b871ce19377c2528f3",
+          "risk_positive_counts": {
+            "clinc": 11,
+            "paws-wiki": 19,
+            "qasc": 12,
+            "snli": 29
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7663251161575317,
+          "loss_last": 0.31326404213905334,
+          "risk_loss_last": 0.2621757686138153,
+          "margin_loss_last": 0.20435309410095215,
+          "gradient_norm_mean": 0.4004753362387419,
+          "gradient_norm_maximum": 0.6296989321708679,
+          "router_sha256": "01c04e4a1bc24a5999f104546ce9064c66fa39c0dd3e698b5bd661af62a3c72c"
+        },
+        {
+          "heldout_source": "typed-decisions",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "bea59f24aca13c18da8f035343d1e306d532958ff9b7a32664b23cda6d9217ec",
+          "standardization_scale_sha256": "bd77e4230725a89bb317a9c7368b8238aa4caa21f69e9697eea3f9d95677bd26",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04924320799182169,
+          "plan_sha256": "c34863599ef9fcf328a101c4aa3ee541489276c04c5eacbb01e4af84b52d9aea",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 10,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7748430967330933,
+          "loss_last": 0.29150015115737915,
+          "risk_loss_last": 0.22211915254592896,
+          "margin_loss_last": 0.2775239646434784,
+          "gradient_norm_mean": 0.39714996656402946,
+          "gradient_norm_maximum": 0.5646305084228516,
+          "router_sha256": "e93a4cd10aeeb2d19deb6497040f4cecb4f3a1bed2be6aa03a96e95e0e8e4574"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "9bacb94ce74779396903f9ee3485976416c0e08ac186128c49e2c973728ce49e",
+        "scale_sha256": "2687643e047036f7071f11246dd43bfd9dfa2270dbc92a9ca2010592b0e8e498"
+      },
+      "evaluation": {
+        "rows": 42,
+        "selection": {
+          "parent": 42
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.0240615099391972,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    },
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.09976833299151622,
+      "plan_sha256": "00eb86f9ccf523372be6e3500728deef8287c5cf490be89ffd7c6704858817ac",
+      "risk_positive_counts": {
+        "clinc": 11,
+        "paws-wiki": 19,
+        "qasc": 13,
+        "snli": 30
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.8265025019645691,
+      "loss_last": 0.19981297850608826,
+      "risk_loss_last": 0.1391986459493637,
+      "margin_loss_last": 0.24245736002922058,
+      "gradient_norm_mean": 0.3361863330937922,
+      "gradient_norm_maximum": 0.5564594864845276,
+      "router_sha256": "b68d8d88875c1510c961a287cbd601b8e8f14fc9fa4317f3c5e04c424609c45d",
+      "seed": 44,
+      "heldout_source": "clinc",
+      "train_sources": [
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "calibration": {
+        "support_cutoff": 67.51005554199219,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.034540215337276456,
+            "risk_violations": 11,
+            "residual_bounds": [
+              4.794012069702148,
+              0.5399954319000244,
+              4.133450508117676,
+              5.251937389373779
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.0,
+            "risk_violations": 19,
+            "residual_bounds": [
+              0.5529649257659912,
+              0.2786768674850464,
+              0.9692499041557312,
+              0.9077004790306091
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.028673637488484383,
+            "risk_violations": 13,
+            "residual_bounds": [
+              0.3327772617340088,
+              0.24187804758548737,
+              0.6554210186004639,
+              0.5891495943069458
+            ]
+          },
+          "snli": {
+            "risk_threshold": 0.0001508744364604354,
+            "risk_violations": 30,
+            "residual_bounds": [
+              0.39033904671669006,
+              0.32882243394851685,
+              1.1244580745697021,
+              0.4766199290752411
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "json-schema",
+          "train_sources": [
+            "paws-wiki",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "d2500482a8d74b58155cececbbe1cff7f138fecc04dda555ddb5ddca46a8f3b0",
+          "standardization_scale_sha256": "cb6196cc17bee5ce2e72801696b5337665f7b2f3c184381fffce024d3e663569",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.049973957997281104,
+          "plan_sha256": "59e17868a1140138c07c59de88a56ca5d48b75274759e59393c8f6fde22ec29f",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 17,
+            "qasc": 7,
+            "snli": 30
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8490766882896423,
+          "loss_last": 0.3375420570373535,
+          "risk_loss_last": 0.2667146921157837,
+          "margin_loss_last": 0.2833094894886017,
+          "gradient_norm_mean": 0.4161358531564474,
+          "gradient_norm_maximum": 0.5606054067611694,
+          "router_sha256": "0268ccff1aa3d4537424c171c4d5c9718eed561d18f85dec822758f34ac334ac"
+        },
+        {
+          "heldout_source": "paws-wiki",
+          "train_sources": [
+            "json-schema",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "16c2c69dcce047512cc7e7f6bdbe501f68a7773be5b2f639376f24be6c44b62c",
+          "standardization_scale_sha256": "6c4d93cbf8a25833538f1ad597f87b03c61ad297c76f343c61863ba7dcf85cc6",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.0515566659742035,
+          "plan_sha256": "49d148ffb439e6b1b38995ecfe6b0cd3b6455b806457184d1e780753f44f6a33",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 18,
+            "qasc": 11,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8137938380241394,
+          "loss_last": 0.29983896017074585,
+          "risk_loss_last": 0.22912180423736572,
+          "margin_loss_last": 0.2828685939311981,
+          "gradient_norm_mean": 0.4243063423782587,
+          "gradient_norm_maximum": 0.5899087190628052,
+          "router_sha256": "fe53a44b5bb7f524b9b1bd59c64e887ed6f9b4673c71c902e56f0681738ead96"
+        },
+        {
+          "heldout_source": "qasc",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 512,
+          "standardization_mean_sha256": "b142fe327ff3f97aaa17792a083a4ed5c227e31400897363b59c63fc34f589b1",
+          "standardization_scale_sha256": "6e04b2e9ba2445f0e182ac4411c7a39e363470eeed6dbdbe5d78ab3524f4f83b",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.05063854099716991,
+          "plan_sha256": "f31f5616d7aeda2dd53b4130ea042d0ba1a89b17d6dbab480d303e71f29a1690",
+          "risk_positive_counts": {
+            "clinc": 4,
+            "paws-wiki": 6,
+            "qasc": 12,
+            "snli": 9
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8242321610450745,
+          "loss_last": 0.26060566306114197,
+          "risk_loss_last": 0.20601877570152283,
+          "margin_loss_last": 0.21834751963615417,
+          "gradient_norm_mean": 0.42088155006058514,
+          "gradient_norm_maximum": 0.515259325504303,
+          "router_sha256": "cf30537c057ed8af17606a6005b3a9ad732ed57f4377cd798ef38d581008c7c7"
+        },
+        {
+          "heldout_source": "snli",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "8520bd8bb6d16c22b47cef0dda17bb926617a07b6bf668f99f34f5b8342a984b",
+          "standardization_scale_sha256": "dd9b39703f5d95df4f7e24827604149f4d31f7e22493b041d6f9dd1b763a3709",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.05057404100080021,
+          "plan_sha256": "19c45bc0bc42eb573fa7d260be144e600cbbd57fcbdb199f0cab3f24dc271ae6",
+          "risk_positive_counts": {
+            "clinc": 11,
+            "paws-wiki": 19,
+            "qasc": 12,
+            "snli": 29
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8118699789047241,
+          "loss_last": 0.4062129855155945,
+          "risk_loss_last": 0.3590499460697174,
+          "margin_loss_last": 0.1886521577835083,
+          "gradient_norm_mean": 0.4206507185008377,
+          "gradient_norm_maximum": 0.5986431837081909,
+          "router_sha256": "e8d5994c6a93371359cd5922a99b237e1eeec9a20c9c6e9a1672b19f864f69cc"
+        },
+        {
+          "heldout_source": "typed-decisions",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "bea59f24aca13c18da8f035343d1e306d532958ff9b7a32664b23cda6d9217ec",
+          "standardization_scale_sha256": "bd77e4230725a89bb317a9c7368b8238aa4caa21f69e9697eea3f9d95677bd26",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.05059608301962726,
+          "plan_sha256": "51b6a41ef450bf4f195fca01a1f8518644874515fb02d95249083bf5b84ab356",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 10,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8193564414978027,
+          "loss_last": 0.3126068711280823,
+          "risk_loss_last": 0.26227718591690063,
+          "margin_loss_last": 0.20131872594356537,
+          "gradient_norm_mean": 0.4142040142323822,
+          "gradient_norm_maximum": 0.5941236615180969,
+          "router_sha256": "5d214c89b611a17dd2e080431eeb2d755c323aff85790fdd963272a9f85370cd"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "9bacb94ce74779396903f9ee3485976416c0e08ac186128c49e2c973728ce49e",
+        "scale_sha256": "2687643e047036f7071f11246dd43bfd9dfa2270dbc92a9ca2010592b0e8e498"
+      },
+      "evaluation": {
+        "rows": 42,
+        "selection": {
+          "parent": 42
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.0240615099391972,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    },
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.09919795801397413,
+      "plan_sha256": "3283a0bf648bd01355993feac208a0fb2d3984a7a54651c83f94d0181e765809",
+      "risk_positive_counts": {
+        "clinc": 10,
+        "paws-wiki": 17,
+        "qasc": 7,
+        "snli": 30
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.7752115726470947,
+      "loss_last": 0.14988000690937042,
+      "risk_loss_last": 0.09865185618400574,
+      "margin_loss_last": 0.20491260290145874,
+      "gradient_norm_mean": 0.3253829075838439,
+      "gradient_norm_maximum": 0.5529181361198425,
+      "router_sha256": "c5b04eba9031f2bb9c5a4814c461533c4a4f32dc90b4658fb0354220f772d8c9",
+      "seed": 42,
+      "heldout_source": "json-schema",
+      "train_sources": [
+        "clinc",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "calibration": {
+        "support_cutoff": 63.25509262084961,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.058084724301099774,
+            "risk_violations": 10,
+            "residual_bounds": [
+              5.159299850463867,
+              0.5329985618591309,
+              5.112519264221191,
+              5.142364501953125
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.0,
+            "risk_violations": 17,
+            "residual_bounds": [
+              0.43596163392066956,
+              0.22252412140369415,
+              0.9712400436401367,
+              0.4413619935512543
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.078025461935997,
+            "risk_violations": 7,
+            "residual_bounds": [
+              0.5739293098449707,
+              0.24486379325389862,
+              0.5416642427444458,
+              0.605262041091919
+            ]
+          },
+          "snli": {
+            "risk_threshold": 2.7230945508927102e-05,
+            "risk_violations": 30,
+            "residual_bounds": [
+              0.4103086292743683,
+              0.29522714018821716,
+              0.6871814727783203,
+              0.47407394647598267
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "clinc",
+          "train_sources": [
+            "paws-wiki",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "d2500482a8d74b58155cececbbe1cff7f138fecc04dda555ddb5ddca46a8f3b0",
+          "standardization_scale_sha256": "cb6196cc17bee5ce2e72801696b5337665f7b2f3c184381fffce024d3e663569",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04997166700195521,
+          "plan_sha256": "545a84320406e79ba77d227a1a654ac644d6e7e7473223481de11f6bca420d2d",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 17,
+            "qasc": 7,
+            "snli": 30
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7995731830596924,
+          "loss_last": 0.31448161602020264,
+          "risk_loss_last": 0.2535409927368164,
+          "margin_loss_last": 0.24376246333122253,
+          "gradient_norm_mean": 0.4280949716921896,
+          "gradient_norm_maximum": 0.6063123345375061,
+          "router_sha256": "34388e37c06f2f32ab9c05c61fc6828c3ca0744e1fcd2893bfff1f204dd1dc5c"
+        },
+        {
+          "heldout_source": "paws-wiki",
+          "train_sources": [
+            "clinc",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "6b22135db1e38b69aac2e293189c216750ae9f01b822370993b461cb1c26cd4b",
+          "standardization_scale_sha256": "695f18f1195442eefd3340107232fa1eefd68d7fbd08b981758742c22573385f",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.05080041699693538,
+          "plan_sha256": "6c16983055d1916ceee34edd3a87795906fbdbcd87ae1d3dd698ae15c4e602a6",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 5,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8041645288467407,
+          "loss_last": 0.24966813623905182,
+          "risk_loss_last": 0.18828830122947693,
+          "margin_loss_last": 0.24551934003829956,
+          "gradient_norm_mean": 0.4330476865870878,
+          "gradient_norm_maximum": 0.6134949326515198,
+          "router_sha256": "f499c0c99c14565dead95e2dc048acb6c0f7c4f6fe1da90b715a195fe8b17d07"
+        },
+        {
+          "heldout_source": "qasc",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 512,
+          "standardization_mean_sha256": "652e31b019ebb6fc4b244098cd6fa9e84580e367527af8b3e6ac41c7b28a9cdf",
+          "standardization_scale_sha256": "160a7aff8786ceafc247dd58e4b63cdf1beee5e2d6d6d5cc35c209b3f54a2532",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04987141699530184,
+          "plan_sha256": "06e3dcc11cb60768060f12de80d6477ebccd2a13464e043e5ea928572649a84b",
+          "risk_positive_counts": {
+            "clinc": 3,
+            "paws-wiki": 4,
+            "qasc": 6,
+            "snli": 9
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7761717438697815,
+          "loss_last": 0.26941943168640137,
+          "risk_loss_last": 0.17800921201705933,
+          "margin_loss_last": 0.36564087867736816,
+          "gradient_norm_mean": 0.4233110351487994,
+          "gradient_norm_maximum": 0.6428921818733215,
+          "router_sha256": "6a9d0faa93f0589e773f23016af098c07579abcce62d47a8cb6a685244571d79"
+        },
+        {
+          "heldout_source": "snli",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "7fb65127e841c919cfb5383ea36ad65c5fdaece06d78df7c8ceda43ee8cc6fa7",
+          "standardization_scale_sha256": "124a75323692192aea2fdeb9faf90242bbe49a1221abc36234365548e2b9ad62",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.051663292018929496,
+          "plan_sha256": "91865e9d62fe0a468d0a3b7febf02ba1da6d7b090fb891860aff2aa5eab00c6a",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 17,
+            "qasc": 6,
+            "snli": 29
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7566092610359192,
+          "loss_last": 0.2266014665365219,
+          "risk_loss_last": 0.1954927295446396,
+          "margin_loss_last": 0.1244349479675293,
+          "gradient_norm_mean": 0.41930392221547663,
+          "gradient_norm_maximum": 0.6047273874282837,
+          "router_sha256": "f40125ceaea08366eeac462b8dea14b72b991ff6ed55313705497545a84979f6"
+        },
+        {
+          "heldout_source": "typed-decisions",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "874a08ac12cdc4d09c17945303adad317b6a1a28141540ee057b25ff6377e41d",
+          "standardization_scale_sha256": "9ada7bfa02088e052e55ed4370f18a38f41963ef49912a793c9b966bd6042a3a",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.05054795800242573,
+          "plan_sha256": "15181fe5fa6a828cacc08644f0695aa7168d7ba2caafbb5e1add8ef98d7bd512",
+          "risk_positive_counts": {
+            "clinc": 8,
+            "paws-wiki": 14,
+            "qasc": 4,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7642223238945007,
+          "loss_last": 0.22528328001499176,
+          "risk_loss_last": 0.1927599012851715,
+          "margin_loss_last": 0.1300935000181198,
+          "gradient_norm_mean": 0.42269027151633054,
+          "gradient_norm_maximum": 0.6134330630302429,
+          "router_sha256": "04031500ef3ebbe81f4e485aea04e3835c4a935d56edbfcdbe0197dc5ce9a61c"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "286aa7bdbef3708fd07f96d925b09e6ceb640b2c497ac1adbd6f42587170a692",
+        "scale_sha256": "c27ce9407f70e284f3a9bcacbb26b27b49ef8fb4250848abff104bb4e4cf96ba"
+      },
+      "evaluation": {
+        "rows": 42,
+        "selection": {
+          "parent": 42
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.20638839843863946,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    },
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.09983191601349972,
+      "plan_sha256": "926a9bfb9176550133d54ba74abf5e266cb7ad496e573bcde1edaf571252724c",
+      "risk_positive_counts": {
+        "clinc": 10,
+        "paws-wiki": 17,
+        "qasc": 7,
+        "snli": 30
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.7589627504348755,
+      "loss_last": 0.11428248882293701,
+      "risk_loss_last": 0.053264372050762177,
+      "margin_loss_last": 0.24407246708869934,
+      "gradient_norm_mean": 0.3070978189643938,
+      "gradient_norm_maximum": 0.5923201441764832,
+      "router_sha256": "0f7d7d20fecd47292376a1b2bf05aa7af54b1192b2f5654b162822ca69b7f2f5",
+      "seed": 43,
+      "heldout_source": "json-schema",
+      "train_sources": [
+        "clinc",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "calibration": {
+        "support_cutoff": 63.25509262084961,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.004368606784939766,
+            "risk_violations": 10,
+            "residual_bounds": [
+              5.144505977630615,
+              0.5771872401237488,
+              4.750890731811523,
+              5.293233394622803
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.0,
+            "risk_violations": 17,
+            "residual_bounds": [
+              0.4056236147880554,
+              0.20457123219966888,
+              1.2573440074920654,
+              0.5724331140518188
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.05817709287405014,
+            "risk_violations": 7,
+            "residual_bounds": [
+              0.39296913146972656,
+              0.3085506856441498,
+              0.5423710942268372,
+              0.6026943922042847
+            ]
+          },
+          "snli": {
+            "risk_threshold": 0.004921123681217432,
+            "risk_violations": 30,
+            "residual_bounds": [
+              0.42945414781570435,
+              0.3053535223007202,
+              0.6417954564094543,
+              0.42725473642349243
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "clinc",
+          "train_sources": [
+            "paws-wiki",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "d2500482a8d74b58155cececbbe1cff7f138fecc04dda555ddb5ddca46a8f3b0",
+          "standardization_scale_sha256": "cb6196cc17bee5ce2e72801696b5337665f7b2f3c184381fffce024d3e663569",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04895341701922007,
+          "plan_sha256": "af56301dbc50fbb4e814c9bf90ee9cc17b15ad84b9c20af7dd054ba9a155d5ff",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 17,
+            "qasc": 7,
+            "snli": 30
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7745383381843567,
+          "loss_last": 0.2642480134963989,
+          "risk_loss_last": 0.20253416895866394,
+          "margin_loss_last": 0.24685540795326233,
+          "gradient_norm_mean": 0.4008550386643037,
+          "gradient_norm_maximum": 0.6799337863922119,
+          "router_sha256": "f0fcc507b1cb975b5ec6d1e37e97a7a702433d650819948b1001c11af7f00500"
+        },
+        {
+          "heldout_source": "paws-wiki",
+          "train_sources": [
+            "clinc",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "6b22135db1e38b69aac2e293189c216750ae9f01b822370993b461cb1c26cd4b",
+          "standardization_scale_sha256": "695f18f1195442eefd3340107232fa1eefd68d7fbd08b981758742c22573385f",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04917966699576937,
+          "plan_sha256": "7b8cdf2c34aef1fe53f1d492b8326ae9b05a83bac2c1b0fdcf6e07c6baac16ba",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 5,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7495132684707642,
+          "loss_last": 0.23048865795135498,
+          "risk_loss_last": 0.172255277633667,
+          "margin_loss_last": 0.23293350636959076,
+          "gradient_norm_mean": 0.3935830066911876,
+          "gradient_norm_maximum": 0.5596864223480225,
+          "router_sha256": "76db1934490fbe7283c68fb71c51d535aa5f62b0e995312ba20522d8a248188d"
+        },
+        {
+          "heldout_source": "qasc",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 512,
+          "standardization_mean_sha256": "652e31b019ebb6fc4b244098cd6fa9e84580e367527af8b3e6ac41c7b28a9cdf",
+          "standardization_scale_sha256": "160a7aff8786ceafc247dd58e4b63cdf1beee5e2d6d6d5cc35c209b3f54a2532",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.049504166992846876,
+          "plan_sha256": "3187aa3493d88522954da8bd6c0587bf07e131a00edca264184f6a3250fe1318",
+          "risk_positive_counts": {
+            "clinc": 3,
+            "paws-wiki": 4,
+            "qasc": 6,
+            "snli": 9
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.807408332824707,
+          "loss_last": 0.24294042587280273,
+          "risk_loss_last": 0.18900200724601746,
+          "margin_loss_last": 0.2157537043094635,
+          "gradient_norm_mean": 0.3930486880708486,
+          "gradient_norm_maximum": 0.4721643328666687,
+          "router_sha256": "08a64cc51001b640fbe24d265ed455fc2a9ee1e6c1326fdcbbf83904268db2bc"
+        },
+        {
+          "heldout_source": "snli",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "7fb65127e841c919cfb5383ea36ad65c5fdaece06d78df7c8ceda43ee8cc6fa7",
+          "standardization_scale_sha256": "124a75323692192aea2fdeb9faf90242bbe49a1221abc36234365548e2b9ad62",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04878662500414066,
+          "plan_sha256": "2f93957b468d7a536825d9b863e0a20c32ca36154618867862b3739d18b88c08",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 17,
+            "qasc": 6,
+            "snli": 29
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7652633786201477,
+          "loss_last": 0.26424869894981384,
+          "risk_loss_last": 0.2231922447681427,
+          "margin_loss_last": 0.16422578692436218,
+          "gradient_norm_mean": 0.3962578767677769,
+          "gradient_norm_maximum": 0.6336738467216492,
+          "router_sha256": "33e4a279505a50ec8d6274efc8b144bae02ee174828f4575938c1ce1da69099c"
+        },
+        {
+          "heldout_source": "typed-decisions",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "874a08ac12cdc4d09c17945303adad317b6a1a28141540ee057b25ff6377e41d",
+          "standardization_scale_sha256": "9ada7bfa02088e052e55ed4370f18a38f41963ef49912a793c9b966bd6042a3a",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.047658707975642756,
+          "plan_sha256": "b095fb0869f76b8e79beb0083eea75b64437c701e057fb0f3438e3bdff58a110",
+          "risk_positive_counts": {
+            "clinc": 8,
+            "paws-wiki": 14,
+            "qasc": 4,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7771004438400269,
+          "loss_last": 0.2425628900527954,
+          "risk_loss_last": 0.18290308117866516,
+          "margin_loss_last": 0.2386392205953598,
+          "gradient_norm_mean": 0.39226986980065703,
+          "gradient_norm_maximum": 0.5733432173728943,
+          "router_sha256": "87e0862c297d2adbeaf2570d5909133f40b5a104652d8798c74ed8806a5e9b1a"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "286aa7bdbef3708fd07f96d925b09e6ceb640b2c497ac1adbd6f42587170a692",
+        "scale_sha256": "c27ce9407f70e284f3a9bcacbb26b27b49ef8fb4250848abff104bb4e4cf96ba"
+      },
+      "evaluation": {
+        "rows": 42,
+        "selection": {
+          "parent": 42
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.20638839843863946,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    },
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.09758174998569302,
+      "plan_sha256": "5e5bbeedf5b5c565214d1b6f129b70b5ac5f84c0df8ebefd1dad7a0663a9ca20",
+      "risk_positive_counts": {
+        "clinc": 10,
+        "paws-wiki": 17,
+        "qasc": 7,
+        "snli": 30
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.8258993029594421,
+      "loss_last": 0.1472351849079132,
+      "risk_loss_last": 0.09443962574005127,
+      "margin_loss_last": 0.21118226647377014,
+      "gradient_norm_mean": 0.3303812916856259,
+      "gradient_norm_maximum": 0.5540328621864319,
+      "router_sha256": "2394d04e5aa4ea3dd99337c4000b5a91d9037987c8f660df62ba298451071747",
+      "seed": 44,
+      "heldout_source": "json-schema",
+      "train_sources": [
+        "clinc",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "calibration": {
+        "support_cutoff": 63.25509262084961,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.06305537542104721,
+            "risk_violations": 10,
+            "residual_bounds": [
+              5.217691898345947,
+              0.5837543606758118,
+              4.661069393157959,
+              5.433800220489502
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.0,
+            "risk_violations": 17,
+            "residual_bounds": [
+              0.3344099819660187,
+              0.23595649003982544,
+              0.6825416684150696,
+              0.583698570728302
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.0913672464132309,
+            "risk_violations": 7,
+            "residual_bounds": [
+              0.4599343538284302,
+              0.2865307629108429,
+              0.5787671208381653,
+              0.582472562789917
+            ]
+          },
+          "snli": {
+            "risk_threshold": 0.001931420124694705,
+            "risk_violations": 30,
+            "residual_bounds": [
+              0.36188650131225586,
+              0.2878205180168152,
+              1.2063568830490112,
+              0.4896140694618225
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "clinc",
+          "train_sources": [
+            "paws-wiki",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "d2500482a8d74b58155cececbbe1cff7f138fecc04dda555ddb5ddca46a8f3b0",
+          "standardization_scale_sha256": "cb6196cc17bee5ce2e72801696b5337665f7b2f3c184381fffce024d3e663569",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04926395800430328,
+          "plan_sha256": "59e17868a1140138c07c59de88a56ca5d48b75274759e59393c8f6fde22ec29f",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 17,
+            "qasc": 7,
+            "snli": 30
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8490766882896423,
+          "loss_last": 0.3375420570373535,
+          "risk_loss_last": 0.2667146921157837,
+          "margin_loss_last": 0.2833094894886017,
+          "gradient_norm_mean": 0.4161358531564474,
+          "gradient_norm_maximum": 0.5606054067611694,
+          "router_sha256": "0268ccff1aa3d4537424c171c4d5c9718eed561d18f85dec822758f34ac334ac"
+        },
+        {
+          "heldout_source": "paws-wiki",
+          "train_sources": [
+            "clinc",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "6b22135db1e38b69aac2e293189c216750ae9f01b822370993b461cb1c26cd4b",
+          "standardization_scale_sha256": "695f18f1195442eefd3340107232fa1eefd68d7fbd08b981758742c22573385f",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04874120801105164,
+          "plan_sha256": "edfc81bdd85ffecb38d00eedd19c5536ebad6f68f4b07783fd277dee6f036a02",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 5,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.819396436214447,
+          "loss_last": 0.27597615122795105,
+          "risk_loss_last": 0.20937193930149078,
+          "margin_loss_last": 0.2664168179035187,
+          "gradient_norm_mean": 0.432897319085896,
+          "gradient_norm_maximum": 0.5635514259338379,
+          "router_sha256": "72c7682ed01ee1f295137c2b2e36cfea14444a4f42b564e994218ea296500d98"
+        },
+        {
+          "heldout_source": "qasc",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 512,
+          "standardization_mean_sha256": "652e31b019ebb6fc4b244098cd6fa9e84580e367527af8b3e6ac41c7b28a9cdf",
+          "standardization_scale_sha256": "160a7aff8786ceafc247dd58e4b63cdf1beee5e2d6d6d5cc35c209b3f54a2532",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.048271500010741875,
+          "plan_sha256": "830b184565c70cdc34438d3b3b2989ffa88074d85fe0c87bb670d001539ec12d",
+          "risk_positive_counts": {
+            "clinc": 3,
+            "paws-wiki": 4,
+            "qasc": 6,
+            "snli": 9
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7987189292907715,
+          "loss_last": 0.25813964009284973,
+          "risk_loss_last": 0.21150130033493042,
+          "margin_loss_last": 0.18655334413051605,
+          "gradient_norm_mean": 0.42320956010371447,
+          "gradient_norm_maximum": 0.5030215382575989,
+          "router_sha256": "068677a60fd6da235e3d123b1b786cd0837c358823d12037c6a8c99a921a57e0"
+        },
+        {
+          "heldout_source": "snli",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "7fb65127e841c919cfb5383ea36ad65c5fdaece06d78df7c8ceda43ee8cc6fa7",
+          "standardization_scale_sha256": "124a75323692192aea2fdeb9faf90242bbe49a1221abc36234365548e2b9ad62",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04940841600182466,
+          "plan_sha256": "2ea3fed7ae662e7f49e6e1d159d20af970378a730e480f9ffaa84da30d3a8d4a",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 17,
+            "qasc": 6,
+            "snli": 29
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8125026822090149,
+          "loss_last": 0.3415849804878235,
+          "risk_loss_last": 0.30258265137672424,
+          "margin_loss_last": 0.1560092568397522,
+          "gradient_norm_mean": 0.429108691168949,
+          "gradient_norm_maximum": 0.5545760989189148,
+          "router_sha256": "46a2eb1073045d163d5c0582b4a8c5f9d9681431d8bf931d94a1b5517e38b688"
+        },
+        {
+          "heldout_source": "typed-decisions",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "874a08ac12cdc4d09c17945303adad317b6a1a28141540ee057b25ff6377e41d",
+          "standardization_scale_sha256": "9ada7bfa02088e052e55ed4370f18a38f41963ef49912a793c9b966bd6042a3a",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.048129000002518296,
+          "plan_sha256": "744e16da5c8bda0b6dcb7de8380ccb102d63c8b73bd7379396e57d6c140d9d38",
+          "risk_positive_counts": {
+            "clinc": 8,
+            "paws-wiki": 14,
+            "qasc": 4,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.82057785987854,
+          "loss_last": 0.23824553191661835,
+          "risk_loss_last": 0.19329610466957092,
+          "margin_loss_last": 0.1797976940870285,
+          "gradient_norm_mean": 0.42625460121780634,
+          "gradient_norm_maximum": 0.5688140392303467,
+          "router_sha256": "1d9ba82b51ed5160417035d74896a07311842766b6d424b372d91d21ef499da3"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "286aa7bdbef3708fd07f96d925b09e6ceb640b2c497ac1adbd6f42587170a692",
+        "scale_sha256": "c27ce9407f70e284f3a9bcacbb26b27b49ef8fb4250848abff104bb4e4cf96ba"
+      },
+      "evaluation": {
+        "rows": 42,
+        "selection": {
+          "parent": 42
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.20638839843863946,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    },
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.09838312500505708,
+      "plan_sha256": "01007bd693f8f114c0bd8905f2350b6bf427f2a6b5a4bc2b71be32e55da92fd3",
+      "risk_positive_counts": {
+        "clinc": 10,
+        "paws-wiki": 18,
+        "qasc": 11,
+        "snli": 26
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.7471837997436523,
+      "loss_last": 0.16013461351394653,
+      "risk_loss_last": 0.10054093599319458,
+      "margin_loss_last": 0.2383747100830078,
+      "gradient_norm_mean": 0.33238399506080896,
+      "gradient_norm_maximum": 0.5927929282188416,
+      "router_sha256": "f059a02f0ae98d55fa944bf645c4fdf4bc16d6d53b3bf0293ce8809d283a7dd8",
+      "seed": 42,
+      "heldout_source": "paws-wiki",
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "calibration": {
+        "support_cutoff": 66.98219299316406,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.017066618257761002,
+            "risk_violations": 10,
+            "residual_bounds": [
+              5.118183135986328,
+              0.49520501494407654,
+              4.875920295715332,
+              5.209634780883789
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.0,
+            "risk_violations": 18,
+            "residual_bounds": [
+              0.42901337146759033,
+              0.17084291577339172,
+              1.0235443115234375,
+              0.40050190687179565
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.0169030165463686,
+            "risk_violations": 11,
+            "residual_bounds": [
+              0.5051227807998657,
+              0.22934527695178986,
+              0.5488389730453491,
+              0.6296108365058899
+            ]
+          },
+          "snli": {
+            "risk_threshold": 0.0,
+            "risk_violations": 26,
+            "residual_bounds": [
+              0.4624912440776825,
+              0.2492569386959076,
+              0.7182874083518982,
+              0.32183292508125305
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "clinc",
+          "train_sources": [
+            "json-schema",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "16c2c69dcce047512cc7e7f6bdbe501f68a7773be5b2f639376f24be6c44b62c",
+          "standardization_scale_sha256": "6c4d93cbf8a25833538f1ad597f87b03c61ad297c76f343c61863ba7dcf85cc6",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04955241599236615,
+          "plan_sha256": "820a9c51ae233987069d7fd5ef7eab6c8ea214696a1ade33e2d86adf26746cfd",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 18,
+            "qasc": 11,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8109423518180847,
+          "loss_last": 0.25735345482826233,
+          "risk_loss_last": 0.192818284034729,
+          "margin_loss_last": 0.2581406831741333,
+          "gradient_norm_mean": 0.4297054372727871,
+          "gradient_norm_maximum": 0.6535232067108154,
+          "router_sha256": "f874cd5406cc796cc4db485a287ce538b66b4d74abd43718b2f688efb2e595f2"
+        },
+        {
+          "heldout_source": "json-schema",
+          "train_sources": [
+            "clinc",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "6b22135db1e38b69aac2e293189c216750ae9f01b822370993b461cb1c26cd4b",
+          "standardization_scale_sha256": "695f18f1195442eefd3340107232fa1eefd68d7fbd08b981758742c22573385f",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.048832250002305955,
+          "plan_sha256": "6c16983055d1916ceee34edd3a87795906fbdbcd87ae1d3dd698ae15c4e602a6",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 5,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8041645288467407,
+          "loss_last": 0.24966813623905182,
+          "risk_loss_last": 0.18828830122947693,
+          "margin_loss_last": 0.24551934003829956,
+          "gradient_norm_mean": 0.4330476865870878,
+          "gradient_norm_maximum": 0.6134949326515198,
+          "router_sha256": "f499c0c99c14565dead95e2dc048acb6c0f7c4f6fe1da90b715a195fe8b17d07"
+        },
+        {
+          "heldout_source": "qasc",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 512,
+          "standardization_mean_sha256": "3fb867543b10ff34f298de2bd271efee686307226dea4a980f196eab43554fb7",
+          "standardization_scale_sha256": "7c837fe8efcbb6e6e86a26f3cbfeaf05898ca5e2a800790ed46ab6c8a8f71be9",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.050217292009619996,
+          "plan_sha256": "f396f9364e890f8031880b2737b7f8b438acf3305f1019f70ec3200ea10817b6",
+          "risk_positive_counts": {
+            "clinc": 3,
+            "paws-wiki": 5,
+            "qasc": 10,
+            "snli": 5
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7754285335540771,
+          "loss_last": 0.27470672130584717,
+          "risk_loss_last": 0.18188685178756714,
+          "margin_loss_last": 0.3712794780731201,
+          "gradient_norm_mean": 0.42109036818146706,
+          "gradient_norm_maximum": 0.5900115370750427,
+          "router_sha256": "c4aaa5c419ba10a3e7cde09532793a42071761e058141181091dda071e903d06"
+        },
+        {
+          "heldout_source": "snli",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "207bb7c35d258c0396f648b91ceac83b9b1088dc728dafec37ad99abf9eb4fef",
+          "standardization_scale_sha256": "2aa8b67678d640f537ad8954e5bc0eed4934749dc37af6725668c1d78266a271",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.05043658401700668,
+          "plan_sha256": "3f198315fe3be511020e4aa4e2e9cb5e5a27c477637d08866bac808fce4821c4",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 18,
+            "qasc": 10,
+            "snli": 25
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7589521408081055,
+          "loss_last": 0.2575436532497406,
+          "risk_loss_last": 0.21547532081604004,
+          "margin_loss_last": 0.16827328503131866,
+          "gradient_norm_mean": 0.42668397165834904,
+          "gradient_norm_maximum": 0.6633169054985046,
+          "router_sha256": "8436560e3931f54fc73ba0bf08f904f487694e815a63cf5846108afe041e3c08"
+        },
+        {
+          "heldout_source": "typed-decisions",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "e61ec93dc18e42fbf993c83591d978fa52314f91a4c9d65deefe0eae5a7536ab",
+          "standardization_scale_sha256": "52732a499b4f831cf437fde54ac4b85eacb48e7c3ba327f231ef161cd1906d88",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04942616599146277,
+          "plan_sha256": "74434a9aa0585574c2c830cb3a57a83125be91f35a3defd173a261f2701109c2",
+          "risk_positive_counts": {
+            "clinc": 8,
+            "paws-wiki": 15,
+            "qasc": 8,
+            "snli": 22
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7576612234115601,
+          "loss_last": 0.28298285603523254,
+          "risk_loss_last": 0.24042147397994995,
+          "margin_loss_last": 0.17024554312229156,
+          "gradient_norm_mean": 0.42889741517137736,
+          "gradient_norm_maximum": 0.6418830156326294,
+          "router_sha256": "832a2b98defac23d6f9deba6bfad5aa20ce7b0562e06e32657671c3630237135"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "9ddd34977f6ec7e59e2c3a4c885f1e6e6a86bb700de31fbbe0b0a02dcd161907",
+        "scale_sha256": "49622932a39a00033d0b5276f7f0ba11cf09b680a0714c7c07e517088e0a8ae0"
+      },
+      "evaluation": {
+        "rows": 96,
+        "selection": {
+          "parent": 96
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.13547363800583115,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    },
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.0974450419889763,
+      "plan_sha256": "f53cc7bbec2982cbbb6468023fecfd0573d24cb64bb1641ec9be25b5984772f0",
+      "risk_positive_counts": {
+        "clinc": 10,
+        "paws-wiki": 18,
+        "qasc": 11,
+        "snli": 26
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.7239069938659668,
+      "loss_last": 0.11724196374416351,
+      "risk_loss_last": 0.05795902758836746,
+      "margin_loss_last": 0.2371317595243454,
+      "gradient_norm_mean": 0.3128540458274074,
+      "gradient_norm_maximum": 0.5991188883781433,
+      "router_sha256": "c1a105ed863ce0e52772bca335b5690de7a44f75cf3108456d439c7e6d8e089a",
+      "seed": 43,
+      "heldout_source": "paws-wiki",
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "calibration": {
+        "support_cutoff": 66.98219299316406,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.0005929698283784091,
+            "risk_violations": 10,
+            "residual_bounds": [
+              5.16536283493042,
+              0.5177500247955322,
+              4.861851692199707,
+              5.156974792480469
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.0,
+            "risk_violations": 18,
+            "residual_bounds": [
+              0.4556889832019806,
+              0.2030504047870636,
+              1.3939989805221558,
+              0.531359851360321
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.009023288094997407,
+            "risk_violations": 11,
+            "residual_bounds": [
+              0.4803449809551239,
+              0.3131104111671448,
+              0.5903636813163757,
+              0.6396629810333252
+            ]
+          },
+          "snli": {
+            "risk_threshold": 0.0034313982516527178,
+            "risk_violations": 26,
+            "residual_bounds": [
+              0.5247993469238281,
+              0.30008095502853394,
+              0.6220026016235352,
+              0.36583614349365234
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "clinc",
+          "train_sources": [
+            "json-schema",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "16c2c69dcce047512cc7e7f6bdbe501f68a7773be5b2f639376f24be6c44b62c",
+          "standardization_scale_sha256": "6c4d93cbf8a25833538f1ad597f87b03c61ad297c76f343c61863ba7dcf85cc6",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04783866700017825,
+          "plan_sha256": "ef9ad069f6ee10009066ea4f112834fe5b5535c62a9bbe95d197fdf45b09a695",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 18,
+            "qasc": 11,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7432963848114014,
+          "loss_last": 0.2467978149652481,
+          "risk_loss_last": 0.18202409148216248,
+          "margin_loss_last": 0.25909489393234253,
+          "gradient_norm_mean": 0.39551099645905197,
+          "gradient_norm_maximum": 0.582994818687439,
+          "router_sha256": "150b084043f24f8ac0b681d83930896bd74cadd30f3b8d2e74d59c264973bb3b"
+        },
+        {
+          "heldout_source": "json-schema",
+          "train_sources": [
+            "clinc",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "6b22135db1e38b69aac2e293189c216750ae9f01b822370993b461cb1c26cd4b",
+          "standardization_scale_sha256": "695f18f1195442eefd3340107232fa1eefd68d7fbd08b981758742c22573385f",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.049356540985172614,
+          "plan_sha256": "7b8cdf2c34aef1fe53f1d492b8326ae9b05a83bac2c1b0fdcf6e07c6baac16ba",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 5,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7495132684707642,
+          "loss_last": 0.23048865795135498,
+          "risk_loss_last": 0.172255277633667,
+          "margin_loss_last": 0.23293350636959076,
+          "gradient_norm_mean": 0.3935830066911876,
+          "gradient_norm_maximum": 0.5596864223480225,
+          "router_sha256": "76db1934490fbe7283c68fb71c51d535aa5f62b0e995312ba20522d8a248188d"
+        },
+        {
+          "heldout_source": "qasc",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 512,
+          "standardization_mean_sha256": "3fb867543b10ff34f298de2bd271efee686307226dea4a980f196eab43554fb7",
+          "standardization_scale_sha256": "7c837fe8efcbb6e6e86a26f3cbfeaf05898ca5e2a800790ed46ab6c8a8f71be9",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.050657707994105294,
+          "plan_sha256": "3d27cf3a80be6d5c87bd579efb4a8be4fcdc162ba3cbeb63b8bf5388d3e03fad",
+          "risk_positive_counts": {
+            "clinc": 3,
+            "paws-wiki": 5,
+            "qasc": 10,
+            "snli": 5
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7692660093307495,
+          "loss_last": 0.2612285614013672,
+          "risk_loss_last": 0.2063913643360138,
+          "margin_loss_last": 0.21934883296489716,
+          "gradient_norm_mean": 0.38576081849168986,
+          "gradient_norm_maximum": 0.47688648104667664,
+          "router_sha256": "602137676764b5b83f3a5ed54da59ae11ab4a7988b056853fa80680582205ee1"
+        },
+        {
+          "heldout_source": "snli",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "207bb7c35d258c0396f648b91ceac83b9b1088dc728dafec37ad99abf9eb4fef",
+          "standardization_scale_sha256": "2aa8b67678d640f537ad8954e5bc0eed4934749dc37af6725668c1d78266a271",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.05200091699953191,
+          "plan_sha256": "57c5788393e4cadddb5579d109469c01765a499823630923ffbb625b93a64d86",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 18,
+            "qasc": 10,
+            "snli": 25
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7097830772399902,
+          "loss_last": 0.26072490215301514,
+          "risk_loss_last": 0.21388980746269226,
+          "margin_loss_last": 0.1873403787612915,
+          "gradient_norm_mean": 0.39224394294433296,
+          "gradient_norm_maximum": 0.602427065372467,
+          "router_sha256": "8a8770f02020f1946937840bed703213b87cfd8bd7c444d81bcd0e0b993e8edc"
+        },
+        {
+          "heldout_source": "typed-decisions",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "e61ec93dc18e42fbf993c83591d978fa52314f91a4c9d65deefe0eae5a7536ab",
+          "standardization_scale_sha256": "52732a499b4f831cf437fde54ac4b85eacb48e7c3ba327f231ef161cd1906d88",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.050461625010939315,
+          "plan_sha256": "8a577df73448fd313d5070367c5d9fd56675196227c2e5cd08b7b8828ac23350",
+          "risk_positive_counts": {
+            "clinc": 8,
+            "paws-wiki": 15,
+            "qasc": 8,
+            "snli": 22
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7215284705162048,
+          "loss_last": 0.23469766974449158,
+          "risk_loss_last": 0.16877101361751556,
+          "margin_loss_last": 0.26370662450790405,
+          "gradient_norm_mean": 0.38586771802511066,
+          "gradient_norm_maximum": 0.6018829345703125,
+          "router_sha256": "74279656e3b603842cc80e49b227d0fc9d7a0301f6f24d1985f63c5d5f75df6e"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "9ddd34977f6ec7e59e2c3a4c885f1e6e6a86bb700de31fbbe0b0a02dcd161907",
+        "scale_sha256": "49622932a39a00033d0b5276f7f0ba11cf09b680a0714c7c07e517088e0a8ae0"
+      },
+      "evaluation": {
+        "rows": 96,
+        "selection": {
+          "parent": 96
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.13547363800583115,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    },
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.09852054200018756,
+      "plan_sha256": "6a37df5149a6fe8c1cc6ef3e2c745d12e3f255ab4cb3200fbff38e0ae4803749",
+      "risk_positive_counts": {
+        "clinc": 10,
+        "paws-wiki": 18,
+        "qasc": 11,
+        "snli": 26
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.8221096992492676,
+      "loss_last": 0.1581396460533142,
+      "risk_loss_last": 0.09465029090642929,
+      "margin_loss_last": 0.2539573907852173,
+      "gradient_norm_mean": 0.3373220107750967,
+      "gradient_norm_maximum": 0.5838454961776733,
+      "router_sha256": "009883df1dcfc6ea00cbf44b8bba0626834d642ce3d73a060e44cb52dd42d550",
+      "seed": 44,
+      "heldout_source": "paws-wiki",
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "calibration": {
+        "support_cutoff": 66.98219299316406,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.03517240082621574,
+            "risk_violations": 10,
+            "residual_bounds": [
+              5.236724376678467,
+              0.6146872043609619,
+              4.576084136962891,
+              5.442716598510742
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.0,
+            "risk_violations": 18,
+            "residual_bounds": [
+              0.34610623121261597,
+              0.21497297286987305,
+              0.86568284034729,
+              0.5974761843681335
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.03206353803873062,
+            "risk_violations": 11,
+            "residual_bounds": [
+              0.37186717987060547,
+              0.26423782110214233,
+              0.5453152060508728,
+              0.49465644359588623
+            ]
+          },
+          "snli": {
+            "risk_threshold": 0.0004881074466742575,
+            "risk_violations": 26,
+            "residual_bounds": [
+              0.3750510513782501,
+              0.27799826860427856,
+              0.9429773092269897,
+              0.324739545583725
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "clinc",
+          "train_sources": [
+            "json-schema",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "16c2c69dcce047512cc7e7f6bdbe501f68a7773be5b2f639376f24be6c44b62c",
+          "standardization_scale_sha256": "6c4d93cbf8a25833538f1ad597f87b03c61ad297c76f343c61863ba7dcf85cc6",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.048864209005841985,
+          "plan_sha256": "49d148ffb439e6b1b38995ecfe6b0cd3b6455b806457184d1e780753f44f6a33",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 18,
+            "qasc": 11,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8137938380241394,
+          "loss_last": 0.29983896017074585,
+          "risk_loss_last": 0.22912180423736572,
+          "margin_loss_last": 0.2828685939311981,
+          "gradient_norm_mean": 0.4243063423782587,
+          "gradient_norm_maximum": 0.5899087190628052,
+          "router_sha256": "fe53a44b5bb7f524b9b1bd59c64e887ed6f9b4673c71c902e56f0681738ead96"
+        },
+        {
+          "heldout_source": "json-schema",
+          "train_sources": [
+            "clinc",
+            "qasc",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "6b22135db1e38b69aac2e293189c216750ae9f01b822370993b461cb1c26cd4b",
+          "standardization_scale_sha256": "695f18f1195442eefd3340107232fa1eefd68d7fbd08b981758742c22573385f",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04937383398646489,
+          "plan_sha256": "edfc81bdd85ffecb38d00eedd19c5536ebad6f68f4b07783fd277dee6f036a02",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 5,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.819396436214447,
+          "loss_last": 0.27597615122795105,
+          "risk_loss_last": 0.20937193930149078,
+          "margin_loss_last": 0.2664168179035187,
+          "gradient_norm_mean": 0.432897319085896,
+          "gradient_norm_maximum": 0.5635514259338379,
+          "router_sha256": "72c7682ed01ee1f295137c2b2e36cfea14444a4f42b564e994218ea296500d98"
+        },
+        {
+          "heldout_source": "qasc",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 512,
+          "standardization_mean_sha256": "3fb867543b10ff34f298de2bd271efee686307226dea4a980f196eab43554fb7",
+          "standardization_scale_sha256": "7c837fe8efcbb6e6e86a26f3cbfeaf05898ca5e2a800790ed46ab6c8a8f71be9",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.048802125005749986,
+          "plan_sha256": "502791c86fdd98f379306924f65bc7f9ddc6ebfb762125bc7981207733dbba1e",
+          "risk_positive_counts": {
+            "clinc": 3,
+            "paws-wiki": 5,
+            "qasc": 10,
+            "snli": 5
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8001005053520203,
+          "loss_last": 0.24555453658103943,
+          "risk_loss_last": 0.19639751315116882,
+          "margin_loss_last": 0.19662806391716003,
+          "gradient_norm_mean": 0.42293753172270954,
+          "gradient_norm_maximum": 0.5072045922279358,
+          "router_sha256": "38720d24e42075f4885bca7c5b0d5c0a8bef34c3b0739b55ed5699a52361da5b"
+        },
+        {
+          "heldout_source": "snli",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "207bb7c35d258c0396f648b91ceac83b9b1088dc728dafec37ad99abf9eb4fef",
+          "standardization_scale_sha256": "2aa8b67678d640f537ad8954e5bc0eed4934749dc37af6725668c1d78266a271",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04882166598690674,
+          "plan_sha256": "43801cdf953f2650e68c855b2f0c8146a509ec3795da8ba8eacaa2aa949acb74",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 18,
+            "qasc": 10,
+            "snli": 25
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8139311075210571,
+          "loss_last": 0.37862181663513184,
+          "risk_loss_last": 0.33091026544570923,
+          "margin_loss_last": 0.19084621965885162,
+          "gradient_norm_mean": 0.4316136983688921,
+          "gradient_norm_maximum": 0.5973318219184875,
+          "router_sha256": "4b654a4633d35b11ef04d630a99cae8b38719b59bbfbec9c187e992d694c77c1"
+        },
+        {
+          "heldout_source": "typed-decisions",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "e61ec93dc18e42fbf993c83591d978fa52314f91a4c9d65deefe0eae5a7536ab",
+          "standardization_scale_sha256": "52732a499b4f831cf437fde54ac4b85eacb48e7c3ba327f231ef161cd1906d88",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.047180207999190316,
+          "plan_sha256": "aaf753495952f057a0cd46cbbf5ad86f84ebc4ab0a125009914770331b1387ff",
+          "risk_positive_counts": {
+            "clinc": 8,
+            "paws-wiki": 15,
+            "qasc": 8,
+            "snli": 22
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8226909041404724,
+          "loss_last": 0.24081838130950928,
+          "risk_loss_last": 0.18953749537467957,
+          "margin_loss_last": 0.20512351393699646,
+          "gradient_norm_mean": 0.42759628826752305,
+          "gradient_norm_maximum": 0.5747918486595154,
+          "router_sha256": "f5a9c0e1a79d00b07f92dd4a05b3bc042e39c3edd48baad2fd7072f172eabf36"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "9ddd34977f6ec7e59e2c3a4c885f1e6e6a86bb700de31fbbe0b0a02dcd161907",
+        "scale_sha256": "49622932a39a00033d0b5276f7f0ba11cf09b680a0714c7c07e517088e0a8ae0"
+      },
+      "evaluation": {
+        "rows": 96,
+        "selection": {
+          "parent": 96
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.13547363800583115,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    },
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.0993037500011269,
+      "plan_sha256": "82848d4deef1a63782a9317c06b9420a4c8e7257903ad1201d3f5bd14604d83b",
+      "risk_positive_counts": {
+        "clinc": 4,
+        "paws-wiki": 6,
+        "qasc": 12,
+        "snli": 9
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.7779378294944763,
+      "loss_last": 0.16597440838813782,
+      "risk_loss_last": 0.1042955070734024,
+      "margin_loss_last": 0.24671560525894165,
+      "gradient_norm_mean": 0.3223392811487429,
+      "gradient_norm_maximum": 0.5185736417770386,
+      "router_sha256": "4b91ab9cf0f57d4e62fad7cd266b1840b2a37352acbe1ad4b84ad68dcbb37b10",
+      "seed": 42,
+      "heldout_source": "qasc",
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "snli",
+        "typed-decisions"
+      ],
+      "calibration": {
+        "support_cutoff": 9.746794700622559,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.17344799807071687,
+            "risk_violations": 4,
+            "residual_bounds": [
+              2.8012382984161377,
+              0.5058938264846802,
+              2.9677577018737793,
+              2.728273868560791
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.1127779649734497,
+            "risk_violations": 6,
+            "residual_bounds": [
+              0.22136704623699188,
+              0.15129303932189941,
+              0.8011715412139893,
+              0.311043381690979
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.20494409074783326,
+            "risk_violations": 12,
+            "residual_bounds": [
+              0.22404170036315918,
+              0.18878716230392456,
+              0.48350220918655396,
+              0.3374871611595154
+            ]
+          },
+          "snli": {
+            "risk_threshold": 0.08967416902780533,
+            "risk_violations": 9,
+            "residual_bounds": [
+              0.3711361885070801,
+              0.32206910848617554,
+              0.8670862317085266,
+              0.5298711061477661
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "clinc",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "b142fe327ff3f97aaa17792a083a4ed5c227e31400897363b59c63fc34f589b1",
+          "standardization_scale_sha256": "6e04b2e9ba2445f0e182ac4411c7a39e363470eeed6dbdbe5d78ab3524f4f83b",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04868766601430252,
+          "plan_sha256": "8e251772a49e6faecadaffad70287d07855133be574395dbf86c037e09b0c6f9",
+          "risk_positive_counts": {
+            "clinc": 4,
+            "paws-wiki": 6,
+            "qasc": 12,
+            "snli": 9
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7835172414779663,
+          "loss_last": 0.2831515371799469,
+          "risk_loss_last": 0.19226831197738647,
+          "margin_loss_last": 0.3635328710079193,
+          "gradient_norm_mean": 0.4173934117425233,
+          "gradient_norm_maximum": 0.5854347944259644,
+          "router_sha256": "b41e90994ddc3c8e1070ff60dc34216e4d866a862810b53b1b877867a06967bc"
+        },
+        {
+          "heldout_source": "json-schema",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "652e31b019ebb6fc4b244098cd6fa9e84580e367527af8b3e6ac41c7b28a9cdf",
+          "standardization_scale_sha256": "160a7aff8786ceafc247dd58e4b63cdf1beee5e2d6d6d5cc35c209b3f54a2532",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04790079200756736,
+          "plan_sha256": "06e3dcc11cb60768060f12de80d6477ebccd2a13464e043e5ea928572649a84b",
+          "risk_positive_counts": {
+            "clinc": 3,
+            "paws-wiki": 4,
+            "qasc": 6,
+            "snli": 9
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7761717438697815,
+          "loss_last": 0.26941943168640137,
+          "risk_loss_last": 0.17800921201705933,
+          "margin_loss_last": 0.36564087867736816,
+          "gradient_norm_mean": 0.4233110351487994,
+          "gradient_norm_maximum": 0.6428921818733215,
+          "router_sha256": "6a9d0faa93f0589e773f23016af098c07579abcce62d47a8cb6a685244571d79"
+        },
+        {
+          "heldout_source": "paws-wiki",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "3fb867543b10ff34f298de2bd271efee686307226dea4a980f196eab43554fb7",
+          "standardization_scale_sha256": "7c837fe8efcbb6e6e86a26f3cbfeaf05898ca5e2a800790ed46ab6c8a8f71be9",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.0490231669973582,
+          "plan_sha256": "f396f9364e890f8031880b2737b7f8b438acf3305f1019f70ec3200ea10817b6",
+          "risk_positive_counts": {
+            "clinc": 3,
+            "paws-wiki": 5,
+            "qasc": 10,
+            "snli": 5
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7754285335540771,
+          "loss_last": 0.27470672130584717,
+          "risk_loss_last": 0.18188685178756714,
+          "margin_loss_last": 0.3712794780731201,
+          "gradient_norm_mean": 0.42109036818146706,
+          "gradient_norm_maximum": 0.5900115370750427,
+          "router_sha256": "c4aaa5c419ba10a3e7cde09532793a42071761e058141181091dda071e903d06"
+        },
+        {
+          "heldout_source": "snli",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "9c48acb9e199e88fb6a00fdd494de51ef819717793beec8cf9d1e28c7210dc89",
+          "standardization_scale_sha256": "21b35da454a0af871711036cb69d7963bd7b4267205b8a00833e47a1e36c0f50",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04796804199577309,
+          "plan_sha256": "afeeb6300cdac263b782db4f1b2137293d61bfa52daf2980d49d5fa48a27a9d8",
+          "risk_positive_counts": {
+            "clinc": 4,
+            "paws-wiki": 6,
+            "qasc": 11,
+            "snli": 8
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7819961309432983,
+          "loss_last": 0.28872305154800415,
+          "risk_loss_last": 0.2157246470451355,
+          "margin_loss_last": 0.2919935882091522,
+          "gradient_norm_mean": 0.42028155853040516,
+          "gradient_norm_maximum": 0.5563252568244934,
+          "router_sha256": "34a6e69f5bf5d93ac3c085e4d85bb4503b835f49d687903fa50f8260ef56e0b9"
+        },
+        {
+          "heldout_source": "typed-decisions",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "cc68b68ed262890337c5be668b1e6e708a43bf91a0acfa84954baa4ba92fa8a6",
+          "standardization_scale_sha256": "fa93eae653d4d2a29e9833b6d22c3ae1889554b60989bf1ed9988bf1498e6d45",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.0494567500136327,
+          "plan_sha256": "7c94ead01f99b7bfc88c711aa8b4c14bd22c6f38849f311e20225b9bc67ed3d5",
+          "risk_positive_counts": {
+            "clinc": 2,
+            "paws-wiki": 3,
+            "qasc": 9,
+            "snli": 5
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7816268801689148,
+          "loss_last": 0.21790403127670288,
+          "risk_loss_last": 0.16422685980796814,
+          "margin_loss_last": 0.21470871567726135,
+          "gradient_norm_mean": 0.4188984762877226,
+          "gradient_norm_maximum": 0.5176610946655273,
+          "router_sha256": "a66b969cfddf642567aa103456050d0db38cf58815f8f531560625332d6d3e89"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 480,
+        "mean_sha256": "b6b5ee4096771908a3801a18e751496a2a2e1c8c49271470eae793c0d1d637f0",
+        "scale_sha256": "a073be4bb87c2dcd5822656453aafba89ba66c210623bc93f9843aa004142b99"
+      },
+      "evaluation": {
+        "rows": 128,
+        "selection": {
+          "parent": 128
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.44695155551101046,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    },
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.09843824998824857,
+      "plan_sha256": "b7a1dbb14283c7273f09c823a019fdd021ebcd75a242e40904de256dca1b6380",
+      "risk_positive_counts": {
+        "clinc": 4,
+        "paws-wiki": 6,
+        "qasc": 12,
+        "snli": 9
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.7551923394203186,
+      "loss_last": 0.12417468428611755,
+      "risk_loss_last": 0.07114798575639725,
+      "margin_loss_last": 0.21210680902004242,
+      "gradient_norm_mean": 0.29724087909562513,
+      "gradient_norm_maximum": 0.5888279676437378,
+      "router_sha256": "59265d7ba20199bf98cce56732577559a19a67930166813c2d682c67e25c9057",
+      "seed": 43,
+      "heldout_source": "qasc",
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "snli",
+        "typed-decisions"
+      ],
+      "calibration": {
+        "support_cutoff": 9.746794700622559,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.18177926709651948,
+            "risk_violations": 4,
+            "residual_bounds": [
+              3.0710649490356445,
+              0.537132978439331,
+              2.962519884109497,
+              2.8365495204925537
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.22229306569099427,
+            "risk_violations": 6,
+            "residual_bounds": [
+              0.19183434545993805,
+              0.12509098649024963,
+              0.5849554538726807,
+              0.2584104537963867
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.22583429684638978,
+            "risk_violations": 12,
+            "residual_bounds": [
+              0.1893739551305771,
+              0.19795991480350494,
+              0.5618733763694763,
+              0.29937756061553955
+            ]
+          },
+          "snli": {
+            "risk_threshold": 0.15761178901195527,
+            "risk_violations": 9,
+            "residual_bounds": [
+              0.3718293309211731,
+              0.32831987738609314,
+              0.6830168962478638,
+              0.5452138185501099
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "clinc",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "b142fe327ff3f97aaa17792a083a4ed5c227e31400897363b59c63fc34f589b1",
+          "standardization_scale_sha256": "6e04b2e9ba2445f0e182ac4411c7a39e363470eeed6dbdbe5d78ab3524f4f83b",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.051613583986181766,
+          "plan_sha256": "62db8ab0bc9e6fd181ae72d6e210dae8737042b9ec74203cddf0ffb259214dec",
+          "risk_positive_counts": {
+            "clinc": 4,
+            "paws-wiki": 6,
+            "qasc": 12,
+            "snli": 9
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8045872449874878,
+          "loss_last": 0.24755798280239105,
+          "risk_loss_last": 0.1879044622182846,
+          "margin_loss_last": 0.23861408233642578,
+          "gradient_norm_mean": 0.38836707966402173,
+          "gradient_norm_maximum": 0.5038678050041199,
+          "router_sha256": "a9ebab725d3aa2fd49fa65d8d46b01b3257c1d5009f461a06efc6a96d63ee63e"
+        },
+        {
+          "heldout_source": "json-schema",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "652e31b019ebb6fc4b244098cd6fa9e84580e367527af8b3e6ac41c7b28a9cdf",
+          "standardization_scale_sha256": "160a7aff8786ceafc247dd58e4b63cdf1beee5e2d6d6d5cc35c209b3f54a2532",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04977195800165646,
+          "plan_sha256": "3187aa3493d88522954da8bd6c0587bf07e131a00edca264184f6a3250fe1318",
+          "risk_positive_counts": {
+            "clinc": 3,
+            "paws-wiki": 4,
+            "qasc": 6,
+            "snli": 9
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.807408332824707,
+          "loss_last": 0.24294042587280273,
+          "risk_loss_last": 0.18900200724601746,
+          "margin_loss_last": 0.2157537043094635,
+          "gradient_norm_mean": 0.3930486880708486,
+          "gradient_norm_maximum": 0.4721643328666687,
+          "router_sha256": "08a64cc51001b640fbe24d265ed455fc2a9ee1e6c1326fdcbbf83904268db2bc"
+        },
+        {
+          "heldout_source": "paws-wiki",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "3fb867543b10ff34f298de2bd271efee686307226dea4a980f196eab43554fb7",
+          "standardization_scale_sha256": "7c837fe8efcbb6e6e86a26f3cbfeaf05898ca5e2a800790ed46ab6c8a8f71be9",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04860016700695269,
+          "plan_sha256": "3d27cf3a80be6d5c87bd579efb4a8be4fcdc162ba3cbeb63b8bf5388d3e03fad",
+          "risk_positive_counts": {
+            "clinc": 3,
+            "paws-wiki": 5,
+            "qasc": 10,
+            "snli": 5
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7692660093307495,
+          "loss_last": 0.2612285614013672,
+          "risk_loss_last": 0.2063913643360138,
+          "margin_loss_last": 0.21934883296489716,
+          "gradient_norm_mean": 0.38576081849168986,
+          "gradient_norm_maximum": 0.47688648104667664,
+          "router_sha256": "602137676764b5b83f3a5ed54da59ae11ab4a7988b056853fa80680582205ee1"
+        },
+        {
+          "heldout_source": "snli",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "9c48acb9e199e88fb6a00fdd494de51ef819717793beec8cf9d1e28c7210dc89",
+          "standardization_scale_sha256": "21b35da454a0af871711036cb69d7963bd7b4267205b8a00833e47a1e36c0f50",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.048540125018917024,
+          "plan_sha256": "681e453c2ad5d6fff4849188a9ede28523b265f61995d46fdc17592b6b91f418",
+          "risk_positive_counts": {
+            "clinc": 4,
+            "paws-wiki": 6,
+            "qasc": 11,
+            "snli": 8
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7947194576263428,
+          "loss_last": 0.30519887804985046,
+          "risk_loss_last": 0.23566071689128876,
+          "margin_loss_last": 0.2781526744365692,
+          "gradient_norm_mean": 0.38959410705138,
+          "gradient_norm_maximum": 0.4873078167438507,
+          "router_sha256": "1e4badeb5ad9ab1094a44b49dc2cfd35e9505394f57a6f60746698eac2cbf2af"
+        },
+        {
+          "heldout_source": "typed-decisions",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "cc68b68ed262890337c5be668b1e6e708a43bf91a0acfa84954baa4ba92fa8a6",
+          "standardization_scale_sha256": "fa93eae653d4d2a29e9833b6d22c3ae1889554b60989bf1ed9988bf1498e6d45",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.049226125003769994,
+          "plan_sha256": "4185772171bca394750f17c2094ee42abcddb84ef94159bffa35015bc2ad8ac6",
+          "risk_positive_counts": {
+            "clinc": 2,
+            "paws-wiki": 3,
+            "qasc": 9,
+            "snli": 5
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7580973505973816,
+          "loss_last": 0.2695007622241974,
+          "risk_loss_last": 0.19234435260295868,
+          "margin_loss_last": 0.3086256682872772,
+          "gradient_norm_mean": 0.3889814855065197,
+          "gradient_norm_maximum": 0.47918620705604553,
+          "router_sha256": "bd140b72889c26e093b87be933f6d54377f263a8ce76eefb6263b3b8fc9e4be7"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 480,
+        "mean_sha256": "b6b5ee4096771908a3801a18e751496a2a2e1c8c49271470eae793c0d1d637f0",
+        "scale_sha256": "a073be4bb87c2dcd5822656453aafba89ba66c210623bc93f9843aa004142b99"
+      },
+      "evaluation": {
+        "rows": 128,
+        "selection": {
+          "parent": 128
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.44695155551101046,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    },
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.09984245800296776,
+      "plan_sha256": "992ed4b81f628f421687ad956942a653bc85964aaee767f5d3749aba851a7155",
+      "risk_positive_counts": {
+        "clinc": 4,
+        "paws-wiki": 6,
+        "qasc": 12,
+        "snli": 9
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.8108904361724854,
+      "loss_last": 0.10381166636943817,
+      "risk_loss_last": 0.05297422409057617,
+      "margin_loss_last": 0.2033497840166092,
+      "gradient_norm_mean": 0.32538507657591254,
+      "gradient_norm_maximum": 0.507988691329956,
+      "router_sha256": "687d04b7f7dfeeefe90869fbc969545db9c0ffda8d7965380d193e919a97f5cf",
+      "seed": 44,
+      "heldout_source": "qasc",
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "snli",
+        "typed-decisions"
+      ],
+      "calibration": {
+        "support_cutoff": 9.746794700622559,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.17645067145824433,
+            "risk_violations": 4,
+            "residual_bounds": [
+              2.7591450214385986,
+              0.5678231716156006,
+              2.8425850868225098,
+              2.9745686054229736
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.1369552033185959,
+            "risk_violations": 6,
+            "residual_bounds": [
+              0.21374306082725525,
+              0.14387112855911255,
+              0.6268154382705688,
+              0.2680327892303467
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.3238680528640747,
+            "risk_violations": 12,
+            "residual_bounds": [
+              0.2101116180419922,
+              0.16742433607578278,
+              0.5205802917480469,
+              0.32436856627464294
+            ]
+          },
+          "snli": {
+            "risk_threshold": 0.11917039176225662,
+            "risk_violations": 9,
+            "residual_bounds": [
+              0.39623549580574036,
+              0.30550915002822876,
+              0.7395839095115662,
+              0.55280601978302
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "clinc",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "b142fe327ff3f97aaa17792a083a4ed5c227e31400897363b59c63fc34f589b1",
+          "standardization_scale_sha256": "6e04b2e9ba2445f0e182ac4411c7a39e363470eeed6dbdbe5d78ab3524f4f83b",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.05144416698021814,
+          "plan_sha256": "f31f5616d7aeda2dd53b4130ea042d0ba1a89b17d6dbab480d303e71f29a1690",
+          "risk_positive_counts": {
+            "clinc": 4,
+            "paws-wiki": 6,
+            "qasc": 12,
+            "snli": 9
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8242321610450745,
+          "loss_last": 0.26060566306114197,
+          "risk_loss_last": 0.20601877570152283,
+          "margin_loss_last": 0.21834751963615417,
+          "gradient_norm_mean": 0.42088155006058514,
+          "gradient_norm_maximum": 0.515259325504303,
+          "router_sha256": "cf30537c057ed8af17606a6005b3a9ad732ed57f4377cd798ef38d581008c7c7"
+        },
+        {
+          "heldout_source": "json-schema",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "652e31b019ebb6fc4b244098cd6fa9e84580e367527af8b3e6ac41c7b28a9cdf",
+          "standardization_scale_sha256": "160a7aff8786ceafc247dd58e4b63cdf1beee5e2d6d6d5cc35c209b3f54a2532",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.050436041987268254,
+          "plan_sha256": "830b184565c70cdc34438d3b3b2989ffa88074d85fe0c87bb670d001539ec12d",
+          "risk_positive_counts": {
+            "clinc": 3,
+            "paws-wiki": 4,
+            "qasc": 6,
+            "snli": 9
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7987189292907715,
+          "loss_last": 0.25813964009284973,
+          "risk_loss_last": 0.21150130033493042,
+          "margin_loss_last": 0.18655334413051605,
+          "gradient_norm_mean": 0.42320956010371447,
+          "gradient_norm_maximum": 0.5030215382575989,
+          "router_sha256": "068677a60fd6da235e3d123b1b786cd0837c358823d12037c6a8c99a921a57e0"
+        },
+        {
+          "heldout_source": "paws-wiki",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "snli",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "3fb867543b10ff34f298de2bd271efee686307226dea4a980f196eab43554fb7",
+          "standardization_scale_sha256": "7c837fe8efcbb6e6e86a26f3cbfeaf05898ca5e2a800790ed46ab6c8a8f71be9",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.049327790999086574,
+          "plan_sha256": "502791c86fdd98f379306924f65bc7f9ddc6ebfb762125bc7981207733dbba1e",
+          "risk_positive_counts": {
+            "clinc": 3,
+            "paws-wiki": 5,
+            "qasc": 10,
+            "snli": 5
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8001005053520203,
+          "loss_last": 0.24555453658103943,
+          "risk_loss_last": 0.19639751315116882,
+          "margin_loss_last": 0.19662806391716003,
+          "gradient_norm_mean": 0.42293753172270954,
+          "gradient_norm_maximum": 0.5072045922279358,
+          "router_sha256": "38720d24e42075f4885bca7c5b0d5c0a8bef34c3b0739b55ed5699a52361da5b"
+        },
+        {
+          "heldout_source": "snli",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "9c48acb9e199e88fb6a00fdd494de51ef819717793beec8cf9d1e28c7210dc89",
+          "standardization_scale_sha256": "21b35da454a0af871711036cb69d7963bd7b4267205b8a00833e47a1e36c0f50",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04843324999092147,
+          "plan_sha256": "03ec755f913378d5358e1370e67aa531dd877aa5139639e306586fbf3ea94a83",
+          "risk_positive_counts": {
+            "clinc": 4,
+            "paws-wiki": 6,
+            "qasc": 11,
+            "snli": 8
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8330092430114746,
+          "loss_last": 0.2944851219654083,
+          "risk_loss_last": 0.23863625526428223,
+          "margin_loss_last": 0.2233954519033432,
+          "gradient_norm_mean": 0.42085169930942357,
+          "gradient_norm_maximum": 0.49900320172309875,
+          "router_sha256": "137fe8b74e83625ad38488eff0272ea2b543bc4731fd6cb089f05f97ac538daa"
+        },
+        {
+          "heldout_source": "typed-decisions",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "cc68b68ed262890337c5be668b1e6e708a43bf91a0acfa84954baa4ba92fa8a6",
+          "standardization_scale_sha256": "fa93eae653d4d2a29e9833b6d22c3ae1889554b60989bf1ed9988bf1498e6d45",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.047396209003636613,
+          "plan_sha256": "f84071ec03f26f64656047e3dfa6b84ca3d89f7e533a9bc59fb43257ac32bd54",
+          "risk_positive_counts": {
+            "clinc": 2,
+            "paws-wiki": 3,
+            "qasc": 9,
+            "snli": 5
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8211452960968018,
+          "loss_last": 0.25391536951065063,
+          "risk_loss_last": 0.192373126745224,
+          "margin_loss_last": 0.24616900086402893,
+          "gradient_norm_mean": 0.4250957611948252,
+          "gradient_norm_maximum": 0.5079764723777771,
+          "router_sha256": "1cfa23958bdaf3a023cd6853cb2712edc06a978e28e131359d6cdc80a95f4beb"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 480,
+        "mean_sha256": "b6b5ee4096771908a3801a18e751496a2a2e1c8c49271470eae793c0d1d637f0",
+        "scale_sha256": "a073be4bb87c2dcd5822656453aafba89ba66c210623bc93f9843aa004142b99"
+      },
+      "evaluation": {
+        "rows": 128,
+        "selection": {
+          "parent": 128
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.44695155551101046,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    },
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.1021272920188494,
+      "plan_sha256": "fc97318b0383abb6951dca5787d74ee87d69f0f24ff7c69d480be1c8749b8962",
+      "risk_positive_counts": {
+        "clinc": 11,
+        "paws-wiki": 19,
+        "qasc": 12,
+        "snli": 29
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.774176299571991,
+      "loss_last": 0.12947893142700195,
+      "risk_loss_last": 0.09361222386360168,
+      "margin_loss_last": 0.1434668004512787,
+      "gradient_norm_mean": 0.33264123831759207,
+      "gradient_norm_maximum": 0.6085143089294434,
+      "router_sha256": "ca480527e7724aa486a9e3e2e0b4afe9ab7e0787cc95f6c1f1b97ed0c522e31b",
+      "seed": 42,
+      "heldout_source": "snli",
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "typed-decisions"
+      ],
+      "calibration": {
+        "support_cutoff": 95.95135498046875,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.00463180366680026,
+            "risk_violations": 11,
+            "residual_bounds": [
+              4.928077220916748,
+              0.44614526629447937,
+              4.58065128326416,
+              5.085646152496338
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.0,
+            "risk_violations": 19,
+            "residual_bounds": [
+              0.5357632637023926,
+              0.2052919864654541,
+              1.0054012537002563,
+              0.4884290099143982
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.01577805338203907,
+            "risk_violations": 12,
+            "residual_bounds": [
+              0.38803568482398987,
+              0.2468489110469818,
+              0.537421464920044,
+              0.512471079826355
+            ]
+          },
+          "snli": {
+            "risk_threshold": 0.0,
+            "risk_violations": 29,
+            "residual_bounds": [
+              0.4145301282405853,
+              0.26788702607154846,
+              0.6961958408355713,
+              0.4071490168571472
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "clinc",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "8520bd8bb6d16c22b47cef0dda17bb926617a07b6bf668f99f34f5b8342a984b",
+          "standardization_scale_sha256": "dd9b39703f5d95df4f7e24827604149f4d31f7e22493b041d6f9dd1b763a3709",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.051223209011368454,
+          "plan_sha256": "63043f595e3f49e31a5e5c7fd0d90c15d7c4415fbcdb513aac9e334fb2a67a68",
+          "risk_positive_counts": {
+            "clinc": 11,
+            "paws-wiki": 19,
+            "qasc": 12,
+            "snli": 29
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7679283022880554,
+          "loss_last": 0.2656126618385315,
+          "risk_loss_last": 0.22819474339485168,
+          "margin_loss_last": 0.14967162907123566,
+          "gradient_norm_mean": 0.42021442600525916,
+          "gradient_norm_maximum": 0.6246363520622253,
+          "router_sha256": "d63f064b5f85f6cd1f91da708fec57ca795c2205f423fcdeac7103429722afd0"
+        },
+        {
+          "heldout_source": "json-schema",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "7fb65127e841c919cfb5383ea36ad65c5fdaece06d78df7c8ceda43ee8cc6fa7",
+          "standardization_scale_sha256": "124a75323692192aea2fdeb9faf90242bbe49a1221abc36234365548e2b9ad62",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.05531170900212601,
+          "plan_sha256": "91865e9d62fe0a468d0a3b7febf02ba1da6d7b090fb891860aff2aa5eab00c6a",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 17,
+            "qasc": 6,
+            "snli": 29
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7566092610359192,
+          "loss_last": 0.2266014665365219,
+          "risk_loss_last": 0.1954927295446396,
+          "margin_loss_last": 0.1244349479675293,
+          "gradient_norm_mean": 0.41930392221547663,
+          "gradient_norm_maximum": 0.6047273874282837,
+          "router_sha256": "f40125ceaea08366eeac462b8dea14b72b991ff6ed55313705497545a84979f6"
+        },
+        {
+          "heldout_source": "paws-wiki",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "207bb7c35d258c0396f648b91ceac83b9b1088dc728dafec37ad99abf9eb4fef",
+          "standardization_scale_sha256": "2aa8b67678d640f537ad8954e5bc0eed4934749dc37af6725668c1d78266a271",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.05083037499571219,
+          "plan_sha256": "3f198315fe3be511020e4aa4e2e9cb5e5a27c477637d08866bac808fce4821c4",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 18,
+            "qasc": 10,
+            "snli": 25
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7589521408081055,
+          "loss_last": 0.2575436532497406,
+          "risk_loss_last": 0.21547532081604004,
+          "margin_loss_last": 0.16827328503131866,
+          "gradient_norm_mean": 0.42668397165834904,
+          "gradient_norm_maximum": 0.6633169054985046,
+          "router_sha256": "8436560e3931f54fc73ba0bf08f904f487694e815a63cf5846108afe041e3c08"
+        },
+        {
+          "heldout_source": "qasc",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "typed-decisions"
+          ],
+          "rows": 512,
+          "standardization_mean_sha256": "9c48acb9e199e88fb6a00fdd494de51ef819717793beec8cf9d1e28c7210dc89",
+          "standardization_scale_sha256": "21b35da454a0af871711036cb69d7963bd7b4267205b8a00833e47a1e36c0f50",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.051493417005985975,
+          "plan_sha256": "afeeb6300cdac263b782db4f1b2137293d61bfa52daf2980d49d5fa48a27a9d8",
+          "risk_positive_counts": {
+            "clinc": 4,
+            "paws-wiki": 6,
+            "qasc": 11,
+            "snli": 8
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7819961309432983,
+          "loss_last": 0.28872305154800415,
+          "risk_loss_last": 0.2157246470451355,
+          "margin_loss_last": 0.2919935882091522,
+          "gradient_norm_mean": 0.42028155853040516,
+          "gradient_norm_maximum": 0.5563252568244934,
+          "router_sha256": "34a6e69f5bf5d93ac3c085e4d85bb4503b835f49d687903fa50f8260ef56e0b9"
+        },
+        {
+          "heldout_source": "typed-decisions",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "qasc"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "e212ef3baf7d1043415663b26bdcc4631ca3185fb907f00ad6bd492051acd8f6",
+          "standardization_scale_sha256": "96a89b7453158c78e66108a6a40b7799e5dd8181d8c6b81d52de80e7ed270b78",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.05082562501775101,
+          "plan_sha256": "b1f206296c3189fd0b36534c6ee0afd75ab3f02ab50f3557deda1e78174a2d3c",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 9,
+            "snli": 25
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7574220895767212,
+          "loss_last": 0.2066364288330078,
+          "risk_loss_last": 0.15847116708755493,
+          "margin_loss_last": 0.1926610767841339,
+          "gradient_norm_mean": 0.4224360587541014,
+          "gradient_norm_maximum": 0.6340032815933228,
+          "router_sha256": "6cf2a37e5a9582b2f74f6d85a6034a31b1546c0ff2dd070db7609031f3a6c97a"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "0ee8eadd49d2fcf0f741176a8be2346b387e8bb5c0d951210241d102104a6fc9",
+        "scale_sha256": "4ba9f1653d005a732265addbb1f98afc559ac976406228fb38a87389be3f73bf"
+      },
+      "evaluation": {
+        "rows": 96,
+        "selection": {
+          "parent": 96
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.25523427146045125,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    },
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.09755816697725095,
+      "plan_sha256": "3141cc8d62882892386ad95cad66bb61654003533ed83cb74e83ca45691a2986",
+      "risk_positive_counts": {
+        "clinc": 11,
+        "paws-wiki": 19,
+        "qasc": 12,
+        "snli": 29
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.7283551692962646,
+      "loss_last": 0.13791826367378235,
+      "risk_loss_last": 0.10182487964630127,
+      "margin_loss_last": 0.1443735659122467,
+      "gradient_norm_mean": 0.3101698449172545,
+      "gradient_norm_maximum": 0.5520997047424316,
+      "router_sha256": "c6e81bfeab5f894d21f1d9112a6ec71e05070b94a3d8ad1a530c69a01cc9a0e5",
+      "seed": 43,
+      "heldout_source": "snli",
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "typed-decisions"
+      ],
+      "calibration": {
+        "support_cutoff": 95.95135498046875,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.00021398056307807566,
+            "risk_violations": 11,
+            "residual_bounds": [
+              5.142843723297119,
+              0.49209100008010864,
+              4.698569297790527,
+              5.146485328674316
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.0,
+            "risk_violations": 19,
+            "residual_bounds": [
+              0.6292788982391357,
+              0.2511875331401825,
+              1.2176244258880615,
+              0.7286791801452637
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.00624463969618082,
+            "risk_violations": 12,
+            "residual_bounds": [
+              0.44173920154571533,
+              0.27576684951782227,
+              0.6004409193992615,
+              0.49619942903518677
+            ]
+          },
+          "snli": {
+            "risk_threshold": 0.0008661235380917787,
+            "risk_violations": 29,
+            "residual_bounds": [
+              0.38647526502609253,
+              0.28962767124176025,
+              0.6994004845619202,
+              0.41180306673049927
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "clinc",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "8520bd8bb6d16c22b47cef0dda17bb926617a07b6bf668f99f34f5b8342a984b",
+          "standardization_scale_sha256": "dd9b39703f5d95df4f7e24827604149f4d31f7e22493b041d6f9dd1b763a3709",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04954683399409987,
+          "plan_sha256": "260537e4b462f879b3291f4ec668381807cfa2248da848b871ce19377c2528f3",
+          "risk_positive_counts": {
+            "clinc": 11,
+            "paws-wiki": 19,
+            "qasc": 12,
+            "snli": 29
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7663251161575317,
+          "loss_last": 0.31326404213905334,
+          "risk_loss_last": 0.2621757686138153,
+          "margin_loss_last": 0.20435309410095215,
+          "gradient_norm_mean": 0.4004753362387419,
+          "gradient_norm_maximum": 0.6296989321708679,
+          "router_sha256": "01c04e4a1bc24a5999f104546ce9064c66fa39c0dd3e698b5bd661af62a3c72c"
+        },
+        {
+          "heldout_source": "json-schema",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "7fb65127e841c919cfb5383ea36ad65c5fdaece06d78df7c8ceda43ee8cc6fa7",
+          "standardization_scale_sha256": "124a75323692192aea2fdeb9faf90242bbe49a1221abc36234365548e2b9ad62",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04879341702326201,
+          "plan_sha256": "2f93957b468d7a536825d9b863e0a20c32ca36154618867862b3739d18b88c08",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 17,
+            "qasc": 6,
+            "snli": 29
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7652633786201477,
+          "loss_last": 0.26424869894981384,
+          "risk_loss_last": 0.2231922447681427,
+          "margin_loss_last": 0.16422578692436218,
+          "gradient_norm_mean": 0.3962578767677769,
+          "gradient_norm_maximum": 0.6336738467216492,
+          "router_sha256": "33e4a279505a50ec8d6274efc8b144bae02ee174828f4575938c1ce1da69099c"
+        },
+        {
+          "heldout_source": "paws-wiki",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "207bb7c35d258c0396f648b91ceac83b9b1088dc728dafec37ad99abf9eb4fef",
+          "standardization_scale_sha256": "2aa8b67678d640f537ad8954e5bc0eed4934749dc37af6725668c1d78266a271",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04972208398976363,
+          "plan_sha256": "57c5788393e4cadddb5579d109469c01765a499823630923ffbb625b93a64d86",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 18,
+            "qasc": 10,
+            "snli": 25
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7097830772399902,
+          "loss_last": 0.26072490215301514,
+          "risk_loss_last": 0.21388980746269226,
+          "margin_loss_last": 0.1873403787612915,
+          "gradient_norm_mean": 0.39224394294433296,
+          "gradient_norm_maximum": 0.602427065372467,
+          "router_sha256": "8a8770f02020f1946937840bed703213b87cfd8bd7c444d81bcd0e0b993e8edc"
+        },
+        {
+          "heldout_source": "qasc",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "typed-decisions"
+          ],
+          "rows": 512,
+          "standardization_mean_sha256": "9c48acb9e199e88fb6a00fdd494de51ef819717793beec8cf9d1e28c7210dc89",
+          "standardization_scale_sha256": "21b35da454a0af871711036cb69d7963bd7b4267205b8a00833e47a1e36c0f50",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04805616702651605,
+          "plan_sha256": "681e453c2ad5d6fff4849188a9ede28523b265f61995d46fdc17592b6b91f418",
+          "risk_positive_counts": {
+            "clinc": 4,
+            "paws-wiki": 6,
+            "qasc": 11,
+            "snli": 8
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7947194576263428,
+          "loss_last": 0.30519887804985046,
+          "risk_loss_last": 0.23566071689128876,
+          "margin_loss_last": 0.2781526744365692,
+          "gradient_norm_mean": 0.38959410705138,
+          "gradient_norm_maximum": 0.4873078167438507,
+          "router_sha256": "1e4badeb5ad9ab1094a44b49dc2cfd35e9505394f57a6f60746698eac2cbf2af"
+        },
+        {
+          "heldout_source": "typed-decisions",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "qasc"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "e212ef3baf7d1043415663b26bdcc4631ca3185fb907f00ad6bd492051acd8f6",
+          "standardization_scale_sha256": "96a89b7453158c78e66108a6a40b7799e5dd8181d8c6b81d52de80e7ed270b78",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04846687498502433,
+          "plan_sha256": "8d991ef3a7c3a01d262b62839a0592b0d73fed4c5d0fd88a375abf79d8dadfd0",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 9,
+            "snli": 25
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7194809317588806,
+          "loss_last": 0.2990143895149231,
+          "risk_loss_last": 0.2489713430404663,
+          "margin_loss_last": 0.20017217099666595,
+          "gradient_norm_mean": 0.3927430771291256,
+          "gradient_norm_maximum": 0.5937652587890625,
+          "router_sha256": "0c722f35b2ad01cf28b75b9aa442753dfd2860b836a1b7357349f31edb1d1773"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "0ee8eadd49d2fcf0f741176a8be2346b387e8bb5c0d951210241d102104a6fc9",
+        "scale_sha256": "4ba9f1653d005a732265addbb1f98afc559ac976406228fb38a87389be3f73bf"
+      },
+      "evaluation": {
+        "rows": 96,
+        "selection": {
+          "parent": 96
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.25523427146045125,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    },
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.09744954199413769,
+      "plan_sha256": "541bc3597cab46681831be2457a63ed0b9d2eda4cb34e4f25bd108b08d957bc5",
+      "risk_positive_counts": {
+        "clinc": 11,
+        "paws-wiki": 19,
+        "qasc": 12,
+        "snli": 29
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.8114973902702332,
+      "loss_last": 0.15111571550369263,
+      "risk_loss_last": 0.11710140854120255,
+      "margin_loss_last": 0.13605724275112152,
+      "gradient_norm_mean": 0.34995202539721504,
+      "gradient_norm_maximum": 0.5985820293426514,
+      "router_sha256": "34420705028845315fef7d01af4120aaac52cda501e9b5cc2768e6eeb184d504",
+      "seed": 44,
+      "heldout_source": "snli",
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "typed-decisions"
+      ],
+      "calibration": {
+        "support_cutoff": 95.95135498046875,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.016501800918579102,
+            "risk_violations": 11,
+            "residual_bounds": [
+              5.089885711669922,
+              0.5347188115119934,
+              4.077171325683594,
+              5.173306465148926
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.0,
+            "risk_violations": 19,
+            "residual_bounds": [
+              0.4493458867073059,
+              0.37657126784324646,
+              0.6780030131340027,
+              0.7891730070114136
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.0672026442527771,
+            "risk_violations": 12,
+            "residual_bounds": [
+              0.4218026399612427,
+              0.23866216838359833,
+              0.5646872520446777,
+              0.4522823095321655
+            ]
+          },
+          "snli": {
+            "risk_threshold": 0.0,
+            "risk_violations": 29,
+            "residual_bounds": [
+              0.3261740207672119,
+              0.30162370204925537,
+              1.623649001121521,
+              0.3957185447216034
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "clinc",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "8520bd8bb6d16c22b47cef0dda17bb926617a07b6bf668f99f34f5b8342a984b",
+          "standardization_scale_sha256": "dd9b39703f5d95df4f7e24827604149f4d31f7e22493b041d6f9dd1b763a3709",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04831708301207982,
+          "plan_sha256": "19c45bc0bc42eb573fa7d260be144e600cbbd57fcbdb199f0cab3f24dc271ae6",
+          "risk_positive_counts": {
+            "clinc": 11,
+            "paws-wiki": 19,
+            "qasc": 12,
+            "snli": 29
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8118699789047241,
+          "loss_last": 0.4062129855155945,
+          "risk_loss_last": 0.3590499460697174,
+          "margin_loss_last": 0.1886521577835083,
+          "gradient_norm_mean": 0.4206507185008377,
+          "gradient_norm_maximum": 0.5986431837081909,
+          "router_sha256": "e8d5994c6a93371359cd5922a99b237e1eeec9a20c9c6e9a1672b19f864f69cc"
+        },
+        {
+          "heldout_source": "json-schema",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "7fb65127e841c919cfb5383ea36ad65c5fdaece06d78df7c8ceda43ee8cc6fa7",
+          "standardization_scale_sha256": "124a75323692192aea2fdeb9faf90242bbe49a1221abc36234365548e2b9ad62",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.049635083007160574,
+          "plan_sha256": "2ea3fed7ae662e7f49e6e1d159d20af970378a730e480f9ffaa84da30d3a8d4a",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 17,
+            "qasc": 6,
+            "snli": 29
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8125026822090149,
+          "loss_last": 0.3415849804878235,
+          "risk_loss_last": 0.30258265137672424,
+          "margin_loss_last": 0.1560092568397522,
+          "gradient_norm_mean": 0.429108691168949,
+          "gradient_norm_maximum": 0.5545760989189148,
+          "router_sha256": "46a2eb1073045d163d5c0582b4a8c5f9d9681431d8bf931d94a1b5517e38b688"
+        },
+        {
+          "heldout_source": "paws-wiki",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "qasc",
+            "typed-decisions"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "207bb7c35d258c0396f648b91ceac83b9b1088dc728dafec37ad99abf9eb4fef",
+          "standardization_scale_sha256": "2aa8b67678d640f537ad8954e5bc0eed4934749dc37af6725668c1d78266a271",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04968475000350736,
+          "plan_sha256": "43801cdf953f2650e68c855b2f0c8146a509ec3795da8ba8eacaa2aa949acb74",
+          "risk_positive_counts": {
+            "clinc": 10,
+            "paws-wiki": 18,
+            "qasc": 10,
+            "snli": 25
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8139311075210571,
+          "loss_last": 0.37862181663513184,
+          "risk_loss_last": 0.33091026544570923,
+          "margin_loss_last": 0.19084621965885162,
+          "gradient_norm_mean": 0.4316136983688921,
+          "gradient_norm_maximum": 0.5973318219184875,
+          "router_sha256": "4b654a4633d35b11ef04d630a99cae8b38719b59bbfbec9c187e992d694c77c1"
+        },
+        {
+          "heldout_source": "qasc",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "typed-decisions"
+          ],
+          "rows": 512,
+          "standardization_mean_sha256": "9c48acb9e199e88fb6a00fdd494de51ef819717793beec8cf9d1e28c7210dc89",
+          "standardization_scale_sha256": "21b35da454a0af871711036cb69d7963bd7b4267205b8a00833e47a1e36c0f50",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04908329198951833,
+          "plan_sha256": "03ec755f913378d5358e1370e67aa531dd877aa5139639e306586fbf3ea94a83",
+          "risk_positive_counts": {
+            "clinc": 4,
+            "paws-wiki": 6,
+            "qasc": 11,
+            "snli": 8
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8330092430114746,
+          "loss_last": 0.2944851219654083,
+          "risk_loss_last": 0.23863625526428223,
+          "margin_loss_last": 0.2233954519033432,
+          "gradient_norm_mean": 0.42085169930942357,
+          "gradient_norm_maximum": 0.49900320172309875,
+          "router_sha256": "137fe8b74e83625ad38488eff0272ea2b543bc4731fd6cb089f05f97ac538daa"
+        },
+        {
+          "heldout_source": "typed-decisions",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "qasc"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "e212ef3baf7d1043415663b26bdcc4631ca3185fb907f00ad6bd492051acd8f6",
+          "standardization_scale_sha256": "96a89b7453158c78e66108a6a40b7799e5dd8181d8c6b81d52de80e7ed270b78",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.0488621249969583,
+          "plan_sha256": "a79fd43b5fcbbd55450179f49bf1da261441f8b7ef564620fb01efdc04f52715",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 9,
+            "snli": 25
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8191395998001099,
+          "loss_last": 0.25771859288215637,
+          "risk_loss_last": 0.20824673771858215,
+          "margin_loss_last": 0.1978873908519745,
+          "gradient_norm_mean": 0.4301931490190327,
+          "gradient_norm_maximum": 0.644598126411438,
+          "router_sha256": "f43caff7c76c0084f580d199ed69514d9423c10cddb2b7fbe704780314a57623"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "0ee8eadd49d2fcf0f741176a8be2346b387e8bb5c0d951210241d102104a6fc9",
+        "scale_sha256": "4ba9f1653d005a732265addbb1f98afc559ac976406228fb38a87389be3f73bf"
+      },
+      "evaluation": {
+        "rows": 96,
+        "selection": {
+          "parent": 96
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.25523427146045125,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    },
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.09587220798130147,
+      "plan_sha256": "3f7ee435642be6574f0245cf895a2f3101fe0f4512c499503a83dde0dac92594",
+      "risk_positive_counts": {
+        "clinc": 9,
+        "paws-wiki": 16,
+        "qasc": 10,
+        "snli": 26
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.7693496346473694,
+      "loss_last": 0.12183207273483276,
+      "risk_loss_last": 0.08648362755775452,
+      "margin_loss_last": 0.1413937658071518,
+      "gradient_norm_mean": 0.32034447649493814,
+      "gradient_norm_maximum": 0.5949655175209045,
+      "router_sha256": "ffc3a38f630219d36c734a44fe981cd806e52f487a84298edbf51441b2a20ada",
+      "seed": 42,
+      "heldout_source": "typed-decisions",
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli"
+      ],
+      "calibration": {
+        "support_cutoff": 65.39392852783203,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.03647202050089836,
+            "risk_violations": 9,
+            "residual_bounds": [
+              5.344697952270508,
+              0.5854690670967102,
+              5.128973484039307,
+              5.5929856300354
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.0,
+            "risk_violations": 16,
+            "residual_bounds": [
+              0.359672486782074,
+              0.17559225857257843,
+              0.9507250785827637,
+              0.32862284779548645
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.05126764794588089,
+            "risk_violations": 10,
+            "residual_bounds": [
+              0.5857226848602295,
+              0.28714171051979065,
+              0.5589488744735718,
+              0.6986860036849976
+            ]
+          },
+          "snli": {
+            "risk_threshold": 0.0,
+            "risk_violations": 26,
+            "residual_bounds": [
+              0.36679840087890625,
+              0.2982102632522583,
+              0.6142349243164062,
+              0.46716001629829407
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "clinc",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "bea59f24aca13c18da8f035343d1e306d532958ff9b7a32664b23cda6d9217ec",
+          "standardization_scale_sha256": "bd77e4230725a89bb317a9c7368b8238aa4caa21f69e9697eea3f9d95677bd26",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04946725000627339,
+          "plan_sha256": "483df022eaf2e016eb12c454884fe5b7b6e55728cbeef5b650659e4eb43cb30c",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 10,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7692891955375671,
+          "loss_last": 0.2722296714782715,
+          "risk_loss_last": 0.23477327823638916,
+          "margin_loss_last": 0.14982563257217407,
+          "gradient_norm_mean": 0.418799850391224,
+          "gradient_norm_maximum": 0.6263700723648071,
+          "router_sha256": "dadfaf4a10a9408cd357cdaa81539b2d7eb0a761fb6bf2f2bc2941926d7fe098"
+        },
+        {
+          "heldout_source": "json-schema",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "874a08ac12cdc4d09c17945303adad317b6a1a28141540ee057b25ff6377e41d",
+          "standardization_scale_sha256": "9ada7bfa02088e052e55ed4370f18a38f41963ef49912a793c9b966bd6042a3a",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04955437500029802,
+          "plan_sha256": "15181fe5fa6a828cacc08644f0695aa7168d7ba2caafbb5e1add8ef98d7bd512",
+          "risk_positive_counts": {
+            "clinc": 8,
+            "paws-wiki": 14,
+            "qasc": 4,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7642223238945007,
+          "loss_last": 0.22528328001499176,
+          "risk_loss_last": 0.1927599012851715,
+          "margin_loss_last": 0.1300935000181198,
+          "gradient_norm_mean": 0.42269027151633054,
+          "gradient_norm_maximum": 0.6134330630302429,
+          "router_sha256": "04031500ef3ebbe81f4e485aea04e3835c4a935d56edbfcdbe0197dc5ce9a61c"
+        },
+        {
+          "heldout_source": "paws-wiki",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "e61ec93dc18e42fbf993c83591d978fa52314f91a4c9d65deefe0eae5a7536ab",
+          "standardization_scale_sha256": "52732a499b4f831cf437fde54ac4b85eacb48e7c3ba327f231ef161cd1906d88",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.0490894999820739,
+          "plan_sha256": "74434a9aa0585574c2c830cb3a57a83125be91f35a3defd173a261f2701109c2",
+          "risk_positive_counts": {
+            "clinc": 8,
+            "paws-wiki": 15,
+            "qasc": 8,
+            "snli": 22
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7576612234115601,
+          "loss_last": 0.28298285603523254,
+          "risk_loss_last": 0.24042147397994995,
+          "margin_loss_last": 0.17024554312229156,
+          "gradient_norm_mean": 0.42889741517137736,
+          "gradient_norm_maximum": 0.6418830156326294,
+          "router_sha256": "832a2b98defac23d6f9deba6bfad5aa20ce7b0562e06e32657671c3630237135"
+        },
+        {
+          "heldout_source": "qasc",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "snli"
+          ],
+          "rows": 512,
+          "standardization_mean_sha256": "cc68b68ed262890337c5be668b1e6e708a43bf91a0acfa84954baa4ba92fa8a6",
+          "standardization_scale_sha256": "fa93eae653d4d2a29e9833b6d22c3ae1889554b60989bf1ed9988bf1498e6d45",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04895437500090338,
+          "plan_sha256": "7c94ead01f99b7bfc88c711aa8b4c14bd22c6f38849f311e20225b9bc67ed3d5",
+          "risk_positive_counts": {
+            "clinc": 2,
+            "paws-wiki": 3,
+            "qasc": 9,
+            "snli": 5
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7816268801689148,
+          "loss_last": 0.21790403127670288,
+          "risk_loss_last": 0.16422685980796814,
+          "margin_loss_last": 0.21470871567726135,
+          "gradient_norm_mean": 0.4188984762877226,
+          "gradient_norm_maximum": 0.5176610946655273,
+          "router_sha256": "a66b969cfddf642567aa103456050d0db38cf58815f8f531560625332d6d3e89"
+        },
+        {
+          "heldout_source": "snli",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "qasc"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "e212ef3baf7d1043415663b26bdcc4631ca3185fb907f00ad6bd492051acd8f6",
+          "standardization_scale_sha256": "96a89b7453158c78e66108a6a40b7799e5dd8181d8c6b81d52de80e7ed270b78",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04912383298506029,
+          "plan_sha256": "b1f206296c3189fd0b36534c6ee0afd75ab3f02ab50f3557deda1e78174a2d3c",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 9,
+            "snli": 25
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7574220895767212,
+          "loss_last": 0.2066364288330078,
+          "risk_loss_last": 0.15847116708755493,
+          "margin_loss_last": 0.1926610767841339,
+          "gradient_norm_mean": 0.4224360587541014,
+          "gradient_norm_maximum": 0.6340032815933228,
+          "router_sha256": "6cf2a37e5a9582b2f74f6d85a6034a31b1546c0ff2dd070db7609031f3a6c97a"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "70e601cf6e5e019a30220bf4f8e08da05b6598fdafd1e180092d55e930dfef04",
+        "scale_sha256": "20e9dfbaa8f59c29f561480664d22aa2d8ac151e56eb57c3ae0f555d235f68a8"
+      },
+      "evaluation": {
+        "rows": 320,
+        "selection": {
+          "parent": 320
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.12530514967722964,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    },
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.09596804200555198,
+      "plan_sha256": "9b04e8c299dfba33fd3e57d72c5c042d7701e2ccf731f01cff110af058f8f1fc",
+      "risk_positive_counts": {
+        "clinc": 9,
+        "paws-wiki": 16,
+        "qasc": 10,
+        "snli": 26
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.7275710701942444,
+      "loss_last": 0.12263135612010956,
+      "risk_loss_last": 0.08101508021354675,
+      "margin_loss_last": 0.16646510362625122,
+      "gradient_norm_mean": 0.30007392007973976,
+      "gradient_norm_maximum": 0.5504339933395386,
+      "router_sha256": "7bc6ac684e38566543ad2f4f9fc0fe2c6b563cbcfdd27e506fb195993a1a2874",
+      "seed": 43,
+      "heldout_source": "typed-decisions",
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli"
+      ],
+      "calibration": {
+        "support_cutoff": 65.39392852783203,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.002415596337616444,
+            "risk_violations": 9,
+            "residual_bounds": [
+              5.356107234954834,
+              0.5778543949127197,
+              5.35165548324585,
+              5.438429355621338
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.0,
+            "risk_violations": 16,
+            "residual_bounds": [
+              0.33567601442337036,
+              0.1862332820892334,
+              1.0121276378631592,
+              0.49501606822013855
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.041042523288726804,
+            "risk_violations": 10,
+            "residual_bounds": [
+              0.43809062242507935,
+              0.3039965033531189,
+              0.4952860474586487,
+              0.5989099740982056
+            ]
+          },
+          "snli": {
+            "risk_threshold": 9.222254923079162e-05,
+            "risk_violations": 26,
+            "residual_bounds": [
+              0.4590316712856293,
+              0.31890949606895447,
+              0.6219937801361084,
+              0.4601268768310547
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "clinc",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "bea59f24aca13c18da8f035343d1e306d532958ff9b7a32664b23cda6d9217ec",
+          "standardization_scale_sha256": "bd77e4230725a89bb317a9c7368b8238aa4caa21f69e9697eea3f9d95677bd26",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.048764459002995864,
+          "plan_sha256": "c34863599ef9fcf328a101c4aa3ee541489276c04c5eacbb01e4af84b52d9aea",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 10,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7748430967330933,
+          "loss_last": 0.29150015115737915,
+          "risk_loss_last": 0.22211915254592896,
+          "margin_loss_last": 0.2775239646434784,
+          "gradient_norm_mean": 0.39714996656402946,
+          "gradient_norm_maximum": 0.5646305084228516,
+          "router_sha256": "e93a4cd10aeeb2d19deb6497040f4cecb4f3a1bed2be6aa03a96e95e0e8e4574"
+        },
+        {
+          "heldout_source": "json-schema",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "874a08ac12cdc4d09c17945303adad317b6a1a28141540ee057b25ff6377e41d",
+          "standardization_scale_sha256": "9ada7bfa02088e052e55ed4370f18a38f41963ef49912a793c9b966bd6042a3a",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.0487069170048926,
+          "plan_sha256": "b095fb0869f76b8e79beb0083eea75b64437c701e057fb0f3438e3bdff58a110",
+          "risk_positive_counts": {
+            "clinc": 8,
+            "paws-wiki": 14,
+            "qasc": 4,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7771004438400269,
+          "loss_last": 0.2425628900527954,
+          "risk_loss_last": 0.18290308117866516,
+          "margin_loss_last": 0.2386392205953598,
+          "gradient_norm_mean": 0.39226986980065703,
+          "gradient_norm_maximum": 0.5733432173728943,
+          "router_sha256": "87e0862c297d2adbeaf2570d5909133f40b5a104652d8798c74ed8806a5e9b1a"
+        },
+        {
+          "heldout_source": "paws-wiki",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "e61ec93dc18e42fbf993c83591d978fa52314f91a4c9d65deefe0eae5a7536ab",
+          "standardization_scale_sha256": "52732a499b4f831cf437fde54ac4b85eacb48e7c3ba327f231ef161cd1906d88",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.048616290994687006,
+          "plan_sha256": "8a577df73448fd313d5070367c5d9fd56675196227c2e5cd08b7b8828ac23350",
+          "risk_positive_counts": {
+            "clinc": 8,
+            "paws-wiki": 15,
+            "qasc": 8,
+            "snli": 22
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7215284705162048,
+          "loss_last": 0.23469766974449158,
+          "risk_loss_last": 0.16877101361751556,
+          "margin_loss_last": 0.26370662450790405,
+          "gradient_norm_mean": 0.38586771802511066,
+          "gradient_norm_maximum": 0.6018829345703125,
+          "router_sha256": "74279656e3b603842cc80e49b227d0fc9d7a0301f6f24d1985f63c5d5f75df6e"
+        },
+        {
+          "heldout_source": "qasc",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "snli"
+          ],
+          "rows": 512,
+          "standardization_mean_sha256": "cc68b68ed262890337c5be668b1e6e708a43bf91a0acfa84954baa4ba92fa8a6",
+          "standardization_scale_sha256": "fa93eae653d4d2a29e9833b6d22c3ae1889554b60989bf1ed9988bf1498e6d45",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04782270800205879,
+          "plan_sha256": "4185772171bca394750f17c2094ee42abcddb84ef94159bffa35015bc2ad8ac6",
+          "risk_positive_counts": {
+            "clinc": 2,
+            "paws-wiki": 3,
+            "qasc": 9,
+            "snli": 5
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7580973505973816,
+          "loss_last": 0.2695007622241974,
+          "risk_loss_last": 0.19234435260295868,
+          "margin_loss_last": 0.3086256682872772,
+          "gradient_norm_mean": 0.3889814855065197,
+          "gradient_norm_maximum": 0.47918620705604553,
+          "router_sha256": "bd140b72889c26e093b87be933f6d54377f263a8ce76eefb6263b3b8fc9e4be7"
+        },
+        {
+          "heldout_source": "snli",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "qasc"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "e212ef3baf7d1043415663b26bdcc4631ca3185fb907f00ad6bd492051acd8f6",
+          "standardization_scale_sha256": "96a89b7453158c78e66108a6a40b7799e5dd8181d8c6b81d52de80e7ed270b78",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.048336374980863184,
+          "plan_sha256": "8d991ef3a7c3a01d262b62839a0592b0d73fed4c5d0fd88a375abf79d8dadfd0",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 9,
+            "snli": 25
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.7194809317588806,
+          "loss_last": 0.2990143895149231,
+          "risk_loss_last": 0.2489713430404663,
+          "margin_loss_last": 0.20017217099666595,
+          "gradient_norm_mean": 0.3927430771291256,
+          "gradient_norm_maximum": 0.5937652587890625,
+          "router_sha256": "0c722f35b2ad01cf28b75b9aa442753dfd2860b836a1b7357349f31edb1d1773"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "70e601cf6e5e019a30220bf4f8e08da05b6598fdafd1e180092d55e930dfef04",
+        "scale_sha256": "20e9dfbaa8f59c29f561480664d22aa2d8ac151e56eb57c3ae0f555d235f68a8"
+      },
+      "evaluation": {
+        "rows": 320,
+        "selection": {
+          "parent": 320
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.12530514967722964,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    },
+    {
+      "updates": 256,
+      "examples": 16384,
+      "seconds": 0.09765820798929781,
+      "plan_sha256": "9a640f16e650c96d53721311e1790d8818ddae472509f69679fb56a3e7fd310a",
+      "risk_positive_counts": {
+        "clinc": 9,
+        "paws-wiki": 16,
+        "qasc": 10,
+        "snli": 26
+      },
+      "risk_positive_weights": {
+        "clinc": 3.0,
+        "paws-wiki": 3.0,
+        "qasc": 3.0,
+        "snli": 3.0
+      },
+      "loss_first": 0.8131588697433472,
+      "loss_last": 0.16868790984153748,
+      "risk_loss_last": 0.11952951550483704,
+      "margin_loss_last": 0.19663354754447937,
+      "gradient_norm_mean": 0.3418987816548906,
+      "gradient_norm_maximum": 0.5987811088562012,
+      "router_sha256": "b3ba118a924740426a00c94de524599f4d44945e6ba068cc15c5c4578f40dcd2",
+      "seed": 44,
+      "heldout_source": "typed-decisions",
+      "train_sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli"
+      ],
+      "calibration": {
+        "support_cutoff": 65.39392852783203,
+        "experts": {
+          "clinc": {
+            "risk_threshold": 0.04913492670059204,
+            "risk_violations": 9,
+            "residual_bounds": [
+              5.542481899261475,
+              0.7226279377937317,
+              5.125471591949463,
+              5.719654083251953
+            ]
+          },
+          "paws-wiki": {
+            "risk_threshold": 0.0,
+            "risk_violations": 16,
+            "residual_bounds": [
+              0.30484575033187866,
+              0.215347558259964,
+              0.6837087273597717,
+              0.5163848400115967
+            ]
+          },
+          "qasc": {
+            "risk_threshold": 0.1074853705406189,
+            "risk_violations": 10,
+            "residual_bounds": [
+              0.46083176136016846,
+              0.3191569447517395,
+              0.5519521236419678,
+              0.7149169445037842
+            ]
+          },
+          "snli": {
+            "risk_threshold": 0.0,
+            "risk_violations": 26,
+            "residual_bounds": [
+              0.35992833971977234,
+              0.3262697160243988,
+              1.1492984294891357,
+              0.47668537497520447
+            ]
+          }
+        }
+      },
+      "inner_folds": [
+        {
+          "heldout_source": "clinc",
+          "train_sources": [
+            "json-schema",
+            "paws-wiki",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "bea59f24aca13c18da8f035343d1e306d532958ff9b7a32664b23cda6d9217ec",
+          "standardization_scale_sha256": "bd77e4230725a89bb317a9c7368b8238aa4caa21f69e9697eea3f9d95677bd26",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04971954200300388,
+          "plan_sha256": "51b6a41ef450bf4f195fca01a1f8518644874515fb02d95249083bf5b84ab356",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 10,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8193564414978027,
+          "loss_last": 0.3126068711280823,
+          "risk_loss_last": 0.26227718591690063,
+          "margin_loss_last": 0.20131872594356537,
+          "gradient_norm_mean": 0.4142040142323822,
+          "gradient_norm_maximum": 0.5941236615180969,
+          "router_sha256": "5d214c89b611a17dd2e080431eeb2d755c323aff85790fdd963272a9f85370cd"
+        },
+        {
+          "heldout_source": "json-schema",
+          "train_sources": [
+            "clinc",
+            "paws-wiki",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "874a08ac12cdc4d09c17945303adad317b6a1a28141540ee057b25ff6377e41d",
+          "standardization_scale_sha256": "9ada7bfa02088e052e55ed4370f18a38f41963ef49912a793c9b966bd6042a3a",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.049407791026169434,
+          "plan_sha256": "744e16da5c8bda0b6dcb7de8380ccb102d63c8b73bd7379396e57d6c140d9d38",
+          "risk_positive_counts": {
+            "clinc": 8,
+            "paws-wiki": 14,
+            "qasc": 4,
+            "snli": 26
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.82057785987854,
+          "loss_last": 0.23824553191661835,
+          "risk_loss_last": 0.19329610466957092,
+          "margin_loss_last": 0.1797976940870285,
+          "gradient_norm_mean": 0.42625460121780634,
+          "gradient_norm_maximum": 0.5688140392303467,
+          "router_sha256": "1d9ba82b51ed5160417035d74896a07311842766b6d424b372d91d21ef499da3"
+        },
+        {
+          "heldout_source": "paws-wiki",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "qasc",
+            "snli"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "e61ec93dc18e42fbf993c83591d978fa52314f91a4c9d65deefe0eae5a7536ab",
+          "standardization_scale_sha256": "52732a499b4f831cf437fde54ac4b85eacb48e7c3ba327f231ef161cd1906d88",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04890295898076147,
+          "plan_sha256": "aaf753495952f057a0cd46cbbf5ad86f84ebc4ab0a125009914770331b1387ff",
+          "risk_positive_counts": {
+            "clinc": 8,
+            "paws-wiki": 15,
+            "qasc": 8,
+            "snli": 22
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8226909041404724,
+          "loss_last": 0.24081838130950928,
+          "risk_loss_last": 0.18953749537467957,
+          "margin_loss_last": 0.20512351393699646,
+          "gradient_norm_mean": 0.42759628826752305,
+          "gradient_norm_maximum": 0.5747918486595154,
+          "router_sha256": "f5a9c0e1a79d00b07f92dd4a05b3bc042e39c3edd48baad2fd7072f172eabf36"
+        },
+        {
+          "heldout_source": "qasc",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "snli"
+          ],
+          "rows": 512,
+          "standardization_mean_sha256": "cc68b68ed262890337c5be668b1e6e708a43bf91a0acfa84954baa4ba92fa8a6",
+          "standardization_scale_sha256": "fa93eae653d4d2a29e9833b6d22c3ae1889554b60989bf1ed9988bf1498e6d45",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.047637582989409566,
+          "plan_sha256": "f84071ec03f26f64656047e3dfa6b84ca3d89f7e533a9bc59fb43257ac32bd54",
+          "risk_positive_counts": {
+            "clinc": 2,
+            "paws-wiki": 3,
+            "qasc": 9,
+            "snli": 5
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8211452960968018,
+          "loss_last": 0.25391536951065063,
+          "risk_loss_last": 0.192373126745224,
+          "margin_loss_last": 0.24616900086402893,
+          "gradient_norm_mean": 0.4250957611948252,
+          "gradient_norm_maximum": 0.5079764723777771,
+          "router_sha256": "1cfa23958bdaf3a023cd6853cb2712edc06a978e28e131359d6cdc80a95f4beb"
+        },
+        {
+          "heldout_source": "snli",
+          "train_sources": [
+            "clinc",
+            "json-schema",
+            "paws-wiki",
+            "qasc"
+          ],
+          "rows": 96,
+          "standardization_mean_sha256": "e212ef3baf7d1043415663b26bdcc4631ca3185fb907f00ad6bd492051acd8f6",
+          "standardization_scale_sha256": "96a89b7453158c78e66108a6a40b7799e5dd8181d8c6b81d52de80e7ed270b78",
+          "updates": 128,
+          "examples": 8192,
+          "seconds": 0.04861920798430219,
+          "plan_sha256": "a79fd43b5fcbbd55450179f49bf1da261441f8b7ef564620fb01efdc04f52715",
+          "risk_positive_counts": {
+            "clinc": 9,
+            "paws-wiki": 16,
+            "qasc": 9,
+            "snli": 25
+          },
+          "risk_positive_weights": {
+            "clinc": 3.0,
+            "paws-wiki": 3.0,
+            "qasc": 3.0,
+            "snli": 3.0
+          },
+          "loss_first": 0.8191395998001099,
+          "loss_last": 0.25771859288215637,
+          "risk_loss_last": 0.20824673771858215,
+          "margin_loss_last": 0.1978873908519745,
+          "gradient_norm_mean": 0.4301931490190327,
+          "gradient_norm_maximum": 0.644598126411438,
+          "router_sha256": "f43caff7c76c0084f580d199ed69514d9423c10cddb2b7fbe704780314a57623"
+        }
+      ],
+      "standardization": {
+        "fit_rows": 896,
+        "mean_sha256": "70e601cf6e5e019a30220bf4f8e08da05b6598fdafd1e180092d55e930dfef04",
+        "scale_sha256": "20e9dfbaa8f59c29f561480664d22aa2d8ac151e56eb57c3ae0f555d235f68a8"
+      },
+      "evaluation": {
+        "rows": 320,
+        "selection": {
+          "parent": 320
+        },
+        "selected_experts": 0,
+        "unsafe_selected_rows": 0,
+        "expert_selection_rate": 0.0,
+        "safe_selection_precision": 1.0,
+        "mean_proper_gain": 0.0,
+        "mean_regret": 0.12530514967722964,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.0,
+        "violation_count": 0,
+        "violations": {
+          "parent_correct_lost": 0,
+          "cross_entropy_regressed": 0,
+          "brier_regressed": 0,
+          "context_regressed": 0
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "mean_proper_gain": 0.0,
+    "mean_regret": 0.1989024205053932,
+    "accuracy_delta": 0.0,
+    "cross_entropy_delta": 0.0,
+    "expert_selection_rate": 0.0,
+    "safe_selection_precision": 1.0,
+    "violation_rate": 0.0
+  },
+  "by_source": {
+    "clinc": {
+      "mean_proper_gain": 0.0,
+      "mean_regret": 0.0240615099391972,
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": 0.0,
+      "expert_selection_rate": 0.0,
+      "safe_selection_precision": 1.0,
+      "violation_count": 0.0
+    },
+    "json-schema": {
+      "mean_proper_gain": 0.0,
+      "mean_regret": 0.20638839843863946,
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": 0.0,
+      "expert_selection_rate": 0.0,
+      "safe_selection_precision": 1.0,
+      "violation_count": 0.0
+    },
+    "paws-wiki": {
+      "mean_proper_gain": 0.0,
+      "mean_regret": 0.13547363800583115,
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": 0.0,
+      "expert_selection_rate": 0.0,
+      "safe_selection_precision": 1.0,
+      "violation_count": 0.0
+    },
+    "qasc": {
+      "mean_proper_gain": 0.0,
+      "mean_regret": 0.44695155551101046,
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": 0.0,
+      "expert_selection_rate": 0.0,
+      "safe_selection_precision": 1.0,
+      "violation_count": 0.0
+    },
+    "snli": {
+      "mean_proper_gain": 0.0,
+      "mean_regret": 0.25523427146045125,
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": 0.0,
+      "expert_selection_rate": 0.0,
+      "safe_selection_precision": 1.0,
+      "violation_count": 0.0
+    },
+    "typed-decisions": {
+      "mean_proper_gain": 0.0,
+      "mean_regret": 0.12530514967722964,
+      "accuracy_delta": 0.0,
+      "cross_entropy_delta": 0.0,
+      "expert_selection_rate": 0.0,
+      "safe_selection_precision": 1.0,
+      "violation_count": 0.0
+    }
+  },
+  "checks": {
+    "coverage.folds_seeds": true,
+    "coverage.no_outer_leakage": true,
+    "combined.accuracy": true,
+    "combined.cross_entropy": true,
+    "sources.accuracy": true,
+    "sources.cross_entropy": true,
+    "safety.violation_rate": true,
+    "safety.selection_precision": true,
+    "coverage.expert_selection": false,
+    "utility.proper_gain": false
+  },
+  "advances_to_full_router_training": false,
+  "limitations": [
+    "All train and validation rows are consumed public data and cannot support a fresh release claim.",
+    "The specialist bank is shared across folds; route fitting and calibration alone hold out sources.",
+    "Finite-sample residual quantiles are empirical safeguards, not distribution-free coverage for unseen task families.",
+    "The router sees inference-time behavior summaries, not source identity, labels or text hidden states."
+  ]
+}

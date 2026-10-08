@@ -1,0 +1,434 @@
+{
+  "format_version": 1,
+  "study": "hellaswag-specialist-v1",
+  "role": "consumed multi-seed public-family specialist screen",
+  "protocol_sha256": "3d1a1d35e8686e319d2ca266b49413b1787865785cf755d39c3d216be9db4b9b",
+  "seeds": [
+    {
+      "seed": 42,
+      "run": {
+        "seed": 42,
+        "updates": 16,
+        "seconds": 0.1572385420149658,
+        "initial_residual_sha256": "995b8d3fd86fa34cf8979bb37500063415a122630df6951b62dac729c3a29422",
+        "final_residual_sha256": "1b7bbec9bfdab3a8d955753efd33fab1aea077638c5bc3b2e238e9a23e5a7275",
+        "initial_max_logit_difference": 0.0,
+        "weights_sha256": "cc354d95bad7e4c42a4f811798bffe46706c1e69d2f8a9d9d9ef744a1dfa8954",
+        "training_plan_sha256": "23833c70ec8b82c41fce8306cd6e871b6d9663b02f2b840adebfe7b4d03958b5",
+        "gradient_norm": {
+          "mean": 0.14726649364456534,
+          "maximum": 0.22717143595218658,
+          "clipped_updates": 0
+        },
+        "curve": [
+          {
+            "update": 1,
+            "loss": 1.3751022815704346
+          },
+          {
+            "update": 2,
+            "loss": 1.0574268102645874
+          },
+          {
+            "update": 3,
+            "loss": 1.4790199995040894
+          },
+          {
+            "update": 4,
+            "loss": 1.2581372261047363
+          },
+          {
+            "update": 5,
+            "loss": 1.2223219871520996
+          },
+          {
+            "update": 6,
+            "loss": 1.2111753225326538
+          },
+          {
+            "update": 7,
+            "loss": 1.1818252801895142
+          },
+          {
+            "update": 8,
+            "loss": 1.0596100091934204
+          },
+          {
+            "update": 9,
+            "loss": 1.186669111251831
+          },
+          {
+            "update": 10,
+            "loss": 1.2818043231964111
+          },
+          {
+            "update": 11,
+            "loss": 1.1290901899337769
+          },
+          {
+            "update": 12,
+            "loss": 1.3358019590377808
+          },
+          {
+            "update": 13,
+            "loss": 1.1102571487426758
+          },
+          {
+            "update": 14,
+            "loss": 1.4048526287078857
+          },
+          {
+            "update": 15,
+            "loss": 1.260165810585022
+          },
+          {
+            "update": 16,
+            "loss": 1.0386782884597778
+          }
+        ]
+      },
+      "evaluation": {
+        "rows": 256,
+        "mean_utility": 0.01423312422411982,
+        "open_rate": 0.76953125,
+        "parent_accuracy": 0.67578125,
+        "expert_accuracy": 0.67578125,
+        "accuracy_delta": 0.0,
+        "parent_nll": 0.9224323630064081,
+        "expert_nll": 0.9118054666136206,
+        "nll_delta": -0.010626896392787466,
+        "context_advantage": {
+          "hellaswag": {
+            "rows": 256,
+            "mean": 0.4978010679478757,
+            "positive": 207
+          }
+        },
+        "parent_context_advantage": {
+          "hellaswag": {
+            "rows": 256,
+            "mean": 0.4969275976764038,
+            "positive": 206
+          }
+        },
+        "by_source": {
+          "hellaswag": {
+            "rows": 256,
+            "mean_utility": 0.01423312422411982,
+            "open_rate": 0.76953125,
+            "parent_accuracy": 0.67578125,
+            "expert_accuracy": 0.67578125,
+            "accuracy_delta": 0.0,
+            "parent_nll": 0.9224323630064081,
+            "expert_nll": 0.9118054666136206,
+            "nll_delta": -0.010626896392787466
+          }
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "run": {
+        "seed": 43,
+        "updates": 16,
+        "seconds": 0.10668524997890927,
+        "initial_residual_sha256": "9a8b6fd2e4368a16819f9c31eeb71e967d6787d8e5a0e891322fed70fd4958d9",
+        "final_residual_sha256": "bb488ab197b9932e72eeec03ea2aa3eef1e915c56127fa61c157ddd6589b6a58",
+        "initial_max_logit_difference": 0.0,
+        "weights_sha256": "a4cf0940ccb57807031ce5ed0c49b626a284171a362fca3483a97401562bee1c",
+        "training_plan_sha256": "29be9cd619dd4c20d80fc936182d13b2d96bf139b5738ac7483e3f24e25c4d95",
+        "gradient_norm": {
+          "mean": 0.1466165161691606,
+          "maximum": 0.3208502531051636,
+          "clipped_updates": 0
+        },
+        "curve": [
+          {
+            "update": 1,
+            "loss": 1.0428895950317383
+          },
+          {
+            "update": 2,
+            "loss": 1.437111258506775
+          },
+          {
+            "update": 3,
+            "loss": 1.1019963026046753
+          },
+          {
+            "update": 4,
+            "loss": 1.214463472366333
+          },
+          {
+            "update": 5,
+            "loss": 1.3061590194702148
+          },
+          {
+            "update": 6,
+            "loss": 1.2121186256408691
+          },
+          {
+            "update": 7,
+            "loss": 1.5963000059127808
+          },
+          {
+            "update": 8,
+            "loss": 1.2666478157043457
+          },
+          {
+            "update": 9,
+            "loss": 1.1998872756958008
+          },
+          {
+            "update": 10,
+            "loss": 1.074480414390564
+          },
+          {
+            "update": 11,
+            "loss": 1.0694891214370728
+          },
+          {
+            "update": 12,
+            "loss": 1.1947886943817139
+          },
+          {
+            "update": 13,
+            "loss": 1.276570200920105
+          },
+          {
+            "update": 14,
+            "loss": 1.096828818321228
+          },
+          {
+            "update": 15,
+            "loss": 1.2063175439834595
+          },
+          {
+            "update": 16,
+            "loss": 1.307013988494873
+          }
+        ]
+      },
+      "evaluation": {
+        "rows": 256,
+        "mean_utility": 0.010537923124502413,
+        "open_rate": 0.70703125,
+        "parent_accuracy": 0.67578125,
+        "expert_accuracy": 0.67578125,
+        "accuracy_delta": 0.0,
+        "parent_nll": 0.9224323630064081,
+        "expert_nll": 0.9146199431170768,
+        "nll_delta": -0.007812419889331235,
+        "context_advantage": {
+          "hellaswag": {
+            "rows": 256,
+            "mean": 0.49674811033764854,
+            "positive": 207
+          }
+        },
+        "parent_context_advantage": {
+          "hellaswag": {
+            "rows": 256,
+            "mean": 0.4969275976764038,
+            "positive": 206
+          }
+        },
+        "by_source": {
+          "hellaswag": {
+            "rows": 256,
+            "mean_utility": 0.010537923124502413,
+            "open_rate": 0.70703125,
+            "parent_accuracy": 0.67578125,
+            "expert_accuracy": 0.67578125,
+            "accuracy_delta": 0.0,
+            "parent_nll": 0.9224323630064081,
+            "expert_nll": 0.9146199431170768,
+            "nll_delta": -0.007812419889331235
+          }
+        }
+      }
+    },
+    {
+      "seed": 44,
+      "run": {
+        "seed": 44,
+        "updates": 16,
+        "seconds": 0.10419391700997949,
+        "initial_residual_sha256": "d02d8ddaf86a37b07eab3a50da39217fdf0679d4f08736deb7a827f3eece7c47",
+        "final_residual_sha256": "a9aa3c04ca97d87e75b90236189b8bc433446076ad0ac8e9ab8c99bf90702771",
+        "initial_max_logit_difference": 0.0,
+        "weights_sha256": "23c008c453bf3256109465cb45b512f87385df08fa08cdda767dc92b95df5d88",
+        "training_plan_sha256": "bff952aa4bab37d8f569c68454b00ee2b045f95aab576d73f70f7605f0134f8b",
+        "gradient_norm": {
+          "mean": 0.13849560171365738,
+          "maximum": 0.2193419635295868,
+          "clipped_updates": 0
+        },
+        "curve": [
+          {
+            "update": 1,
+            "loss": 1.1879093647003174
+          },
+          {
+            "update": 2,
+            "loss": 1.4847207069396973
+          },
+          {
+            "update": 3,
+            "loss": 1.2750636339187622
+          },
+          {
+            "update": 4,
+            "loss": 1.0169812440872192
+          },
+          {
+            "update": 5,
+            "loss": 1.2607421875
+          },
+          {
+            "update": 6,
+            "loss": 1.561780333518982
+          },
+          {
+            "update": 7,
+            "loss": 1.2367361783981323
+          },
+          {
+            "update": 8,
+            "loss": 1.2145949602127075
+          },
+          {
+            "update": 9,
+            "loss": 0.9900611639022827
+          },
+          {
+            "update": 10,
+            "loss": 1.0068153142929077
+          },
+          {
+            "update": 11,
+            "loss": 1.122451663017273
+          },
+          {
+            "update": 12,
+            "loss": 1.2076305150985718
+          },
+          {
+            "update": 13,
+            "loss": 1.3525086641311646
+          },
+          {
+            "update": 14,
+            "loss": 1.4287493228912354
+          },
+          {
+            "update": 15,
+            "loss": 1.301971673965454
+          },
+          {
+            "update": 16,
+            "loss": 0.9554741978645325
+          }
+        ]
+      },
+      "evaluation": {
+        "rows": 256,
+        "mean_utility": 0.012136063116486184,
+        "open_rate": 0.66015625,
+        "parent_accuracy": 0.67578125,
+        "expert_accuracy": 0.67578125,
+        "accuracy_delta": 0.0,
+        "parent_nll": 0.9224323630064081,
+        "expert_nll": 0.9134834270699089,
+        "nll_delta": -0.008948935936499147,
+        "context_advantage": {
+          "hellaswag": {
+            "rows": 256,
+            "mean": 0.4961399558233097,
+            "positive": 207
+          }
+        },
+        "parent_context_advantage": {
+          "hellaswag": {
+            "rows": 256,
+            "mean": 0.4969275976764038,
+            "positive": 206
+          }
+        },
+        "by_source": {
+          "hellaswag": {
+            "rows": 256,
+            "mean_utility": 0.012136063116486184,
+            "open_rate": 0.66015625,
+            "parent_accuracy": 0.67578125,
+            "expert_accuracy": 0.67578125,
+            "accuracy_delta": 0.0,
+            "parent_nll": 0.9224323630064081,
+            "expert_nll": 0.9134834270699089,
+            "nll_delta": -0.008948935936499147
+          }
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "mean_utility": {
+      "mean": 0.012302370155036138,
+      "minimum": 0.010537923124502413,
+      "maximum": 0.01423312422411982
+    },
+    "open_rate": {
+      "mean": 0.7122395833333334,
+      "minimum": 0.66015625,
+      "maximum": 0.76953125
+    },
+    "accuracy_delta": {
+      "mean": 0.0,
+      "minimum": 0.0,
+      "maximum": 0.0
+    },
+    "nll_delta": {
+      "mean": -0.00912941740620595,
+      "minimum": -0.010626896392787466,
+      "maximum": -0.007812419889331235
+    }
+  },
+  "checks": {
+    "mechanism.initial_exact_each_seed": true,
+    "utility.combined_each_seed": false,
+    "utility.each_source_each_seed": false,
+    "accuracy.combined_each_seed": false,
+    "nll.combined_each_seed": false,
+    "nll.each_source_each_seed": false,
+    "context.each_source_each_seed": false
+  },
+  "qualifies_as_positive_utility_family": false,
+  "limitations": [
+    "HellaSwag validation becomes consumed after this first run and is not fresh release evidence.",
+    "The decoder representation and parent decision head are frozen.",
+    "This screen trains a HellaSwag specialist only; it does not train or evaluate a router."
+  ],
+  "context_gate": [
+    {
+      "seed": 42,
+      "by_source": {
+        "hellaswag": 0.0008734702714718878
+      },
+      "minimum_delta": 0.0008734702714718878
+    },
+    {
+      "seed": 43,
+      "by_source": {
+        "hellaswag": -0.00017948733875527978
+      },
+      "minimum_delta": -0.00017948733875527978
+    },
+    {
+      "seed": 44,
+      "by_source": {
+        "hellaswag": -0.000787641853094101
+      },
+      "minimum_delta": -0.000787641853094101
+    }
+  ]
+}

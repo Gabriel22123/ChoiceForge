@@ -1,0 +1,29 @@
+{
+  "study": "task-expansion-v1",
+  "verified_date": "2026-09-23",
+  "paws": {
+    "name": "PAWS-Wiki Labeled (Final)",
+    "official_repository": "https://github.com/google-research-datasets/paws",
+    "official_commit": "02b29f3af1143620d1b7f352247e65c0bdd2ec18",
+    "license": "Dataset license permits use for any purpose and requests acknowledgement; see third_party/paws-DATA-LICENSE.",
+    "conversion_repository": "google-research-datasets/paws",
+    "conversion_revision": "161ece9501cf0a11f3e48bd356eaa82de46d6a09",
+    "files": {
+      "train": "8dc9ad3e5f30ad9a86b290fe236d528ef23a5751fec9a35d99cbacf68ba277cf",
+      "validation": "7760d829453764ba342a6f562809a8ed21c2c3eec3fd9ffa544089f145d42f6d",
+      "test": "ae342ff12bb84b84b95f468abf5db6cb7c7bd578271299fe9c99be75b8132f4d"
+    },
+    "release_policy": "Raw and transformed rows are excluded from release bundles."
+  },
+  "boolq": {
+    "name": "BoolQ",
+    "official_repository": "https://github.com/google-research-datasets/boolean-questions",
+    "official_commit": "90af34107399cc7a446b373dc4ee35b8001da7c2",
+    "license": "CC BY-SA 3.0, as stated by the official repository README.",
+    "conversion_repository": "google/boolq",
+    "conversion_revision": "35b264d03638db9f4ce671b711558bf7ff0f80d5",
+    "validation_sha256": "52355d11524b4b874a9b9dcc278feb10f672d52c4f4eff9872e695ede59820f8",
+    "selection": "384 token-admissible validation rows selected by SHA-256(question, passage); answer excluded.",
+    "release_policy": "Raw and transformed rows and per-case predictions are excluded from release bundles."
+  }
+}

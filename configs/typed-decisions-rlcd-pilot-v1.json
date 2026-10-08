@@ -1,0 +1,60 @@
+{
+  "protocol_id": "typed-decisions-rlcd-pilot-v1",
+  "source_fold": "data/typed-decisions-workflow-folds-v1/heldout-security_incidents/cases.jsonl",
+  "held_out_workflow": "security_incidents",
+  "selection_seed": "typed-decisions-rlcd-pilot-v1",
+  "cases_per_family": {"train": 2, "validation": 1, "test": 1},
+  "seed": 20260926,
+  "base_path": "models/minicpm5-2b-base",
+  "base_config": {
+    "model_id": "openbmb/MiniCPM5-2B-Base",
+    "revision": "96a57cd572a02506b4500f54427dca24970c1bac",
+    "architecture": "causal_decoder",
+    "lora_layers": 1,
+    "lora_rank": 2,
+    "head_width": 64,
+    "dropout": 0.0,
+    "max_tokens": 768,
+    "encoder_lr": 0.00003,
+    "head_lr": 0.0003,
+    "epochs": 1,
+    "batch_size": 4,
+    "accumulation": 1,
+    "brier_weight": 0.5,
+    "consistency_weight": 0.0,
+    "candidate_encoding": "independent",
+    "candidate_chunk_size": 8,
+    "training_views": 1,
+    "require_all_rows": true,
+    "noise_samples": 4,
+    "noise_sigma": 0.4,
+    "noise_seed": 20260926,
+    "center_score_logits": true
+  },
+  "arms": {
+    "H-hard": {
+      "training_target_mode": "hard",
+      "gradient_estimator": "clean",
+      "ranked_probability_weight": 0.0,
+      "clean_anchor_weight": 0.0
+    },
+    "S-soft": {
+      "training_target_mode": "distribution",
+      "gradient_estimator": "clean",
+      "ranked_probability_weight": 0.0,
+      "clean_anchor_weight": 0.0
+    },
+    "T-typed-rps": {
+      "training_target_mode": "distribution",
+      "gradient_estimator": "clean",
+      "ranked_probability_weight": 1.0,
+      "clean_anchor_weight": 0.0
+    },
+    "R-rlcd-loo": {
+      "training_target_mode": "distribution",
+      "gradient_estimator": "score_function",
+      "ranked_probability_weight": 1.0,
+      "clean_anchor_weight": 1.0
+    }
+  }
+}

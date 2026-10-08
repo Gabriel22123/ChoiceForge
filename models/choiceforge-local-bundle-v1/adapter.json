@@ -1,0 +1,72 @@
+{
+  "format_version": 1,
+  "format": "choiceforge-merged-residual-v1",
+  "project": "ChoiceForge",
+  "canonical_seed": 42,
+  "selection_rule": "lowest registered full-portfolio seed",
+  "architecture": {
+    "expert_order": [
+      "clinc",
+      "gsm8k",
+      "paws-wiki",
+      "qasc",
+      "snli",
+      "truthfulqa"
+    ],
+    "expert_widths": {
+      "clinc": 256,
+      "gsm8k": 512,
+      "paws-wiki": 256,
+      "qasc": 256,
+      "snli": 256,
+      "truthfulqa": 256
+    },
+    "hidden_size": 2048,
+    "total_width": 1792,
+    "layer_norm_eps": 1e-05
+  },
+  "portfolio": {
+    "paths": [
+      "parent",
+      "clinc",
+      "gsm8k",
+      "paws-wiki",
+      "qasc",
+      "snli",
+      "truthfulqa"
+    ],
+    "weights": {
+      "parent": 0.004158858209848404,
+      "clinc": 0.03814656287431717,
+      "gsm8k": 0.0002527108881622553,
+      "paws-wiki": 3.444140020292252e-05,
+      "qasc": 0.956927478313446,
+      "snli": 0.0003622903604991734,
+      "truthfulqa": 0.00011770767014240846
+    },
+    "weights_file_sha256": "dd88050c599c1a36cccd3102c5fb3f8d724989ba5ea72c21157e28a72de3bc99"
+  },
+  "parent": {
+    "path": "runs/functional-retention-screen-v1/warm-functional-context",
+    "weights_sha256": "24a64f1efa256e182049db117b8ce67495dd401326b1db5ebbba168a6f08c180",
+    "model_sha256": "b728b762e7f4d664fa37b3d6cb5976d8f6c731cebca502440f4814f26c052c6f",
+    "calibration_sha256": "e41aa1253886ad1ca0954219355d8f123a5ca62944fbc8ee4d03da05b2d486d9"
+  },
+  "base_lock_sha256": "9a80b8721295fe6735b596fe61c62f69c736fa12ab2eb78d5d52e5b75af34ffa",
+  "projection_alphas": [
+    0.125,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "output_contract": {
+    "requires_review": true,
+    "score_kind": "candidate_probability_not_a_guarantee",
+    "calibration": "uncalibrated"
+  },
+  "adapter_file": "adapter.safetensors",
+  "adapter_sha256": "8e4c816e43ea70ccac43145646583e6466357455bc794761faecbe0fe23f196a",
+  "parameter_sha256": "536d2743a06f74ffd24e22da3f57bae74eb958be8519b18b94396fcdbee30b2b",
+  "training_data_embedded": false
+}

@@ -1,0 +1,9 @@
+include LICENSE THIRD_PARTY.md MODEL_CARD.md README.zh-CN.md sources.lock.json requirements-tested.txt requirements-local-lock.txt
+recursive-include configs *.json
+recursive-include examples *.json
+recursive-include docs *.md *.json
+recursive-include third_party *LICENSE *NOTICE *README
+recursive-include tests *.py
+recursive-include scripts *.py
+recursive-include src/decision_model/schemas *.json
+recursive-include data/release-candidate-v1 *.json *.jsonl

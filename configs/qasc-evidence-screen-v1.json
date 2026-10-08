@@ -1,0 +1,83 @@
+{
+  "format_version": 1,
+  "study": "qasc-evidence-screen-v1",
+  "status": "frozen_before_reference_or_training",
+  "seed": 1701,
+  "parent": {
+    "study": "functional-retention-screen-v1",
+    "checkpoint": "runs/functional-retention-screen-v1/warm-functional-context",
+    "weights_sha256": "24a64f1efa256e182049db117b8ce67495dd401326b1db5ebbba168a6f08c180",
+    "model_sha256": "b728b762e7f4d664fa37b3d6cb5976d8f6c731cebca502440f4814f26c052c6f",
+    "train_predictions_sha256": "506a2a3830fee5fe65335939ffae314aa841e5cfafae964d44244e4e495fb662",
+    "calibration_sha256": "e41aa1253886ad1ca0954219355d8f123a5ca62944fbc8ee4d03da05b2d486d9",
+    "cases": "runs/functional-retention-screen-v1/cases.jsonl",
+    "cases_sha256": "504cc328b81f881bb39e6894cac65acc9980bb0f5f9d83ab2510b6225d57619b"
+  },
+  "qasc": {
+    "official_repository": "https://github.com/allenai/qasc",
+    "mirror": "https://huggingface.co/datasets/allenai/qasc",
+    "revision": "a34ba204eb9a33b919c10cc08f4f1c8dae5ec070",
+    "license": "CC-BY-4.0",
+    "readme": "cache/qasc-a34ba204/README.md",
+    "readme_sha256": "c90ae4776b98cd6fc0a22558784c43b07e1f0b00a090dda99797d6b6efab4a3e",
+    "retained_notice": "third_party/qasc-UPSTREAM-README",
+    "train_cache": "cache/qasc-a34ba204/data/train-00000-of-00001.parquet",
+    "train_sha256": "b9a297b5ab55f1605c7682ffbb7042c26d7ecb9ff1e1aa5a820d4e791c8302d1",
+    "validation_cache": "cache/qasc-a34ba204/data/validation-00000-of-00001.parquet",
+    "validation_sha256": "d1ae34ae13c5fce2c55305372c203c6cdb789728d0d7e5ea2956d55bc33f40ae",
+    "train_rows": 512,
+    "train_per_correct_position": 64,
+    "validation_rows": 128,
+    "validation_per_correct_position": 16,
+    "selection": "within each correct position created by an answer-blind candidate-text permutation, take the first SHA-256(id, question, ordered source choices, fact1, fact2) rows after token admission",
+    "candidate_policy": "keep all eight answer texts, hide source letters, order by SHA-256(question, candidate text), then assign opaque option-01..option-08 IDs",
+    "context_policy": "include question, fact1 and fact2; exclude combinedfact because it often restates the answer",
+    "redistribution": "raw and transformed QASC rows remain in ignored local directories; public bundles contain preparation code, checksums, attribution and aggregate evidence only"
+  },
+  "training": {
+    "epochs": 1,
+    "batch_size": 2,
+    "accumulation": 4,
+    "updates": 128,
+    "encoder_lr": 0.0000025,
+    "head_lr": 0.000025,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05,
+    "distillation_weight": 1.0,
+    "distillation_target_field": "teacher_probabilities",
+    "distillation_allow_missing_targets": true,
+    "teacher_scope": "the 512 replay rows only; QASC rows use upstream gold answers without teacher targets",
+    "training_weight_field": "training_weight",
+    "weighting": "every replay and QASC row has weight 1; QASC correct positions are exactly balanced after the answer-blind permutation",
+    "gold_supervision_replaced": false
+  },
+  "development_suite": {
+    "cases": "runs/release-candidate-v1/blind-suite/cases.jsonl",
+    "cases_sha256": "4890b3ba5f22af9de9e8c6a12a163154395a7a069125c9a0e5ed16dd27183d63",
+    "protocol_sha256": "4ae8c129e292f2a79e5d229b5a21a207eb96e1c56e97466db912d00173703b21",
+    "role": "Consumed development diagnostic only; permanently ineligible as a fresh test."
+  },
+  "screening_rule": {
+    "seen_accuracy_vs_parent_min_delta": -0.005,
+    "seen_nll_vs_parent_max_delta": 0.01,
+    "seen_each_source_accuracy_vs_release_control_min_delta": -0.02,
+    "development_accuracy_vs_parent_min_delta": -0.005,
+    "development_each_source_accuracy_vs_release_control_min_delta": -0.02,
+    "development_context_advantage_each_source_positive": true,
+    "qasc_validation_accuracy_vs_parent_min_delta": 0.03,
+    "qasc_validation_accuracy_minimum": 0.18,
+    "qasc_validation_nll_vs_parent_max_delta": -0.02,
+    "qasc_context_advantage_minimum": 0.0,
+    "qasc_context_advantage_vs_parent_min_delta": 0.02,
+    "decision": "Advance only if every condition passes. A later release study still requires newly sealed and previously unread task families."
+  },
+  "interpretation": {
+    "primary_question": "Does low-rate eight-way natural science evidence training improve semantic candidate scoring and evidence use while functional distillation preserves the existing decision function?",
+    "single_seed_development_screen": true,
+    "qasc_validation_is_consumed_development_after_this_run": true,
+    "public_data_only": true,
+    "bigbench_training_excluded": "BIG-bench task files carry an explicit benchmark canary asking that they not enter training corpora; no new BIG-bench row is used here.",
+    "super_natural_instructions_training_deferred": "The aggregate repository is Apache-2.0 but individual upstream task licenses vary; no Super-NaturalInstructions row is used here.",
+    "github_publication": false
+  }
+}

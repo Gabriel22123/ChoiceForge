@@ -1,0 +1,19 @@
+{
+  "format_version": 1,
+  "protocol_sha256": "f572179c04e6569f768de7348e5c4818329fe389940c53450520ac33bfc504f8",
+  "data_sha256": "8870e94c674b2a8d1c851462990818e4b06969056fd61b0157f7fe38dd5027b1",
+  "manifest_sha256": "326233a07c16911c57ae7132b87e9fffe6b5633b6a1112bb4c53324a49a9d44b",
+  "source_outcome_data_sha256": "07af9e539a806a7ff5969440a404bf57581c0f4ec14c8b8c55509ede6c3d6497",
+  "rows": 248,
+  "splits": {
+    "train": 203,
+    "validation": 45
+  },
+  "candidates": 1466,
+  "mean_candidate_reward": 0.3974533879035925,
+  "request_admission_max": 765,
+  "candidate_path_max": 156,
+  "request_token_limit": 768,
+  "excluded_for_request_length": 63,
+  "official_test_rows_present": false
+}

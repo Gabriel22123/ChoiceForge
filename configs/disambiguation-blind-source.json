@@ -1,0 +1,14 @@
+{
+  "name": "BIG-bench disambiguation_qa",
+  "repository": "https://github.com/google/BIG-bench",
+  "revision": "092b196c1f8f14a54bbc62f24759d43bde46dd3b",
+  "license": "Apache-2.0",
+  "files": {
+    "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "bigbench/benchmark_tasks/disambiguation_qa/README.md": "913381225d40671ed146187c759306a721c94a97d2bb24e7af2851965a3f08be",
+    "bigbench/benchmark_tasks/disambiguation_qa/task.json": "118b6a250c6e1744384763d51cfd48c931467325dbe94d79ccb2103805fa4c6a"
+  },
+  "official_rows": 258,
+  "selection": "Form complete m/f/t triples from public example IDs; admit the entire triple under the pinned decoder tokenizer; order groups by SHA-256 of their IDs, inputs and choice text without target values; take 64 groups.",
+  "release_policy": "Raw and transformed task rows, labels, logits and per-case predictions are excluded from release bundles."
+}

@@ -1,0 +1,65 @@
+{
+  "format_version": 1,
+  "study": "qasc-dual-function-screen-v1",
+  "status": "frozen_before_teacher_collection_or_training",
+  "seed": 1701,
+  "parent": {
+    "checkpoint": "runs/functional-retention-screen-v1/warm-functional-context",
+    "weights_sha256": "24a64f1efa256e182049db117b8ce67495dd401326b1db5ebbba168a6f08c180",
+    "model_sha256": "b728b762e7f4d664fa37b3d6cb5976d8f6c731cebca502440f4814f26c052c6f"
+  },
+  "data": {
+    "qasc_cases": "runs/qasc-evidence-screen-v1/cases.jsonl",
+    "qasc_cases_sha256": "c905abe996ff63dce96c363da2c932f0635ff2c11ef75448395cb1dbbb835783",
+    "qasc_development": "runs/qasc-evidence-screen-v1/qasc-development.jsonl",
+    "qasc_development_sha256": "ee1f206aeaa8dfe253c2df847020df147fe9553b2bbc4f4a539f8073a0667224",
+    "consumed_development": "runs/release-candidate-v1/blind-suite/cases.jsonl",
+    "consumed_development_sha256": "4890b3ba5f22af9de9e8c6a12a163154395a7a069125c9a0e5ed16dd27183d63"
+  },
+  "baselines": {
+    "qasc_screen_evidence": "docs/evidence/qasc-evidence-screen-v1.json",
+    "qasc_screen_evidence_sha256": "93b115649dd5d2cfe4f319a4592120a76470e4f26807d926eaa4fec004e7685e",
+    "functional_retention_evidence": "docs/evidence/functional-retention-screen-v1.json",
+    "functional_retention_evidence_sha256": "00d4cbf55d84c193c7057870e8d20fb4ee60d3bc90332e2f750b4e269d5ff7e6"
+  },
+  "training": {
+    "epochs": 1,
+    "batch_size": 2,
+    "accumulation": 4,
+    "updates": 128,
+    "encoder_lr": 0.0000025,
+    "head_lr": 0.000025,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05,
+    "distillation_weight": 1.0,
+    "distillation_target_field": "teacher_probabilities",
+    "null_distillation_target_field": "teacher_null_probabilities",
+    "training_weight_field": "training_weight",
+    "replay_weight": 1.0,
+    "qasc_weight": 0.5
+  },
+  "arms": {
+    "half-qasc-evidence-only": {"null_distillation_weight": 0.0},
+    "half-qasc-dual-function": {"null_distillation_weight": 1.0}
+  },
+  "screening_rule": {
+    "seen_accuracy_vs_parent_min_delta": -0.005,
+    "seen_nll_vs_parent_max_delta": 0.01,
+    "development_accuracy_vs_parent_min_delta": -0.005,
+    "development_each_context_advantage_vs_parent_min_delta": -0.005,
+    "qasc_accuracy_vs_parent_min_delta": 0.03,
+    "qasc_nll_vs_parent_max_delta": -0.02,
+    "qasc_context_advantage_vs_parent_min_delta": 0.02,
+    "dual_causal_context_advantage_vs_control_min_delta": 0.01,
+    "decision": "Only the dual-function arm may select the next data-expansion route, and only if every absolute retention/QASC gate passes and its causal context advantage exceeds the matched evidence-only arm by at least 0.01. This is not a multiseed or release gate."
+  },
+  "interpretation": {
+    "primary_question": "Does preserving the parent function on both original replay requests and context-ablated replay requests prevent cross-task context-response collapse at a lower QASC dose?",
+    "matched_control": true,
+    "single_seed_development_screen": true,
+    "all_evaluation_tasks_consumed": true,
+    "new_data_used": false,
+    "public_data_only": true,
+    "github_publication": false
+  }
+}

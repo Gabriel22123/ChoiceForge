@@ -1,0 +1,2063 @@
+{
+  "objective": "E_epsilon[CE(softmax(mu+sigma*epsilon),y)+0.5*Brier]",
+  "seed": 20260921,
+  "repeats": 2048,
+  "reference_samples": 131072,
+  "matched_noise_samples_between_estimators": true,
+  "baseline": "independent leave-one-out; no reward standardization",
+  "scope": "synthetic known differentiable objective; no backbone training, accuracy or OOD calibration claim",
+  "results": [
+    {
+      "candidates": 3,
+      "condition": "uncertain",
+      "sigma": 0.1,
+      "samples": 4,
+      "reference_gradient": [
+        -0.9462168220533669,
+        0.41317466770158073,
+        0.5330421543517861
+      ],
+      "reference_standard_error_norm": 0.0001769182366588664,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -0.973513302889283,
+            0.4356085721973639,
+            0.5355706369525555
+          ],
+          "mean_error_norm": 0.035422749204626194,
+          "mean_standard_error_norm": 0.030447675975324065,
+          "variance_trace": 1.8986208712669728,
+          "mse_to_reference": 1.8989485814558893,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -0.9460953625362465,
+            0.41275229361546917,
+            0.5333430689207774
+          ],
+          "mean_error_norm": 0.000532636706159939,
+          "mean_standard_error_norm": 0.0006922867598876113,
+          "variance_trace": 0.0009815264418113277,
+          "mse_to_reference": 0.000981330882714161,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 1934.355296392445
+    },
+    {
+      "candidates": 3,
+      "condition": "uncertain",
+      "sigma": 0.1,
+      "samples": 16,
+      "reference_gradient": [
+        -0.9462168220533669,
+        0.41317466770158073,
+        0.5330421543517861
+      ],
+      "reference_standard_error_norm": 0.0001769182366588664,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -0.949507342855074,
+            0.4158951768078248,
+            0.5261737202612868
+          ],
+          "mean_error_norm": 0.008087279134489984,
+          "mean_standard_error_norm": 0.01336280754613397,
+          "variance_trace": 0.3657003530547508,
+          "mse_to_reference": 0.36558719251303506,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -0.9461626379407009,
+            0.41292181708486253,
+            0.5332408208558385
+          ],
+          "mean_error_norm": 0.000326094667654265,
+          "mean_standard_error_norm": 0.0003578926093816963,
+          "variance_trace": 0.00026232242145288095,
+          "mse_to_reference": 0.0002623006720653037,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 1394.0872878090554
+    },
+    {
+      "candidates": 3,
+      "condition": "uncertain",
+      "sigma": 0.1,
+      "samples": 64,
+      "reference_gradient": [
+        -0.9462168220533669,
+        0.41317466770158073,
+        0.5330421543517861
+      ],
+      "reference_standard_error_norm": 0.0001769182366588664,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -0.9557035573913762,
+            0.416493356471219,
+            0.5334132008017718
+          ],
+          "mean_error_norm": 0.010057311668194723,
+          "mean_standard_error_norm": 0.006511866241079177,
+          "variance_trace": 0.08684421517661522,
+          "mse_to_reference": 0.08690296029266459,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -0.9462262476408929,
+            0.4130363269190582,
+            0.5331899207218346
+          ],
+          "mean_error_norm": 0.0002026373951827247,
+          "mean_standard_error_norm": 0.00017409182813207485,
+          "variance_trace": 6.207071154660944e-05,
+          "mse_to_reference": 6.208146549591334e-05,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 1399.1174422320444
+    },
+    {
+      "candidates": 3,
+      "condition": "uncertain",
+      "sigma": 0.4,
+      "samples": 4,
+      "reference_gradient": [
+        -0.9341063376852793,
+        0.4124490223082438,
+        0.5216573153770355
+      ],
+      "reference_standard_error_norm": 0.0006650414284532374,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -0.9250363242488007,
+            0.4066852754745271,
+            0.5170676091094977
+          ],
+          "mean_error_norm": 0.011685517743059502,
+          "mean_standard_error_norm": 0.029614568823102226,
+          "variance_trace": 1.7961424621122735,
+          "mse_to_reference": 1.7954019907506171,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -0.9342058976522578,
+            0.41160123367458845,
+            0.5226046639776694
+          ],
+          "mean_error_norm": 0.0012751968967586469,
+          "mean_standard_error_norm": 0.0026533100066639904,
+          "variance_trace": 0.014418030574516768,
+          "mse_to_reference": 0.014412616647650808,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 124.57613075719759
+    },
+    {
+      "candidates": 3,
+      "condition": "uncertain",
+      "sigma": 0.4,
+      "samples": 16,
+      "reference_gradient": [
+        -0.9341063376852793,
+        0.4124490223082438,
+        0.5216573153770355
+      ],
+      "reference_standard_error_norm": 0.0006650414284532374,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -0.9220316185519906,
+            0.40680374250044427,
+            0.5072206805345296
+          ],
+          "mean_error_norm": 0.01964903182938064,
+          "mean_standard_error_norm": 0.01301639001139081,
+          "variance_trace": 0.3469852854858433,
+          "mse_to_reference": 0.34720194352874656,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -0.9350944043986597,
+            0.4135832053758777,
+            0.521511199022782
+          ],
+          "mean_error_norm": 0.0015112898629905806,
+          "mean_standard_error_norm": 0.0013393974908084854,
+          "variance_trace": 0.0036740825874105694,
+          "mse_to_reference": 0.003674572598822164,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 94.44134072402346
+    },
+    {
+      "candidates": 3,
+      "condition": "uncertain",
+      "sigma": 0.4,
+      "samples": 64,
+      "reference_gradient": [
+        -0.9341063376852793,
+        0.4124490223082438,
+        0.5216573153770355
+      ],
+      "reference_standard_error_norm": 0.0006650414284532374,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -0.9346026880873063,
+            0.4080790609164528,
+            0.5208045010729352
+          ],
+          "mean_error_norm": 0.004479979746004956,
+          "mean_standard_error_norm": 0.00645734559864639,
+          "variance_trace": 0.08539609534537303,
+          "mse_to_reference": 0.08537446825171732,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -0.9343074275313187,
+            0.41265307113761196,
+            0.5216543563937068
+          ],
+          "mean_error_norm": 0.00028649922605304765,
+          "mean_standard_error_norm": 0.0006577439368730122,
+          "variance_trace": 0.0008860202731380924,
+          "mse_to_reference": 0.0008856697278581288,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 96.38164942086314
+    },
+    {
+      "candidates": 3,
+      "condition": "confident_wrong",
+      "sigma": 0.1,
+      "samples": 4,
+      "reference_gradient": [
+        -1.0288072926641472,
+        0.011193144887427564,
+        1.0176141477767195
+      ],
+      "reference_standard_error_norm": 1.3356371438790872e-05,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.0318278783444963,
+            0.02696022700657426,
+            1.0144788342011029
+          ],
+          "mean_error_norm": 0.016357108779417345,
+          "mean_standard_error_norm": 0.03691779656737129,
+          "variance_trace": 2.791267744542335,
+          "mse_to_reference": 2.790172375846569,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.028813178765756,
+            0.011186457575009436,
+            1.0176267211907466
+          ],
+          "mean_error_norm": 1.540964243005818e-05,
+          "mean_standard_error_norm": 5.311574939072115e-05,
+          "variance_trace": 5.777987242676011e-06,
+          "mse_to_reference": 5.775403416922738e-06,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 483086.51911276806
+    },
+    {
+      "candidates": 3,
+      "condition": "confident_wrong",
+      "sigma": 0.1,
+      "samples": 16,
+      "reference_gradient": [
+        -1.0288072926641472,
+        0.011193144887427564,
+        1.0176141477767195
+      ],
+      "reference_standard_error_norm": 1.3356371438790872e-05,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.0426600619051345,
+            0.01129711135561627,
+            1.0274206614456767
+          ],
+          "mean_error_norm": 0.01697285288364909,
+          "mean_standard_error_norm": 0.016635103468235192,
+          "variance_trace": 0.5667362148329278,
+          "mse_to_reference": 0.5667475659005395,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.0288230525039075,
+            0.011205975492763011,
+            1.0176170770111446
+          ],
+          "mean_error_norm": 2.0532350008260374e-05,
+          "mean_standard_error_norm": 2.692474053650675e-05,
+          "variance_trace": 1.484680505258414e-06,
+          "mse_to_reference": 1.484377141002308e-06,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 381722.6755693713
+    },
+    {
+      "candidates": 3,
+      "condition": "confident_wrong",
+      "sigma": 0.1,
+      "samples": 64,
+      "reference_gradient": [
+        -1.0288072926641472,
+        0.011193144887427564,
+        1.0176141477767195
+      ],
+      "reference_standard_error_norm": 1.3356371438790872e-05,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.0322214865355823,
+            0.00896059788329695,
+            1.0249156028943163
+          ],
+          "mean_error_norm": 0.008363745139091537,
+          "mean_standard_error_norm": 0.008048080890491988,
+          "variance_trace": 0.13265224912875992,
+          "mse_to_reference": 0.13265742975549186,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.0288209031321092,
+            0.01120114449531724,
+            1.0176197586367919
+          ],
+          "mean_error_norm": 1.6754710241735598e-05,
+          "mean_standard_error_norm": 1.313977129976066e-05,
+          "variance_trace": 3.5359455193090856e-07,
+          "mse_to_reference": 3.537026186563698e-07,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 375153.54352710675
+    },
+    {
+      "candidates": 3,
+      "condition": "confident_wrong",
+      "sigma": 0.4,
+      "samples": 4,
+      "reference_gradient": [
+        -1.0291078374318996,
+        0.01635816349875902,
+        1.0127496739331403
+      ],
+      "reference_standard_error_norm": 7.214249501810312e-05,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.026144618410155,
+            0.028235831569466872,
+            0.9884539059467425
+          ],
+          "mean_error_norm": 0.02720558780503763,
+          "mean_standard_error_norm": 0.03669595392838177,
+          "variance_trace": 2.757822535094104,
+          "mse_to_reference": 2.7572160860672117,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.0289483310993859,
+            0.016135669556320467,
+            1.0128126615430653
+          ],
+          "mean_error_norm": 0.00028091504683424115,
+          "mean_standard_error_norm": 0.0002807334283218528,
+          "variance_trace": 0.00016140545592799413,
+          "mse_to_reference": 0.00016140555793375436,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 17086.303057341618
+    },
+    {
+      "candidates": 3,
+      "condition": "confident_wrong",
+      "sigma": 0.4,
+      "samples": 16,
+      "reference_gradient": [
+        -1.0291078374318996,
+        0.01635816349875902,
+        1.0127496739331403
+      ],
+      "reference_standard_error_norm": 7.214249501810312e-05,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.0394360553629887,
+            0.010994031955464806,
+            1.0156728356724785
+          ],
+          "mean_error_norm": 0.011999619468973346,
+          "mean_standard_error_norm": 0.01649613280135263,
+          "variance_trace": 0.557306669874918,
+          "mse_to_reference": 0.5571785383449185,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.0290965191228603,
+            0.016271484414361805,
+            1.0128250347084986
+          ],
+          "mean_error_norm": 0.00011541496546832061,
+          "mean_standard_error_norm": 0.00014618542449105422,
+          "variance_trace": 4.3766125227273654e-05,
+          "mse_to_reference": 4.375807566319417e-05,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 12733.744807905046
+    },
+    {
+      "candidates": 3,
+      "condition": "confident_wrong",
+      "sigma": 0.4,
+      "samples": 64,
+      "reference_gradient": [
+        -1.0291078374318996,
+        0.01635816349875902,
+        1.0127496739331403
+      ],
+      "reference_standard_error_norm": 7.214249501810312e-05,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.0361869763405194,
+            0.012787168628027543,
+            1.014349057067946
+          ],
+          "mean_error_norm": 0.008088525110687738,
+          "mean_standard_error_norm": 0.008124385669158105,
+          "variance_trace": 0.13517955584250183,
+          "mse_to_reference": 0.13517897443846696,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.0291083533505399,
+            0.01638497607860722,
+            1.0127233772719326
+          ],
+          "mean_error_norm": 3.755921991776596e-05,
+          "mean_standard_error_norm": 7.310059459376817e-05,
+          "variance_trace": 1.0943891312563097e-05,
+          "mse_to_reference": 1.0939958310633838e-05,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 12352.0557708136
+    },
+    {
+      "candidates": 8,
+      "condition": "uncertain",
+      "sigma": 0.1,
+      "samples": 4,
+      "reference_gradient": [
+        -0.9922069511481005,
+        0.11622246267335735,
+        0.12375117116287813,
+        0.131849952623186,
+        0.14054696266089073,
+        0.14979160106340478,
+        0.15968233826910938,
+        0.17036246269527416
+      ],
+      "reference_standard_error_norm": 0.00010821191799873094,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.0469708418114156,
+            0.11079079079437171,
+            0.12006001647683638,
+            0.13516687148186263,
+            0.12655777563771128,
+            0.17546822070581694,
+            0.17410247289319944,
+            0.17541755645795942
+          ],
+          "mean_error_norm": 0.06435599240919875,
+          "mean_standard_error_norm": 0.04212724782618554,
+          "variance_trace": 3.634595859269335,
+          "mse_to_reference": 3.636962848018897,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -0.9922082340716306,
+            0.11617471946201353,
+            0.12383615616702418,
+            0.13192995484142012,
+            0.14033208510297088,
+            0.14989496064346938,
+            0.15973512452519437,
+            0.17030523332953823
+          ],
+          "mean_error_norm": 0.00028075081976198146,
+          "mean_standard_error_norm": 0.00043042137218955137,
+          "variance_trace": 0.00037941771804167435,
+          "mse_to_reference": 0.0003793112765068337,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 9579.404667839259
+    },
+    {
+      "candidates": 8,
+      "condition": "uncertain",
+      "sigma": 0.1,
+      "samples": 16,
+      "reference_gradient": [
+        -0.9922069511481005,
+        0.11622246267335735,
+        0.12375117116287813,
+        0.131849952623186,
+        0.14054696266089073,
+        0.14979160106340478,
+        0.15968233826910938,
+        0.17036246269527416
+      ],
+      "reference_standard_error_norm": 0.00010821191799873094,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -0.9942990065366932,
+            0.1165571541027446,
+            0.13178108300851607,
+            0.12769279182485452,
+            0.1441015578642833,
+            0.15601846273293782,
+            0.16072315055314235,
+            0.16731114757689378
+          ],
+          "mean_error_norm": 0.01216770116856415,
+          "mean_standard_error_norm": 0.018287668264496293,
+          "variance_trace": 0.6849306840110383,
+          "mse_to_reference": 0.6847442981522136,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -0.9921904679401078,
+            0.11632249985447181,
+            0.12394790641168836,
+            0.1318829161039717,
+            0.14045446727489205,
+            0.14946305117062186,
+            0.15978307626137953,
+            0.1703365508630824
+          ],
+          "mean_error_norm": 0.0004211774893721801,
+          "mean_standard_error_norm": 0.00021556211592348002,
+          "variance_trace": 9.516446888224327e-05,
+          "mse_to_reference": 9.529539233397557e-05,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 7197.336275354755
+    },
+    {
+      "candidates": 8,
+      "condition": "uncertain",
+      "sigma": 0.1,
+      "samples": 64,
+      "reference_gradient": [
+        -0.9922069511481005,
+        0.11622246267335735,
+        0.12375117116287813,
+        0.131849952623186,
+        0.14054696266089073,
+        0.14979160106340478,
+        0.15968233826910938,
+        0.17036246269527416
+      ],
+      "reference_standard_error_norm": 0.00010821191799873094,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -0.9931452404900898,
+            0.1155833766868066,
+            0.12552164347562833,
+            0.13035418018702627,
+            0.14256357184891713,
+            0.14349877014369541,
+            0.1571887983172876,
+            0.1691059705109402
+          ],
+          "mean_error_norm": 0.007623888304559084,
+          "mean_standard_error_norm": 0.008887572085862532,
+          "variance_trace": 0.16176934416671312,
+          "mse_to_reference": 0.161748478902012,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -0.9922225478578033,
+            0.11621786085954244,
+            0.12379550484167258,
+            0.1318829049489047,
+            0.1404639866585304,
+            0.1498033477871497,
+            0.15974195368340136,
+            0.17031698907860207
+          ],
+          "mean_error_norm": 0.00012633532685097656,
+          "mean_standard_error_norm": 0.0001064916790827509,
+          "variance_trace": 2.3225298357992665e-05,
+          "mse_to_reference": 2.3229918495089357e-05,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 6965.221357900982
+    },
+    {
+      "candidates": 8,
+      "condition": "uncertain",
+      "sigma": 0.4,
+      "samples": 4,
+      "reference_gradient": [
+        -0.9907547920992716,
+        0.11640955509989097,
+        0.12383556619041935,
+        0.13186951630553473,
+        0.14019176837047617,
+        0.14953401533281643,
+        0.1593630778811722,
+        0.16955129291896204
+      ],
+      "reference_standard_error_norm": 0.000441218497322962,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -0.9838224437263072,
+            0.12431405241046675,
+            0.12398703884691577,
+            0.13860834491346438,
+            0.14848059131653132,
+            0.16291644900247756,
+            0.159298457794594,
+            0.1716014223780841
+          ],
+          "mean_error_norm": 0.020198381370259328,
+          "mean_standard_error_norm": 0.04073133722233259,
+          "variance_trace": 3.3977176717708826,
+          "mse_to_reference": 3.396466604548942,
+          "wrong_gradient_direction_rate": 0.0009765625
+        },
+        "pathwise": {
+          "mean": [
+            -0.990958106663084,
+            0.11633923986800059,
+            0.12435185437493337,
+            0.13177331148064755,
+            0.1402921544431517,
+            0.14986922943981165,
+            0.1587038338584755,
+            0.16962848319806367
+          ],
+          "mean_error_norm": 0.0009407958244270244,
+          "mean_standard_error_norm": 0.001761541807861654,
+          "variance_trace": 0.006355004499649546,
+          "mse_to_reference": 0.00635278656689196,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 534.6522841892959
+    },
+    {
+      "candidates": 8,
+      "condition": "uncertain",
+      "sigma": 0.4,
+      "samples": 16,
+      "reference_gradient": [
+        -0.9907547920992716,
+        0.11640955509989097,
+        0.12383556619041935,
+        0.13186951630553473,
+        0.14019176837047617,
+        0.14953401533281643,
+        0.1593630778811722,
+        0.16955129291896204
+      ],
+      "reference_standard_error_norm": 0.000441218497322962,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -0.9892361879826648,
+            0.11346764815045172,
+            0.12683945397839486,
+            0.12890136321142714,
+            0.13274369371539188,
+            0.1532562240629437,
+            0.16189859486120703,
+            0.17798914942823327
+          ],
+          "mean_error_norm": 0.013257042366998132,
+          "mean_standard_error_norm": 0.018229091046959037,
+          "variance_trace": 0.6805499092957638,
+          "mse_to_reference": 0.680393358707686,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -0.9907336787013066,
+            0.1164971788942991,
+            0.12357366947593092,
+            0.1320245902853436,
+            0.14039619837079853,
+            0.1495057318144514,
+            0.15945922915767496,
+            0.169277080702808
+          ],
+          "mean_error_norm": 0.00047727405449891566,
+          "mean_standard_error_norm": 0.0008832236504873654,
+          "variance_trace": 0.0015976120663659071,
+          "mse_to_reference": 0.0015970597728722242,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 425.979449969862
+    },
+    {
+      "candidates": 8,
+      "condition": "uncertain",
+      "sigma": 0.4,
+      "samples": 64,
+      "reference_gradient": [
+        -0.9907547920992716,
+        0.11640955509989097,
+        0.12383556619041935,
+        0.13186951630553473,
+        0.14019176837047617,
+        0.14953401533281643,
+        0.1593630778811722,
+        0.16955129291896204
+      ],
+      "reference_standard_error_norm": 0.000441218497322962,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -0.9939942921300032,
+            0.12312240593304069,
+            0.12212335541174806,
+            0.13491446483124447,
+            0.14152170977728143,
+            0.15002311385380065,
+            0.16000635841933536,
+            0.16633066743803318
+          ],
+          "mean_error_norm": 0.008975204949192014,
+          "mean_standard_error_norm": 0.008955409730435418,
+          "variance_trace": 0.1642482963250737,
+          "mse_to_reference": 0.1642486512655138,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -0.990729562266038,
+            0.11638929316456362,
+            0.12393340039608475,
+            0.13183477399982696,
+            0.14010664335085538,
+            0.1495354828062948,
+            0.15910233082396938,
+            0.1698276377244432
+          ],
+          "mean_error_norm": 0.0004042642105263419,
+          "mean_standard_error_norm": 0.0004336611649690171,
+          "variance_trace": 0.0003851509882926799,
+          "mse_to_reference": 0.0003851263558385898,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 426.4517067791083
+    },
+    {
+      "candidates": 8,
+      "condition": "confident_wrong",
+      "sigma": 0.1,
+      "samples": 4,
+      "reference_gradient": [
+        -1.015274724642293,
+        0.016236651745961755,
+        0.017257324100369367,
+        0.018355731645385308,
+        0.019513242825505497,
+        0.02075418520389858,
+        0.022076114141397624,
+        0.901081474979775
+      ],
+      "reference_standard_error_norm": 5.202860182313809e-05,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.0153419306868863,
+            0.032253894658306546,
+            -0.023600893119868644,
+            0.023096619355758338,
+            0.008130343900617258,
+            0.006893223009204622,
+            0.012646778902075334,
+            0.9136411932688716
+          ],
+          "mean_error_norm": 0.050167539956808324,
+          "mean_standard_error_norm": 0.052325286146653376,
+          "variance_trace": 5.607292048034111,
+          "mse_to_reference": 5.607070894529096,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.0152826170371831,
+            0.016246585446291612,
+            0.01729176291872652,
+            0.018388913761754225,
+            0.01954530361779789,
+            0.02076650262111312,
+            0.022103661542484818,
+            0.900939887129015
+          ],
+          "mean_error_norm": 0.00015631265244584036,
+          "mean_standard_error_norm": 0.00020563974579255686,
+          "variance_trace": 8.660521994163697e-05,
+          "mse_to_reference": 8.658736588190186e-05,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 64745.428183345655
+    },
+    {
+      "candidates": 8,
+      "condition": "confident_wrong",
+      "sigma": 0.1,
+      "samples": 16,
+      "reference_gradient": [
+        -1.015274724642293,
+        0.016236651745961755,
+        0.017257324100369367,
+        0.018355731645385308,
+        0.019513242825505497,
+        0.02075418520389858,
+        0.022076114141397624,
+        0.901081474979775
+      ],
+      "reference_standard_error_norm": 5.202860182313809e-05,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.010460822768989,
+            0.01925331583650841,
+            0.009031994964293725,
+            0.02514306919738254,
+            0.022301100667243213,
+            0.008959305195839637,
+            0.030245905731294077,
+            0.8961488752825504
+          ],
+          "mean_error_norm": 0.019595032127255368,
+          "mean_standard_error_norm": 0.0231977167978583,
+          "variance_trace": 1.1020985643696892,
+          "mse_to_reference": 1.1019443955891237,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.01526927296975,
+            0.01621676659817976,
+            0.01724536206330881,
+            0.01832597753099818,
+            0.019496294784105046,
+            0.020746229963903837,
+            0.022071685103840492,
+            0.9011669569254139
+          ],
+          "mean_error_norm": 9.55554228917402e-05,
+          "mean_standard_error_norm": 0.00010218181931274615,
+          "variance_trace": 2.1383422357632414e-05,
+          "mse_to_reference": 2.138211207227841e-05,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 51539.858584718815
+    },
+    {
+      "candidates": 8,
+      "condition": "confident_wrong",
+      "sigma": 0.1,
+      "samples": 64,
+      "reference_gradient": [
+        -1.015274724642293,
+        0.016236651745961755,
+        0.017257324100369367,
+        0.018355731645385308,
+        0.019513242825505497,
+        0.02075418520389858,
+        0.022076114141397624,
+        0.901081474979775
+      ],
+      "reference_standard_error_norm": 5.202860182313809e-05,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.0075435189784203,
+            0.016414841621536776,
+            0.020135938014855435,
+            0.02193510487643479,
+            0.016049233561217145,
+            0.025178166064366677,
+            0.011589248855895778,
+            0.8999749699469319
+          ],
+          "mean_error_norm": 0.014955643990999393,
+          "mean_standard_error_norm": 0.011184692424003415,
+          "variance_trace": 0.2561993617808576,
+          "mse_to_reference": 0.25629793572342363,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.0152691628307222,
+            0.016228419430164974,
+            0.017250485241623235,
+            0.018335191130744558,
+            0.01949982724941275,
+            0.020734003363827132,
+            0.02206000768742557,
+            0.9011612287275241
+          ],
+          "mean_error_norm": 8.817454276685318e-05,
+          "mean_standard_error_norm": 5.132512743928489e-05,
+          "variance_trace": 5.394982311237294e-06,
+          "mse_to_reference": 5.4001227925228555e-06,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 47488.45260293364
+    },
+    {
+      "candidates": 8,
+      "condition": "confident_wrong",
+      "sigma": 0.4,
+      "samples": 4,
+      "reference_gradient": [
+        -1.0142255187463693,
+        0.01966629922700434,
+        0.02097703943558479,
+        0.02220820299796058,
+        0.02373482517816068,
+        0.02525180576298485,
+        0.02689355671228311,
+        0.875493789432391
+      ],
+      "reference_standard_error_norm": 0.000241453648497951,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.0290800257534203,
+            0.023294741068111365,
+            0.026683387789628324,
+            -0.001620198536191067,
+            0.01754678668989112,
+            0.01670109383441873,
+            0.035527696667532006,
+            0.8743007059391535
+          ],
+          "mean_error_norm": 0.031961780545419656,
+          "mean_standard_error_norm": 0.051548796834440816,
+          "variance_trace": 5.442106276000677,
+          "mse_to_reference": 5.440470552961232,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.014293039164551,
+            0.019504248165558687,
+            0.020834956324253404,
+            0.022116871050723963,
+            0.023670509966539556,
+            0.025088346160195573,
+            0.026644987955496014,
+            0.8764331195417839
+          ],
+          "mean_error_norm": 0.0010170209722279555,
+          "mean_standard_error_norm": 0.0009431260039989789,
+          "variance_trace": 0.00182166867849028,
+          "mse_to_reference": 0.0018218135234888168,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 2987.429240157359
+    },
+    {
+      "candidates": 8,
+      "condition": "confident_wrong",
+      "sigma": 0.4,
+      "samples": 16,
+      "reference_gradient": [
+        -1.0142255187463693,
+        0.01966629922700434,
+        0.02097703943558479,
+        0.02220820299796058,
+        0.02373482517816068,
+        0.02525180576298485,
+        0.02689355671228311,
+        0.875493789432391
+      ],
+      "reference_standard_error_norm": 0.000241453648497951,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.0133047506527895,
+            0.009889520149769578,
+            0.028525289027762447,
+            0.029188930981156942,
+            0.024053915064935847,
+            0.013302085524627454,
+            0.03796833646928218,
+            0.879020695628913
+          ],
+          "mean_error_norm": 0.02191180741528078,
+          "mean_standard_error_norm": 0.02300617234498136,
+          "variance_trace": 1.0839735623003857,
+          "mse_to_reference": 1.0839244056386228,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.0142556417007182,
+            0.019527844326224737,
+            0.020776948029339267,
+            0.022108351807404048,
+            0.023489970502860363,
+            0.025137114696348113,
+            0.02661867676447316,
+            0.8765967355740687
+          ],
+          "mean_error_norm": 0.0011980154477175692,
+          "mean_standard_error_norm": 0.0004880571223498688,
+          "variance_trace": 0.0004878330975773386,
+          "mse_to_reference": 0.0004890301388356317,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 2222.0172589428253
+    },
+    {
+      "candidates": 8,
+      "condition": "confident_wrong",
+      "sigma": 0.4,
+      "samples": 64,
+      "reference_gradient": [
+        -1.0142255187463693,
+        0.01966629922700434,
+        0.02097703943558479,
+        0.02220820299796058,
+        0.02373482517816068,
+        0.02525180576298485,
+        0.02689355671228311,
+        0.875493789432391
+      ],
+      "reference_standard_error_norm": 0.000241453648497951,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.0130109344910894,
+            0.016623519882591028,
+            0.020108101777014144,
+            0.021987172205991095,
+            0.025482673713835755,
+            0.020002300912751545,
+            0.029297098381433094,
+            0.874230374253091
+          ],
+          "mean_error_norm": 0.00703726754247368,
+          "mean_standard_error_norm": 0.011191743255725618,
+          "variance_trace": 0.2565224798250596,
+          "mse_to_reference": 0.25644674784242205,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.014223829109618,
+            0.01968501610641097,
+            0.020958144136646328,
+            0.0222619335443481,
+            0.023704896640121917,
+            0.025221038147786916,
+            0.026860686763270136,
+            0.8755321137710336
+          ],
+          "mean_error_norm": 8.937970909978913e-05,
+          "mean_standard_error_norm": 0.00024421412785480354,
+          "variance_trace": 0.00012214382641947104,
+          "mse_to_reference": 0.00012209217461162594,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 2100.1673792672927
+    },
+    {
+      "candidates": 16,
+      "condition": "uncertain",
+      "sigma": 0.1,
+      "samples": 4,
+      "reference_gradient": [
+        -0.9980423848061473,
+        0.05422653697810998,
+        0.055759575091354784,
+        0.05732633968837722,
+        0.058968832122143246,
+        0.06066187399939218,
+        0.06239895324249251,
+        0.06419091762797126,
+        0.06603481631170785,
+        0.0679289741346859,
+        0.06986498532592147,
+        0.07188115816909817,
+        0.07392084167129227,
+        0.07607838126155857,
+        0.07826142033627963,
+        0.08053877884576238
+      ],
+      "reference_standard_error_norm": 7.367708928169297e-05,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.0168272324987222,
+            0.0814293752148234,
+            0.06782993276416234,
+            0.07907366921824703,
+            0.08576795270767301,
+            0.051761696631311055,
+            0.05133718619402955,
+            0.044501992186762,
+            0.07246936191819783,
+            0.07571075916740719,
+            0.07988707962682319,
+            0.08337298800894165,
+            0.08024424021367377,
+            0.0947984171755329,
+            0.07951607015164251,
+            0.07803536680797904
+          ],
+          "mean_error_norm": 0.06125077712192126,
+          "mean_standard_error_norm": 0.05513967422975918,
+          "variance_trace": 6.226705764687807,
+          "mse_to_reference": 6.22741703871168,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -0.9980423913435688,
+            0.054190311812267994,
+            0.05581842310383675,
+            0.057295845078558214,
+            0.05897637133960499,
+            0.06064029328556135,
+            0.06242520637372584,
+            0.06422951429139474,
+            0.06611493377579004,
+            0.06792581081295639,
+            0.0697870870503512,
+            0.0718130171130324,
+            0.0738896036270561,
+            0.0760464965784204,
+            0.07816546890404893,
+            0.08072400819696357
+          ],
+          "mean_error_norm": 0.0002665632507575585,
+          "mean_standard_error_norm": 0.00029356296191913433,
+          "variance_trace": 0.00017649502742678554,
+          "mse_to_reference": 0.00017647990418082922,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 35279.78014718175
+    },
+    {
+      "candidates": 16,
+      "condition": "uncertain",
+      "sigma": 0.1,
+      "samples": 16,
+      "reference_gradient": [
+        -0.9980423848061473,
+        0.05422653697810998,
+        0.055759575091354784,
+        0.05732633968837722,
+        0.058968832122143246,
+        0.06066187399939218,
+        0.06239895324249251,
+        0.06419091762797126,
+        0.06603481631170785,
+        0.0679289741346859,
+        0.06986498532592147,
+        0.07188115816909817,
+        0.07392084167129227,
+        0.07607838126155857,
+        0.07826142033627963,
+        0.08053877884576238
+      ],
+      "reference_standard_error_norm": 7.367708928169297e-05,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.0016105827158357,
+            0.05981667130477284,
+            0.06308966546637906,
+            0.055548639840789574,
+            0.057105775371488934,
+            0.05539420326589045,
+            0.06297038131948682,
+            0.06728378166956404,
+            0.06955991713091536,
+            0.070073065254489,
+            0.06126112922540638,
+            0.06996349072928736,
+            0.07456445905747094,
+            0.08290226727996872,
+            0.07534131689071538,
+            0.07008823179115367
+          ],
+          "mean_error_norm": 0.020035758172222723,
+          "mean_standard_error_norm": 0.024194422238001466,
+          "variance_trace": 1.1988378980980734,
+          "mse_to_reference": 1.1986539596361787,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -0.9980383107910552,
+            0.05419282526283413,
+            0.05576353978242429,
+            0.05732043520570534,
+            0.058944519166248495,
+            0.0606759607882206,
+            0.0623721587167769,
+            0.06412543802820399,
+            0.06597910234005444,
+            0.06792221241035648,
+            0.06996047265044482,
+            0.07190583984524818,
+            0.0740484081141359,
+            0.07602983496605732,
+            0.07824181582205633,
+            0.08055574769228796
+          ],
+          "mean_error_norm": 0.0001979336802746547,
+          "mean_standard_error_norm": 0.00014681266845442182,
+          "variance_trace": 4.414250929911395e-05,
+          "mse_to_reference": 4.4160133081282306e-05,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 27158.354092981685
+    },
+    {
+      "candidates": 16,
+      "condition": "uncertain",
+      "sigma": 0.1,
+      "samples": 64,
+      "reference_gradient": [
+        -0.9980423848061473,
+        0.05422653697810998,
+        0.055759575091354784,
+        0.05732633968837722,
+        0.058968832122143246,
+        0.06066187399939218,
+        0.06239895324249251,
+        0.06419091762797126,
+        0.06603481631170785,
+        0.0679289741346859,
+        0.06986498532592147,
+        0.07188115816909817,
+        0.07392084167129227,
+        0.07607838126155857,
+        0.07826142033627963,
+        0.08053877884576238
+      ],
+      "reference_standard_error_norm": 7.367708928169297e-05,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -0.9947581182058243,
+            0.05354185174428594,
+            0.04975043716773356,
+            0.06573424458155447,
+            0.053808791837113006,
+            0.05967541280511904,
+            0.06309555035589783,
+            0.06491149042543455,
+            0.06554958092657723,
+            0.06838683904094933,
+            0.0676705260290807,
+            0.0750001982056764,
+            0.06909888891449555,
+            0.06960643776825316,
+            0.07678878614082964,
+            0.08071193327065872
+          ],
+          "mean_error_norm": 0.015132298876226568,
+          "mean_standard_error_norm": 0.01183711467648917,
+          "variance_trace": 0.2869601973541997,
+          "mse_to_reference": 0.2870490665396146,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -0.9980386382134894,
+            0.05419122766956257,
+            0.05574071472902871,
+            0.05732319296057662,
+            0.05900385673215809,
+            0.060666830892303306,
+            0.06240748119656811,
+            0.06419797308700892,
+            0.06600718692369399,
+            0.06790320450079627,
+            0.06984709666975993,
+            0.07190413774475927,
+            0.07397424099268075,
+            0.07602859034090828,
+            0.07829756598254027,
+            0.08054533779114423
+          ],
+          "mean_error_norm": 0.00010934290936437632,
+          "mean_standard_error_norm": 7.337811623726923e-05,
+          "variance_trace": 1.102714458630184e-05,
+          "mse_to_reference": 1.1033716110187554e-05,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 26023.07379833107
+    },
+    {
+      "candidates": 16,
+      "condition": "uncertain",
+      "sigma": 0.4,
+      "samples": 4,
+      "reference_gradient": [
+        -0.9976893039403746,
+        0.054125038495362425,
+        0.05579337235441514,
+        0.057360476005749186,
+        0.05888949837926783,
+        0.060720281443818254,
+        0.062477299353239736,
+        0.06429448755945369,
+        0.06603262813714245,
+        0.06791372960863855,
+        0.06973564205653428,
+        0.07179997900684229,
+        0.07388595141338446,
+        0.07608075761526825,
+        0.07815771726333662,
+        0.08042244524792153
+      ],
+      "reference_standard_error_norm": 0.00030445980195983744,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.0487158476718041,
+            0.06284723287149596,
+            0.08415441248014828,
+            0.06094093571595084,
+            0.056157148235426294,
+            0.06195353534508544,
+            0.06452359890825252,
+            0.06587535043537596,
+            0.07857239047958516,
+            0.06551661747342387,
+            0.07648834023716791,
+            0.06950667160768369,
+            0.042839702449699306,
+            0.06592593203886853,
+            0.06950663119333425,
+            0.08947933356798833
+          ],
+          "mean_error_norm": 0.07035861568869664,
+          "mean_standard_error_norm": 0.05627724020709169,
+          "variance_trace": 6.486277663389078,
+          "mse_to_reference": 6.488060870425383,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -0.9976032956201952,
+            0.054487146220360785,
+            0.05553822290862544,
+            0.05755293038523063,
+            0.05906243768795465,
+            0.06053084857845565,
+            0.06199895008368207,
+            0.0640162995971753,
+            0.06569012292627306,
+            0.0673838403836932,
+            0.07005662498587918,
+            0.07216095536268058,
+            0.07458575757282843,
+            0.07604757732461362,
+            0.07855186433730037,
+            0.07993971726544216
+          ],
+          "mean_error_norm": 0.001457152338837937,
+          "mean_standard_error_norm": 0.0012216918529070002,
+          "variance_trace": 0.003056703454124728,
+          "mse_to_reference": 0.0030573342160798486,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 2121.984602280103
+    },
+    {
+      "candidates": 16,
+      "condition": "uncertain",
+      "sigma": 0.4,
+      "samples": 16,
+      "reference_gradient": [
+        -0.9976893039403746,
+        0.054125038495362425,
+        0.05579337235441514,
+        0.057360476005749186,
+        0.05888949837926783,
+        0.060720281443818254,
+        0.062477299353239736,
+        0.06429448755945369,
+        0.06603262813714245,
+        0.06791372960863855,
+        0.06973564205653428,
+        0.07179997900684229,
+        0.07388595141338446,
+        0.07608075761526825,
+        0.07815771726333662,
+        0.08042244524792153
+      ],
+      "reference_standard_error_norm": 0.00030445980195983744,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -0.9937595514329685,
+            0.056514506693958154,
+            0.05697318950442083,
+            0.05483744127123761,
+            0.045320059094177634,
+            0.0686738506029595,
+            0.06240723655527183,
+            0.06418018402266465,
+            0.056180730065736026,
+            0.0740897957225414,
+            0.0609405887560181,
+            0.07533664170380105,
+            0.06707675088268618,
+            0.07330473570515936,
+            0.07373814588655048,
+            0.07767547845774875
+          ],
+          "mean_error_norm": 0.02413569319188667,
+          "mean_standard_error_norm": 0.024246850198669827,
+          "variance_trace": 1.2040391568521935,
+          "mse_to_reference": 1.20403377879349,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -0.9977117948664423,
+            0.05444618247973323,
+            0.05568195387628881,
+            0.05719589593334899,
+            0.059099600754228196,
+            0.06070219668847428,
+            0.062485293947412326,
+            0.06448817079332662,
+            0.0657467229796247,
+            0.06779990063050896,
+            0.06970480800382628,
+            0.07175049290501258,
+            0.07390145017673069,
+            0.07591835047217535,
+            0.07834673323312784,
+            0.08044404199262338
+          ],
+          "mean_error_norm": 0.0006213656808676756,
+          "mean_standard_error_norm": 0.0006151599538618038,
+          "variance_trace": 0.0007750077825746055,
+          "mse_to_reference": 0.0007750154561151304,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 1553.5833109344135
+    },
+    {
+      "candidates": 16,
+      "condition": "uncertain",
+      "sigma": 0.4,
+      "samples": 64,
+      "reference_gradient": [
+        -0.9976893039403746,
+        0.054125038495362425,
+        0.05579337235441514,
+        0.057360476005749186,
+        0.05888949837926783,
+        0.060720281443818254,
+        0.062477299353239736,
+        0.06429448755945369,
+        0.06603262813714245,
+        0.06791372960863855,
+        0.06973564205653428,
+        0.07179997900684229,
+        0.07388595141338446,
+        0.07608075761526825,
+        0.07815771726333662,
+        0.08042244524792153
+      ],
+      "reference_standard_error_norm": 0.00030445980195983744,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -0.9951728080203119,
+            0.051521439307009594,
+            0.0557406580166458,
+            0.054235074457723076,
+            0.05979349873823201,
+            0.06018311497500188,
+            0.061363228586776716,
+            0.0640818539431589,
+            0.06895191077215607,
+            0.06894636884203073,
+            0.06568428038854052,
+            0.07256185743397611,
+            0.07063776095938937,
+            0.07808265677418053,
+            0.0840128674773938,
+            0.08209749374450523
+          ],
+          "mean_error_norm": 0.010173690738065592,
+          "mean_standard_error_norm": 0.01191118337143915,
+          "variance_trace": 0.29056264050288344,
+          "mse_to_reference": 0.2905242681968092,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -0.9976905769830302,
+            0.054209206772298915,
+            0.055795987790958415,
+            0.057312830335047665,
+            0.05903847815597511,
+            0.06071826535008502,
+            0.062463649752490004,
+            0.06413103862517046,
+            0.0659845542765393,
+            0.06797526826626041,
+            0.06976528590792133,
+            0.0719839834868676,
+            0.07365206788698477,
+            0.07601426121169869,
+            0.07825929476627853,
+            0.08038640439845385
+          ],
+          "mean_error_norm": 0.00041235723679639355,
+          "mean_standard_error_norm": 0.00030417534779668024,
+          "variance_trace": 0.00018948637124040988,
+          "mse_to_reference": 0.00018956388708894095,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 1533.422370172647
+    },
+    {
+      "candidates": 16,
+      "condition": "confident_wrong",
+      "sigma": 0.1,
+      "samples": 4,
+      "reference_gradient": [
+        -1.0068567139814233,
+        0.017075961207441818,
+        0.01754699469907046,
+        0.01803928094316686,
+        0.018538521038878982,
+        0.019069525614574933,
+        0.019610628915156903,
+        0.02014301428660382,
+        0.02072571139399945,
+        0.021287889240769436,
+        0.021906253825119872,
+        0.02252028083051054,
+        0.023152073822796,
+        0.02380733419728668,
+        0.02450014737032169,
+        0.7189330965957259
+      ],
+      "reference_standard_error_norm": 8.739165597534578e-05,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.0414242033997163,
+            -0.006926964698390235,
+            0.035982801929190046,
+            0.016461293920120912,
+            0.022725399548162963,
+            0.00709604129113519,
+            0.010852242707477203,
+            0.05725852684671012,
+            0.020734876179724183,
+            0.032094859512694744,
+            0.031419493855803116,
+            0.020471230701505052,
+            -0.004988694787125703,
+            0.016708009446052535,
+            0.03450543737935795,
+            0.7132050285476056
+          ],
+          "mean_error_norm": 0.0701091761642279,
+          "mean_standard_error_norm": 0.06578977657893775,
+          "variance_trace": 8.864347550323807,
+          "mse_to_reference": 8.86493455220393,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.006863456308215,
+            0.017092201878245887,
+            0.01754451233425074,
+            0.018019953958860285,
+            0.018556965730025295,
+            0.01907786274599246,
+            0.019591187817798707,
+            0.02012132202104349,
+            0.020762428668008488,
+            0.02129224899683585,
+            0.021900387093256014,
+            0.022556612114457086,
+            0.023161014516364722,
+            0.02382581447403069,
+            0.024516075231989044,
+            0.7188448687270562
+          ],
+          "mean_error_norm": 0.00011457746068272034,
+          "mean_standard_error_norm": 0.00034500245709296977,
+          "variance_trace": 0.00024376667217958182,
+          "mse_to_reference": 0.0002436607734786782,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 36364.066798243366
+    },
+    {
+      "candidates": 16,
+      "condition": "confident_wrong",
+      "sigma": 0.1,
+      "samples": 16,
+      "reference_gradient": [
+        -1.0068567139814233,
+        0.017075961207441818,
+        0.01754699469907046,
+        0.01803928094316686,
+        0.018538521038878982,
+        0.019069525614574933,
+        0.019610628915156903,
+        0.02014301428660382,
+        0.02072571139399945,
+        0.021287889240769436,
+        0.021906253825119872,
+        0.02252028083051054,
+        0.023152073822796,
+        0.02380733419728668,
+        0.02450014737032169,
+        0.7189330965957259
+      ],
+      "reference_standard_error_norm": 8.739165597534578e-05,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -0.9998288241197362,
+            0.010785092870284205,
+            0.020199942256972882,
+            0.03039046558640837,
+            0.019567405974457944,
+            0.024724519283242756,
+            0.021893069967483837,
+            0.03117473772573856,
+            0.018499339409469764,
+            0.016284709469780074,
+            0.02031649601112939,
+            0.02248528475673966,
+            0.017451787536581807,
+            0.02808227927449402,
+            0.02346866261779865,
+            0.7193600454214146
+          ],
+          "mean_error_norm": 0.022204367360885633,
+          "mean_standard_error_norm": 0.02922929915847806,
+          "variance_trace": 1.7497127511978112,
+          "mse_to_reference": 1.749351433198414,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.0068612694511965,
+            0.017088766685299486,
+            0.01756826202014758,
+            0.018065537932580252,
+            0.018565138369862587,
+            0.0190890783902887,
+            0.019614623622006493,
+            0.020158475108263033,
+            0.02072351694040207,
+            0.021318365008651637,
+            0.021925205586591286,
+            0.022537859574971078,
+            0.023191154315218423,
+            0.023834078204274033,
+            0.024510349552872568,
+            0.7186708581397673
+          ],
+          "mean_error_norm": 0.00027457173512077153,
+          "mean_standard_error_norm": 0.00017441674035033723,
+          "variance_trace": 6.230261619596689e-05,
+          "mse_to_reference": 6.234758463437946e-05,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 28084.097555297805
+    },
+    {
+      "candidates": 16,
+      "condition": "confident_wrong",
+      "sigma": 0.1,
+      "samples": 64,
+      "reference_gradient": [
+        -1.0068567139814233,
+        0.017075961207441818,
+        0.01754699469907046,
+        0.01803928094316686,
+        0.018538521038878982,
+        0.019069525614574933,
+        0.019610628915156903,
+        0.02014301428660382,
+        0.02072571139399945,
+        0.021287889240769436,
+        0.021906253825119872,
+        0.02252028083051054,
+        0.023152073822796,
+        0.02380733419728668,
+        0.02450014737032169,
+        0.7189330965957259
+      ],
+      "reference_standard_error_norm": 8.739165597534578e-05,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.00422530327138,
+            0.013273758537300298,
+            0.012118363587995494,
+            0.01259675337256649,
+            0.020467065194563466,
+            0.024997642900824596,
+            0.019869790788208726,
+            0.022731660334946665,
+            0.013582708661826651,
+            0.02582347395353808,
+            0.02661036131104828,
+            0.02346533926759325,
+            0.02463812236108205,
+            0.02554811067800392,
+            0.02984597826607508,
+            0.7108617746417422
+          ],
+          "mean_error_norm": 0.017879622154806558,
+          "mean_standard_error_norm": 0.014199184418934339,
+          "variance_trace": 0.41291128455763504,
+          "mse_to_reference": 0.41302934860787077,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.0068560093845957,
+            0.017085332441794047,
+            0.017555388618580588,
+            0.018056019282999353,
+            0.018553575914019276,
+            0.019090136176336793,
+            0.019619268907034935,
+            0.02016713805153061,
+            0.02072910327213938,
+            0.021315636223352273,
+            0.021907993666008468,
+            0.02254132386212281,
+            0.02317560118604478,
+            0.023824167930828578,
+            0.02450863989801247,
+            0.7187266839537915
+          ],
+          "mean_error_norm": 0.00021561411294125315,
+          "mean_standard_error_norm": 8.824783684650671e-05,
+          "variance_trace": 1.5949170090163545e-05,
+          "mse_to_reference": 1.5987871855155218e-05,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 25889.20189723809
+    },
+    {
+      "candidates": 16,
+      "condition": "confident_wrong",
+      "sigma": 0.4,
+      "samples": 4,
+      "reference_gradient": [
+        -1.0061628247682708,
+        0.018777404134966154,
+        0.01931612932876727,
+        0.019873329808602565,
+        0.020429602530763747,
+        0.02096174442768271,
+        0.021620797683135313,
+        0.022245741999102595,
+        0.022845895209466702,
+        0.023450030440262584,
+        0.024166834367502336,
+        0.024810230363252878,
+        0.02553239439730942,
+        0.0263042570441974,
+        0.02697564623322425,
+        0.6888527868000347
+      ],
+      "reference_standard_error_norm": 0.0003509295651610614,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.0120077194067858,
+            0.006764007556599257,
+            0.04630659924220968,
+            0.03007449617778995,
+            0.0259467795172576,
+            0.027985571120075096,
+            0.00025481486329396313,
+            0.02629489079057449,
+            0.022966014686493355,
+            0.02264550861846571,
+            0.009164621316736041,
+            0.03969624338184802,
+            0.02126784036304345,
+            -0.0014384958217901582,
+            0.03758259117490618,
+            0.669130619718051
+          ],
+          "mean_error_norm": 0.057448649595825116,
+          "mean_standard_error_norm": 0.0637549745734537,
+          "variance_trace": 8.32449901130082,
+          "mse_to_reference": 8.323734661858339,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.0061452024634063,
+            0.0189088434275039,
+            0.01936917497419862,
+            0.019996417231960623,
+            0.020476261301269696,
+            0.02131370517493846,
+            0.021713042186770393,
+            0.022389939629242794,
+            0.02297471283623919,
+            0.023544377740254765,
+            0.02425955153272737,
+            0.02479182485858299,
+            0.02573275736674391,
+            0.026627740059556457,
+            0.027139244822979167,
+            0.686907609320438
+          ],
+          "mean_error_norm": 0.0020446524733463717,
+          "mean_standard_error_norm": 0.0014061731591969195,
+          "variance_trace": 0.004049557409066691,
+          "mse_to_reference": 0.004051760689849807,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 2055.656500303667
+    },
+    {
+      "candidates": 16,
+      "condition": "confident_wrong",
+      "sigma": 0.4,
+      "samples": 16,
+      "reference_gradient": [
+        -1.0061628247682708,
+        0.018777404134966154,
+        0.01931612932876727,
+        0.019873329808602565,
+        0.020429602530763747,
+        0.02096174442768271,
+        0.021620797683135313,
+        0.022245741999102595,
+        0.022845895209466702,
+        0.023450030440262584,
+        0.024166834367502336,
+        0.024810230363252878,
+        0.02553239439730942,
+        0.0263042570441974,
+        0.02697564623322425,
+        0.6888527868000347
+      ],
+      "reference_standard_error_norm": 0.0003509295651610614,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -0.9993570860974399,
+            0.022292510813273818,
+            0.03238455212536786,
+            0.022002996617088218,
+            0.030594346606754055,
+            0.0119165479311682,
+            0.03502628450133458,
+            0.029703155919339794,
+            0.02953375973014721,
+            0.030551931348956736,
+            0.025009802130097757,
+            0.022212008294036703,
+            0.019170084015378203,
+            0.022558351771598914,
+            0.023180019757324376,
+            0.6894214438419726
+          ],
+          "mean_error_norm": 0.028745743019442643,
+          "mean_standard_error_norm": 0.028610275069265317,
+          "variance_trace": 1.676385975375922,
+          "mse_to_reference": 1.6763937452781228,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.0061637544305648,
+            0.018878962730078355,
+            0.01933761768573482,
+            0.019819891543884194,
+            0.020483205937886592,
+            0.021013884320187297,
+            0.021570101544806358,
+            0.022299017317970703,
+            0.022809605938390497,
+            0.02349163600404538,
+            0.02414153113614091,
+            0.024841015398891463,
+            0.025552542729062835,
+            0.026351684666719624,
+            0.02707605918674187,
+            0.688496998290024
+          ],
+          "mean_error_norm": 0.00041059971703816256,
+          "mean_standard_error_norm": 0.0007046435303469141,
+          "variance_trace": 0.0010168780899527938,
+          "mse_to_reference": 0.0010165501595755684,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 1648.5614076449856
+    },
+    {
+      "candidates": 16,
+      "condition": "confident_wrong",
+      "sigma": 0.4,
+      "samples": 64,
+      "reference_gradient": [
+        -1.0061628247682708,
+        0.018777404134966154,
+        0.01931612932876727,
+        0.019873329808602565,
+        0.020429602530763747,
+        0.02096174442768271,
+        0.021620797683135313,
+        0.022245741999102595,
+        0.022845895209466702,
+        0.023450030440262584,
+        0.024166834367502336,
+        0.024810230363252878,
+        0.02553239439730942,
+        0.0263042570441974,
+        0.02697564623322425,
+        0.6888527868000347
+      ],
+      "reference_standard_error_norm": 0.0003509295651610614,
+      "estimators": {
+        "score_function_loo": {
+          "mean": [
+            -1.0024507251387464,
+            0.02306217600553278,
+            0.015026025898378408,
+            0.021747778471849458,
+            0.019088944428908905,
+            0.0218270501538868,
+            0.021105722054351413,
+            0.026871119459332744,
+            0.023728437830704125,
+            0.023031112679100373,
+            0.02708907934266524,
+            0.024228224398745588,
+            0.025741069563143152,
+            0.020811365305494413,
+            0.030427692482421956,
+            0.6877159750382119
+          ],
+          "mean_error_norm": 0.011468218085152092,
+          "mean_standard_error_norm": 0.014021139723844672,
+          "variance_trace": 0.40262115155061784,
+          "mse_to_reference": 0.40255607921751074,
+          "wrong_gradient_direction_rate": 0.0
+        },
+        "pathwise": {
+          "mean": [
+            -1.0061646669279456,
+            0.018781419256186357,
+            0.01930175410950523,
+            0.019824707841062675,
+            0.02042303478226512,
+            0.02096892484313011,
+            0.021553218503405837,
+            0.02217888062523375,
+            0.022798910889680047,
+            0.023446584014843792,
+            0.02410596695091323,
+            0.02481512411873191,
+            0.02553424090869899,
+            0.026268333032399803,
+            0.026932006761508503,
+            0.6892315602903802
+          ],
+          "mean_error_norm": 0.00040538653165696084,
+          "mean_standard_error_norm": 0.0003565567432082359,
+          "variance_trace": 0.00026036779238863643,
+          "mse_to_reference": 0.00026040499791755875,
+          "wrong_gradient_direction_rate": 0.0
+        }
+      },
+      "variance_ratio_score_over_path": 1546.3554376558518
+    }
+  ]
+}

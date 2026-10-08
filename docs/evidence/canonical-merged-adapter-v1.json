@@ -1,0 +1,168 @@
+{
+  "format_version": 1,
+  "study": "canonical-merged-adapter-v1",
+  "role": "label-free exact fusion and full-cache equivalence validation",
+  "protocol_sha256": "30b4d2ef5529581463954a7306c965ada274181b782d7166e046ec72aedb8a95",
+  "adapter": {
+    "format_version": 1,
+    "format": "choiceforge-merged-residual-v1",
+    "project": "ChoiceForge",
+    "canonical_seed": 42,
+    "selection_rule": "lowest registered full-portfolio seed",
+    "architecture": {
+      "expert_order": [
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "expert_widths": {
+        "clinc": 256,
+        "gsm8k": 512,
+        "paws-wiki": 256,
+        "qasc": 256,
+        "snli": 256,
+        "truthfulqa": 256
+      },
+      "hidden_size": 2048,
+      "total_width": 1792,
+      "layer_norm_eps": 1e-05
+    },
+    "portfolio": {
+      "paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "weights": {
+        "parent": 0.004158858209848404,
+        "clinc": 0.03814656287431717,
+        "gsm8k": 0.0002527108881622553,
+        "paws-wiki": 3.444140020292252e-05,
+        "qasc": 0.956927478313446,
+        "snli": 0.0003622903604991734,
+        "truthfulqa": 0.00011770767014240846
+      },
+      "weights_file_sha256": "dd88050c599c1a36cccd3102c5fb3f8d724989ba5ea72c21157e28a72de3bc99"
+    },
+    "parent": {
+      "path": "runs/functional-retention-screen-v1/warm-functional-context",
+      "weights_sha256": "24a64f1efa256e182049db117b8ce67495dd401326b1db5ebbba168a6f08c180",
+      "model_sha256": "b728b762e7f4d664fa37b3d6cb5976d8f6c731cebca502440f4814f26c052c6f",
+      "calibration_sha256": "e41aa1253886ad1ca0954219355d8f123a5ca62944fbc8ee4d03da05b2d486d9"
+    },
+    "base_lock_sha256": "9a80b8721295fe6735b596fe61c62f69c736fa12ab2eb78d5d52e5b75af34ffa",
+    "projection_alphas": [
+      0.125,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "output_contract": {
+      "requires_review": true,
+      "score_kind": "candidate_probability_not_a_guarantee",
+      "calibration": "uncalibrated"
+    },
+    "adapter_file": "adapter.safetensors",
+    "adapter_sha256": "8e4c816e43ea70ccac43145646583e6466357455bc794761faecbe0fe23f196a",
+    "parameter_sha256": "536d2743a06f74ffd24e22da3f57bae74eb958be8519b18b94396fcdbee30b2b",
+    "training_data_embedded": false
+  },
+  "groups": {
+    "consumed-six": {
+      "rows": 1716,
+      "sources": [
+        "clinc",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "typed-decisions"
+      ],
+      "maximum_full_residual_difference": 1.430511474609375e-06,
+      "maximum_null_residual_difference": 1.430511474609375e-06,
+      "maximum_projected_logit_difference": 1.430511474609375e-06,
+      "exact_alpha_rate": 1.0,
+      "exact_choice_rate": 1.0,
+      "output_contract_rate": 1.0,
+      "candidate_permutation_rate": 1.0
+    },
+    "truthfulqa": {
+      "rows": 768,
+      "sources": [
+        "truthfulqa"
+      ],
+      "maximum_full_residual_difference": 1.1920928955078125e-06,
+      "maximum_null_residual_difference": 1.430511474609375e-06,
+      "maximum_projected_logit_difference": 1.430511474609375e-06,
+      "exact_alpha_rate": 1.0,
+      "exact_choice_rate": 1.0,
+      "output_contract_rate": 1.0,
+      "candidate_permutation_rate": 1.0
+    },
+    "hellaswag": {
+      "rows": 768,
+      "sources": [
+        "hellaswag"
+      ],
+      "maximum_full_residual_difference": 1.430511474609375e-06,
+      "maximum_null_residual_difference": 1.430511474609375e-06,
+      "maximum_projected_logit_difference": 1.430511474609375e-06,
+      "exact_alpha_rate": 1.0,
+      "exact_choice_rate": 1.0,
+      "output_contract_rate": 1.0,
+      "candidate_permutation_rate": 1.0
+    },
+    "gsm8k": {
+      "rows": 2304,
+      "sources": [
+        "gsm8k"
+      ],
+      "maximum_full_residual_difference": 1.430511474609375e-06,
+      "maximum_null_residual_difference": 1.430511474609375e-06,
+      "maximum_projected_logit_difference": 1.430511474609375e-06,
+      "exact_alpha_rate": 1.0,
+      "exact_choice_rate": 1.0,
+      "output_contract_rate": 1.0,
+      "candidate_permutation_rate": 1.0
+    },
+    "scifact-sealed-final": {
+      "rows": 209,
+      "sources": [
+        "scifact"
+      ],
+      "maximum_full_residual_difference": 9.5367431640625e-07,
+      "maximum_null_residual_difference": 9.5367431640625e-07,
+      "maximum_projected_logit_difference": 9.5367431640625e-07,
+      "exact_alpha_rate": 1.0,
+      "exact_choice_rate": 1.0,
+      "output_contract_rate": 1.0,
+      "candidate_permutation_rate": 1.0
+    }
+  },
+  "checks": {
+    "coverage.groups": true,
+    "coverage.rows": true,
+    "equivalence.full": true,
+    "equivalence.null": true,
+    "equivalence.projected": true,
+    "equivalence.alpha": true,
+    "equivalence.choice": true,
+    "contract.output": true,
+    "contract.permutation": true
+  },
+  "passed": true,
+  "limitations": [
+    "The adapter is exactly fused from the validated seed-42 portfolio; it is not a new independent model result.",
+    "The adapter still requires the pinned 2B parent to produce candidate features and parent logits.",
+    "Validation reuses consumed public caches and establishes implementation equivalence, not a second generalization claim.",
+    "Human review remains mandatory for every prediction."
+  ]
+}

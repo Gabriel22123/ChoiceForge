@@ -1,0 +1,8 @@
+# Tested local Python 3.12 / macOS arm64 environment
+torch==2.14.0
+transformers==5.17.0
+peft==0.21.0
+safetensors==0.8.0
+numpy==2.5.3
+jsonschema==4.25.1
+pyarrow==21.0.0

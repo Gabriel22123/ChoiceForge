@@ -1,0 +1,81 @@
+{
+  "format_version": 1,
+  "study": "gsm8k-specialist-v1",
+  "status": "frozen_before_training",
+  "display_name": "GSM8K",
+  "data": {
+    "train": "runs/gsm8k-specialist-v1/cases.jsonl",
+    "train_sha256": "278a806db62a5c43789fe2fbab4b5b6f17012f153adb3d5af0128872f5cb4d54",
+    "train_rows": 512,
+    "train_splits": ["train"],
+    "train_sources": ["gsm8k"],
+    "train_dataset": "gsm8k",
+    "validation": "runs/gsm8k-specialist-v1/cases.jsonl",
+    "validation_sha256": "278a806db62a5c43789fe2fbab4b5b6f17012f153adb3d5af0128872f5cb4d54",
+    "validation_rows": 256,
+    "validation_splits": ["validation"],
+    "validation_sources": ["gsm8k"],
+    "validation_dataset": "gsm8k"
+  },
+  "feature_cache": {
+    "path": "cache/gsm8k-specialist-features-v1",
+    "manifest_sha256": "bcc254682c6783308a2f7d6cec12f1a2575f24753951542ed848313216a743a3"
+  },
+  "training": {
+    "seeds": [42, 43, 44],
+    "epochs": 1,
+    "residual_width": 256,
+    "router_width": 128,
+    "dropout": 0.0,
+    "initial_gate_probability": 0.25,
+    "batch_size": 32,
+    "updates": 16,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "brier_weight": 0.5,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05
+  },
+  "cost": {
+    "brier_weight": 0.5,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05
+  },
+  "screening_rule": {
+    "combined_mean_utility_min": 0.02,
+    "each_source_mean_utility_min": 0.02,
+    "combined_accuracy_min_delta": 0.01,
+    "combined_nll_max_delta": -0.02,
+    "each_source_nll_max_delta": -0.02,
+    "context_advantage_min_delta": 0.0,
+    "decision": "Count GSM8K as one consumed positive-utility specialist family only if every seed passes exact initialization, utility, accuracy, NLL and hard context-advantage gates."
+  },
+  "evidence_path": "docs/evidence/gsm8k-specialist-v1.json",
+  "report_path": "docs/GSM8K_SPECIALIST_RESULT.zh-CN.md",
+  "limitations": [
+    "GSM8K validation becomes consumed after this first run and is not fresh release evidence.",
+    "The decoder representation and parent decision head are frozen.",
+    "This screen trains a GSM8K specialist only; it does not train or evaluate a router."
+  ],
+  "source_files": {
+    "scripts/run_public_specialist.py": "bc33926c96ba1a2700b2d522eb4e221f177fe195ea7b1259789fd48887596de6",
+    "scripts/run_public_specialist_context_gate.py": "bab3256cf9803c8dc7e3e9cac035c5c6eacc54e2db344de6ca4682fc03bd625b",
+    "scripts/run_qasc_routed_residual_screen.py": "bd14916548a04465b33d0a1ed80e0fa9bd621a5ef0ca858670184ba911e64ba4",
+    "scripts/prepare_gsm8k_specialist_data.py": "c7e6b2dc4d520062a992f9cbd124c270401ee8bd773442d8829b52ddf2ff1c1e",
+    "src/decision_model/core.py": "ed3eafaff30275e99bf4e7c970584d5bd3f2197d747d25b2ca20adbfb37621ae",
+    "src/decision_model/counterfactual_routing.py": "3f033b5a85fa6a57bcdc43c120de00f3f7a9c791727cc7e9d65049ddba1f37b5",
+    "src/decision_model/feature_screen.py": "3b16e2b880e1e3c861c01988c19ac323818e8a5e7f0afd54b2991d35c36124e2",
+    "src/decision_model/route_utility.py": "be260aa82f322cbac68015129a3c08a46048f92e7b8c6d943c73d8f0820d9f37",
+    "src/decision_model/train.py": "485af4564a68d6e44dbb080e97b0a08ded6925ae0d2bac8d74215fd665fa0f51",
+    "docs/GSM8K_SPECIALIST_DESIGN.zh-CN.md": "c954ac5671230cf53f1ac14787ac1591a40b2c415649c008544ffd72a323277b"
+  },
+  "interpretation": {
+    "public_data_only": true,
+    "consumed_mechanism_screen": true,
+    "source_balanced_training": true,
+    "hard_context_advantage_gate": true,
+    "router_training": false,
+    "github_publication": false
+  }
+}

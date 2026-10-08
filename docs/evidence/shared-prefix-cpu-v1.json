@@ -1,0 +1,78 @@
+{
+  "scope": "local synthetic throughput and numerical-parity benchmark; not decision quality",
+  "model_id": "openbmb/MiniCPM5-2B-Base",
+  "device": "cpu",
+  "repeats_after_warmup": 3,
+  "results": [
+    {
+      "candidates": 2,
+      "path_tokens": 208,
+      "common_prefix_tokens": 94,
+      "max_abs_logit_difference": 4.172325134277344e-07,
+      "same_argmax": true,
+      "path": {
+        "median_ms": 633.5668749998149,
+        "min_ms": 631.5159999976458,
+        "max_ms": 635.9742500026186,
+        "work": {
+          "encoder_calls": 6,
+          "encoder_sequences": 6,
+          "unpadded_tokens": 624,
+          "padded_token_slots": 624,
+          "attention_token_pairs": 32760,
+          "shared_prefix_requests": 0,
+          "shared_prefix_tokens": 0
+        }
+      },
+      "shared": {
+        "median_ms": 459.6010000022943,
+        "min_ms": 454.13249999910477,
+        "max_ms": 506.4949160005199,
+        "work": {
+          "encoder_calls": 6,
+          "encoder_sequences": 9,
+          "unpadded_tokens": 342,
+          "padded_token_slots": 342,
+          "attention_token_pairs": 19365,
+          "shared_prefix_requests": 3,
+          "shared_prefix_tokens": 282
+        }
+      }
+    },
+    {
+      "candidates": 8,
+      "path_tokens": 832,
+      "common_prefix_tokens": 94,
+      "max_abs_logit_difference": 4.470348358154297e-07,
+      "same_argmax": true,
+      "path": {
+        "median_ms": 2608.9802920032525,
+        "min_ms": 2586.288041999069,
+        "max_ms": 3577.1879159983655,
+        "work": {
+          "encoder_calls": 24,
+          "encoder_sequences": 24,
+          "unpadded_tokens": 2496,
+          "padded_token_slots": 2496,
+          "attention_token_pairs": 131040,
+          "shared_prefix_requests": 0,
+          "shared_prefix_tokens": 0
+        }
+      },
+      "shared": {
+        "median_ms": 1517.6196669999626,
+        "min_ms": 648.8807499990799,
+        "max_ms": 2385.346709001169,
+        "work": {
+          "encoder_calls": 6,
+          "encoder_sequences": 27,
+          "unpadded_tokens": 522,
+          "padded_token_slots": 522,
+          "attention_token_pairs": 37275,
+          "shared_prefix_requests": 3,
+          "shared_prefix_tokens": 282
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "format_version": 1,
+  "goal": "local reproducible general zero-shot decision model",
+  "complete": true,
+  "requirements": {
+    "public_redistributable_data": true,
+    "dynamic_task_context_candidates": true,
+    "strict_json_probabilities_review": true,
+    "rlcd_deconstruction_and_outcome_feedback": true,
+    "encoder_decoder_comparison": true,
+    "multitask_stability": true,
+    "candidate_prior_stability": true,
+    "cross_task_generalization": true,
+    "multi_seed_seen_and_unseen_gain": true,
+    "reproducible_training_and_docs": true,
+    "full_test_suite": true,
+    "single_verified_adapter_bundle": true,
+    "publication_boundary_respected": true
+  },
+  "release_evidence_sha256": "399655f3a162d5c4ab278d4b7e8fe895a1109cf974aaae52174ad0e91e6bad31",
+  "bundle": {
+    "verified": true,
+    "path": "models/choiceforge-local-bundle-v1",
+    "bytes": 55150459,
+    "manifest_sha256": "27406c0544c8d44813a2e2363029ee265548997e42802f790eca0d3588fb59ba",
+    "adapter_sha256": "8e4c816e43ea70ccac43145646583e6466357455bc794761faecbe0fe23f196a",
+    "contains_training_data": false
+  },
+  "unit_tests": {
+    "passed": true,
+    "tail": [
+      "----------------------------------------------------------------------",
+      "Ran 337 tests in 1.996s",
+      "",
+      "OK"
+    ]
+  },
+  "git_remotes": [
+    "origin"
+  ],
+  "github_published": true,
+  "limitations": [
+    "Public-base pretraining contamination cannot be excluded.",
+    "RLCD-style outcome feedback is implemented and falsifiably evaluated; the final endpoint uses source-balanced proper-loss portfolios and decision-stable projection rather than direct outcome policy updates.",
+    "SciFact evaluates classification given gold rationale sentences, not retrieval.",
+    "One sealed unseen family does not establish universal zero-shot competence.",
+    "Quality-gate use remains one example; every downstream use needs its own validation and human review."
+  ]
+}

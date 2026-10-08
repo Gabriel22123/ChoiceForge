@@ -1,0 +1,176 @@
+{
+  "status": "pass",
+  "selection": "16 fit-only row IDs ranked by fixed SHA-256; labels and probabilities excluded from ranking",
+  "cache_manifest_sha256": "467b6a8932e14d8e753c4ff0fed5d3d3c0efc370f7854a1e148d8ee164be04ef",
+  "script_sha256": "8486a18b586d7943f9f09ee01120ac3d22987830816fa5be89ec812f3fad8708",
+  "cache_provenance_checks": {
+    "extractor_source": true,
+    "decoder_source": true,
+    "base_lock": true,
+    "fold_sources": true
+  },
+  "runtime": {
+    "python": "3.12.13",
+    "platform": "macOS-26.2-arm64-arm-64bit",
+    "device": "cpu",
+    "torch": "2.14.0",
+    "transformers": "5.17.0",
+    "peft": "0.21.0",
+    "safetensors": "0.8.0"
+  },
+  "thresholds_frozen_in_source_before_measurement": {
+    "max_relative_l2_error": 0.0005,
+    "min_cosine_similarity": 0.999999,
+    "max_logit_abs_error": 0.005,
+    "max_probability_abs_error": 0.001,
+    "required_argmax_matches": 16
+  },
+  "summary": {
+    "rows": 16,
+    "candidate_paths": 56,
+    "max_relative_l2_error": 0.00021394137002062052,
+    "min_cosine_similarity": 0.9999990463256836,
+    "max_feature_abs_error": 0.031158447265625,
+    "max_logit_abs_error": 0.0001093149185180664,
+    "max_probability_abs_error": 1.4856457710266113e-05,
+    "argmax_matches": 16
+  },
+  "checks": {
+    "provenance": true,
+    "relative_l2": true,
+    "cosine": true,
+    "logits": true,
+    "probabilities": true,
+    "argmax": true
+  },
+  "rows_detail": [
+    {
+      "id": "typed-decisions:agent_trace_observability:tr_agent_trace_observability_000017:risk",
+      "candidates": 4,
+      "max_abs_error": 0.03072357177734375,
+      "mean_abs_error": 0.0003590877167880535,
+      "relative_l2_error": 0.00019120356591884047,
+      "cosine_similarity": 0.9999990463256836
+    },
+    {
+      "id": "typed-decisions:customer_service:tr_customer_service_000192:urgency",
+      "candidates": 4,
+      "max_abs_error": 0.0291595458984375,
+      "mean_abs_error": 0.0003560081822797656,
+      "relative_l2_error": 0.0001825496437959373,
+      "cosine_similarity": 0.9999997615814209
+    },
+    {
+      "id": "typed-decisions:customer_service:tr_customer_service_000066:category",
+      "candidates": 5,
+      "max_abs_error": 0.0308837890625,
+      "mean_abs_error": 0.00036508048651739955,
+      "relative_l2_error": 0.00019911429262720048,
+      "cosine_similarity": 1.0
+    },
+    {
+      "id": "typed-decisions:invoice_processing:tr_invoice_processing_000211:discrepancy_severity",
+      "candidates": 4,
+      "max_abs_error": 0.030487060546875,
+      "mean_abs_error": 0.00034251087345182896,
+      "relative_l2_error": 0.00017865792324300855,
+      "cosine_similarity": 0.9999993443489075
+    },
+    {
+      "id": "typed-decisions:security_incidents:tr_security_incidents_000036:true_positive",
+      "candidates": 2,
+      "max_abs_error": 0.02953338623046875,
+      "mean_abs_error": 0.000353543582605198,
+      "relative_l2_error": 0.00019693345529958606,
+      "cosine_similarity": 0.9999996423721313
+    },
+    {
+      "id": "typed-decisions:invoice_processing:tr_invoice_processing_000186:urgency",
+      "candidates": 4,
+      "max_abs_error": 0.02875518798828125,
+      "mean_abs_error": 0.0003546234220266342,
+      "relative_l2_error": 0.0001816775038605556,
+      "cosine_similarity": 0.9999997615814209
+    },
+    {
+      "id": "typed-decisions:security_incidents:tr_security_incidents_000203:true_positive",
+      "candidates": 2,
+      "max_abs_error": 0.02458953857421875,
+      "mean_abs_error": 0.0003580620395950973,
+      "relative_l2_error": 0.00019981041259597987,
+      "cosine_similarity": 1.0000003576278687
+    },
+    {
+      "id": "typed-decisions:invoice_processing:tr_invoice_processing_000269:duplicate",
+      "candidates": 2,
+      "max_abs_error": 0.02820587158203125,
+      "mean_abs_error": 0.00037473038537427783,
+      "relative_l2_error": 0.00021325847774278373,
+      "cosine_similarity": 1.0000001192092896
+    },
+    {
+      "id": "typed-decisions:invoice_processing:tr_invoice_processing_000064:urgency",
+      "candidates": 4,
+      "max_abs_error": 0.03099822998046875,
+      "mean_abs_error": 0.0003577300813049078,
+      "relative_l2_error": 0.00019149210129398853,
+      "cosine_similarity": 1.000000238418579
+    },
+    {
+      "id": "typed-decisions:invoice_processing:tr_invoice_processing_000094:disposition",
+      "candidates": 4,
+      "max_abs_error": 0.031158447265625,
+      "mean_abs_error": 0.00037049053935334086,
+      "relative_l2_error": 0.00021394137002062052,
+      "cosine_similarity": 0.9999998211860657
+    },
+    {
+      "id": "typed-decisions:invoice_processing:tr_invoice_processing_000273:matches_order",
+      "candidates": 2,
+      "max_abs_error": 0.02397918701171875,
+      "mean_abs_error": 0.0003566530649550259,
+      "relative_l2_error": 0.00020110247714910656,
+      "cosine_similarity": 0.9999998211860657
+    },
+    {
+      "id": "typed-decisions:security_incidents:tr_security_incidents_000013:credential_compromise",
+      "candidates": 2,
+      "max_abs_error": 0.02783203125,
+      "mean_abs_error": 0.00036275145248509943,
+      "relative_l2_error": 0.00020067591685801744,
+      "cosine_similarity": 0.9999997615814209
+    },
+    {
+      "id": "typed-decisions:security_incidents:tr_security_incidents_000180:urgency",
+      "candidates": 4,
+      "max_abs_error": 0.02806854248046875,
+      "mean_abs_error": 0.00035368476528674364,
+      "relative_l2_error": 0.0001928041165228933,
+      "cosine_similarity": 0.9999994039535522
+    },
+    {
+      "id": "typed-decisions:invoice_processing:tr_invoice_processing_000214:urgency",
+      "candidates": 4,
+      "max_abs_error": 0.03035736083984375,
+      "mean_abs_error": 0.000366554653737694,
+      "relative_l2_error": 0.00020775989105459303,
+      "cosine_similarity": 0.9999995827674866
+    },
+    {
+      "id": "typed-decisions:customer_service:tr_customer_service_000170:churn_risk",
+      "candidates": 4,
+      "max_abs_error": 0.02606201171875,
+      "mean_abs_error": 0.00035419053165242076,
+      "relative_l2_error": 0.00018054038810078055,
+      "cosine_similarity": 0.9999997615814209
+    },
+    {
+      "id": "typed-decisions:customer_service:tr_customer_service_000202:action",
+      "candidates": 5,
+      "max_abs_error": 0.0303955078125,
+      "mean_abs_error": 0.0003742590779438615,
+      "relative_l2_error": 0.0002065485023194924,
+      "cosine_similarity": 1.000000238418579
+    }
+  ]
+}

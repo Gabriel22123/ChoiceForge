@@ -1,0 +1,9 @@
+{
+  "task": "Determine whether this HTTP request explicitly sets a positive timeout.",
+  "context": "import requests\nrequests.get('https://example.org', timeout=None)",
+  "choices": [
+    {"id": "meets_rule", "description": "The call explicitly sets a positive timeout."},
+    {"id": "breaks_rule", "description": "The call does not explicitly set a positive timeout."},
+    {"id": "unknown", "description": "The supplied code is insufficient to decide."}
+  ]
+}

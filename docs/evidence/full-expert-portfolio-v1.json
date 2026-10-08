@@ -1,0 +1,610 @@
+{
+  "format_version": 1,
+  "study": "full-expert-portfolio-v1",
+  "role": "full consumed-source portfolios frozen before sealed-family access",
+  "protocol_sha256": "cccd7e588a53e3151b663173478fe0573d5065fb4da5ba5ca1844adb701db91a",
+  "paths": [
+    "parent",
+    "clinc",
+    "gsm8k",
+    "paws-wiki",
+    "qasc",
+    "snli",
+    "truthfulqa"
+  ],
+  "training_sources": [
+    "clinc",
+    "gsm8k",
+    "hellaswag",
+    "json-schema",
+    "paws-wiki",
+    "qasc",
+    "snli",
+    "truthfulqa",
+    "typed-decisions"
+  ],
+  "runs": [
+    {
+      "seed": 42,
+      "heldout_source": "__sealed_final__",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7776708329911344,
+      "weights": {
+        "parent": 0.004158858209848404,
+        "clinc": 0.03814656287431717,
+        "gsm8k": 0.0002527108881622553,
+        "paws-wiki": 3.444140020292252e-05,
+        "qasc": 0.956927478313446,
+        "snli": 0.0003622903604991734,
+        "truthfulqa": 0.00011770767014240846
+      },
+      "weights_sha256": "e533c276c917715e8b263e12bd77ea75d13c9d0ee83a481c0a42e3de96258be5",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.9421020150184631,
+          "proper_regression_max": 3.5762786865234375e-07,
+          "context_regression_max": 2.384185791015625e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.8743996024131775,
+          "proper_regression_max": 0.013712763786315918,
+          "context_regression_max": 0.011046767234802246
+        }
+      ],
+      "weights_file": "runs/full-expert-portfolio-v1/weights-seed-42.json",
+      "weights_file_sha256": "dd88050c599c1a36cccd3102c5fb3f8d724989ba5ea72c21157e28a72de3bc99",
+      "consumed_validation": {
+        "clinc": {
+          "rows": 42,
+          "parent_accuracy": 0.976190447807312,
+          "accuracy": 0.976190447807312,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.0034582281950861216,
+          "brier_delta": -0.000765602511819452,
+          "proper_gain": 0.0038410297129303217,
+          "positive_proper_rate": 0.761904776096344,
+          "context_advantage_delta": 0.018076490610837936,
+          "context_regression_rate": 0.4761904776096344,
+          "mean_alpha": 0.9940476190476191,
+          "minimum_alpha": 0.75
+        },
+        "gsm8k": {
+          "rows": 256,
+          "parent_accuracy": 0.32421875,
+          "accuracy": 0.32421875,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.02184182032942772,
+          "brier_delta": -0.008883289061486721,
+          "proper_gain": 0.026283470913767815,
+          "positive_proper_rate": 0.56640625,
+          "context_advantage_delta": 0.024653874337673187,
+          "context_regression_rate": 0.375,
+          "mean_alpha": 0.87890625,
+          "minimum_alpha": 0.0
+        },
+        "hellaswag": {
+          "rows": 256,
+          "parent_accuracy": 0.67578125,
+          "accuracy": 0.67578125,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.023366184905171394,
+          "brier_delta": -0.009507643058896065,
+          "proper_gain": 0.028120005503296852,
+          "positive_proper_rate": 0.44921875,
+          "context_advantage_delta": 0.031063973903656006,
+          "context_regression_rate": 0.44140625,
+          "mean_alpha": 0.955078125,
+          "minimum_alpha": 0.0
+        },
+        "json-schema": {
+          "rows": 42,
+          "parent_accuracy": 0.4047619104385376,
+          "accuracy": 0.4047619104385376,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": 0.013481692411005497,
+          "brier_delta": 0.012474147602915764,
+          "proper_gain": -0.01971876434981823,
+          "positive_proper_rate": 0.4047619104385376,
+          "context_advantage_delta": 0.032160475850105286,
+          "context_regression_rate": 0.523809552192688,
+          "mean_alpha": 0.9404761904761905,
+          "minimum_alpha": 0.25
+        },
+        "paws-wiki": {
+          "rows": 96,
+          "parent_accuracy": 0.84375,
+          "accuracy": 0.84375,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.01736379601061344,
+          "brier_delta": -0.00972993765026331,
+          "proper_gain": 0.02222876437008381,
+          "positive_proper_rate": 0.2916666567325592,
+          "context_advantage_delta": 0.01248230505734682,
+          "context_regression_rate": 0.7395833134651184,
+          "mean_alpha": 0.9947916666666666,
+          "minimum_alpha": 0.5
+        },
+        "qasc": {
+          "rows": 128,
+          "parent_accuracy": 0.8203125,
+          "accuracy": 0.8203125,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.27090370655059814,
+          "brier_delta": -0.0977901816368103,
+          "proper_gain": 0.3197987973690033,
+          "positive_proper_rate": 0.8671875,
+          "context_advantage_delta": 0.2509037256240845,
+          "context_regression_rate": 0.3359375,
+          "mean_alpha": 0.9306640625,
+          "minimum_alpha": 0.0
+        },
+        "snli": {
+          "rows": 96,
+          "parent_accuracy": 0.6666666865348816,
+          "accuracy": 0.6666666865348816,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.024128863587975502,
+          "brier_delta": -0.01724405400454998,
+          "proper_gain": 0.03275088593363762,
+          "positive_proper_rate": 0.40625,
+          "context_advantage_delta": 0.021785704419016838,
+          "context_regression_rate": 0.5833333134651184,
+          "mean_alpha": 0.9739583333333334,
+          "minimum_alpha": 0.25
+        },
+        "truthfulqa": {
+          "rows": 256,
+          "parent_accuracy": 0.53125,
+          "accuracy": 0.53125,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.04031045734882355,
+          "brier_delta": 0.0024319631047546864,
+          "proper_gain": 0.0390944741666317,
+          "positive_proper_rate": 0.4140625,
+          "context_advantage_delta": 0.04908715933561325,
+          "context_regression_rate": 0.5234375,
+          "mean_alpha": 0.9501953125,
+          "minimum_alpha": 0.125
+        },
+        "typed-decisions": {
+          "rows": 320,
+          "parent_accuracy": 0.6875,
+          "accuracy": 0.6875,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.011708644218742847,
+          "brier_delta": -0.0027565360069274902,
+          "proper_gain": 0.013086912222206593,
+          "positive_proper_rate": 0.590624988079071,
+          "context_advantage_delta": 0.0573887825012207,
+          "context_regression_rate": 0.3531250059604645,
+          "mean_alpha": 0.983984375,
+          "minimum_alpha": 0.0
+        }
+      },
+      "consumed_macro": {
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.04440000097060369,
+        "brier_delta": -0.014641237024786986,
+        "proper_gain": 0.05172061953797109,
+        "context_advantage_delta": 0.055289165737728276,
+        "mean_alpha": 0.9557891038359787
+      }
+    },
+    {
+      "seed": 43,
+      "heldout_source": "__sealed_final__",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7566078339878004,
+      "weights": {
+        "parent": 0.0041471319273114204,
+        "clinc": 0.0381479375064373,
+        "gsm8k": 0.0002548969932831824,
+        "paws-wiki": 3.508105510263704e-05,
+        "qasc": 0.9569336771965027,
+        "snli": 0.00036474945954978466,
+        "truthfulqa": 0.00011651340173557401
+      },
+      "weights_sha256": "113f2efc4170d68fa22ab0542e04229421792e40d6ccd3e2084c23cb004888fa",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.9421015977859497,
+          "proper_regression_max": 4.76837158203125e-07,
+          "context_regression_max": 2.47955322265625e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.8743994235992432,
+          "proper_regression_max": 0.01371312141418457,
+          "context_regression_max": 0.011047840118408203
+        }
+      ],
+      "weights_file": "runs/full-expert-portfolio-v1/weights-seed-43.json",
+      "weights_file_sha256": "3f4b2ed81e7249a702df6236df5d92ebce0e34f7a6ddb5275c865d3d651d7ceb",
+      "consumed_validation": {
+        "clinc": {
+          "rows": 42,
+          "parent_accuracy": 0.976190447807312,
+          "accuracy": 0.976190447807312,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.003458260791376233,
+          "brier_delta": -0.0007656041998416185,
+          "proper_gain": 0.003841063706204295,
+          "positive_proper_rate": 0.761904776096344,
+          "context_advantage_delta": 0.018075954169034958,
+          "context_regression_rate": 0.4761904776096344,
+          "mean_alpha": 0.9940476190476191,
+          "minimum_alpha": 0.75
+        },
+        "gsm8k": {
+          "rows": 256,
+          "parent_accuracy": 0.32421875,
+          "accuracy": 0.32421875,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.02184285596013069,
+          "brier_delta": -0.008883790113031864,
+          "proper_gain": 0.02628476172685623,
+          "positive_proper_rate": 0.56640625,
+          "context_advantage_delta": 0.024654554203152657,
+          "context_regression_rate": 0.375,
+          "mean_alpha": 0.87890625,
+          "minimum_alpha": 0.0
+        },
+        "hellaswag": {
+          "rows": 256,
+          "parent_accuracy": 0.67578125,
+          "accuracy": 0.67578125,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.023366812616586685,
+          "brier_delta": -0.00950800720602274,
+          "proper_gain": 0.028120815753936768,
+          "positive_proper_rate": 0.44921875,
+          "context_advantage_delta": 0.031064040958881378,
+          "context_regression_rate": 0.44140625,
+          "mean_alpha": 0.955078125,
+          "minimum_alpha": 0.0
+        },
+        "json-schema": {
+          "rows": 42,
+          "parent_accuracy": 0.4047619104385376,
+          "accuracy": 0.4047619104385376,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": 0.013481671921908855,
+          "brier_delta": 0.0124741792678833,
+          "proper_gain": -0.019718756899237633,
+          "positive_proper_rate": 0.4047619104385376,
+          "context_advantage_delta": 0.03216026350855827,
+          "context_regression_rate": 0.523809552192688,
+          "mean_alpha": 0.9404761904761905,
+          "minimum_alpha": 0.25
+        },
+        "paws-wiki": {
+          "rows": 96,
+          "parent_accuracy": 0.84375,
+          "accuracy": 0.84375,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.017363859340548515,
+          "brier_delta": -0.009729995392262936,
+          "proper_gain": 0.02222885750234127,
+          "positive_proper_rate": 0.2916666567325592,
+          "context_advantage_delta": 0.01248152181506157,
+          "context_regression_rate": 0.7395833134651184,
+          "mean_alpha": 0.9947916666666666,
+          "minimum_alpha": 0.5
+        },
+        "qasc": {
+          "rows": 128,
+          "parent_accuracy": 0.8203125,
+          "accuracy": 0.8203125,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.27090534567832947,
+          "brier_delta": -0.09779094159603119,
+          "proper_gain": 0.31980079412460327,
+          "positive_proper_rate": 0.8671875,
+          "context_advantage_delta": 0.25090453028678894,
+          "context_regression_rate": 0.3359375,
+          "mean_alpha": 0.9306640625,
+          "minimum_alpha": 0.0
+        },
+        "snli": {
+          "rows": 96,
+          "parent_accuracy": 0.6666666865348816,
+          "accuracy": 0.6666666865348816,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.024129202589392662,
+          "brier_delta": -0.017244257032871246,
+          "proper_gain": 0.032751329243183136,
+          "positive_proper_rate": 0.40625,
+          "context_advantage_delta": 0.021785572171211243,
+          "context_regression_rate": 0.5833333134651184,
+          "mean_alpha": 0.9739583333333334,
+          "minimum_alpha": 0.25
+        },
+        "truthfulqa": {
+          "rows": 256,
+          "parent_accuracy": 0.53125,
+          "accuracy": 0.53125,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.04031069576740265,
+          "brier_delta": 0.0024319877848029137,
+          "proper_gain": 0.03909469395875931,
+          "positive_proper_rate": 0.4140625,
+          "context_advantage_delta": 0.0490877628326416,
+          "context_regression_rate": 0.5234375,
+          "mean_alpha": 0.9501953125,
+          "minimum_alpha": 0.125
+        },
+        "typed-decisions": {
+          "rows": 320,
+          "parent_accuracy": 0.6875,
+          "accuracy": 0.6875,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.01170882023870945,
+          "brier_delta": -0.0027565977070480585,
+          "proper_gain": 0.013087118044495583,
+          "positive_proper_rate": 0.590624988079071,
+          "context_advantage_delta": 0.05738912150263786,
+          "context_regression_rate": 0.3531250059604645,
+          "mean_alpha": 0.983984375,
+          "minimum_alpha": 0.0
+        }
+      },
+      "consumed_macro": {
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.044400464562285274,
+        "brier_delta": -0.014641447354935937,
+        "proper_gain": 0.05172118635123803,
+        "context_advantage_delta": 0.05528925793866316,
+        "mean_alpha": 0.9557891038359787
+      }
+    },
+    {
+      "seed": 44,
+      "heldout_source": "__sealed_final__",
+      "train_sources": [
+        "clinc",
+        "gsm8k",
+        "hellaswag",
+        "json-schema",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa",
+        "typed-decisions"
+      ],
+      "available_paths": [
+        "parent",
+        "clinc",
+        "gsm8k",
+        "paws-wiki",
+        "qasc",
+        "snli",
+        "truthfulqa"
+      ],
+      "heldout_expert_excluded": true,
+      "updates": 600,
+      "seconds": 0.7707182919839397,
+      "weights": {
+        "parent": 0.004025545436888933,
+        "clinc": 0.03614366799592972,
+        "gsm8k": 0.00025107021792791784,
+        "paws-wiki": 3.396929241716862e-05,
+        "qasc": 0.9590883851051331,
+        "snli": 0.00034573127049952745,
+        "truthfulqa": 0.00011169322533532977
+      },
+      "weights_sha256": "7276e44e5f3fadf682a4d8d5da4e344723314d7284f70d186f1a6cda932888e6",
+      "curve": [
+        {
+          "update": 1,
+          "loss": 0.942101776599884,
+          "proper_regression_max": 4.76837158203125e-07,
+          "context_regression_max": 2.47955322265625e-05
+        },
+        {
+          "update": 600,
+          "loss": 0.8743377923965454,
+          "proper_regression_max": 0.013948559761047363,
+          "context_regression_max": 0.011462986469268799
+        }
+      ],
+      "weights_file": "runs/full-expert-portfolio-v1/weights-seed-44.json",
+      "weights_file_sha256": "6d1e75d52a9ae1c7dbae8a4f0ca0c2edcf0ae8142b146e45d26eb499f1db9d7e",
+      "consumed_validation": {
+        "clinc": {
+          "rows": 42,
+          "parent_accuracy": 0.976190447807312,
+          "accuracy": 0.976190447807312,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.003338894573971629,
+          "brier_delta": -0.0007358997245319188,
+          "proper_gain": 0.0037068433593958616,
+          "positive_proper_rate": 0.761904776096344,
+          "context_advantage_delta": 0.015573135577142239,
+          "context_regression_rate": 0.4761904776096344,
+          "mean_alpha": 0.9940476190476191,
+          "minimum_alpha": 0.75
+        },
+        "gsm8k": {
+          "rows": 256,
+          "parent_accuracy": 0.32421875,
+          "accuracy": 0.32421875,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.02189851738512516,
+          "brier_delta": -0.008939535357058048,
+          "proper_gain": 0.026368290185928345,
+          "positive_proper_rate": 0.56640625,
+          "context_advantage_delta": 0.024677349254488945,
+          "context_regression_rate": 0.37890625,
+          "mean_alpha": 0.87890625,
+          "minimum_alpha": 0.0
+        },
+        "hellaswag": {
+          "rows": 256,
+          "parent_accuracy": 0.67578125,
+          "accuracy": 0.67578125,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.02317427471280098,
+          "brier_delta": -0.009374652989208698,
+          "proper_gain": 0.02786160260438919,
+          "positive_proper_rate": 0.4453125,
+          "context_advantage_delta": 0.03057480975985527,
+          "context_regression_rate": 0.44140625,
+          "mean_alpha": 0.955078125,
+          "minimum_alpha": 0.0
+        },
+        "json-schema": {
+          "rows": 42,
+          "parent_accuracy": 0.4047619104385376,
+          "accuracy": 0.4047619104385376,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": 0.013192422688007355,
+          "brier_delta": 0.012393094599246979,
+          "proper_gain": -0.019388964399695396,
+          "positive_proper_rate": 0.4047619104385376,
+          "context_advantage_delta": 0.030735287815332413,
+          "context_regression_rate": 0.5,
+          "mean_alpha": 0.9404761904761905,
+          "minimum_alpha": 0.25
+        },
+        "paws-wiki": {
+          "rows": 96,
+          "parent_accuracy": 0.84375,
+          "accuracy": 0.84375,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.017925448715686798,
+          "brier_delta": -0.009801479056477547,
+          "proper_gain": 0.022826185449957848,
+          "positive_proper_rate": 0.28125,
+          "context_advantage_delta": 0.012612752616405487,
+          "context_regression_rate": 0.71875,
+          "mean_alpha": 0.9947916666666666,
+          "minimum_alpha": 0.5
+        },
+        "qasc": {
+          "rows": 128,
+          "parent_accuracy": 0.8203125,
+          "accuracy": 0.8203125,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.27152514457702637,
+          "brier_delta": -0.0981408953666687,
+          "proper_gain": 0.32059556245803833,
+          "positive_proper_rate": 0.8671875,
+          "context_advantage_delta": 0.24946872889995575,
+          "context_regression_rate": 0.34375,
+          "mean_alpha": 0.9306640625,
+          "minimum_alpha": 0.0
+        },
+        "snli": {
+          "rows": 96,
+          "parent_accuracy": 0.6666666865348816,
+          "accuracy": 0.6666666865348816,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.024460816755890846,
+          "brier_delta": -0.017459072172641754,
+          "proper_gain": 0.03319035843014717,
+          "positive_proper_rate": 0.40625,
+          "context_advantage_delta": 0.021490350365638733,
+          "context_regression_rate": 0.59375,
+          "mean_alpha": 0.9739583333333334,
+          "minimum_alpha": 0.25
+        },
+        "truthfulqa": {
+          "rows": 256,
+          "parent_accuracy": 0.53125,
+          "accuracy": 0.53125,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.042133718729019165,
+          "brier_delta": 0.002128858817741275,
+          "proper_gain": 0.04106927663087845,
+          "positive_proper_rate": 0.41796875,
+          "context_advantage_delta": 0.050624869763851166,
+          "context_regression_rate": 0.52734375,
+          "mean_alpha": 0.9501953125,
+          "minimum_alpha": 0.125
+        },
+        "typed-decisions": {
+          "rows": 320,
+          "parent_accuracy": 0.6875,
+          "accuracy": 0.6875,
+          "accuracy_delta": 0.0,
+          "cross_entropy_delta": -0.012747524306178093,
+          "brier_delta": -0.0030075819231569767,
+          "proper_gain": 0.01425131969153881,
+          "positive_proper_rate": 0.6000000238418579,
+          "context_advantage_delta": 0.05747448280453682,
+          "context_regression_rate": 0.3499999940395355,
+          "mean_alpha": 0.983984375,
+          "minimum_alpha": 0.0
+        }
+      },
+      "consumed_macro": {
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.0448902130075213,
+        "brier_delta": -0.014770795908083932,
+        "proper_gain": 0.05227560826784207,
+        "context_advantage_delta": 0.05480352965080076,
+        "mean_alpha": 0.9557891038359787
+      }
+    }
+  ],
+  "checks": {
+    "coverage.seeds": true,
+    "coverage.sources": true,
+    "coverage.paths": true,
+    "weights.simplex": true,
+    "decision.exact": true,
+    "utility.consumed_each_seed": true,
+    "context.consumed_each_seed": true
+  },
+  "eligible_for_sealed_evaluation": true,
+  "limitations": [
+    "All training and consumed validation sources have been used during development.",
+    "The weights are a small policy layer over six frozen experts, not a single distilled adapter.",
+    "SciFact remains unextracted and unevaluated during this stage."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "scope": "independent report validator only; no protocol, model, data, selection, logits, predictions, metrics or advancement rule changed",
+  "frozen_validator_sha256": "31a1a29385e0580a9621661fc6fb6107e7688b5c0e7161ff2ecb87249dc64174",
+  "corrected_validator_sha256": "7449f33f6e6a3a1a3ff3cf507fbd0ab1d5bf06b3e6497fbf59278b9514f0dd72",
+  "defect": "The frozen validator compared in-memory floating-point strength-map keys with their persisted JSON string-key representation.",
+  "correction": "Normalize the independently recomputed selection through a JSON round trip before comparison.",
+  "observed_failure": "Keys differ at selection.mean_validation_nll",
+  "post_correction_result": "All frozen artifacts and recomputed metrics validated; selected_strength=0.0; eligible_as_default=false."
+}

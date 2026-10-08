@@ -1,0 +1,29 @@
+{
+  "name": "SciFact sealed final-family source",
+  "repository": "https://github.com/allenai/scifact",
+  "revision": "68b98a56d93e0f9da0d2aab4e6c3294699a0f72e",
+  "archive_url": "https://scifact.s3-us-west-2.amazonaws.com/release/latest/data.tar.gz",
+  "archive_bytes": 3115079,
+  "archive_sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+  "archive_state": "downloaded_for_hash_only_not_extracted",
+  "licenses": {
+    "claims_and_evidence_annotations": "CC-BY-4.0",
+    "abstract_corpus": "ODC-By-1.0",
+    "code": "Apache-2.0"
+  },
+  "metadata_files": {
+    "script/download-data.sh": {
+      "bytes": 324,
+      "sha256": "e04b1fa300286791e38d37baec454f2e3c758cb41285ddb699793cea6d2b5aa4"
+    },
+    "LICENSE.md": {
+      "bytes": 542,
+      "sha256": "56ee69bc639cbab8f0b2e4b67091ec5e9390aa99a1d65f0a35e4274686c9a806"
+    },
+    "doc/data.md": {
+      "bytes": 4290,
+      "sha256": "f8f4cc2f7bf32347dd47d419be731a5d0eeb60ebb75423619e02919c7f337df7"
+    }
+  },
+  "release_policy": "The public source metadata and archive checksum may be released. The archive and all raw or transformed SciFact text remain outside release bundles. The archive must remain unextracted until the final-family method, thresholds, seeds and weight hashes are frozen."
+}

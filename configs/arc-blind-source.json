@@ -1,0 +1,17 @@
+{
+  "name": "AI2 Reasoning Challenge (ARC)",
+  "repository": "https://huggingface.co/datasets/allenai/ai2_arc",
+  "revision": "210d026faf9955653af8916fad021475a3f00453",
+  "license": "CC-BY-SA-4.0",
+  "official_rows": {
+    "ARC-Challenge-validation": 299,
+    "ARC-Easy-validation": 570
+  },
+  "files": {
+    "README.md": "4a293e352253d771604725c978adcea71ee6504e89ed40e1cb0024ecafa9b37e",
+    "ARC-Challenge/validation-00000-of-00001.parquet": "395a5c88d1580d69855fbaee9450270578df1ad5af6259771cd0a42c20e99f05",
+    "ARC-Easy/validation-00000-of-00001.parquet": "ed890ff1e4cef7a7140d3a30dcea3ed2c9d467c6458f447ad9ef0176d8dcbb74"
+  },
+  "selection": "For each task, retain rows admitted by both pinned tokenizers, order by SHA-256 of source/id/question/choice text without answerKey, then take 192.",
+  "release_policy": "Raw and transformed ARC rows and per-case predictions are excluded from release bundles."
+}

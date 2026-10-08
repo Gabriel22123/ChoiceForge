@@ -1,0 +1,613 @@
+{
+  "kind": "outcome_learnability_diagnostic",
+  "official_test_parsed": false,
+  "protocol_sha256": "f572179c04e6569f768de7348e5c4818329fe389940c53450520ac33bfc504f8",
+  "feature_manifest_sha256": "e70e545ff54a7502d1820cc6b5de87fc3f196fec24553a8a4d7ae7c645d908bd",
+  "endpoint": {
+    "id": "seed42-decoder",
+    "path": "runs/architecture-comparison-v1/seed42-decoder",
+    "seed": 42,
+    "weights_sha256": "e6bb5bee5bbb9bd8f43770f98a2476e4e0367c42caa726b5396759be325df78d"
+  },
+  "epochs": 200,
+  "checkpoints": [
+    1,
+    5,
+    20,
+    50,
+    100,
+    200
+  ],
+  "results": {
+    "hard-first-max": {
+      "curve": [
+        {
+          "epoch": 0,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.180623973727422,
+            "mean_policy_expected_reward": 0.5725446486366214,
+            "mean_selected_reward": 0.819376026272578,
+            "optimal_set_hit_rate": 0.7931034482758621,
+            "full_pass_selection_rate": 0.7931034482758621
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.12592592592592594,
+            "mean_policy_expected_reward": 0.5363435706780172,
+            "mean_selected_reward": 0.8740740740740741,
+            "optimal_set_hit_rate": 0.8666666666666667,
+            "full_pass_selection_rate": 0.8666666666666667
+          }
+        },
+        {
+          "epoch": 1,
+          "mean_training_loss": 1.0672608155470629,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.17569786535303775,
+            "mean_policy_expected_reward": 0.688273962119365,
+            "mean_selected_reward": 0.8243021346469622,
+            "optimal_set_hit_rate": 0.7980295566502463,
+            "full_pass_selection_rate": 0.7980295566502463
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.12592592592592594,
+            "mean_policy_expected_reward": 0.6480543378808686,
+            "mean_selected_reward": 0.8740740740740741,
+            "optimal_set_hit_rate": 0.8666666666666667,
+            "full_pass_selection_rate": 0.8666666666666667
+          }
+        },
+        {
+          "epoch": 5,
+          "mean_training_loss": 0.9781822837316073,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.1625615763546798,
+            "mean_policy_expected_reward": 0.7244116981747899,
+            "mean_selected_reward": 0.8374384236453202,
+            "optimal_set_hit_rate": 0.812807881773399,
+            "full_pass_selection_rate": 0.812807881773399
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.08148148148148149,
+            "mean_policy_expected_reward": 0.6874498167676388,
+            "mean_selected_reward": 0.9185185185185186,
+            "optimal_set_hit_rate": 0.9111111111111111,
+            "full_pass_selection_rate": 0.9111111111111111
+          }
+        },
+        {
+          "epoch": 20,
+          "mean_training_loss": 0.8274260851053091,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.11986863711001641,
+            "mean_policy_expected_reward": 0.7500719549238654,
+            "mean_selected_reward": 0.8801313628899835,
+            "optimal_set_hit_rate": 0.8620689655172413,
+            "full_pass_selection_rate": 0.8620689655172413
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.10370370370370371,
+            "mean_policy_expected_reward": 0.7114449046491883,
+            "mean_selected_reward": 0.8962962962962964,
+            "optimal_set_hit_rate": 0.8888888888888888,
+            "full_pass_selection_rate": 0.8888888888888888
+          }
+        },
+        {
+          "epoch": 50,
+          "mean_training_loss": 0.5934794178375831,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.060755336617405585,
+            "mean_policy_expected_reward": 0.8178109083637737,
+            "mean_selected_reward": 0.9392446633825944,
+            "optimal_set_hit_rate": 0.9359605911330049,
+            "full_pass_selection_rate": 0.9359605911330049
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.08888888888888889,
+            "mean_policy_expected_reward": 0.7627805116956554,
+            "mean_selected_reward": 0.9111111111111111,
+            "optimal_set_hit_rate": 0.9111111111111111,
+            "full_pass_selection_rate": 0.9111111111111111
+          }
+        },
+        {
+          "epoch": 100,
+          "mean_training_loss": 0.3315547773471245,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.04105090311986864,
+            "mean_policy_expected_reward": 0.8927955186817221,
+            "mean_selected_reward": 0.9589490968801313,
+            "optimal_set_hit_rate": 0.9556650246305419,
+            "full_pass_selection_rate": 0.9556650246305419
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.13333333333333333,
+            "mean_policy_expected_reward": 0.8055862881654035,
+            "mean_selected_reward": 0.8666666666666667,
+            "optimal_set_hit_rate": 0.8666666666666667,
+            "full_pass_selection_rate": 0.8666666666666667
+          }
+        },
+        {
+          "epoch": 200,
+          "mean_training_loss": 0.10500890732957767,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.0049261083743842365,
+            "mean_policy_expected_reward": 0.9587079250571566,
+            "mean_selected_reward": 0.9950738916256158,
+            "optimal_set_hit_rate": 0.9950738916256158,
+            "full_pass_selection_rate": 0.9950738916256158
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.14814814814814817,
+            "mean_policy_expected_reward": 0.8185168697028182,
+            "mean_selected_reward": 0.8518518518518519,
+            "optimal_set_hit_rate": 0.8444444444444444,
+            "full_pass_selection_rate": 0.8444444444444444
+          }
+        }
+      ],
+      "final_head_sha256": "b6a77d69ad0bd30bf0b77b5163a0916d3f63ae0db15cd8c1ab8971633b89ad5b"
+    },
+    "optimal-set": {
+      "curve": [
+        {
+          "epoch": 0,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.180623973727422,
+            "mean_policy_expected_reward": 0.5725446486366214,
+            "mean_selected_reward": 0.819376026272578,
+            "optimal_set_hit_rate": 0.7931034482758621,
+            "full_pass_selection_rate": 0.7931034482758621
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.12592592592592594,
+            "mean_policy_expected_reward": 0.5363435706780172,
+            "mean_selected_reward": 0.8740740740740741,
+            "optimal_set_hit_rate": 0.8666666666666667,
+            "full_pass_selection_rate": 0.8666666666666667
+          }
+        },
+        {
+          "epoch": 1,
+          "mean_training_loss": 0.6611100366482368,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.180623973727422,
+            "mean_policy_expected_reward": 0.6987982285740696,
+            "mean_selected_reward": 0.819376026272578,
+            "optimal_set_hit_rate": 0.7931034482758621,
+            "full_pass_selection_rate": 0.7931034482758621
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.12592592592592594,
+            "mean_policy_expected_reward": 0.6601053890866281,
+            "mean_selected_reward": 0.8740740740740741,
+            "optimal_set_hit_rate": 0.8666666666666667,
+            "full_pass_selection_rate": 0.8666666666666667
+          }
+        },
+        {
+          "epoch": 5,
+          "mean_training_loss": 0.4741772825901325,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.1592775041050903,
+            "mean_policy_expected_reward": 0.7642562989119611,
+            "mean_selected_reward": 0.8407224958949097,
+            "optimal_set_hit_rate": 0.812807881773399,
+            "full_pass_selection_rate": 0.812807881773399
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.08148148148148149,
+            "mean_policy_expected_reward": 0.7444535312086052,
+            "mean_selected_reward": 0.9185185185185186,
+            "optimal_set_hit_rate": 0.9111111111111111,
+            "full_pass_selection_rate": 0.9111111111111111
+          }
+        },
+        {
+          "epoch": 20,
+          "mean_training_loss": 0.33478715213445515,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.09523809523809523,
+            "mean_policy_expected_reward": 0.825045747992286,
+            "mean_selected_reward": 0.9047619047619048,
+            "optimal_set_hit_rate": 0.8866995073891626,
+            "full_pass_selection_rate": 0.8866995073891626
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.10370370370370371,
+            "mean_policy_expected_reward": 0.8103521118649593,
+            "mean_selected_reward": 0.8962962962962964,
+            "optimal_set_hit_rate": 0.8888888888888888,
+            "full_pass_selection_rate": 0.8888888888888888
+          }
+        },
+        {
+          "epoch": 50,
+          "mean_training_loss": 0.17431915150238916,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.03940886699507389,
+            "mean_policy_expected_reward": 0.8983370364386583,
+            "mean_selected_reward": 0.9605911330049262,
+            "optimal_set_hit_rate": 0.9556650246305419,
+            "full_pass_selection_rate": 0.9556650246305419
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.05925925925925927,
+            "mean_policy_expected_reward": 0.8673426261023575,
+            "mean_selected_reward": 0.9407407407407408,
+            "optimal_set_hit_rate": 0.9333333333333333,
+            "full_pass_selection_rate": 0.9333333333333333
+          }
+        },
+        {
+          "epoch": 100,
+          "mean_training_loss": 0.05424114725051018,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.0,
+            "mean_policy_expected_reward": 0.9602177066516492,
+            "mean_selected_reward": 1.0,
+            "optimal_set_hit_rate": 1.0,
+            "full_pass_selection_rate": 1.0
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.044444444444444446,
+            "mean_policy_expected_reward": 0.9050439171056293,
+            "mean_selected_reward": 0.9555555555555556,
+            "optimal_set_hit_rate": 0.9555555555555556,
+            "full_pass_selection_rate": 0.9555555555555556
+          }
+        },
+        {
+          "epoch": 200,
+          "mean_training_loss": 0.007380926139796009,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.0,
+            "mean_policy_expected_reward": 0.9936531632742177,
+            "mean_selected_reward": 1.0,
+            "optimal_set_hit_rate": 1.0,
+            "full_pass_selection_rate": 1.0
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.044444444444444446,
+            "mean_policy_expected_reward": 0.9338090781300543,
+            "mean_selected_reward": 0.9555555555555556,
+            "optimal_set_hit_rate": 0.9555555555555556,
+            "full_pass_selection_rate": 0.9555555555555556
+          }
+        }
+      ],
+      "final_head_sha256": "15f3a882d3bcf4f52fd8735aefc5cb782545188dfdcd154fe8f6c2a020ead4c5"
+    },
+    "expected-reward": {
+      "curve": [
+        {
+          "epoch": 0,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.180623973727422,
+            "mean_policy_expected_reward": 0.5725446486366214,
+            "mean_selected_reward": 0.819376026272578,
+            "optimal_set_hit_rate": 0.7931034482758621,
+            "full_pass_selection_rate": 0.7931034482758621
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.12592592592592594,
+            "mean_policy_expected_reward": 0.5363435706780172,
+            "mean_selected_reward": 0.8740740740740741,
+            "optimal_set_hit_rate": 0.8666666666666667,
+            "full_pass_selection_rate": 0.8666666666666667
+          }
+        },
+        {
+          "epoch": 1,
+          "mean_training_loss": -0.6459716879404508,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.18555008210180624,
+            "mean_policy_expected_reward": 0.6998651302036804,
+            "mean_selected_reward": 0.8144499178981938,
+            "optimal_set_hit_rate": 0.7881773399014779,
+            "full_pass_selection_rate": 0.7881773399014779
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.12592592592592594,
+            "mean_policy_expected_reward": 0.6617878474701607,
+            "mean_selected_reward": 0.8740740740740741,
+            "optimal_set_hit_rate": 0.8666666666666667,
+            "full_pass_selection_rate": 0.8666666666666667
+          }
+        },
+        {
+          "epoch": 5,
+          "mean_training_loss": -0.7813042860764724,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.1724137931034483,
+            "mean_policy_expected_reward": 0.7894005785453233,
+            "mean_selected_reward": 0.8275862068965517,
+            "optimal_set_hit_rate": 0.8029556650246306,
+            "full_pass_selection_rate": 0.8029556650246306
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.10370370370370371,
+            "mean_policy_expected_reward": 0.8005493775517357,
+            "mean_selected_reward": 0.8962962962962964,
+            "optimal_set_hit_rate": 0.8888888888888888,
+            "full_pass_selection_rate": 0.8888888888888888
+          }
+        },
+        {
+          "epoch": 20,
+          "mean_training_loss": -0.8526857403608469,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.11658456486042694,
+            "mean_policy_expected_reward": 0.8529288813048997,
+            "mean_selected_reward": 0.8834154351395731,
+            "optimal_set_hit_rate": 0.8620689655172413,
+            "full_pass_selection_rate": 0.8620689655172413
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.10370370370370371,
+            "mean_policy_expected_reward": 0.856322970883291,
+            "mean_selected_reward": 0.8962962962962964,
+            "optimal_set_hit_rate": 0.8888888888888888,
+            "full_pass_selection_rate": 0.8888888888888888
+          }
+        },
+        {
+          "epoch": 50,
+          "mean_training_loss": -0.905935172851269,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.07717569786535304,
+            "mean_policy_expected_reward": 0.906655995679834,
+            "mean_selected_reward": 0.9228243021346471,
+            "optimal_set_hit_rate": 0.9064039408866995,
+            "full_pass_selection_rate": 0.9064039408866995
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.10370370370370371,
+            "mean_policy_expected_reward": 0.8814822467604789,
+            "mean_selected_reward": 0.8962962962962964,
+            "optimal_set_hit_rate": 0.8888888888888888,
+            "full_pass_selection_rate": 0.8888888888888888
+          }
+        },
+        {
+          "epoch": 100,
+          "mean_training_loss": -0.9468860259422889,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.036124794745484405,
+            "mean_policy_expected_reward": 0.9485546562871756,
+            "mean_selected_reward": 0.9638752052545155,
+            "optimal_set_hit_rate": 0.9556650246305419,
+            "full_pass_selection_rate": 0.9556650246305419
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.08148148148148149,
+            "mean_policy_expected_reward": 0.9078381403962522,
+            "mean_selected_reward": 0.9185185185185186,
+            "optimal_set_hit_rate": 0.9111111111111111,
+            "full_pass_selection_rate": 0.9111111111111111
+          }
+        },
+        {
+          "epoch": 200,
+          "mean_training_loss": -0.9721203125440158,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.02627257799671593,
+            "mean_policy_expected_reward": 0.9722126258981281,
+            "mean_selected_reward": 0.973727422003284,
+            "optimal_set_hit_rate": 0.9655172413793104,
+            "full_pass_selection_rate": 0.9655172413793104
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.044444444444444446,
+            "mean_policy_expected_reward": 0.9380112214467267,
+            "mean_selected_reward": 0.9555555555555556,
+            "optimal_set_hit_rate": 0.9555555555555556,
+            "full_pass_selection_rate": 0.9555555555555556
+          }
+        }
+      ],
+      "final_head_sha256": "46909fb6f62235c5c2b493596d399eea38b923645736c1f51b9e6f14164cb7a8"
+    },
+    "full-reward-regression": {
+      "curve": [
+        {
+          "epoch": 0,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.6354679802955665,
+            "mean_policy_expected_reward": 0.41780240831964965,
+            "mean_selected_reward": 0.3645320197044335,
+            "optimal_set_hit_rate": 0.2857142857142857,
+            "full_pass_selection_rate": 0.2857142857142857,
+            "full_reward_mse": 0.20529257067718606
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.6814814814814815,
+            "mean_policy_expected_reward": 0.3809964726631393,
+            "mean_selected_reward": 0.31851851851851853,
+            "optimal_set_hit_rate": 0.2222222222222222,
+            "full_pass_selection_rate": 0.2222222222222222,
+            "full_reward_mse": 0.21152336081664705
+          }
+        },
+        {
+          "epoch": 1,
+          "mean_training_loss": 0.19644778623030737,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.18883415435139575,
+            "mean_policy_expected_reward": 0.4343880036563189,
+            "mean_selected_reward": 0.8111658456486043,
+            "optimal_set_hit_rate": 0.7783251231527094,
+            "full_pass_selection_rate": 0.7783251231527094,
+            "full_reward_mse": 0.1912151772718099
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.12592592592592594,
+            "mean_policy_expected_reward": 0.3991985243744064,
+            "mean_selected_reward": 0.8740740740740741,
+            "optimal_set_hit_rate": 0.8666666666666667,
+            "full_pass_selection_rate": 0.8666666666666667,
+            "full_reward_mse": 0.18712880041668975
+          }
+        },
+        {
+          "epoch": 5,
+          "mean_training_loss": 0.18456734258394975,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.1954022988505747,
+            "mean_policy_expected_reward": 0.4765900496539994,
+            "mean_selected_reward": 0.8045977011494253,
+            "optimal_set_hit_rate": 0.7733990147783252,
+            "full_pass_selection_rate": 0.7733990147783252,
+            "full_reward_mse": 0.18236157621255752
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.14814814814814817,
+            "mean_policy_expected_reward": 0.4438178991002117,
+            "mean_selected_reward": 0.8518518518518519,
+            "optimal_set_hit_rate": 0.8444444444444444,
+            "full_pass_selection_rate": 0.8444444444444444,
+            "full_reward_mse": 0.17510457987084674
+          }
+        },
+        {
+          "epoch": 20,
+          "mean_training_loss": 0.16322974746043867,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.2315270935960591,
+            "mean_policy_expected_reward": 0.505018101241007,
+            "mean_selected_reward": 0.7684729064039408,
+            "optimal_set_hit_rate": 0.729064039408867,
+            "full_pass_selection_rate": 0.729064039408867,
+            "full_reward_mse": 0.16099866500101256
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.17037037037037037,
+            "mean_policy_expected_reward": 0.4701637812826672,
+            "mean_selected_reward": 0.8296296296296297,
+            "optimal_set_hit_rate": 0.8222222222222222,
+            "full_pass_selection_rate": 0.8222222222222222,
+            "full_reward_mse": 0.1624437847826312
+          }
+        },
+        {
+          "epoch": 50,
+          "mean_training_loss": 0.13902543714413276,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.17898193760262726,
+            "mean_policy_expected_reward": 0.5545699143300409,
+            "mean_selected_reward": 0.8210180623973727,
+            "optimal_set_hit_rate": 0.7783251231527094,
+            "full_pass_selection_rate": 0.7783251231527094,
+            "full_reward_mse": 0.14147015348400516
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.1851851851851852,
+            "mean_policy_expected_reward": 0.5113535985891918,
+            "mean_selected_reward": 0.8148148148148148,
+            "optimal_set_hit_rate": 0.8,
+            "full_pass_selection_rate": 0.8,
+            "full_reward_mse": 0.1600291625716041
+          }
+        },
+        {
+          "epoch": 100,
+          "mean_training_loss": 0.11714098029411756,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.13793103448275862,
+            "mean_policy_expected_reward": 0.6402149464142038,
+            "mean_selected_reward": 0.8620689655172413,
+            "optimal_set_hit_rate": 0.8374384236453202,
+            "full_pass_selection_rate": 0.8374384236453202,
+            "full_reward_mse": 0.12366243102685462
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.14074074074074075,
+            "mean_policy_expected_reward": 0.5898680127756764,
+            "mean_selected_reward": 0.8592592592592592,
+            "optimal_set_hit_rate": 0.8444444444444444,
+            "full_pass_selection_rate": 0.8444444444444444,
+            "full_reward_mse": 0.16778181332951467
+          }
+        },
+        {
+          "epoch": 200,
+          "mean_training_loss": 0.09335792666444412,
+          "train": {
+            "n": 203,
+            "mean_decision_regret": 0.11822660098522167,
+            "mean_policy_expected_reward": 0.7004104117675409,
+            "mean_selected_reward": 0.8817733990147784,
+            "optimal_set_hit_rate": 0.8522167487684729,
+            "full_pass_selection_rate": 0.8522167487684729,
+            "full_reward_mse": 0.09227388932558851
+          },
+          "validation": {
+            "n": 45,
+            "mean_decision_regret": 0.14074074074074075,
+            "mean_policy_expected_reward": 0.6305098231905869,
+            "mean_selected_reward": 0.8592592592592592,
+            "optimal_set_hit_rate": 0.8444444444444444,
+            "full_pass_selection_rate": 0.8444444444444444,
+            "full_reward_mse": 0.1715090219849187
+          }
+        }
+      ],
+      "final_head_sha256": "15373061d6ab8c6f8aa445c532ced1485b1ccaedcb5bca897ca289761cbb8bbd"
+    }
+  }
+}

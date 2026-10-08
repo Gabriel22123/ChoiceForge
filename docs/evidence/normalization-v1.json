@@ -1,0 +1,480 @@
+{
+  "seed": 20260922,
+  "independent_groups": 16384,
+  "objective": "population binary CE with Gaussian logit noise, evaluated at its population optimum",
+  "label_integration": "integrate y=1 and y=0 with known true p; normalize separately per observed label before averaging",
+  "common_noise_across_estimators": true,
+  "normalization": "within-group population std + 1e-8; no clipping or CE anchor",
+  "gradient_direction": "cost minimization; negative means gradient descent increases the class-1 logit difference",
+  "scope": "Synthetic local-stationarity check. Does not claim all policy gradient methods are biased or diagnose an external implementation end-to-end.",
+  "results": [
+    {
+      "true_probability": 0.5,
+      "sigma_per_logit": 0.1,
+      "samples": 4,
+      "optimum_logit_difference": 2.0816681711726418e-17,
+      "clean_probability_at_optimum": 0.5,
+      "true_risk_gradient_at_optimum": 0.0,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": 0.00011684866436519725,
+          "standard_error": 0.00021236942827069632
+        },
+        "centered_score": {
+          "mean_gradient": 8.763649827389756e-05,
+          "standard_error": 0.00015927707120302263
+        },
+        "standardized_score": {
+          "mean_gradient": 7.299891567208647e-07,
+          "standard_error": 1.7976985809858467e-06
+        },
+        "pathwise": {
+          "mean_gradient": 0.00017565776748108738,
+          "standard_error": 0.0001360105138098281
+        }
+      }
+    },
+    {
+      "true_probability": 0.5,
+      "sigma_per_logit": 0.1,
+      "samples": 16,
+      "optimum_logit_difference": 2.0816681711726418e-17,
+      "clean_probability_at_optimum": 0.5,
+      "true_risk_gradient_at_optimum": 0.0,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": -0.0002182122259254811,
+          "standard_error": 0.00010775070628191407
+        },
+        "centered_score": {
+          "mean_gradient": -0.00020457396180513932,
+          "standard_error": 0.00010101628713929429
+        },
+        "standardized_score": {
+          "mean_gradient": -7.285114597808736e-06,
+          "standard_error": 3.2178879764915876e-06
+        },
+        "pathwise": {
+          "mean_gradient": -0.00012320126479710777,
+          "standard_error": 6.813954187257382e-05
+        }
+      }
+    },
+    {
+      "true_probability": 0.5,
+      "sigma_per_logit": 0.1,
+      "samples": 64,
+      "optimum_logit_difference": 2.0816681711726418e-17,
+      "clean_probability_at_optimum": 0.5,
+      "true_risk_gradient_at_optimum": 0.0,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": -4.8302269153617294e-05,
+          "standard_error": 5.4968352643131763e-05
+        },
+        "centered_score": {
+          "mean_gradient": -4.7547546198092245e-05,
+          "standard_error": 5.410947213308287e-05
+        },
+        "standardized_score": {
+          "mean_gradient": -2.301904605110861e-06,
+          "standard_error": 1.990819504736114e-06
+        },
+        "pathwise": {
+          "mean_gradient": -4.426963098106094e-05,
+          "standard_error": 3.462473781454132e-05
+        }
+      }
+    },
+    {
+      "true_probability": 0.5,
+      "sigma_per_logit": 0.4,
+      "samples": 4,
+      "optimum_logit_difference": 2.7755575615627336e-17,
+      "clean_probability_at_optimum": 0.5,
+      "true_risk_gradient_at_optimum": -5.551115123125783e-17,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": 0.0017421550524135136,
+          "standard_error": 0.0008209452924151827
+        },
+        "centered_score": {
+          "mean_gradient": 0.0013066162893101356,
+          "standard_error": 0.0006157089693113849
+        },
+        "standardized_score": {
+          "mean_gradient": 5.16896335078065e-05,
+          "standard_error": 2.463993113318037e-05
+        },
+        "pathwise": {
+          "mean_gradient": -5.903264868427073e-05,
+          "standard_error": 0.0005139987929254517
+        }
+      }
+    },
+    {
+      "true_probability": 0.5,
+      "sigma_per_logit": 0.4,
+      "samples": 16,
+      "optimum_logit_difference": 2.7755575615627336e-17,
+      "clean_probability_at_optimum": 0.5,
+      "true_risk_gradient_at_optimum": -5.551115123125783e-17,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": -3.2628401675874216e-05,
+          "standard_error": 0.00040047735039962885
+        },
+        "centered_score": {
+          "mean_gradient": -3.058912657113246e-05,
+          "standard_error": 0.0003754475159996516
+        },
+        "standardized_score": {
+          "mean_gradient": -9.89691720179918e-07,
+          "standard_error": 3.915570975000768e-05
+        },
+        "pathwise": {
+          "mean_gradient": -0.0001715409021709612,
+          "standard_error": 0.0002572884952214501
+        }
+      }
+    },
+    {
+      "true_probability": 0.5,
+      "sigma_per_logit": 0.4,
+      "samples": 64,
+      "optimum_logit_difference": 2.7755575615627336e-17,
+      "clean_probability_at_optimum": 0.5,
+      "true_risk_gradient_at_optimum": -5.551115123125783e-17,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": 0.00023654006967623902,
+          "standard_error": 0.00019984558386907793
+        },
+        "centered_score": {
+          "mean_gradient": 0.000232844131087548,
+          "standard_error": 0.00019672299662112385
+        },
+        "standardized_score": {
+          "mean_gradient": 2.948387584071386e-05,
+          "standard_error": 2.3102107944821142e-05
+        },
+        "pathwise": {
+          "mean_gradient": 3.9578097737430595e-05,
+          "standard_error": 0.0001293655670578344
+        }
+      }
+    },
+    {
+      "true_probability": 0.7,
+      "sigma_per_logit": 0.1,
+      "samples": 4,
+      "optimum_logit_difference": 0.8512812284451075,
+      "clean_probability_at_optimum": 0.7008358402950483,
+      "true_risk_gradient_at_optimum": 0.0,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": -7.179068770092095e-05,
+          "standard_error": 0.00019000723044292327
+        },
+        "centered_score": {
+          "mean_gradient": -5.384301577569006e-05,
+          "standard_error": 0.00014250542283219308
+        },
+        "standardized_score": {
+          "mean_gradient": -2.2617736149933014,
+          "standard_error": 0.007480728364443943
+        },
+        "pathwise": {
+          "mean_gradient": -9.937684357166095e-05,
+          "standard_error": 0.0001163369967469819
+        }
+      }
+    },
+    {
+      "true_probability": 0.7,
+      "sigma_per_logit": 0.1,
+      "samples": 16,
+      "optimum_logit_difference": 0.8512812284451075,
+      "clean_probability_at_optimum": 0.7008358402950483,
+      "true_risk_gradient_at_optimum": 0.0,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": 3.0846355438727085e-05,
+          "standard_error": 9.215615001179676e-05
+        },
+        "centered_score": {
+          "mean_gradient": 2.891845822380645e-05,
+          "standard_error": 8.639639063605965e-05
+        },
+        "standardized_score": {
+          "mean_gradient": -2.6899623069529772,
+          "standard_error": 0.00386144817501593
+        },
+        "pathwise": {
+          "mean_gradient": 0.00017226831528977297,
+          "standard_error": 5.795806505514728e-05
+        }
+      }
+    },
+    {
+      "true_probability": 0.7,
+      "sigma_per_logit": 0.1,
+      "samples": 64,
+      "optimum_logit_difference": 0.8512812284451075,
+      "clean_probability_at_optimum": 0.7008358402950483,
+      "true_risk_gradient_at_optimum": 0.0,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": 5.970813551433293e-05,
+          "standard_error": 4.594024609953767e-05
+        },
+        "centered_score": {
+          "mean_gradient": 5.8775195896920924e-05,
+          "standard_error": 4.5222429754232324e-05
+        },
+        "standardized_score": {
+          "mean_gradient": -2.7825493371226404,
+          "standard_error": 0.0019407866874062815
+        },
+        "pathwise": {
+          "mean_gradient": 1.6955812254352387e-05,
+          "standard_error": 2.8893020002989688e-05
+        }
+      }
+    },
+    {
+      "true_probability": 0.7,
+      "sigma_per_logit": 0.4,
+      "samples": 4,
+      "optimum_logit_difference": 0.907575479942283,
+      "clean_probability_at_optimum": 0.7125037748533979,
+      "true_risk_gradient_at_optimum": 0.0,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": 0.001312328084041422,
+          "standard_error": 0.0007073075354568781
+        },
+        "centered_score": {
+          "mean_gradient": 0.0009842460630310663,
+          "standard_error": 0.0005304806515926577
+        },
+        "standardized_score": {
+          "mean_gradient": -0.5557950659113866,
+          "standard_error": 0.001801453118365396
+        },
+        "pathwise": {
+          "mean_gradient": 0.0005241926901842568,
+          "standard_error": 0.00044211804034507746
+        }
+      }
+    },
+    {
+      "true_probability": 0.7,
+      "sigma_per_logit": 0.4,
+      "samples": 16,
+      "optimum_logit_difference": 0.907575479942283,
+      "clean_probability_at_optimum": 0.7125037748533979,
+      "true_risk_gradient_at_optimum": 0.0,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": 0.00021966218279276215,
+          "standard_error": 0.00034744755108172113
+        },
+        "centered_score": {
+          "mean_gradient": 0.00020593329636821515,
+          "standard_error": 0.0003257320791391133
+        },
+        "standardized_score": {
+          "mean_gradient": -0.6468913969926167,
+          "standard_error": 0.000882322480838878
+        },
+        "pathwise": {
+          "mean_gradient": 0.00013956045571144628,
+          "standard_error": 0.00022034919954715585
+        }
+      }
+    },
+    {
+      "true_probability": 0.7,
+      "sigma_per_logit": 0.4,
+      "samples": 64,
+      "optimum_logit_difference": 0.907575479942283,
+      "clean_probability_at_optimum": 0.7125037748533979,
+      "true_risk_gradient_at_optimum": 0.0,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": 4.1469997506699256e-05,
+          "standard_error": 0.0001718711560386243
+        },
+        "centered_score": {
+          "mean_gradient": 4.082202879565645e-05,
+          "standard_error": 0.00016918566922552073
+        },
+        "standardized_score": {
+          "mean_gradient": -0.664312960506076,
+          "standard_error": 0.00042657597755669445
+        },
+        "pathwise": {
+          "mean_gradient": -1.2620021001311981e-05,
+          "standard_error": 0.00011018298914138591
+        }
+      }
+    },
+    {
+      "true_probability": 0.9,
+      "sigma_per_logit": 0.1,
+      "samples": 4,
+      "optimum_logit_difference": 2.205210185603491,
+      "clean_probability_at_optimum": 0.9007164125409625,
+      "true_risk_gradient_at_optimum": 1.1102230246251565e-16,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": -7.84436515533096e-06,
+          "standard_error": 8.373769142347537e-05
+        },
+        "centered_score": {
+          "mean_gradient": -5.883273866498031e-06,
+          "standard_error": 6.280326856760646e-05
+        },
+        "standardized_score": {
+          "mean_gradient": -4.510474797206122,
+          "standard_error": 0.01480377496366485
+        },
+        "pathwise": {
+          "mean_gradient": -5.879573381181089e-06,
+          "standard_error": 4.9897471475455154e-05
+        }
+      }
+    },
+    {
+      "true_probability": 0.9,
+      "sigma_per_logit": 0.1,
+      "samples": 16,
+      "optimum_logit_difference": 2.205210185603491,
+      "clean_probability_at_optimum": 0.9007164125409625,
+      "true_risk_gradient_at_optimum": 1.1102230246251565e-16,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": 2.987200294421325e-08,
+          "standard_error": 3.991211459585241e-05
+        },
+        "centered_score": {
+          "mean_gradient": 2.8005002760589555e-08,
+          "standard_error": 3.741760743361163e-05
+        },
+        "standardized_score": {
+          "mean_gradient": -5.364150672554848,
+          "standard_error": 0.007641246584505768
+        },
+        "pathwise": {
+          "mean_gradient": 7.12195867012458e-06,
+          "standard_error": 2.4813045680342363e-05
+        }
+      }
+    },
+    {
+      "true_probability": 0.9,
+      "sigma_per_logit": 0.1,
+      "samples": 64,
+      "optimum_logit_difference": 2.205210185603491,
+      "clean_probability_at_optimum": 0.9007164125409625,
+      "true_risk_gradient_at_optimum": 1.1102230246251565e-16,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": -2.7672920793481266e-07,
+          "standard_error": 1.9647081707339733e-05
+        },
+        "centered_score": {
+          "mean_gradient": -2.7240531406063627e-07,
+          "standard_error": 1.9340096055662506e-05
+        },
+        "standardized_score": {
+          "mean_gradient": -5.568043992656452,
+          "standard_error": 0.0038824408988743174
+        },
+        "pathwise": {
+          "mean_gradient": 2.8397368551749086e-06,
+          "standard_error": 1.254252715174458e-05
+        }
+      }
+    },
+    {
+      "true_probability": 0.9,
+      "sigma_per_logit": 0.4,
+      "samples": 4,
+      "optimum_logit_difference": 2.3216021060311123,
+      "clean_probability_at_optimum": 0.9106503838372979,
+      "true_risk_gradient_at_optimum": -1.1102230246251565e-16,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": 0.0001640539422608074,
+          "standard_error": 0.0003374719544562756
+        },
+        "centered_score": {
+          "mean_gradient": 0.0001230404566956057,
+          "standard_error": 0.00025310396584220663
+        },
+        "standardized_score": {
+          "mean_gradient": -1.113044751527753,
+          "standard_error": 0.003589080416563413
+        },
+        "pathwise": {
+          "mean_gradient": 0.00020601951124736456,
+          "standard_error": 0.00020143041606682458
+        }
+      }
+    },
+    {
+      "true_probability": 0.9,
+      "sigma_per_logit": 0.4,
+      "samples": 16,
+      "optimum_logit_difference": 2.3216021060311123,
+      "clean_probability_at_optimum": 0.9106503838372979,
+      "true_risk_gradient_at_optimum": -1.1102230246251565e-16,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": 9.65676625646764e-05,
+          "standard_error": 0.00015960616075477054
+        },
+        "centered_score": {
+          "mean_gradient": 9.053218365438431e-05,
+          "standard_error": 0.0001496307757075973
+        },
+        "standardized_score": {
+          "mean_gradient": -1.2889806650981894,
+          "standard_error": 0.0017133783162838056
+        },
+        "pathwise": {
+          "mean_gradient": 9.815526382871574e-05,
+          "standard_error": 0.00010016830847424624
+        }
+      }
+    },
+    {
+      "true_probability": 0.9,
+      "sigma_per_logit": 0.4,
+      "samples": 64,
+      "optimum_logit_difference": 2.3216021060311123,
+      "clean_probability_at_optimum": 0.9106503838372979,
+      "true_risk_gradient_at_optimum": -1.1102230246251565e-16,
+      "estimators": {
+        "loo_score": {
+          "mean_gradient": 8.679982697001678e-05,
+          "standard_error": 8.120963725913508e-05
+        },
+        "centered_score": {
+          "mean_gradient": 8.544357967361029e-05,
+          "standard_error": 7.994073667696113e-05
+        },
+        "standardized_score": {
+          "mean_gradient": -1.3152062299104046,
+          "standard_error": 0.0008465208416601137
+        },
+        "pathwise": {
+          "mean_gradient": 3.832215375988074e-06,
+          "standard_error": 5.063814109455352e-05
+        }
+      }
+    }
+  ]
+}

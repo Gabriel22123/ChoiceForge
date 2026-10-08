@@ -1,0 +1,62 @@
+{
+  "source_url": "https://nlp.stanford.edu/projects/snli/snli_1.0.zip",
+  "source_version": "SNLI-1.0",
+  "archive_sha256": "afb3d70a5af5d8de0d9d81e2637e0fb8c22d1235c2749d83125ca43dab0dbd3e",
+  "license": "CC-BY-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "source_page": "https://nlp.stanford.edu/projects/snli/",
+  "data_sha256": "d2e11f0e7b83a5a89c72d79b637cde9c6f5673fc398e4c6850b3063e11e75aec",
+  "summary": {
+    "rows": 4224,
+    "groups": 4114,
+    "splits": {
+      "train": {
+        "contradiction": 1024,
+        "entailment": 1024,
+        "neutral": 1024
+      },
+      "validation": {
+        "neutral": 128,
+        "entailment": 128,
+        "contradiction": 128
+      },
+      "test": {
+        "contradiction": 256,
+        "entailment": 256,
+        "neutral": 256
+      }
+    },
+    "sources": {
+      "snli": 4224
+    },
+    "choice_counts": {
+      "3": 4224
+    }
+  },
+  "eligible_gold_label_rows": {
+    "train": 549367,
+    "validation": 9842,
+    "test": 9824
+  },
+  "excluded": {
+    "unknown_or_no_consensus_label_rows": 1119,
+    "duplicate_pair_rows": 570,
+    "conflicting_label_rows": 151,
+    "cross_split_premise_rows": 218
+  },
+  "cross_split_premise_groups": 29,
+  "conflicting_pairs": 66,
+  "per_label_cap": {
+    "train": 1024,
+    "validation": 128,
+    "test": 256
+  },
+  "script_sha256": "64c3e2b00011eafbe56411b35a1aaf710596f5eeefca542166ae290e1c915c16",
+  "policy": "Retain official split names; remove every row in cross-split normalized-premise groups; exclude conflicting labels; deduplicate normalized ordered pairs; bottom-hash sample per split/label",
+  "limitations": [
+    "Label-balanced subset, not original benchmark or deployment prior",
+    "Exact normalized grouping does not catch every semantic near-duplicate",
+    "No universal zero-shot or pretraining-clean claim",
+    "Prepared only; not trained by this command"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "format_version": 1,
+  "study": "release-candidate-v1",
+  "passed": true,
+  "arms": {
+    "control": {
+      "rows": 3008,
+      "sources": {
+        "bandit": 54,
+        "clinc": 231,
+        "goemotions": 61,
+        "json-schema": 198,
+        "paws-wiki": 672,
+        "snli": 672,
+        "typed-decisions": 1120
+      },
+      "provenance_items": 3010,
+      "licenses": {
+        "bandit:Apache-2.0": 56,
+        "clinc:CC-BY-3.0": 231,
+        "goemotions:CC-BY-4.0": 61,
+        "json-schema:MIT": 198,
+        "paws-wiki:PAWS dataset permission: freely usable for any purpose; attribution appreciated": 672,
+        "snli:CC-BY-SA-4.0": 672,
+        "typed-decisions:Apache-2.0": 1120
+      },
+      "public_url_hosts": {
+        "github.com": 546,
+        "huggingface.co": 1792,
+        "nlp.stanford.edu": 672
+      },
+      "sha256": "65a242bfadcdeac608281938f4817bb8129ae4b0b12805deb8b12a35c78e32f9"
+    },
+    "expanded": {
+      "rows": 5056,
+      "sources": {
+        "bandit": 54,
+        "clinc": 231,
+        "goemotions": 61,
+        "json-schema": 198,
+        "paws-wiki": 1056,
+        "snli": 1056,
+        "typed-decisions": 2400
+      },
+      "provenance_items": 5058,
+      "licenses": {
+        "bandit:Apache-2.0": 56,
+        "clinc:CC-BY-3.0": 231,
+        "goemotions:CC-BY-4.0": 61,
+        "json-schema:MIT": 198,
+        "paws-wiki:PAWS dataset permission: freely usable for any purpose; attribution appreciated": 1056,
+        "snli:CC-BY-SA-4.0": 1056,
+        "typed-decisions:Apache-2.0": 2400
+      },
+      "public_url_hosts": {
+        "github.com": 546,
+        "huggingface.co": 3456,
+        "nlp.stanford.edu": 1056
+      },
+      "sha256": "b0079df73c00d45de69a8197c719ff16b398b11bc1f631fed440db39bc82de2f"
+    }
+  },
+  "allowed_sources": [
+    "bandit",
+    "clinc",
+    "goemotions",
+    "json-schema",
+    "paws-wiki",
+    "snli",
+    "typed-decisions"
+  ],
+  "allowed_public_hosts": [
+    "github.com",
+    "huggingface.co",
+    "nlp.stanford.edu"
+  ],
+  "notice_files": {
+    "bandit": "third_party/bandit-LICENSE",
+    "clinc": "third_party/clinc-LICENSE",
+    "goemotions": "third_party/google-research-DATA-LICENSE-NOTICE",
+    "json-schema": "third_party/json-schema-LICENSE",
+    "paws-wiki": "third_party/paws-DATA-LICENSE",
+    "snli": "THIRD_PARTY.md",
+    "typed-decisions": "THIRD_PARTY.md"
+  },
+  "common_evaluation_rows_identical": true,
+  "target_blind_typed_selection": true,
+  "blind_suite_rows_included": false,
+  "internal_or_local_markers_found": 0,
+  "combined_dataset_relicensed_as_apache": false
+}

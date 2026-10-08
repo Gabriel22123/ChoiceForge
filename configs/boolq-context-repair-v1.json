@@ -1,0 +1,67 @@
+{
+  "format_version": 1,
+  "study": "boolq-context-repair-v1",
+  "status": "frozen_before_reference_or_training",
+  "seed": 1701,
+  "parent": {
+    "study": "functional-retention-screen-v1",
+    "checkpoint": "runs/functional-retention-screen-v1/warm-functional-context",
+    "weights_sha256": "24a64f1efa256e182049db117b8ce67495dd401326b1db5ebbba168a6f08c180",
+    "model_sha256": "b728b762e7f4d664fa37b3d6cb5976d8f6c731cebca502440f4814f26c052c6f",
+    "train_predictions_sha256": "506a2a3830fee5fe65335939ffae314aa841e5cfafae964d44244e4e495fb662",
+    "calibration_sha256": "e41aa1253886ad1ca0954219355d8f123a5ca62944fbc8ee4d03da05b2d486d9",
+    "cases": "runs/functional-retention-screen-v1/cases.jsonl",
+    "cases_sha256": "504cc328b81f881bb39e6894cac65acc9980bb0f5f9d83ab2510b6225d57619b"
+  },
+  "boolq": {
+    "cache": "cache/public-task-expansion/boolq_validation.parquet",
+    "sha256": "52355d11524b4b874a9b9dcc278feb10f672d52c4f4eff9872e695ede59820f8",
+    "revision": "35b264d03638db9f4ce671b711558bf7ff0f80d5",
+    "license": "CC-BY-SA-3.0",
+    "consumed_cases": "runs/task-expansion-v1/blind-cases.jsonl",
+    "consumed_cases_sha256": "7ceff9eea0c3a2302afd3d1363252479864c26de6bc5c173086e8dfd2423f4c5",
+    "selection": "exclude every previously consumed BoolQ group, filter only by token admissibility, then take the first 640 SHA-256(question, passage) keys; answer never participates",
+    "train_rows": 512,
+    "validation_rows": 128,
+    "redistribution": "generated rows remain local and excluded from the Apache-2.0 source tree; preparation and attribution are published"
+  },
+  "training": {
+    "epochs": 1,
+    "batch_size": 2,
+    "accumulation": 4,
+    "updates": 128,
+    "encoder_lr": 0.000005,
+    "head_lr": 0.00005,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05,
+    "distillation_weight": 1.0,
+    "distillation_target_field": "teacher_probabilities",
+    "distillation_allow_missing_targets": true,
+    "teacher_scope": "the 512 replay rows only; BoolQ rows use upstream gold labels without a teacher target",
+    "training_weight_field": "training_weight",
+    "weighting": "all replay rows have weight 1; answer-blind selected BoolQ train rows receive N/(2*class_count), giving Yes and No equal total weight and overall mean 1",
+    "gold_supervision_replaced": false
+  },
+  "development_suite": {
+    "cases": "runs/release-candidate-v1/blind-suite/cases.jsonl",
+    "cases_sha256": "4890b3ba5f22af9de9e8c6a12a163154395a7a069125c9a0e5ed16dd27183d63",
+    "protocol_sha256": "4ae8c129e292f2a79e5d229b5a21a207eb96e1c56e97466db912d00173703b21",
+    "role": "Consumed development diagnostic only; permanently ineligible as a fresh test."
+  },
+  "screening_rule": {
+    "seen_accuracy_vs_parent_min_delta": -0.005,
+    "seen_nll_vs_parent_max_delta": 0.01,
+    "seen_each_source_accuracy_vs_release_control_min_delta": -0.02,
+    "development_accuracy_vs_parent_min_delta": -0.005,
+    "development_each_source_accuracy_vs_release_control_min_delta": -0.02,
+    "development_context_advantage_each_source_positive": true,
+    "boolq_validation_accuracy_vs_parent_min_delta": 0.02,
+    "decision": "Advance only if every condition passes. A later release study still requires newly sealed and previously unread task families."
+  },
+  "interpretation": {
+    "primary_question": "Does answer-blind selected public Yes/No reading-comprehension training repair the causal Yes prior while preserving the current function?",
+    "single_seed_development_screen": true,
+    "public_data_only": true,
+    "github_publication": false
+  }
+}

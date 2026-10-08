@@ -1,0 +1,66 @@
+{
+  "protocol_id": "typed-decisions-objective-screen-v1",
+  "purpose": "representation-frozen full-fold screen of supervision and gradient-estimator effects before expensive end-to-end LoRA",
+  "feature_cache": "cache/typed-decisions-minicpm5-features-v1",
+  "feature_parity_evidence": "docs/evidence/typed-decisions-feature-cache-parity-v1.json",
+  "prepared_data": "data/typed-decisions-objective-screen-v1",
+  "source_folds": "data/typed-decisions-workflow-folds-v1",
+  "seeds": [42, 43, 44],
+  "torch_threads": 4,
+  "deterministic_algorithms": true,
+  "head": {
+    "width": 256,
+    "dropout": 0.0,
+    "epochs": 3,
+    "batch_size": 64,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0
+  },
+  "objective": {
+    "brier_weight": 0.5,
+    "noise_samples": 32,
+    "noise_sigma": 0.4,
+    "center_score_logits": true
+  },
+  "arms": {
+    "H-hard": {
+      "training_target_mode": "hard",
+      "gradient_estimator": "clean",
+      "ranked_probability_weight": 0.0,
+      "clean_anchor_weight": 0.0
+    },
+    "S-soft": {
+      "training_target_mode": "distribution",
+      "gradient_estimator": "clean",
+      "ranked_probability_weight": 0.0,
+      "clean_anchor_weight": 0.0
+    },
+    "T-typed-rps": {
+      "training_target_mode": "distribution",
+      "gradient_estimator": "clean",
+      "ranked_probability_weight": 1.0,
+      "clean_anchor_weight": 0.0
+    },
+    "R-rlcd-loo": {
+      "training_target_mode": "distribution",
+      "gradient_estimator": "score_function",
+      "ranked_probability_weight": 1.0,
+      "clean_anchor_weight": 1.0
+    }
+  },
+  "test_lock": "all 48 heads and validation artifacts must be complete and checksummed before any test file is parsed",
+  "advancement": {
+    "unit": "12 held-out endpoints = 4 workflows x 3 seeds",
+    "primary": "raw held-out-workflow soft cross entropy",
+    "requirements": [
+      "treatment has lower held-out soft CE in at least 9 of 12 paired endpoints",
+      "mean held-out soft CE delta is below zero",
+      "no workflow's three-seed mean held-out soft CE regresses by more than 0.01",
+      "mean seen-workflow soft CE does not regress by more than 0.005",
+      "mean held-out soft Brier does not regress"
+    ],
+    "contrasts": ["S-soft minus H-hard", "T-typed-rps minus S-soft", "R-rlcd-loo minus T-typed-rps"],
+    "boundary": "passing advances an objective to end-to-end LoRA validation only; this frozen-representation screen cannot establish final model quality"
+  }
+}

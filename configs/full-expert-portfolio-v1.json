@@ -1,0 +1,175 @@
+{
+  "format_version": 1,
+  "study": "full-expert-portfolio-v1",
+  "status": "frozen_before_training",
+  "groups": [
+    {
+      "name": "consumed-six",
+      "data_path": "runs/qasc-dual-function-screen-v1/cases.jsonl",
+      "data_sha256": "1e3085e934f30ab50f7258e8ad2cd28de87423f8ed4649a7403cff57e17b8381",
+      "dataset": "cases",
+      "feature_cache": "cache/qasc-routed-residual-features-v1",
+      "manifest_sha256": "b6d2b5def9bf913cb7c06d80747e4a63976a07c21cbc60fe1df9deb7b107db53",
+      "sources": [
+        "qasc",
+        "snli",
+        "paws-wiki",
+        "clinc",
+        "typed-decisions",
+        "json-schema"
+      ],
+      "splits": [
+        "train",
+        "validation"
+      ],
+      "counts": {
+        "qasc|train": 512,
+        "qasc|validation": 128,
+        "snli|train": 96,
+        "snli|validation": 96,
+        "paws-wiki|train": 96,
+        "paws-wiki|validation": 96,
+        "clinc|train": 96,
+        "clinc|validation": 42,
+        "typed-decisions|train": 96,
+        "typed-decisions|validation": 320,
+        "json-schema|train": 96,
+        "json-schema|validation": 42
+      }
+    },
+    {
+      "name": "truthfulqa",
+      "data_path": "runs/truthfulqa-specialist-v1/cases.jsonl",
+      "data_sha256": "b78df2154baa9078d3225a5d195a2c2423c3d98fbb029e83bff6ac29879f9d27",
+      "dataset": "truthfulqa",
+      "feature_cache": "cache/truthfulqa-specialist-features-v1",
+      "manifest_sha256": "3c74aaf923f9bad82c21c8e7e6cba29db88cd76082a8c99f694b5f911574afe6",
+      "sources": [
+        "truthfulqa"
+      ],
+      "splits": [
+        "train",
+        "validation"
+      ],
+      "counts": {
+        "truthfulqa|train": 512,
+        "truthfulqa|validation": 256
+      }
+    },
+    {
+      "name": "hellaswag",
+      "data_path": "runs/hellaswag-specialist-v1/cases.jsonl",
+      "data_sha256": "9afb297de0b3d7fa4684c747057149c6a904904e25e32d0523848d07db507edd",
+      "dataset": "hellaswag",
+      "feature_cache": "cache/hellaswag-specialist-features-v1",
+      "manifest_sha256": "4544300276e18dbbc51f5d32841b947dc7fdaeaaae0c46fef2e83a700414dbc9",
+      "sources": [
+        "hellaswag"
+      ],
+      "splits": [
+        "train",
+        "validation"
+      ],
+      "counts": {
+        "hellaswag|train": 512,
+        "hellaswag|validation": 256
+      }
+    },
+    {
+      "name": "gsm8k",
+      "data_path": "runs/gsm8k-specialist-capacity-v2/cases.jsonl",
+      "data_sha256": "efc49cb858ac451dd907353a120970c1e65f0d31fd99bc05279cf108b47959ac",
+      "dataset": "gsm8k-capacity-v2",
+      "feature_cache": "cache/gsm8k-specialist-capacity-features-v2",
+      "manifest_sha256": "f88f0b65c1284736b757c74fc9250ac0a4a230a9f0654d70e7c7c9b030af13df",
+      "sources": [
+        "gsm8k"
+      ],
+      "splits": [
+        "train",
+        "validation"
+      ],
+      "counts": {
+        "gsm8k|train": 2048,
+        "gsm8k|validation": 256
+      }
+    }
+  ],
+  "default_model": {
+    "residual_width": 256,
+    "router_width": 128,
+    "dropout": 0.0,
+    "initial_gate_probability": 0.25
+  },
+  "experts": {
+    "qasc": {
+      "weights": "runs/qasc-binary-route-screen-v1/binary-route.safetensors",
+      "weights_sha256": "a1b9d145e3532ddd0460aa3429420088cd74f8a3a56325249f227c5b846853ab"
+    },
+    "snli": {
+      "weights": "runs/snli-specialist-v1/specialist-seed-42.safetensors",
+      "weights_sha256": "b7fa22125e6c24e9b15532ba807bb47b2d2fc1bb28fb7d446312c4c0a71ed65b"
+    },
+    "paws-wiki": {
+      "weights": "runs/paws-wiki-specialist-v1/specialist-seed-42.safetensors",
+      "weights_sha256": "6d185df8a459041819abe6e3a48aed2df49bec335d468150d53b04931f8f2152"
+    },
+    "clinc": {
+      "weights": "runs/clinc-specialist-v1/specialist-seed-42.safetensors",
+      "weights_sha256": "1c1edff2735f173aca9e209e01029fad65c42c66d8840a64b086dafde3da2243"
+    },
+    "truthfulqa": {
+      "weights": "runs/truthfulqa-specialist-training-v1/specialist-seed-42.safetensors",
+      "weights_sha256": "489f5884e020636dd4dfd70aff0cdbea53de87299767fe109390682545a96de3"
+    },
+    "gsm8k": {
+      "weights": "runs/gsm8k-specialist-capacity-training-v2/specialist-seed-42.safetensors",
+      "weights_sha256": "ef3821c2e46d93f91f242b0d6f38c426b8995de590a83a39cc3ef2e1ea80d523",
+      "model": {
+        "residual_width": 512
+      }
+    }
+  },
+  "training": {
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "updates": 600,
+    "learning_rate": 0.03,
+    "parent_initial_logit": 5.0,
+    "expert_initial_logit": -5.0,
+    "initial_noise": 0.01,
+    "brier_weight": 0.5,
+    "proper_regression_penalty": 10.0,
+    "context_regression_penalty": 10.0,
+    "projection_alphas": [
+      0.125,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ]
+  },
+  "screening_rule": {
+    "proper_gain_min": 0.01,
+    "context_min_delta": 0.0,
+    "decision": "Only three valid simplex portfolios with exact consumed decision retention, positive consumed proper gain and nonregressing context may reach the sealed-family protocol."
+  },
+  "source_files": {
+    "scripts/train_full_expert_portfolio.py": "93010113ccee149bbd59516cb0e35aab484fe5215e992f4bbf5f313ba2ced27f",
+    "scripts/run_decision_stable_expert_portfolio.py": "1ab7c8404c536653092442debdc5d5002273f94804cde1eea52ebe01cc4bedd3",
+    "scripts/run_heterogeneous_expert_bank.py": "19f3054ed5756885e939f5659e09d5a86df889bceb0f1413cc39f56df6f23f9c",
+    "scripts/run_distribution_safe_specialist_oracle.py": "68a9a9f4b4a096849bc54a29ee62d65ab52dee6454a4a774a384e0a7f26f971f",
+    "src/decision_model/core.py": "ed3eafaff30275e99bf4e7c970584d5bd3f2197d747d25b2ca20adbfb37621ae",
+    "src/decision_model/expert_portfolio.py": "f9a6ab512f91439c4a1480b5e366e7014849e5bace9134f593254f65decb4613",
+    "docs/FULL_EXPERT_PORTFOLIO_V1_DESIGN.zh-CN.md": "ee5fb3c2422baf45704020664ed9899416d86c0717f9347325c8354cec9ebbfb"
+  },
+  "evidence_path": "docs/evidence/full-expert-portfolio-v1.json",
+  "limitations": [
+    "All training and consumed validation sources have been used during development.",
+    "The weights are a small policy layer over six frozen experts, not a single distilled adapter.",
+    "SciFact remains unextracted and unevaluated during this stage."
+  ]
+}

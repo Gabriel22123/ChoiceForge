@@ -1,0 +1,14 @@
+{
+  "repository": "https://huggingface.co/openbmb/MiniCPM5-2B-Base",
+  "revision": "96a57cd572a02506b4500f54427dca24970c1bac",
+  "license": "Apache-2.0",
+  "redistribution": "The project pins and verifies the public base; release bundles do not include base weights.",
+  "files": {
+    "README.md": "dbb2fad89a281847e7d37ec8b1632481c4d46268991edab81b63777ba12a0736",
+    "config.json": "19dbdc2f9ba75b336f94975f598db920819045faddd77ca2b5a7260eda95bfbe",
+    "model.safetensors": "d80717e7b8eb21ef43070244ecebd85d6694e4a33602fdb817f366bdb04e1e5a",
+    "special_tokens_map.json": "82d96d7a9e6ced037f12394b7ea6a5b02e6ca87e0d11edaa8d60d9be857ce7db",
+    "tokenizer.json": "3e065a558a034185fe299917b398685c1facd0169a9eea1e629eb30c171fed81",
+    "tokenizer_config.json": "daab558a87488612988d1700dc29b9989cc05b061e67d580cebb48cd81839112"
+  }
+}

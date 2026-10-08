@@ -1,0 +1,92 @@
+{
+  "format_version": 1,
+  "study": "executable-outcome-rlcd-screen-v1",
+  "data": {
+    "path": "data/mbpp-outcome-screen-v1/data.jsonl",
+    "sha256": "8870e94c674b2a8d1c851462990818e4b06969056fd61b0157f7fe38dd5027b1",
+    "manifest_path": "data/mbpp-outcome-screen-v1/manifest.json",
+    "manifest_sha256": "326233a07c16911c57ae7132b87e9fffe6b5633b6a1112bb4c53324a49a9d44b",
+    "source_outcome_data_sha256": "07af9e539a806a7ff5969440a404bf57581c0f4ec14c8b8c55509ede6c3d6497",
+    "train_rows": 203,
+    "validation_rows": 45,
+    "request_token_limit": 768,
+    "official_test_included": false
+  },
+  "representation_endpoints": [
+    {
+      "id": "seed42-decoder",
+      "path": "runs/architecture-comparison-v1/seed42-decoder",
+      "seed": 42,
+      "weights_sha256": "e6bb5bee5bbb9bd8f43770f98a2476e4e0367c42caa726b5396759be325df78d"
+    },
+    {
+      "id": "seed43-decoder",
+      "path": "runs/architecture-comparison-v1/seed43-decoder",
+      "seed": 43,
+      "weights_sha256": "71997f108a11c56c7c95ff5d222c90fdca290d4808a10238cc9af43a21049b2e"
+    },
+    {
+      "id": "seed44-decoder",
+      "path": "runs/architecture-comparison-v1/seed44-decoder",
+      "seed": 44,
+      "weights_sha256": "985d137410fe8aa86113f5e855d5ec12d0c1bf73675f422891814e0b9b03101b"
+    }
+  ],
+  "stage": "frozen_candidate_features_and_trainable_small_heads",
+  "training": {
+    "policy_head_width": 256,
+    "policy_head_dropout": 0.0,
+    "reward_head_width": 256,
+    "reward_head_dropout": 0.0,
+    "epochs": 20,
+    "batch_size": 16,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "early_stopping": false,
+    "logged_actions_per_row_per_epoch": 8,
+    "behavior_exploration": 0.2,
+    "reward_model_initial_prediction": 0.5,
+    "reward_model_weight": 1.0,
+    "importance_weight_clipping": null
+  },
+  "arms": {
+    "H-hard-winner": {
+      "information": "complete_reward_table_reduced_to_first_argmax",
+      "objective": "cross_entropy"
+    },
+    "O-full-information": {
+      "information": "complete_reward_table",
+      "objective": "negative_expected_reward"
+    },
+    "R-ips-loo": {
+      "information": "chosen_action_reward_only",
+      "objective": "inverse_propensity_score_function_with_independent_leave_one_out_baseline"
+    },
+    "D-doubly-robust": {
+      "information": "same_logged_actions_and_rewards_as_R-ips-loo",
+      "objective": "direct_reward_model_term_plus_inverse_propensity_residual_and_observed_action_MSE"
+    }
+  },
+  "primary_metric": "mean_decision_regret",
+  "secondary_metrics": [
+    "mean_policy_expected_reward",
+    "optimal_set_hit_rate",
+    "full_pass_selection_rate",
+    "importance_weight_distribution",
+    "reward_model_mse"
+  ],
+  "advancement_rule_D_over_R": {
+    "mean_regret_strictly_lower": true,
+    "seed_wins_required": 2,
+    "maximum_single_seed_regret_regression": 0.02,
+    "mean_policy_expected_reward_must_not_decline": true,
+    "integrity_violations_allowed": 0
+  },
+  "sealed_after_advancement": {
+    "mbpp_official_test_ids": [11, 510],
+    "execution_count": 1,
+    "requires_locked_weights_and_hashes": true
+  }
+}

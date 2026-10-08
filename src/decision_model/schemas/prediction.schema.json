@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Decision Model Prediction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "choice_id",
+    "probabilities",
+    "requires_review",
+    "score_kind",
+    "calibration"
+  ],
+  "properties": {
+    "choice_id": {"type": "string", "minLength": 1},
+    "probabilities": {
+      "type": "object",
+      "minProperties": 2,
+      "maxProperties": 32,
+      "propertyNames": {"type": "string", "minLength": 1},
+      "additionalProperties": {"type": "number", "minimum": 0, "maximum": 1}
+    },
+    "requires_review": {"const": true},
+    "score_kind": {
+      "enum": [
+        "candidate_probability_not_a_guarantee",
+        "contextual_prior_corrected_candidate_probability_not_a_guarantee"
+      ]
+    },
+    "calibration": {"enum": ["uncalibrated", "validation_temperature"]}
+  }
+}

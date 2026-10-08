@@ -1,0 +1,38 @@
+{
+  "format_version": 1,
+  "project": "ChoiceForge",
+  "release_status": "source_and_parameter_bundle_published",
+  "source_license": "Apache-2.0",
+  "public_base": {
+    "repository": "https://huggingface.co/openbmb/MiniCPM5-2B-Base",
+    "revision": "96a57cd572a02506b4500f54427dca24970c1bac",
+    "license": "Apache-2.0",
+    "included": false
+  },
+  "model_bundle": {
+    "format": "choiceforge-local-bundle-v1",
+    "bytes": 55150459,
+    "manifest_sha256": "27406c0544c8d44813a2e2363029ee265548997e42802f790eca0d3588fb59ba",
+    "files": {
+      "adapter.json": "b85b843a0d5d1bf3aa866d54d1c1f9fceed37ef337f71294330a79d5bebca368",
+      "adapter.safetensors": "8e4c816e43ea70ccac43145646583e6466357455bc794761faecbe0fe23f196a",
+      "parent/model.json": "b728b762e7f4d664fa37b3d6cb5976d8f6c731cebca502440f4814f26c052c6f",
+      "parent/decision.safetensors": "24a64f1efa256e182049db117b8ce67495dd401326b1db5ebbba168a6f08c180",
+      "parent/calibration.json": "e41aa1253886ad1ca0954219355d8f123a5ca62944fbc8ee4d03da05b2d486d9"
+    },
+    "contains_training_data": false,
+    "requires_human_review": true
+  },
+  "sealed_evidence": {
+    "family": "SciFact scientific claim verification with gold rationales",
+    "rows": 209,
+    "seeds": [42, 43, 44],
+    "all_preregistered_checks_passed": true,
+    "accuracy_delta_each_seed": 0.0,
+    "proper_gain_range": [0.08050066717157989, 0.08137493675132368]
+  },
+  "source_repository_has_remote": true,
+  "published": true,
+  "repository": "https://github.com/Gabriel22123/ChoiceForge",
+  "third_party_base_published": false
+}

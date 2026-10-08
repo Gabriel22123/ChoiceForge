@@ -1,0 +1,9 @@
+{
+  "byte_identical": true,
+  "files": {
+    "cases.jsonl": "dc952a6d731dbcc273790ccc1c52dd4b6c33f0a14d92ad3ff09b6fd09f84638e",
+    "seed-42.json": "ec7fb6a2d746bb107e6d0cfddfebcb03c86c0b3d3c6d081dacb2524c2adb66ac",
+    "seed-43.json": "255aee5e49a0399d70632c2763edcc50c14281ce7c95cf22afd0e62329be9e7f"
+  },
+  "note": "Independent tokenizer-admitted selection from the pinned public mixture; creation timestamps intentionally excluded."
+}

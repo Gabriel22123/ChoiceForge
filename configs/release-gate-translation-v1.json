@@ -1,0 +1,39 @@
+{
+  "format_version": 1,
+  "study": "release-candidate-v1",
+  "status": "locked_before_any_endpoint_result",
+  "purpose": "Mechanical translation of the preregistered advancement language into report calculations.",
+  "metric_view": "raw uncalibrated probabilities for all accuracy and probability-loss gates",
+  "probability_loss_mapping": "Use cross_entropy when evaluation rows contain public soft target distributions; otherwise use nll. Cross entropy is the expected negative log likelihood under the target distribution.",
+  "seed_pairing": [1701, 1702, 1703],
+  "seen_tasks": {
+    "rows": "the identical common test rows stored in each endpoint evaluation",
+    "task_unit": "source",
+    "combined_win": "expanded accuracy > paired control accuracy; require at least two of three seeds",
+    "mean_nll": "equal-seed mean expanded raw NLL <= equal-seed mean control raw NLL",
+    "maximum_task_seed_regression": "for every source and seed, expanded accuracy - control accuracy >= -0.02",
+    "retained_sources": ["bandit", "clinc", "goemotions", "json-schema", "paws-wiki", "snli"],
+    "retained_task_mean": "within an endpoint, arithmetic mean of retained-source raw accuracies; equal-seed mean expanded >= equal-seed mean control"
+  },
+  "fresh_blind_tasks": {
+    "rows": "the sealed release blind suite only",
+    "task_unit": "source",
+    "combined_win": "expanded accuracy > paired control accuracy; require at least two of three seeds",
+    "mean_accuracy": "equal-seed mean expanded raw accuracy > equal-seed mean control raw accuracy",
+    "mean_nll": "equal-seed mean expanded raw NLL <= equal-seed mean control raw NLL",
+    "maximum_task_seed_regression": "for every source and seed, expanded accuracy - control accuracy >= -0.02"
+  },
+  "candidate_prior": {
+    "context_advantage": "for every expanded seed and blind source, mean calibrated gold log probability under full context minus null context > 0",
+    "cross_seed_null_js": "generalized Jensen-Shannon divergence using each endpoint's validation temperature, averaged over blind rows; expanded mean <= control mean + 0.01",
+    "logarithm": "natural"
+  },
+  "contract": {
+    "required_cases_per_endpoint": 4,
+    "candidate_counts": [2, 4, 10, 32],
+    "required_pass_rate": 1.0,
+    "requires_review": true,
+    "free_form_output_fields_allowed": 0
+  },
+  "release_decision": "All gates are conjunctive. If all pass, only seed1701-expanded is eligible. Replication seeds cannot substitute for seed 1701."
+}

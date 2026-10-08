@@ -1,0 +1,91 @@
+{
+  "format_version": 1,
+  "study": "qasc-residual-expert-screen-v1",
+  "protocol_sha256": "12a60d651846d312f91a607ce3fe2dcee87239fb8ec665d4228c72e9697956b4",
+  "role": "consumed single-seed mechanism screen; no multiseed or release claim",
+  "mechanism": {
+    "initial": {
+      "rows": 24,
+      "max_probability_difference": 0.0,
+      "parent_parameters_exact": true
+    },
+    "parent_invariance": {
+      "parent_tensors": 454,
+      "parent_parameters_exact": true,
+      "parent_max_absolute_difference": 0.0,
+      "residual_tensors": [
+        "residual_head.0.bias",
+        "residual_head.0.weight",
+        "residual_head.1.bias",
+        "residual_head.1.weight",
+        "residual_head.4.bias",
+        "residual_head.4.weight"
+      ]
+    },
+    "residual_probe": {
+      "parameter": "residual_head.4.weight",
+      "absolute_change": 0.9428673386573792
+    }
+  },
+  "seen": {
+    "accuracy": 0.7587209302325582,
+    "nll": 0.8055505068854891
+  },
+  "development": {
+    "accuracy": 0.65625,
+    "context_advantage": {
+      "rows": 384,
+      "mean": 0.11356175762133097,
+      "positive": 239,
+      "by_source": {
+        "bigbench-causal_judgment": {
+          "rows": 128,
+          "mean": -0.0247176459950412,
+          "positive": 73
+        },
+        "bigbench-formal_fallacies_syllogisms_negation": {
+          "rows": 128,
+          "mean": 0.012375618953019977,
+          "positive": 56
+        },
+        "bigbench-movie_recommendation": {
+          "rows": 128,
+          "mean": 0.35302729990601417,
+          "positive": 110
+        }
+      }
+    },
+    "context_delta_vs_parent": {
+      "bigbench-causal_judgment": -0.01110886829919468,
+      "bigbench-formal_fallacies_syllogisms_negation": 0.0028865708949391087,
+      "bigbench-movie_recommendation": 0.016047725609772356
+    }
+  },
+  "qasc": {
+    "accuracy": 0.84375,
+    "nll": 0.5418248500610429,
+    "context_advantage": 1.7027951739603817
+  },
+  "audit": {
+    "cases": 24,
+    "stable_all_orders": 24,
+    "correct_all_orders": 19,
+    "max_reload_probability_difference": 5.960464477539063e-08,
+    "max_id_rename_probability_difference": 0.0
+  },
+  "checks": {
+    "mechanism.initial_exact": true,
+    "mechanism.parent_parameters_exact": true,
+    "mechanism.residual_changed": true,
+    "seen.accuracy": true,
+    "seen.nll": true,
+    "development.accuracy": false,
+    "development.context_retention": false,
+    "qasc.accuracy": false,
+    "qasc.nll": true,
+    "qasc.context": true,
+    "audit": true
+  },
+  "advances_to_new_task_family_screen": false,
+  "new_sealed_tasks_required_for_any_release_claim": true
+}

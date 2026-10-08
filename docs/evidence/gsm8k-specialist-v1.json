@@ -1,0 +1,434 @@
+{
+  "format_version": 1,
+  "study": "gsm8k-specialist-v1",
+  "role": "consumed multi-seed public-family specialist screen",
+  "protocol_sha256": "71514353eb91c27d7538a87ce9173a67eb6cfc542b1df3479c109b9f65fa917b",
+  "seeds": [
+    {
+      "seed": 42,
+      "run": {
+        "seed": 42,
+        "updates": 16,
+        "seconds": 0.16899654199369252,
+        "initial_residual_sha256": "995b8d3fd86fa34cf8979bb37500063415a122630df6951b62dac729c3a29422",
+        "final_residual_sha256": "0a93dc4e1b5d1b096cd0e4a5dc91f419ad637a6949d3edd7f4f28dd351431792",
+        "initial_max_logit_difference": 0.0,
+        "weights_sha256": "df9a47a7c1da26bdf7994e007d01a933a0e531330528f829645a7f23f7c3e79a",
+        "training_plan_sha256": "32e761c3ec516d6daacd91a4244792861fa6c4fab34b97eda8319f79bdd00d3e",
+        "gradient_norm": {
+          "mean": 0.19751872355118394,
+          "maximum": 0.5531637668609619,
+          "clipped_updates": 0
+        },
+        "curve": [
+          {
+            "update": 1,
+            "loss": 1.8013616800308228
+          },
+          {
+            "update": 2,
+            "loss": 1.6826883554458618
+          },
+          {
+            "update": 3,
+            "loss": 1.6432923078536987
+          },
+          {
+            "update": 4,
+            "loss": 2.0159130096435547
+          },
+          {
+            "update": 5,
+            "loss": 1.7024110555648804
+          },
+          {
+            "update": 6,
+            "loss": 1.5739786624908447
+          },
+          {
+            "update": 7,
+            "loss": 1.5687326192855835
+          },
+          {
+            "update": 8,
+            "loss": 1.8336460590362549
+          },
+          {
+            "update": 9,
+            "loss": 1.7142949104309082
+          },
+          {
+            "update": 10,
+            "loss": 1.8107839822769165
+          },
+          {
+            "update": 11,
+            "loss": 1.6054474115371704
+          },
+          {
+            "update": 12,
+            "loss": 1.5124839544296265
+          },
+          {
+            "update": 13,
+            "loss": 1.5726851224899292
+          },
+          {
+            "update": 14,
+            "loss": 1.6279278993606567
+          },
+          {
+            "update": 15,
+            "loss": 1.7385765314102173
+          },
+          {
+            "update": 16,
+            "loss": 1.7228749990463257
+          }
+        ]
+      },
+      "evaluation": {
+        "rows": 256,
+        "mean_utility": 0.019741079304367304,
+        "open_rate": 0.52734375,
+        "parent_accuracy": 0.3828125,
+        "expert_accuracy": 0.39453125,
+        "accuracy_delta": 0.01171875,
+        "parent_nll": 1.2433571748875825,
+        "expert_nll": 1.2319473857918148,
+        "nll_delta": -0.01140978909576762,
+        "context_advantage": {
+          "gsm8k": {
+            "rows": 256,
+            "mean": 0.18390582874417305,
+            "positive": 173
+          }
+        },
+        "parent_context_advantage": {
+          "gsm8k": {
+            "rows": 256,
+            "mean": 0.17870918102562428,
+            "positive": 168
+          }
+        },
+        "by_source": {
+          "gsm8k": {
+            "rows": 256,
+            "mean_utility": 0.019741079304367304,
+            "open_rate": 0.52734375,
+            "parent_accuracy": 0.3828125,
+            "expert_accuracy": 0.39453125,
+            "accuracy_delta": 0.01171875,
+            "parent_nll": 1.2433571748875825,
+            "expert_nll": 1.2319473857918148,
+            "nll_delta": -0.01140978909576762
+          }
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "run": {
+        "seed": 43,
+        "updates": 16,
+        "seconds": 0.10463858401635662,
+        "initial_residual_sha256": "9a8b6fd2e4368a16819f9c31eeb71e967d6787d8e5a0e891322fed70fd4958d9",
+        "final_residual_sha256": "cca795c4302ca8b262ccadeae23bef0f21c91e6de908ba7c8b37ec6ddb470c8e",
+        "initial_max_logit_difference": 0.0,
+        "weights_sha256": "ce5a7f848fa37003783b8d51e434a6b465904f028632832dd99d4fe4e8ce70ee",
+        "training_plan_sha256": "2b87de892928c5cb28daa20fb36eb84a1b3a3b87e48f6c17395c53d76b6c5df2",
+        "gradient_norm": {
+          "mean": 0.2303265226073563,
+          "maximum": 0.5686091184616089,
+          "clipped_updates": 0
+        },
+        "curve": [
+          {
+            "update": 1,
+            "loss": 1.7385330200195312
+          },
+          {
+            "update": 2,
+            "loss": 1.9256243705749512
+          },
+          {
+            "update": 3,
+            "loss": 1.6947451829910278
+          },
+          {
+            "update": 4,
+            "loss": 1.6479599475860596
+          },
+          {
+            "update": 5,
+            "loss": 1.7298104763031006
+          },
+          {
+            "update": 6,
+            "loss": 1.4831211566925049
+          },
+          {
+            "update": 7,
+            "loss": 1.9039876461029053
+          },
+          {
+            "update": 8,
+            "loss": 1.5666265487670898
+          },
+          {
+            "update": 9,
+            "loss": 1.7011343240737915
+          },
+          {
+            "update": 10,
+            "loss": 1.9395301342010498
+          },
+          {
+            "update": 11,
+            "loss": 1.5284656286239624
+          },
+          {
+            "update": 12,
+            "loss": 1.599282145500183
+          },
+          {
+            "update": 13,
+            "loss": 1.5811219215393066
+          },
+          {
+            "update": 14,
+            "loss": 1.7781323194503784
+          },
+          {
+            "update": 15,
+            "loss": 1.6716594696044922
+          },
+          {
+            "update": 16,
+            "loss": 1.613784909248352
+          }
+        ]
+      },
+      "evaluation": {
+        "rows": 256,
+        "mean_utility": 0.023326958471443504,
+        "open_rate": 0.53125,
+        "parent_accuracy": 0.3828125,
+        "expert_accuracy": 0.40234375,
+        "accuracy_delta": 0.01953125,
+        "parent_nll": 1.2433571748875825,
+        "expert_nll": 1.229920529269222,
+        "nll_delta": -0.013436645618360554,
+        "context_advantage": {
+          "gsm8k": {
+            "rows": 256,
+            "mean": 0.18500996544025838,
+            "positive": 174
+          }
+        },
+        "parent_context_advantage": {
+          "gsm8k": {
+            "rows": 256,
+            "mean": 0.17870918102562428,
+            "positive": 168
+          }
+        },
+        "by_source": {
+          "gsm8k": {
+            "rows": 256,
+            "mean_utility": 0.023326958471443504,
+            "open_rate": 0.53125,
+            "parent_accuracy": 0.3828125,
+            "expert_accuracy": 0.40234375,
+            "accuracy_delta": 0.01953125,
+            "parent_nll": 1.2433571748875825,
+            "expert_nll": 1.229920529269222,
+            "nll_delta": -0.013436645618360554
+          }
+        }
+      }
+    },
+    {
+      "seed": 44,
+      "run": {
+        "seed": 44,
+        "updates": 16,
+        "seconds": 0.10202783398563042,
+        "initial_residual_sha256": "d02d8ddaf86a37b07eab3a50da39217fdf0679d4f08736deb7a827f3eece7c47",
+        "final_residual_sha256": "67bad4ab1f5633a2f5b77eff60759d7323f3563220fe8ed787cafdb10e245aba",
+        "initial_max_logit_difference": 0.0,
+        "weights_sha256": "0c6c8f83c8193786e4618b12def4caba251ff2bc9b0a1f05af3cea03ea5c0d92",
+        "training_plan_sha256": "f0bd3f9315b8c6f5c84c5470b58ff50bc67ba99b44a2a578bd0f4a84dda738bd",
+        "gradient_norm": {
+          "mean": 0.19414689159020782,
+          "maximum": 0.4250427186489105,
+          "clipped_updates": 0
+        },
+        "curve": [
+          {
+            "update": 1,
+            "loss": 1.4403456449508667
+          },
+          {
+            "update": 2,
+            "loss": 1.5032998323440552
+          },
+          {
+            "update": 3,
+            "loss": 1.512696623802185
+          },
+          {
+            "update": 4,
+            "loss": 1.7696397304534912
+          },
+          {
+            "update": 5,
+            "loss": 1.548668622970581
+          },
+          {
+            "update": 6,
+            "loss": 1.828249454498291
+          },
+          {
+            "update": 7,
+            "loss": 1.6833797693252563
+          },
+          {
+            "update": 8,
+            "loss": 1.7860682010650635
+          },
+          {
+            "update": 9,
+            "loss": 1.605950117111206
+          },
+          {
+            "update": 10,
+            "loss": 1.8577730655670166
+          },
+          {
+            "update": 11,
+            "loss": 1.9836097955703735
+          },
+          {
+            "update": 12,
+            "loss": 1.6849629878997803
+          },
+          {
+            "update": 13,
+            "loss": 1.8538265228271484
+          },
+          {
+            "update": 14,
+            "loss": 1.7029097080230713
+          },
+          {
+            "update": 15,
+            "loss": 1.614343523979187
+          },
+          {
+            "update": 16,
+            "loss": 1.762701153755188
+          }
+        ]
+      },
+      "evaluation": {
+        "rows": 256,
+        "mean_utility": 0.016036233690101653,
+        "open_rate": 0.546875,
+        "parent_accuracy": 0.3828125,
+        "expert_accuracy": 0.390625,
+        "accuracy_delta": 0.0078125,
+        "parent_nll": 1.2433571748875825,
+        "expert_nll": 1.2338339755547612,
+        "nll_delta": -0.009523199332821308,
+        "context_advantage": {
+          "gsm8k": {
+            "rows": 256,
+            "mean": 0.1835128404200077,
+            "positive": 173
+          }
+        },
+        "parent_context_advantage": {
+          "gsm8k": {
+            "rows": 256,
+            "mean": 0.17870918102562428,
+            "positive": 168
+          }
+        },
+        "by_source": {
+          "gsm8k": {
+            "rows": 256,
+            "mean_utility": 0.016036233690101653,
+            "open_rate": 0.546875,
+            "parent_accuracy": 0.3828125,
+            "expert_accuracy": 0.390625,
+            "accuracy_delta": 0.0078125,
+            "parent_nll": 1.2433571748875825,
+            "expert_nll": 1.2338339755547612,
+            "nll_delta": -0.009523199332821308
+          }
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "mean_utility": {
+      "mean": 0.01970142382197082,
+      "minimum": 0.016036233690101653,
+      "maximum": 0.023326958471443504
+    },
+    "open_rate": {
+      "mean": 0.53515625,
+      "minimum": 0.52734375,
+      "maximum": 0.546875
+    },
+    "accuracy_delta": {
+      "mean": 0.013020833333333334,
+      "minimum": 0.0078125,
+      "maximum": 0.01953125
+    },
+    "nll_delta": {
+      "mean": -0.011456544682316494,
+      "minimum": -0.013436645618360554,
+      "maximum": -0.009523199332821308
+    }
+  },
+  "checks": {
+    "mechanism.initial_exact_each_seed": true,
+    "utility.combined_each_seed": false,
+    "utility.each_source_each_seed": false,
+    "accuracy.combined_each_seed": false,
+    "nll.combined_each_seed": false,
+    "nll.each_source_each_seed": false,
+    "context.each_source_each_seed": true
+  },
+  "qualifies_as_positive_utility_family": false,
+  "limitations": [
+    "GSM8K validation becomes consumed after this first run and is not fresh release evidence.",
+    "The decoder representation and parent decision head are frozen.",
+    "This screen trains a GSM8K specialist only; it does not train or evaluate a router."
+  ],
+  "context_gate": [
+    {
+      "seed": 42,
+      "by_source": {
+        "gsm8k": 0.005196647718548775
+      },
+      "minimum_delta": 0.005196647718548775
+    },
+    {
+      "seed": 43,
+      "by_source": {
+        "gsm8k": 0.0063007844146341085
+      },
+      "minimum_delta": 0.0063007844146341085
+    },
+    {
+      "seed": 44,
+      "by_source": {
+        "gsm8k": 0.0048036593943834305
+      },
+      "minimum_delta": 0.0048036593943834305
+    }
+  ]
+}

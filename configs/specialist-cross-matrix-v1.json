@@ -1,0 +1,143 @@
+{
+  "format_version": 1,
+  "study": "specialist-cross-matrix-v1",
+  "status": "frozen_before_evaluation",
+  "data": {
+    "path": "runs/qasc-dual-function-screen-v1/cases.jsonl",
+    "sha256": "1e3085e934f30ab50f7258e8ad2cd28de87423f8ed4649a7403cff57e17b8381",
+    "dataset": "cases",
+    "splits": [
+      "validation"
+    ],
+    "sources": [
+      "qasc",
+      "snli",
+      "paws-wiki",
+      "clinc",
+      "typed-decisions",
+      "json-schema"
+    ],
+    "rows": 724
+  },
+  "feature_cache": {
+    "path": "cache/qasc-routed-residual-features-v1",
+    "manifest_sha256": "b6d2b5def9bf913cb7c06d80747e4a63976a07c21cbc60fe1df9deb7b107db53"
+  },
+  "model": {
+    "residual_width": 256,
+    "router_width": 128,
+    "dropout": 0.0,
+    "initial_gate_probability": 0.25
+  },
+  "cost": {
+    "brier_weight": 0.5,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05
+  },
+  "experts": {
+    "qasc": {
+      "home_source": "qasc",
+      "canonical_seed": 1701,
+      "endpoints": [
+        {
+          "seed": 1701,
+          "weights": "runs/qasc-binary-route-screen-v1/binary-route.safetensors",
+          "weights_sha256": "a1b9d145e3532ddd0460aa3429420088cd74f8a3a56325249f227c5b846853ab"
+        }
+      ]
+    },
+    "snli": {
+      "home_source": "snli",
+      "canonical_seed": 42,
+      "endpoints": [
+        {
+          "seed": 42,
+          "weights": "runs/snli-specialist-v1/specialist-seed-42.safetensors",
+          "weights_sha256": "b7fa22125e6c24e9b15532ba807bb47b2d2fc1bb28fb7d446312c4c0a71ed65b"
+        },
+        {
+          "seed": 43,
+          "weights": "runs/snli-specialist-v1/specialist-seed-43.safetensors",
+          "weights_sha256": "7f03fb071b0f6f7e8fa486a41ed3af85baf0fe56eca11378f0abd5ba3bbfc670"
+        },
+        {
+          "seed": 44,
+          "weights": "runs/snli-specialist-v1/specialist-seed-44.safetensors",
+          "weights_sha256": "da3bae5f16d37004eb9c532fe825ff69f6ef3147a8e98d41f2496e40bf038f43"
+        }
+      ]
+    },
+    "paws-wiki": {
+      "home_source": "paws-wiki",
+      "canonical_seed": 42,
+      "endpoints": [
+        {
+          "seed": 42,
+          "weights": "runs/paws-wiki-specialist-v1/specialist-seed-42.safetensors",
+          "weights_sha256": "6d185df8a459041819abe6e3a48aed2df49bec335d468150d53b04931f8f2152"
+        },
+        {
+          "seed": 43,
+          "weights": "runs/paws-wiki-specialist-v1/specialist-seed-43.safetensors",
+          "weights_sha256": "8b3da859fcfbcf44b6b42267a9a49f97697111dd87aa043e2044fc12a957f3e7"
+        },
+        {
+          "seed": 44,
+          "weights": "runs/paws-wiki-specialist-v1/specialist-seed-44.safetensors",
+          "weights_sha256": "276eaa21a1f00790a53c98108b38be990a6816e56a6b1fea2071703e07ad150a"
+        }
+      ]
+    },
+    "clinc": {
+      "home_source": "clinc",
+      "canonical_seed": 42,
+      "endpoints": [
+        {
+          "seed": 42,
+          "weights": "runs/clinc-specialist-v1/specialist-seed-42.safetensors",
+          "weights_sha256": "1c1edff2735f173aca9e209e01029fad65c42c66d8840a64b086dafde3da2243"
+        },
+        {
+          "seed": 43,
+          "weights": "runs/clinc-specialist-v1/specialist-seed-43.safetensors",
+          "weights_sha256": "ad203e395430660ab4b23cbbd426ac8a713d9ef1f2d93084b137a2f00320e70a"
+        },
+        {
+          "seed": 44,
+          "weights": "runs/clinc-specialist-v1/specialist-seed-44.safetensors",
+          "weights_sha256": "9f89ae9f0c05253711bbb42db757fa9eed0ee45115141342299657a641991007"
+        }
+      ]
+    }
+  },
+  "screening_rule": {
+    "each_home_utility_min": 0.01,
+    "oracle_mean_utility_min": 0.03,
+    "oracle_accuracy_min_delta": 0.01,
+    "oracle_nll_max_delta": -0.02,
+    "decision": "Advance only if every canonical specialist is positive on its home family, the gold-cost oracle improves utility, accuracy and NLL, and at least one off-diagonal transfer is harmful."
+  },
+  "source_files": {
+    "scripts/run_specialist_cross_matrix.py": "0d45851035c5631151702d351f2941f84a5b2c3522854a056a95294182f3a7e3",
+    "scripts/run_qasc_routed_residual_screen.py": "bd14916548a04465b33d0a1ed80e0fa9bd621a5ef0ca858670184ba911e64ba4",
+    "src/decision_model/core.py": "ed3eafaff30275e99bf4e7c970584d5bd3f2197d747d25b2ca20adbfb37621ae",
+    "src/decision_model/counterfactual_routing.py": "3f033b5a85fa6a57bcdc43c120de00f3f7a9c791727cc7e9d65049ddba1f37b5",
+    "src/decision_model/feature_screen.py": "3b16e2b880e1e3c861c01988c19ac323818e8a5e7f0afd54b2991d35c36124e2",
+    "src/decision_model/route_utility.py": "be260aa82f322cbac68015129a3c08a46048f92e7b8c6d943c73d8f0820d9f37",
+    "src/decision_model/train.py": "485af4564a68d6e44dbb080e97b0a08ded6925ae0d2bac8d74215fd665fa0f51",
+    "docs/SPECIALIST_CROSS_MATRIX_DESIGN.zh-CN.md": "3733cfab1a691f716f9951110a5aa39dec5d653193282d1fdd6537fa255c7bdb"
+  },
+  "limitations": [
+    "All task-family validation rows are consumed and cannot support a fresh release claim.",
+    "The oracle reads gold counterfactual costs and is not an inference-time router.",
+    "QASC has one frozen endpoint while SNLI, PAWS-Wiki and CLINC retain three seeds.",
+    "The expert bank uses a frozen decoder representation and frozen parent head."
+  ],
+  "interpretation": {
+    "public_data_only": true,
+    "consumed_mechanism_screen": true,
+    "gold_cost_oracle_only": true,
+    "router_training": false,
+    "github_publication": false
+  }
+}

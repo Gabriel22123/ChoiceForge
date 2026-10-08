@@ -1,0 +1,20 @@
+{
+  "name": "BIG-bench logical_deduction",
+  "repository": "https://github.com/google/BIG-bench",
+  "revision": "092b196c1f8f14a54bbc62f24759d43bde46dd3b",
+  "license": "Apache-2.0",
+  "files": {
+    "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "bigbench/benchmark_tasks/logical_deduction/README.md": "d3d0e20ba020525c44f59c6d348f02d84167bb59dc210e39585e5d8de5cd7f4a",
+    "bigbench/benchmark_tasks/logical_deduction/three_objects/task.json": "5e3f4a7569cb70bb1469374d3d34fb7883445a9d5743e1a81fd8dcdaf6fcb40f",
+    "bigbench/benchmark_tasks/logical_deduction/five_objects/task.json": "552dec4d5067bdbe033e78e80fdf1f5a8061d17b385379b8ec5104fa17d07918",
+    "bigbench/benchmark_tasks/logical_deduction/seven_objects/task.json": "5e24146d600b1b2e2d8958e23851e7c958b1a7644a2540fa0de7fa3e51a68cf7"
+  },
+  "official_rows": {
+    "three_objects": 300,
+    "five_objects": 500,
+    "seven_objects": 700
+  },
+  "selection": "For each subtask, admit rows under the pinned decoder tokenizer, order by SHA-256 of subtask/input/choice text without target scores, then take 96.",
+  "release_policy": "Raw and transformed task rows, labels, collected logits and per-case predictions are excluded from release bundles."
+}

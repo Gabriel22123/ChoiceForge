@@ -1,0 +1,11 @@
+{
+  "repository": "https://huggingface.co/EuroBERT/EuroBERT-2.1B",
+  "revision": "81245a4d71f43452badf5e04458e4ddb831ff109",
+  "files": {
+    "config.json": "ad333b4fdf4993a8edc955c4f441ba11f69724b57b10620633c2c38714287a65",
+    "tokenizer.json": "98d4a1d32152d6cedf85b5e88f3b205106dca1fe72aaab34e0ac13c238421069",
+    "tokenizer_config.json": "0a6c6b1edf6b4f71604cf97f47521276e5a1f6c6d6b6243cd727a87e0efdc763",
+    "special_tokens_map.json": "6d66005b83cd0646e882e57e09c5a3e3e570ef53dd1f6d4315a65943fa81f2f7",
+    "model.safetensors": "95a20d9e222bb5edfaaddec384ccfd999cf9c9a4e3add3101df0d29b5731791e"
+  }
+}

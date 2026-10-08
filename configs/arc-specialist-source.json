@@ -1,0 +1,21 @@
+{
+  "name": "AI2 Reasoning Challenge (ARC) specialist training source",
+  "repository": "https://huggingface.co/datasets/allenai/ai2_arc",
+  "dataset_id": "allenai/ai2_arc",
+  "revision": "210d026faf9955653af8916fad021475a3f00453",
+  "license": "CC-BY-SA-4.0",
+  "files": {
+    "README.md": {
+      "sha256": "4a293e352253d771604725c978adcea71ee6504e89ed40e1cb0024ecafa9b37e"
+    },
+    "ARC-Challenge/train-00000-of-00001.parquet": {
+      "sha256": "e488c1587ffdcfc8443f916c53488a95cd471c5790e0746c6bfe4cecf20962cb",
+      "rows": 1119
+    },
+    "ARC-Easy/train-00000-of-00001.parquet": {
+      "sha256": "b315db8a4be597dc7daa50a4e70d48dd7c990c32085629e6ccd8c926beaa80b5",
+      "rows": 2251
+    }
+  },
+  "release_policy": "Download scripts and exact source metadata are public. Raw and transformed ARC rows stay outside the source release and are reconstructed locally under CC-BY-SA-4.0."
+}

@@ -1,0 +1,3507 @@
+{
+  "status": "complete_representation_frozen_screen",
+  "report_script_sha256": "c6ae1bcf701073abe0e4587ab64fa7722870d95012c6de5bcefb47d609331e2e",
+  "study_protocol_sha256": "58f88bf84633e89a23ceec12dc258be73d7c7cc3277e388328157d50883cbf9b",
+  "test_lock_sha256": "6c687f5f087ffa4dffd184d26a36b777dcb6e8d96f9fa7a421ed203a8a0ba5df",
+  "protocol": {
+    "protocol_id": "typed-decisions-objective-screen-v1",
+    "purpose": "representation-frozen full-fold screen of supervision and gradient-estimator effects before expensive end-to-end LoRA",
+    "feature_cache": "cache/typed-decisions-minicpm5-features-v1",
+    "feature_parity_evidence": "docs/evidence/typed-decisions-feature-cache-parity-v1.json",
+    "prepared_data": "data/typed-decisions-objective-screen-v1",
+    "source_folds": "data/typed-decisions-workflow-folds-v1",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "torch_threads": 4,
+    "deterministic_algorithms": true,
+    "head": {
+      "width": 256,
+      "dropout": 0.0,
+      "epochs": 3,
+      "batch_size": 64,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.01,
+      "gradient_clip": 1.0
+    },
+    "objective": {
+      "brier_weight": 0.5,
+      "noise_samples": 32,
+      "noise_sigma": 0.4,
+      "center_score_logits": true
+    },
+    "arms": {
+      "H-hard": {
+        "training_target_mode": "hard",
+        "gradient_estimator": "clean",
+        "ranked_probability_weight": 0.0,
+        "clean_anchor_weight": 0.0
+      },
+      "S-soft": {
+        "training_target_mode": "distribution",
+        "gradient_estimator": "clean",
+        "ranked_probability_weight": 0.0,
+        "clean_anchor_weight": 0.0
+      },
+      "T-typed-rps": {
+        "training_target_mode": "distribution",
+        "gradient_estimator": "clean",
+        "ranked_probability_weight": 1.0,
+        "clean_anchor_weight": 0.0
+      },
+      "R-rlcd-loo": {
+        "training_target_mode": "distribution",
+        "gradient_estimator": "score_function",
+        "ranked_probability_weight": 1.0,
+        "clean_anchor_weight": 1.0
+      }
+    },
+    "test_lock": "all 48 heads and validation artifacts must be complete and checksummed before any test file is parsed",
+    "advancement": {
+      "unit": "12 held-out endpoints = 4 workflows x 3 seeds",
+      "primary": "raw held-out-workflow soft cross entropy",
+      "requirements": [
+        "treatment has lower held-out soft CE in at least 9 of 12 paired endpoints",
+        "mean held-out soft CE delta is below zero",
+        "no workflow's three-seed mean held-out soft CE regresses by more than 0.01",
+        "mean seen-workflow soft CE does not regress by more than 0.005",
+        "mean held-out soft Brier does not regress"
+      ],
+      "contrasts": [
+        "S-soft minus H-hard",
+        "T-typed-rps minus S-soft",
+        "R-rlcd-loo minus T-typed-rps"
+      ],
+      "boundary": "passing advances an objective to end-to-end LoRA validation only; this frozen-representation screen cannot establish final model quality"
+    },
+    "created_utc": "2026-09-26T18:22:04.629127+00:00",
+    "protocol_sha256": "8747ebc57cf9516f07aa29aa10cf7aba8de76398beabfb6d6b924df9d0de52cf",
+    "feature_manifest_sha256": "467b6a8932e14d8e753c4ff0fed5d3d3c0efc370f7854a1e148d8ee164be04ef",
+    "feature_parity_evidence_sha256": "4a315e5b1f31bdab7859d128e819c35e096f15bde3cc4bfc2346d939309c6a12",
+    "hidden_size": 2048,
+    "prepared_manifest_sha256": "25606453c6721dfb5e25f4b7b1ee63aab7edb316d8f4d265ae4d8ae430dc41fe",
+    "folds": {
+      "agent_trace_observability": {
+        "held_out_workflow": "agent_trace_observability",
+        "source": "data/typed-decisions-workflow-folds-v1/heldout-agent_trace_observability/cases.jsonl",
+        "source_sha256": "dd4683be4337b74edc0e60df4768f93e5726c868218ea0f1b620951fb98e28ae",
+        "fit_sha256": "0942b8de625803307f989f16e0fbda5c1c0a229e9c6d4240701a69ef7260abf9",
+        "test_sha256": "05d9ba9b131f61cad2dee5b4ba9d687734d3cb239c846c2ad14bf48bcdbba2ce",
+        "fit": {
+          "rows": 4500,
+          "groups": 900,
+          "splits": {
+            "train": {
+              "answer_directly": 56,
+              "account": 58,
+              "1": 290,
+              "false": 613,
+              "3": 482,
+              "0": 132,
+              "2": 507,
+              "request_information": 44,
+              "delivery": 45,
+              "escalate_to_human": 131,
+              "true": 587,
+              "refund": 23,
+              "technical": 56,
+              "billing": 58,
+              "execute_refund": 9,
+              "manual_review": 91,
+              "hold": 45,
+              "reject": 11,
+              "approve": 93,
+              "investigate": 171,
+              "contain": 27,
+              "4": 29,
+              "monitor": 19,
+              "close_benign": 23
+            },
+            "validation": {
+              "answer_directly": 10,
+              "account": 19,
+              "3": 117,
+              "true": 164,
+              "request_information": 11,
+              "delivery": 15,
+              "2": 131,
+              "false": 136,
+              "escalate_to_human": 39,
+              "refund": 4,
+              "1": 74,
+              "billing": 10,
+              "technical": 12,
+              "0": 34,
+              "approve": 27,
+              "manual_review": 19,
+              "hold": 12,
+              "reject": 2,
+              "investigate": 43,
+              "4": 4,
+              "contain": 8,
+              "monitor": 2,
+              "close_benign": 7
+            },
+            "test": {}
+          },
+          "sources": {
+            "typed-decisions": 4500
+          },
+          "choice_counts": {
+            "5": 900,
+            "4": 2100,
+            "2": 1500
+          },
+          "decision_types": {
+            "choice": 1200,
+            "score": 1800,
+            "boolean": 1500
+          },
+          "supervision": {
+            "soft_distribution": 4500,
+            "hard_label": 0
+          }
+        },
+        "sealed_test": {
+          "rows": 2000,
+          "groups": 400,
+          "families": {
+            "agent_trace_observability": 500,
+            "customer_service": 500,
+            "invoice_processing": 500,
+            "security_incidents": 500
+          }
+        },
+        "test_policy": "deterministic separation only; training runner must not parse test.jsonl before global lock"
+      },
+      "customer_service": {
+        "held_out_workflow": "customer_service",
+        "source": "data/typed-decisions-workflow-folds-v1/heldout-customer_service/cases.jsonl",
+        "source_sha256": "c557537a4b7702f289322e7eee3a66c3e3a50b4adca26922679a27ebac5feec4",
+        "fit_sha256": "f0e6ec1d496e2bef0bcf670b5c86043b23f2d6327a883a364992249a40cebd74",
+        "test_sha256": "16e437519090a96c6334b4bfe653b30c08501642a71b3112a73fa78d69a6c761",
+        "fit": {
+          "rows": 4500,
+          "groups": 900,
+          "splits": {
+            "train": {
+              "human_review": 115,
+              "true": 549,
+              "partial": 120,
+              "0": 230,
+              "1": 384,
+              "continue": 30,
+              "false": 651,
+              "success": 60,
+              "harmful": 50,
+              "3": 417,
+              "observe": 92,
+              "2": 380,
+              "failure": 10,
+              "stop": 3,
+              "manual_review": 91,
+              "hold": 45,
+              "reject": 11,
+              "approve": 93,
+              "investigate": 171,
+              "contain": 27,
+              "4": 29,
+              "monitor": 19,
+              "close_benign": 23
+            },
+            "validation": {
+              "continue": 11,
+              "false": 152,
+              "success": 22,
+              "0": 56,
+              "observe": 22,
+              "human_review": 27,
+              "true": 148,
+              "failure": 5,
+              "1": 103,
+              "2": 88,
+              "partial": 21,
+              "harmful": 12,
+              "3": 109,
+              "approve": 27,
+              "manual_review": 19,
+              "hold": 12,
+              "reject": 2,
+              "investigate": 43,
+              "4": 4,
+              "contain": 8,
+              "monitor": 2,
+              "close_benign": 7
+            },
+            "test": {}
+          },
+          "sources": {
+            "typed-decisions": 4500
+          },
+          "choice_counts": {
+            "4": 2700,
+            "2": 1500,
+            "5": 300
+          },
+          "decision_types": {
+            "choice": 1200,
+            "boolean": 1500,
+            "score": 1800
+          },
+          "supervision": {
+            "soft_distribution": 4500,
+            "hard_label": 0
+          }
+        },
+        "sealed_test": {
+          "rows": 2000,
+          "groups": 400,
+          "families": {
+            "agent_trace_observability": 500,
+            "customer_service": 500,
+            "invoice_processing": 500,
+            "security_incidents": 500
+          }
+        },
+        "test_policy": "deterministic separation only; training runner must not parse test.jsonl before global lock"
+      },
+      "invoice_processing": {
+        "held_out_workflow": "invoice_processing",
+        "source": "data/typed-decisions-workflow-folds-v1/heldout-invoice_processing/cases.jsonl",
+        "source_sha256": "add555677dbd7a28d95b620503017788816bbaec12fdaa6a54a84a1513cf578f",
+        "fit_sha256": "dd76d9facdfaeba8e53c51b0b2348d362b215551c7c97e2fd37e18c84e460dcd",
+        "test_sha256": "41a6b49d90909f6a7a48f3ded41dafea5352454f466527c2933b4b715b6462f0",
+        "fit": {
+          "rows": 4500,
+          "groups": 900,
+          "splits": {
+            "train": {
+              "human_review": 115,
+              "true": 567,
+              "partial": 120,
+              "0": 135,
+              "1": 391,
+              "continue": 30,
+              "false": 393,
+              "success": 60,
+              "harmful": 50,
+              "3": 471,
+              "observe": 92,
+              "2": 414,
+              "failure": 10,
+              "stop": 3,
+              "answer_directly": 56,
+              "account": 58,
+              "request_information": 44,
+              "delivery": 45,
+              "escalate_to_human": 131,
+              "refund": 23,
+              "technical": 56,
+              "billing": 58,
+              "execute_refund": 9,
+              "investigate": 171,
+              "contain": 27,
+              "4": 29,
+              "monitor": 19,
+              "close_benign": 23
+            },
+            "validation": {
+              "continue": 11,
+              "false": 86,
+              "success": 22,
+              "0": 35,
+              "observe": 22,
+              "human_review": 27,
+              "true": 154,
+              "failure": 5,
+              "1": 97,
+              "2": 106,
+              "partial": 21,
+              "harmful": 12,
+              "3": 118,
+              "answer_directly": 10,
+              "account": 19,
+              "request_information": 11,
+              "delivery": 15,
+              "escalate_to_human": 39,
+              "refund": 4,
+              "billing": 10,
+              "technical": 12,
+              "investigate": 43,
+              "4": 4,
+              "contain": 8,
+              "monitor": 2,
+              "close_benign": 7
+            },
+            "test": {}
+          },
+          "sources": {
+            "typed-decisions": 4500
+          },
+          "choice_counts": {
+            "4": 2400,
+            "2": 1200,
+            "5": 900
+          },
+          "decision_types": {
+            "choice": 1500,
+            "boolean": 1200,
+            "score": 1800
+          },
+          "supervision": {
+            "soft_distribution": 4500,
+            "hard_label": 0
+          }
+        },
+        "sealed_test": {
+          "rows": 2000,
+          "groups": 400,
+          "families": {
+            "agent_trace_observability": 500,
+            "customer_service": 500,
+            "invoice_processing": 500,
+            "security_incidents": 500
+          }
+        },
+        "test_policy": "deterministic separation only; training runner must not parse test.jsonl before global lock"
+      },
+      "security_incidents": {
+        "held_out_workflow": "security_incidents",
+        "source": "data/typed-decisions-workflow-folds-v1/heldout-security_incidents/cases.jsonl",
+        "source_sha256": "d65f12694b211fd8dbe200869ad66b8e34731887d13c86787a2714a650685a5e",
+        "fit_sha256": "a2b374da92c01b3d8d19b67b59cdbc21748b3aee92d370466038eecaf4c93396",
+        "test_sha256": "046c3c07f45d4dbfdd22a098ba12eb58da416d73f20c30d60398ea938082536b",
+        "fit": {
+          "rows": 4500,
+          "groups": 900,
+          "splits": {
+            "train": {
+              "human_review": 115,
+              "true": 412,
+              "partial": 120,
+              "0": 229,
+              "1": 429,
+              "continue": 30,
+              "false": 548,
+              "success": 60,
+              "harmful": 50,
+              "3": 343,
+              "observe": 92,
+              "2": 439,
+              "failure": 10,
+              "stop": 3,
+              "answer_directly": 56,
+              "account": 58,
+              "request_information": 44,
+              "delivery": 45,
+              "escalate_to_human": 131,
+              "refund": 23,
+              "technical": 56,
+              "billing": 58,
+              "execute_refund": 9,
+              "manual_review": 91,
+              "hold": 45,
+              "reject": 11,
+              "approve": 93
+            },
+            "validation": {
+              "continue": 11,
+              "false": 127,
+              "success": 22,
+              "0": 61,
+              "observe": 22,
+              "human_review": 27,
+              "true": 113,
+              "failure": 5,
+              "1": 101,
+              "2": 119,
+              "partial": 21,
+              "harmful": 12,
+              "3": 79,
+              "answer_directly": 10,
+              "account": 19,
+              "request_information": 11,
+              "delivery": 15,
+              "escalate_to_human": 39,
+              "refund": 4,
+              "billing": 10,
+              "technical": 12,
+              "approve": 27,
+              "manual_review": 19,
+              "hold": 12,
+              "reject": 2
+            },
+            "test": {}
+          },
+          "sources": {
+            "typed-decisions": 4500
+          },
+          "choice_counts": {
+            "4": 2700,
+            "2": 1200,
+            "5": 600
+          },
+          "decision_types": {
+            "choice": 1500,
+            "boolean": 1200,
+            "score": 1800
+          },
+          "supervision": {
+            "soft_distribution": 4500,
+            "hard_label": 0
+          }
+        },
+        "sealed_test": {
+          "rows": 2000,
+          "groups": 400,
+          "families": {
+            "agent_trace_observability": 500,
+            "customer_service": 500,
+            "invoice_processing": 500,
+            "security_incidents": 500
+          }
+        },
+        "test_policy": "deterministic separation only; training runner must not parse test.jsonl before global lock"
+      }
+    },
+    "source_files": {
+      "scripts/run_typed_decisions_objective_screen.py": "758c80f09e09c9293c1c7fe92c63090c5db46f18ddb7634a9c3fe3cfe8a7d7f0",
+      "src/decision_model/feature_screen.py": "697da752c604e7bd18ce3479ba1e45bf36a0f2d9332d54ab1cf1ce554903dddb",
+      "src/decision_model/training_objective.py": "b81c3efc0bb94b8bd7113749bb12f1300a6425ea3011aca28bd0535f6eb95073",
+      "src/decision_model/objective.py": "2405e683f108c9c2c6bf75d180ee6a0f7d0cfc95217b923f8a9dfddef0877b81",
+      "src/decision_model/train.py": "99f54ad04a5d93ff795fe1b0eff00a510a162fbbfd7a1650335ff5b8ba99824a",
+      "src/decision_model/core.py": "3ec89d17733b39c2208cb7e2f7a3c3d8cbe82900fcaf5ed07cadeeff7d8529e4",
+      "configs/typed-decisions-objective-screen-v1.json": "8747ebc57cf9516f07aa29aa10cf7aba8de76398beabfb6d6b924df9d0de52cf"
+    },
+    "runtime": {
+      "python": "3.12.13",
+      "torch": "2.14.0",
+      "safetensors": "0.8.0",
+      "numpy": "2.5.3"
+    },
+    "screen_boundary": "Frozen base representations isolate head/objective optimization. Passing is necessary but insufficient for end-to-end LoRA advancement."
+  },
+  "test_lock": {
+    "status": "all_heads_and_validation_locked_before_test",
+    "protocol_sha256": "58f88bf84633e89a23ceec12dc258be73d7c7cc3277e388328157d50883cbf9b",
+    "endpoints": {
+      "agent_trace_observability/seed42/H-hard": {
+        "head_weights_sha256": "8901b08b5932f3f3bd3d9ce3cdffdd30382355aea4a624b1460a1dc7d448853f",
+        "run_sha256": "fea0cdb0de784368ca20db87559ddd0d6bba4b9ab423734c671c954de9ca5564",
+        "fit_checksums_sha256": "bfa51209348338a052e8541bad54da7203264b9d8ec3c92c37a7ca1143dbde76",
+        "training_plan_sha256": "00c1ba1daf788d01e5d348cc1695a81d3746fd57a7764cbb9d42b74073f7e5ea"
+      },
+      "agent_trace_observability/seed42/S-soft": {
+        "head_weights_sha256": "0e9c474fcae81f16a3020703baf3dfe5260b4fb48315c48871f35672f303035c",
+        "run_sha256": "347dece0da0eddf33b4122e85cae6f24428cd472a0b153c1c10aa0fc7e0f6ea3",
+        "fit_checksums_sha256": "2f7f52be0561833b41c9e0db9d163bcee665f616e9aec585b3f87f71738478a9",
+        "training_plan_sha256": "00c1ba1daf788d01e5d348cc1695a81d3746fd57a7764cbb9d42b74073f7e5ea"
+      },
+      "agent_trace_observability/seed42/T-typed-rps": {
+        "head_weights_sha256": "a28f900e6d9b045bf1eca8b78253d141d16919cdcab99441b7b2f4c2d30e123e",
+        "run_sha256": "aefcaadb55c9e4883c353ca8ccd7a9108ba16ec98d502cb1c51803a8f1aea3ac",
+        "fit_checksums_sha256": "0a471deb7fdd92292e84e1ebae1a1ef05078633c05f1e8a2809ec30627e81d22",
+        "training_plan_sha256": "00c1ba1daf788d01e5d348cc1695a81d3746fd57a7764cbb9d42b74073f7e5ea"
+      },
+      "agent_trace_observability/seed42/R-rlcd-loo": {
+        "head_weights_sha256": "f5df7e7b456b722493ad376d16476d2077aa91d6aa24a7a8d4cba5174df37355",
+        "run_sha256": "29617c53835b425ab962d502efb7234aaacc5f0b0a659d5500ec9ca6563e3ff1",
+        "fit_checksums_sha256": "9eb93ba35c2f71fc9ada5f18315fb0a80edf7ad781cecbaf64ffd0b8b5082af0",
+        "training_plan_sha256": "00c1ba1daf788d01e5d348cc1695a81d3746fd57a7764cbb9d42b74073f7e5ea"
+      },
+      "agent_trace_observability/seed43/H-hard": {
+        "head_weights_sha256": "c79814cf943b438db59126f6f3570ebdd6250c65ceb78d40f28fd4e20d57f539",
+        "run_sha256": "d4bead15095475c2ba88ea80988f5a6d3f821556de781a2958d8b239330cfc72",
+        "fit_checksums_sha256": "124fc09bee682c0626212727cdffc6f65c0b13fd06805a288cf37b9a08f89e40",
+        "training_plan_sha256": "236276a676e6d2f98f239d3dcb61a3d85097687f4644efbcd063a027a43b826e"
+      },
+      "agent_trace_observability/seed43/S-soft": {
+        "head_weights_sha256": "cf624faa554896f513d2fccf2aaa212c7f012d91d8d7f8beb08ac7969a801b98",
+        "run_sha256": "f5ba5d62cf26518c60330e5a0fdc9468221d3f75cc68cc8a255ae61c8d3bb690",
+        "fit_checksums_sha256": "83085e33374976b44ef0f44351c8b9d513a5ca13db1c57e8c5a97bf962c9e9d4",
+        "training_plan_sha256": "236276a676e6d2f98f239d3dcb61a3d85097687f4644efbcd063a027a43b826e"
+      },
+      "agent_trace_observability/seed43/T-typed-rps": {
+        "head_weights_sha256": "5f74b049dca8e08a3f518c151a8b79287f6073af3fe92163227e0ede5f083b76",
+        "run_sha256": "36187a4ca1c55e147ea8b517f2896abf90383c0e9a76de60a0d77cb460edfed3",
+        "fit_checksums_sha256": "0aa6c5c31eac72f9c3b7893cace5dc7f262191ef53295a50130d59f26e73fcd7",
+        "training_plan_sha256": "236276a676e6d2f98f239d3dcb61a3d85097687f4644efbcd063a027a43b826e"
+      },
+      "agent_trace_observability/seed43/R-rlcd-loo": {
+        "head_weights_sha256": "b330a44bd3c36c7a6362b965d8699d5c0e30e2b8a20d3a07ed8d0b0d5420ee05",
+        "run_sha256": "0c2aa178c429f80d872127ed755dde985a6b3bd84a3a3f1de09ed025470faaac",
+        "fit_checksums_sha256": "4ba216d26c4c95847adf90b182094fc5f371371e41283c3ff7ab4a4820b055c4",
+        "training_plan_sha256": "236276a676e6d2f98f239d3dcb61a3d85097687f4644efbcd063a027a43b826e"
+      },
+      "agent_trace_observability/seed44/H-hard": {
+        "head_weights_sha256": "8b61bf2d902246079176df97e96470ff58e8d50e7e1a0aa19128bab4515e7a53",
+        "run_sha256": "0ef7dd754168b2722442f82ef9726c05847ac7e7e21993bac9d367a755a4f8b8",
+        "fit_checksums_sha256": "c6853933c0b26d76a79079687b1fbabaf2791c2d2c6e7e21caba9439ddd90ff5",
+        "training_plan_sha256": "f3279238992a698bb869dc2a5a6e4f9fc966c8da36eb982fc8d697756923b8c4"
+      },
+      "agent_trace_observability/seed44/S-soft": {
+        "head_weights_sha256": "1a1b58203893d4c03c8a5d3fc3c31a7a4a80374cbdac11d4bbd9b03f00e59e5e",
+        "run_sha256": "60740eed3b2b78d65edc58115da9c1da43e8c1c6d1f5019499508cb39aecb340",
+        "fit_checksums_sha256": "c0751e3cd9173d5ed3e02a45a15a9558eec7c0148bee0ec1b8d0ace07e39544c",
+        "training_plan_sha256": "f3279238992a698bb869dc2a5a6e4f9fc966c8da36eb982fc8d697756923b8c4"
+      },
+      "agent_trace_observability/seed44/T-typed-rps": {
+        "head_weights_sha256": "7ed325df94134064fb402fb237e815008618919c7749ae195a4e54566b725502",
+        "run_sha256": "592080552ebb50fa0debdaec03b4b077abc82b4a7c0ee217c3eb4c683363653c",
+        "fit_checksums_sha256": "636e20980d8fb2dbb83d5a08ab6a2656ae6a81b04a3aa017928bb3bc91206676",
+        "training_plan_sha256": "f3279238992a698bb869dc2a5a6e4f9fc966c8da36eb982fc8d697756923b8c4"
+      },
+      "agent_trace_observability/seed44/R-rlcd-loo": {
+        "head_weights_sha256": "9f870c2a23e78ddbe23e4673ccfcf491c463813bf89d2737a5c8187b53f97f22",
+        "run_sha256": "1ab2ffdc9bdcde1be77d9f28f5e6754da2170ea8d9ab766f213eceb9d7d2d794",
+        "fit_checksums_sha256": "d2e8ce12a7b7d1933f44dd3273a3b3bec16bb9c1491b57afbb65aa862f8f8480",
+        "training_plan_sha256": "f3279238992a698bb869dc2a5a6e4f9fc966c8da36eb982fc8d697756923b8c4"
+      },
+      "customer_service/seed42/H-hard": {
+        "head_weights_sha256": "ab682c7cb719378e2b3df329d38ffa08c1f007f961a5bce3ad041c5d48080e71",
+        "run_sha256": "91ce9f73854776b601ab05c12612bdcc5e30330718a66306621ff7120bbd535b",
+        "fit_checksums_sha256": "efc531b3b6073f322ce3a3cd6f541f22c0d4cc9961fb5793da11935d92f87f26",
+        "training_plan_sha256": "8693e0a89446924845618beb306bfa0d75430b78848fae0d05b90a4886aa4880"
+      },
+      "customer_service/seed42/S-soft": {
+        "head_weights_sha256": "049724a607ecbe06d4b06921b41de05787a2ab2633cdfe90f374de2e548bd5e5",
+        "run_sha256": "da051cebf5aa53dd6a6c75f1bc380010a18a9a2126d6aa7f5315b905a82d8d69",
+        "fit_checksums_sha256": "43b13f2d04a717a78a54265b32bc3756829da04a1ef211fa25e72f4a3f4761f6",
+        "training_plan_sha256": "8693e0a89446924845618beb306bfa0d75430b78848fae0d05b90a4886aa4880"
+      },
+      "customer_service/seed42/T-typed-rps": {
+        "head_weights_sha256": "8de06fd6490f2165c5a39f6db88cf331e5bd27a4850697bd0bb3a6d6fd897508",
+        "run_sha256": "63d7f6cd667ff81ea86eedd8c43a40733e4c7def7766170edc8dcab83aaa0384",
+        "fit_checksums_sha256": "a5b4f994acd6f01b0b554f4dfd3b3b0874b9a7895e55d93d0feac6f779d527bb",
+        "training_plan_sha256": "8693e0a89446924845618beb306bfa0d75430b78848fae0d05b90a4886aa4880"
+      },
+      "customer_service/seed42/R-rlcd-loo": {
+        "head_weights_sha256": "acaf3328c2173939babc8083ff8f31fe15bea517fe98f2dee1dea54664a43361",
+        "run_sha256": "06f345e98e07a960b0d49083a2abccd3c397e67cdee2ac6c2a1aded8035e0b9c",
+        "fit_checksums_sha256": "a9fe1061e1fdee66f15529f2fc5cbd0a4c219e75ea13b64478c50c0e54f77dfd",
+        "training_plan_sha256": "8693e0a89446924845618beb306bfa0d75430b78848fae0d05b90a4886aa4880"
+      },
+      "customer_service/seed43/H-hard": {
+        "head_weights_sha256": "6219971a44a47cd23cdaa1f74a69002f6f9a20f4d603d6b3a6d6e02fd07e74c7",
+        "run_sha256": "817ef72f9701972bd8e0ce4ee03cfaf87eede2beb598cc89e6600da37f57b15b",
+        "fit_checksums_sha256": "c805d59828337f13eeebb1319ef535cc9c6f7f8255fa99bc2906d193f77bab85",
+        "training_plan_sha256": "4b4e74615d0000169c9208dfcd7fc98d177661d0b98a980ebccd0dd30fee9d96"
+      },
+      "customer_service/seed43/S-soft": {
+        "head_weights_sha256": "9d93f0f3cfdd40fcef3fcf8647a14b0a42010af88557681e5dd73d935a4e6e27",
+        "run_sha256": "c24ec48ca4f938bb3f40cd08a7a42c97de6f29e7f6d589e032e8c84eba91e788",
+        "fit_checksums_sha256": "4beae814c027d9e6ea5e7a529354942a68a58012f8a96f4ca71504ca15ba343e",
+        "training_plan_sha256": "4b4e74615d0000169c9208dfcd7fc98d177661d0b98a980ebccd0dd30fee9d96"
+      },
+      "customer_service/seed43/T-typed-rps": {
+        "head_weights_sha256": "282453778a9fec8b66ae967bad14d94a5f269b36fe3f75f67742be635324b84c",
+        "run_sha256": "f0d3cffbbffec148a9ecd643a43a0dbc1c6a01e15872df8862de2a3fee5ff510",
+        "fit_checksums_sha256": "4a4521f9a9fd0290c13f3cb5bc7f41d513076022ea619dc7b50abd8f49b055cc",
+        "training_plan_sha256": "4b4e74615d0000169c9208dfcd7fc98d177661d0b98a980ebccd0dd30fee9d96"
+      },
+      "customer_service/seed43/R-rlcd-loo": {
+        "head_weights_sha256": "c751c605a0c1b4bb632dd40191ea627726b52b476682ea2d43e194874e493386",
+        "run_sha256": "b6b7df44209734243a4febfded4105b5acc7d3e6894f5fbd7636fd318d04ba83",
+        "fit_checksums_sha256": "4117129a13f653f2b42348d5e2a9534e2e1c8f9e907616a0e73bf56e74de81a5",
+        "training_plan_sha256": "4b4e74615d0000169c9208dfcd7fc98d177661d0b98a980ebccd0dd30fee9d96"
+      },
+      "customer_service/seed44/H-hard": {
+        "head_weights_sha256": "d755bedd6481cf688284373d828f1c4daee90eb0119d6b81519517178f0a5e89",
+        "run_sha256": "9b0e3127ef6cb2effa12c6b19110c64a556194a34ff210824e17d6852ec62ecc",
+        "fit_checksums_sha256": "3cc6ec8e12560791afc79a1ba197e1430823f0ec618a1578b78f88379a395ba8",
+        "training_plan_sha256": "0b809da6a8e780a871341b682478073cc21568c288d7e0ae8f4a55b2ee7aa30e"
+      },
+      "customer_service/seed44/S-soft": {
+        "head_weights_sha256": "a426724cda69c740e4657746f45435774a1e8ae8acd49d1dc58366d501e7359f",
+        "run_sha256": "2ab041fccfcbdfc25d7a5dc85d2d5609cdd102a12a206c5eefcc3392a6ad4ddb",
+        "fit_checksums_sha256": "399847bdc0fa2058453c67d03fa109fac65d58eb84099da22a92d7b14e06b69f",
+        "training_plan_sha256": "0b809da6a8e780a871341b682478073cc21568c288d7e0ae8f4a55b2ee7aa30e"
+      },
+      "customer_service/seed44/T-typed-rps": {
+        "head_weights_sha256": "30f026e49dd43363bdf9ee24f4dc4a9779769988383649f9d1caa8799ecaed16",
+        "run_sha256": "24cd00f601aaa3b8f8cb49e6927a1e69d2851895cfe9692f17644bc52447df63",
+        "fit_checksums_sha256": "9bf9c959ed45ff045bfb2123a4a26ac8c53cf969075d20ac12b2ea280bb79cea",
+        "training_plan_sha256": "0b809da6a8e780a871341b682478073cc21568c288d7e0ae8f4a55b2ee7aa30e"
+      },
+      "customer_service/seed44/R-rlcd-loo": {
+        "head_weights_sha256": "1e48e5baed2690586ced7de6384b27d30c3dd3b47bd6b0d498186e454239ee41",
+        "run_sha256": "7ca8b8612077dd175aaee75fd504f0324554c1c74b7b87426e48a0b290247a5e",
+        "fit_checksums_sha256": "ba14585c556d0b70bc8b66fca10b04847a53ef0f7e5965aee4faffb4d464fda0",
+        "training_plan_sha256": "0b809da6a8e780a871341b682478073cc21568c288d7e0ae8f4a55b2ee7aa30e"
+      },
+      "invoice_processing/seed42/H-hard": {
+        "head_weights_sha256": "1e40c244f36b31f0fe5ec6b1213cdba65eda21728515326f53de0e933a2eaf36",
+        "run_sha256": "18c872430946c6a6bd852233ceb51a995aa58cf8d2a4edba7f6eb73141e8808d",
+        "fit_checksums_sha256": "0693f01b64dbad59e433fa8a046da9e9419225a3afb555eabb56a7b5ac9650c7",
+        "training_plan_sha256": "bad441a9a6d47213e431d6f571d20efce57e5272c845c63e72b252e5b20fcbc9"
+      },
+      "invoice_processing/seed42/S-soft": {
+        "head_weights_sha256": "3ce5f012e42c0ca22d091d8c06e57457e996ddcf09b55f0860a532f249a947e6",
+        "run_sha256": "da86f69b7549109d7f15b603504ecc34be5d55cd449fb228b76322622b325fbe",
+        "fit_checksums_sha256": "b697a7be525612defb741410a7be04a9fd2f4a30a91b5cab5ad3f6d591b16ffd",
+        "training_plan_sha256": "bad441a9a6d47213e431d6f571d20efce57e5272c845c63e72b252e5b20fcbc9"
+      },
+      "invoice_processing/seed42/T-typed-rps": {
+        "head_weights_sha256": "c40221795af241f6e05621f170333892b39d91b8720b77f7eb46f4cc35564298",
+        "run_sha256": "95a47063fac18f0a061bb14d3dfdb461632609ce49c1c24ba0efa7baa07beba6",
+        "fit_checksums_sha256": "3f26d5ecedeeb37fe505c69b2f87a7d0c6a29d7ea377d5744056d269c2189733",
+        "training_plan_sha256": "bad441a9a6d47213e431d6f571d20efce57e5272c845c63e72b252e5b20fcbc9"
+      },
+      "invoice_processing/seed42/R-rlcd-loo": {
+        "head_weights_sha256": "6bdc3bf30d34af938be12dff69d5c58bbb188d69bd3f120eb80b99148079916b",
+        "run_sha256": "e664b0b97565286e992a6a6acee4cc5e19a6e322126fd823a27fb0512da4e7d6",
+        "fit_checksums_sha256": "134396ed385adf43c563b92a811008ae955f362f0aa5639eca2e3c7c26d4cb40",
+        "training_plan_sha256": "bad441a9a6d47213e431d6f571d20efce57e5272c845c63e72b252e5b20fcbc9"
+      },
+      "invoice_processing/seed43/H-hard": {
+        "head_weights_sha256": "4a2768c6cb3fa9f92428657c09f3b2fa7cc10f9eff7c2905f0b913b662f91962",
+        "run_sha256": "1076fa204e97a29c108f2b655f1210e20125649608bbbdd92a24e18df2897072",
+        "fit_checksums_sha256": "c8744b2586c14b9a791e78a43e562b4a7704706f275e6667a341d1154fd60ed2",
+        "training_plan_sha256": "843278ccf332041c8c13b10ae2cbcbfe45cfdf2009d00761a8424c8447d4500d"
+      },
+      "invoice_processing/seed43/S-soft": {
+        "head_weights_sha256": "0ab9489689decf26dcf5c58508fe31ac65af720aae8a6d45575d0d5bd88dbc29",
+        "run_sha256": "31ba5735a7c66d25b74cbf1cbb1afd837f6e936b56a5af34122bd287a6e563ba",
+        "fit_checksums_sha256": "ccd324e9bf260334e35df0415d71698e601f0a0c8d991f6e88f1e380e43e0eb8",
+        "training_plan_sha256": "843278ccf332041c8c13b10ae2cbcbfe45cfdf2009d00761a8424c8447d4500d"
+      },
+      "invoice_processing/seed43/T-typed-rps": {
+        "head_weights_sha256": "bd62c60e7d11b6dfa9dc524230df49a98caf43c537b68c0f9d36659df327142f",
+        "run_sha256": "f6f03d4de19111a4b87a48f21438c87f8970311c317aa87de264556d42e948ea",
+        "fit_checksums_sha256": "4345f6798c730c308ba97f8374f84e80d67eecfc7648f207a98a70092588bf4c",
+        "training_plan_sha256": "843278ccf332041c8c13b10ae2cbcbfe45cfdf2009d00761a8424c8447d4500d"
+      },
+      "invoice_processing/seed43/R-rlcd-loo": {
+        "head_weights_sha256": "86aff8d644430855230678aa021f8186a5de7616c030d260a8ba40d025370959",
+        "run_sha256": "e5441fcc22cfe1f9ed41c5f7752119dc8246707dff9fe9e358f99b2ae9679db6",
+        "fit_checksums_sha256": "517b44f0b310ca44fcc2e4483473108dcfdb634785f49664ead2c23453f71523",
+        "training_plan_sha256": "843278ccf332041c8c13b10ae2cbcbfe45cfdf2009d00761a8424c8447d4500d"
+      },
+      "invoice_processing/seed44/H-hard": {
+        "head_weights_sha256": "15eac4fe5b05756f16961bcc1f58b4b43d591dd5b552fa6ccbcacd8aba95790f",
+        "run_sha256": "22abaecfe8b0ccbe7af8af0caafdf383491a69480a8335a5f6713feaf245d28e",
+        "fit_checksums_sha256": "a37b15838bf76244f8b4b958bc194a9b63160a54c795b9e9ae1cf289aef03109",
+        "training_plan_sha256": "9dc77fbbe8ef80f147bdba38a9308245142fb428a5b3bbe4a620169d85769671"
+      },
+      "invoice_processing/seed44/S-soft": {
+        "head_weights_sha256": "e8fcba43050a48967b77f9cd9a3868f449c95cc7858bda032a56fd599dfad66f",
+        "run_sha256": "c8d7c1fc89ab49c247cf6ac143973c6e3a2defe16f44e580ab3b515efd46bbde",
+        "fit_checksums_sha256": "510f078f3b1b9c82b338e5f5814f21e6df77acf04895464060c0a60a885b27af",
+        "training_plan_sha256": "9dc77fbbe8ef80f147bdba38a9308245142fb428a5b3bbe4a620169d85769671"
+      },
+      "invoice_processing/seed44/T-typed-rps": {
+        "head_weights_sha256": "73dc02adce172bab72490c13aeba4acd19eed70d31839883ac1dea65529a5a5b",
+        "run_sha256": "6c341af55b0975edee3df1cccae16d662161a7b4de66ff3cb6ef8b4e2e5303f9",
+        "fit_checksums_sha256": "f3806777cb909b592f16ef04c435aa991fe77caf57e52f1233de4a4aa1bbaafa",
+        "training_plan_sha256": "9dc77fbbe8ef80f147bdba38a9308245142fb428a5b3bbe4a620169d85769671"
+      },
+      "invoice_processing/seed44/R-rlcd-loo": {
+        "head_weights_sha256": "5a3bed4a4e84dd6e073a7ae4bfb0649be1953c867320614deb750033b04a4f23",
+        "run_sha256": "a04f8ad7ec50eee7bb30ff2dbccc1a91feab99f117046a604fb75f3f7a1a3973",
+        "fit_checksums_sha256": "132bbccabaac1dfa7f73f6b1f06976322176c3014bc6d2ba79ae3a7b0b2fdad7",
+        "training_plan_sha256": "9dc77fbbe8ef80f147bdba38a9308245142fb428a5b3bbe4a620169d85769671"
+      },
+      "security_incidents/seed42/H-hard": {
+        "head_weights_sha256": "c6dfb6bea00ca3862d27b7bfbd5ef5ac3a3967c5dde1e813429ff40998704f12",
+        "run_sha256": "d95953a35be1f148ff927e57e1ed25131118b9b3aba3aa3aa8175eb9a7aaa4e0",
+        "fit_checksums_sha256": "c23f26b03acf658ae0b2443296f7d37cff40114354105c25b5cf4104151c2996",
+        "training_plan_sha256": "03b3f3156c4dad96c0d438061e9719e74ffa05d53b6e15af6fea243391df0d27"
+      },
+      "security_incidents/seed42/S-soft": {
+        "head_weights_sha256": "54b10e279e8fa1d1facaccc3b1b37a5c8f0356a7ff6ad7f4f31514d48399ce03",
+        "run_sha256": "a47e00c3eb4b81391871e80e882606e792f0493175d67facecdc3e70fa97bde5",
+        "fit_checksums_sha256": "f0931dfe1c66434c63714c64b15f23c6c01cf4782ae552b73ae45b0cb74add3c",
+        "training_plan_sha256": "03b3f3156c4dad96c0d438061e9719e74ffa05d53b6e15af6fea243391df0d27"
+      },
+      "security_incidents/seed42/T-typed-rps": {
+        "head_weights_sha256": "03c97a273c087be5d9827348de6a4f44f9650ffa0450b78abd4b3560412839e8",
+        "run_sha256": "6ff339128fdb5a498211ebf73a849f32859a6ce8f588548fbb21f14eb1fa86ee",
+        "fit_checksums_sha256": "eb96a76353a296f3ef46c9eeaefa3f0a382a24e4657fc82c43006d04454ac349",
+        "training_plan_sha256": "03b3f3156c4dad96c0d438061e9719e74ffa05d53b6e15af6fea243391df0d27"
+      },
+      "security_incidents/seed42/R-rlcd-loo": {
+        "head_weights_sha256": "0a653d3acdb591e827827c9b1a1e5bcfeef5d1d72c1336bc35a4fc3be2ff0e9d",
+        "run_sha256": "86ea59d2c0eded07f0fd6e86666915a8dc06ce58815198a61201c92a82407269",
+        "fit_checksums_sha256": "aa30ec46ace30f4764f71196531f00e2e922f6e93ee3f873076a99f16affa6ae",
+        "training_plan_sha256": "03b3f3156c4dad96c0d438061e9719e74ffa05d53b6e15af6fea243391df0d27"
+      },
+      "security_incidents/seed43/H-hard": {
+        "head_weights_sha256": "a3242a16b61eff10ddd1fbffcb61588173ab32986dd021c35cfda32716330a26",
+        "run_sha256": "d1b053254907b942abe776513095fc59d76d1b162d9c8f12bf3d053400ac3771",
+        "fit_checksums_sha256": "d6c12cb948b7845831d8a5fb45a8752f58fa0c0e893b051ddcd8cade3d1e648e",
+        "training_plan_sha256": "6f0e4e07df61073bd3228bf0e0434495de0020d1f10bd3af0a9eb71f9d65a6a5"
+      },
+      "security_incidents/seed43/S-soft": {
+        "head_weights_sha256": "e6e69a4590fb664f7127aa1bf888e79ea887a837b9c09e94051d2b43c3f55fdc",
+        "run_sha256": "16d2e82004638b169927f8798da43ae65d7ee4cdb02bf8c3cf0dc39c30cf0176",
+        "fit_checksums_sha256": "eef130d670d220808310ad14c97ed46708d5369875b9d18178a153729a38e8fe",
+        "training_plan_sha256": "6f0e4e07df61073bd3228bf0e0434495de0020d1f10bd3af0a9eb71f9d65a6a5"
+      },
+      "security_incidents/seed43/T-typed-rps": {
+        "head_weights_sha256": "26ef07cc5a7e9e0d3c2c169e378351cba234cc3f0bb9a332d70d6a434055e492",
+        "run_sha256": "22a300c09278d89ecf960da3911fc96ef72817447013ae7b470c1493081230ff",
+        "fit_checksums_sha256": "4e4237b20648113e66ce4426525c2a856c8a611f68f05778a84e7c120feb9828",
+        "training_plan_sha256": "6f0e4e07df61073bd3228bf0e0434495de0020d1f10bd3af0a9eb71f9d65a6a5"
+      },
+      "security_incidents/seed43/R-rlcd-loo": {
+        "head_weights_sha256": "f7b6d29640a0357fea8b340f745336226cec9d257909789260da1998f1de4c0d",
+        "run_sha256": "c6d073ded1e3929550feeb1046675619981cc7a46b979816486778b747ba1829",
+        "fit_checksums_sha256": "6577fdfaf008acd15eaeca58331ef39c2db5fda921ca4664a2f44564d85ea40c",
+        "training_plan_sha256": "6f0e4e07df61073bd3228bf0e0434495de0020d1f10bd3af0a9eb71f9d65a6a5"
+      },
+      "security_incidents/seed44/H-hard": {
+        "head_weights_sha256": "da32849f96d21d7bbf5a8da426b3b6f969d99f0c1264b94c88b160856c81bce2",
+        "run_sha256": "5de557bbb02a267ebd12e8386e7727bb353903fb1af65d93a1cfce921c2e240f",
+        "fit_checksums_sha256": "3d7dcc86bb372d07946cb8379ff101ecb6ce14f66e68ed7f9fc246f16e195d5e",
+        "training_plan_sha256": "db1de405d531fd3e38c1a49d389bf194487914c5ff7f62892b2938e2fe211393"
+      },
+      "security_incidents/seed44/S-soft": {
+        "head_weights_sha256": "aab5a8c7b270a5414b1fa28e3f065c90915f9b7a255b48988d3bf4492fe2a4cd",
+        "run_sha256": "90e7e3ef2acc2c4cec38eaa7861230f85079aa44c3d9f01a4cad5892fd695555",
+        "fit_checksums_sha256": "29c463226aad52fdee41f8030adf8d699fca29b1dfc7eda7cf2ef129e4bee638",
+        "training_plan_sha256": "db1de405d531fd3e38c1a49d389bf194487914c5ff7f62892b2938e2fe211393"
+      },
+      "security_incidents/seed44/T-typed-rps": {
+        "head_weights_sha256": "cea7720ae7f75c7020b540bde1baa1170293cb9afab2974a81691f5c048ad3e5",
+        "run_sha256": "a0a5433c050ad7dcc325337ffcc675cb2aec887febf85e026a57203da89636c1",
+        "fit_checksums_sha256": "83257cf1f4acdbdd2753e501ee040695d528c80ce215046525331b9ece1a89dc",
+        "training_plan_sha256": "db1de405d531fd3e38c1a49d389bf194487914c5ff7f62892b2938e2fe211393"
+      },
+      "security_incidents/seed44/R-rlcd-loo": {
+        "head_weights_sha256": "7b7c1b9f8c08dcc27cb91b342ae9e3ca9738c60f1b9a4db8ae2f86ce74e2cb38",
+        "run_sha256": "524ffeca14231ec27e8a83999d3210952f9332db8b9ad54f48411082df062c23",
+        "fit_checksums_sha256": "1e94550adeb1c62acd301aafeb556d3ae8c4e62a765d52b56f89fcdb8b66d82f",
+        "training_plan_sha256": "db1de405d531fd3e38c1a49d389bf194487914c5ff7f62892b2938e2fe211393"
+      }
+    },
+    "test_files_parsed": false
+  },
+  "results": {
+    "agent_trace_observability/seed42/H-hard": {
+      "fold": "agent_trace_observability",
+      "seed": 42,
+      "arm": "H-hard",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.6033333333333334,
+        "soft_cross_entropy": 1.0221690512203605,
+        "soft_brier": 0.17114791715063102
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.594,
+        "soft_cross_entropy": 1.0331590638842063,
+        "soft_brier": 0.16409472167659278
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.304,
+        "soft_cross_entropy": 1.6430045173948062,
+        "soft_brier": 0.31366659738543723
+      },
+      "weights_sha256": "8901b08b5932f3f3bd3d9ce3cdffdd30382355aea4a624b1460a1dc7d448853f",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 42,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.26188284158706665,
+        "max": 1.1152398586273193,
+        "mean": 0.48070520371721503,
+        "clipped_updates": 1
+      },
+      "updates": 171
+    },
+    "agent_trace_observability/seed42/S-soft": {
+      "fold": "agent_trace_observability",
+      "seed": 42,
+      "arm": "S-soft",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5922222222222222,
+        "soft_cross_entropy": 0.9752650950312907,
+        "soft_brier": 0.15940674122697818
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.6,
+        "soft_cross_entropy": 0.9854069684485353,
+        "soft_brier": 0.14848591244289908
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.326,
+        "soft_cross_entropy": 1.374393279530236,
+        "soft_brier": 0.2438233527122478
+      },
+      "weights_sha256": "0e9c474fcae81f16a3020703baf3dfe5260b4fb48315c48871f35672f303035c",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 42,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.1668967306613922,
+        "max": 0.6221650242805481,
+        "mean": 0.2952946454112293,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "agent_trace_observability/seed42/T-typed-rps": {
+      "fold": "agent_trace_observability",
+      "seed": 42,
+      "arm": "T-typed-rps",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5866666666666667,
+        "soft_cross_entropy": 0.9790922127021346,
+        "soft_brier": 0.1618774972924066
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5966666666666667,
+        "soft_cross_entropy": 0.9878573659771683,
+        "soft_brier": 0.15025558464726155
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.322,
+        "soft_cross_entropy": 1.3667662411418688,
+        "soft_brier": 0.2420002905463923
+      },
+      "weights_sha256": "a28f900e6d9b045bf1eca8b78253d141d16919cdcab99441b7b2f4c2d30e123e",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 42,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.18704412877559662,
+        "max": 0.7651996612548828,
+        "mean": 0.3532729611585015,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "agent_trace_observability/seed42/R-rlcd-loo": {
+      "fold": "agent_trace_observability",
+      "seed": 42,
+      "arm": "R-rlcd-loo",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5966666666666667,
+        "soft_cross_entropy": 0.9757049508545788,
+        "soft_brier": 0.16026367656951998
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.596,
+        "soft_cross_entropy": 0.9847150244423444,
+        "soft_brier": 0.14844414224230262
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.32,
+        "soft_cross_entropy": 1.37957019073549,
+        "soft_brier": 0.24693602260948175
+      },
+      "weights_sha256": "f5df7e7b456b722493ad376d16476d2077aa91d6aa24a7a8d4cba5174df37355",
+      "objective": {
+        "gradient_estimator": "score_function",
+        "noise_seed": 42,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 1.0,
+        "noise_calls": 171,
+        "noise_elements": 1728000,
+        "noise_plan_sha256": "531b4fc0c5889d0777bdb514978141fea422cd7224d652737cdc5d97b90b08dc",
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "Monte Carlo Gaussian-smoothed CE+Brier+optional ordered RPS plus optional clean CE anchor",
+        "surrogate_is_risk": false,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.31050625443458557,
+        "max": 1.193791389465332,
+        "mean": 0.546109020884274,
+        "clipped_updates": 1
+      },
+      "updates": 171
+    },
+    "agent_trace_observability/seed43/H-hard": {
+      "fold": "agent_trace_observability",
+      "seed": 43,
+      "arm": "H-hard",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.6255555555555555,
+        "soft_cross_entropy": 1.0216921131258454,
+        "soft_brier": 0.16983421533340087
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.606,
+        "soft_cross_entropy": 1.0314295361350394,
+        "soft_brier": 0.16195888705391495
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.308,
+        "soft_cross_entropy": 1.6292390197524629,
+        "soft_brier": 0.3045595202980931
+      },
+      "weights_sha256": "c79814cf943b438db59126f6f3570ebdd6250c65ceb78d40f28fd4e20d57f539",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 43,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.2575875520706177,
+        "max": 1.2314785718917847,
+        "mean": 0.48087256048855026,
+        "clipped_updates": 2
+      },
+      "updates": 171
+    },
+    "agent_trace_observability/seed43/S-soft": {
+      "fold": "agent_trace_observability",
+      "seed": 43,
+      "arm": "S-soft",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.6011111111111112,
+        "soft_cross_entropy": 0.9736299482277218,
+        "soft_brier": 0.15745636946200894
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.6126666666666667,
+        "soft_cross_entropy": 0.9870450850001716,
+        "soft_brier": 0.1485292843061609
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.32,
+        "soft_cross_entropy": 1.366089182219036,
+        "soft_brier": 0.2386864652980072
+      },
+      "weights_sha256": "cf624faa554896f513d2fccf2aaa212c7f012d91d8d7f8beb08ac7969a801b98",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 43,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.15388154983520508,
+        "max": 0.5457980036735535,
+        "mean": 0.2915766103225842,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "agent_trace_observability/seed43/T-typed-rps": {
+      "fold": "agent_trace_observability",
+      "seed": 43,
+      "arm": "T-typed-rps",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.6,
+        "soft_cross_entropy": 0.9767243668487826,
+        "soft_brier": 0.15871837511841483
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.602,
+        "soft_cross_entropy": 0.9895590677602498,
+        "soft_brier": 0.1495899657450844
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.316,
+        "soft_cross_entropy": 1.355611526661371,
+        "soft_brier": 0.2347813936992666
+      },
+      "weights_sha256": "5f74b049dca8e08a3f518c151a8b79287f6073af3fe92163227e0ede5f083b76",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 43,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.18401354551315308,
+        "max": 0.6716129779815674,
+        "mean": 0.3469581989168424,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "agent_trace_observability/seed43/R-rlcd-loo": {
+      "fold": "agent_trace_observability",
+      "seed": 43,
+      "arm": "R-rlcd-loo",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.6055555555555555,
+        "soft_cross_entropy": 0.9733778818969757,
+        "soft_brier": 0.15726643200189952
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.614,
+        "soft_cross_entropy": 0.9860490511853377,
+        "soft_brier": 0.14791561818862914
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.322,
+        "soft_cross_entropy": 1.3607334687764099,
+        "soft_brier": 0.23688716238995072
+      },
+      "weights_sha256": "b330a44bd3c36c7a6362b965d8699d5c0e30e2b8a20d3a07ed8d0b0d5420ee05",
+      "objective": {
+        "gradient_estimator": "score_function",
+        "noise_seed": 43,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 1.0,
+        "noise_calls": 171,
+        "noise_elements": 1728000,
+        "noise_plan_sha256": "3c6d01fe3905f0984e5bef62098427dbcae4761d15af287f426a93a98bee0e9c",
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "Monte Carlo Gaussian-smoothed CE+Brier+optional ordered RPS plus optional clean CE anchor",
+        "surrogate_is_risk": false,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.29326942563056946,
+        "max": 1.0711052417755127,
+        "mean": 0.5427025664619535,
+        "clipped_updates": 4
+      },
+      "updates": 171
+    },
+    "agent_trace_observability/seed44/H-hard": {
+      "fold": "agent_trace_observability",
+      "seed": 44,
+      "arm": "H-hard",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5888888888888889,
+        "soft_cross_entropy": 1.0393427793032848,
+        "soft_brier": 0.18104000607610563
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.594,
+        "soft_cross_entropy": 1.0446724111717218,
+        "soft_brier": 0.17106940860735328
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.318,
+        "soft_cross_entropy": 1.638498751198792,
+        "soft_brier": 0.3078807253168784
+      },
+      "weights_sha256": "8b61bf2d902246079176df97e96470ff58e8d50e7e1a0aa19128bab4515e7a53",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 44,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.26065775752067566,
+        "max": 1.1796551942825317,
+        "mean": 0.463372264340607,
+        "clipped_updates": 1
+      },
+      "updates": 171
+    },
+    "agent_trace_observability/seed44/S-soft": {
+      "fold": "agent_trace_observability",
+      "seed": 44,
+      "arm": "S-soft",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5744444444444444,
+        "soft_cross_entropy": 0.9812443210710344,
+        "soft_brier": 0.16296704266804035
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5766666666666667,
+        "soft_cross_entropy": 0.9892619961667423,
+        "soft_brier": 0.1509122152039835
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.312,
+        "soft_cross_entropy": 1.389616839447025,
+        "soft_brier": 0.25016090215414893
+      },
+      "weights_sha256": "1a1b58203893d4c03c8a5d3fc3c31a7a4a80374cbdac11d4bbd9b03f00e59e5e",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 44,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.1434730738401413,
+        "max": 0.5745020508766174,
+        "mean": 0.279138765575593,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "agent_trace_observability/seed44/T-typed-rps": {
+      "fold": "agent_trace_observability",
+      "seed": 44,
+      "arm": "T-typed-rps",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5822222222222222,
+        "soft_cross_entropy": 0.9838416749586893,
+        "soft_brier": 0.16440278984147244
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5786666666666667,
+        "soft_cross_entropy": 0.990952984925231,
+        "soft_brier": 0.15191365509784718
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.31,
+        "soft_cross_entropy": 1.3878156812626945,
+        "soft_brier": 0.2500786147468397
+      },
+      "weights_sha256": "7ed325df94134064fb402fb237e815008618919c7749ae195a4e54566b725502",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 44,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.15502038598060608,
+        "max": 0.738047182559967,
+        "mean": 0.3312025038819564,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "agent_trace_observability/seed44/R-rlcd-loo": {
+      "fold": "agent_trace_observability",
+      "seed": 44,
+      "arm": "R-rlcd-loo",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5788888888888889,
+        "soft_cross_entropy": 0.9823065953868086,
+        "soft_brier": 0.16389518857016763
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5806666666666667,
+        "soft_cross_entropy": 0.9904609300807828,
+        "soft_brier": 0.15184666667007116
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.316,
+        "soft_cross_entropy": 1.396938805525976,
+        "soft_brier": 0.2542861399241817
+      },
+      "weights_sha256": "9f870c2a23e78ddbe23e4673ccfcf491c463813bf89d2737a5c8187b53f97f22",
+      "objective": {
+        "gradient_estimator": "score_function",
+        "noise_seed": 44,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 1.0,
+        "noise_calls": 171,
+        "noise_elements": 1728000,
+        "noise_plan_sha256": "32913e7c29d4e34665623c7c7e7925ca1f62c927382aac06f4e214cae4f2d717",
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "Monte Carlo Gaussian-smoothed CE+Brier+optional ordered RPS plus optional clean CE anchor",
+        "surrogate_is_risk": false,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.2828913927078247,
+        "max": 1.2187117338180542,
+        "mean": 0.5189563867292906,
+        "clipped_updates": 2
+      },
+      "updates": 171
+    },
+    "customer_service/seed42/H-hard": {
+      "fold": "customer_service",
+      "seed": 42,
+      "arm": "H-hard",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5277777777777778,
+        "soft_cross_entropy": 1.0771017020338551,
+        "soft_brier": 0.17882944667556044
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.514,
+        "soft_cross_entropy": 1.1004233033912005,
+        "soft_brier": 0.17868444194059377
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.368,
+        "soft_cross_entropy": 1.2875371821978503,
+        "soft_brier": 0.2834309079764637
+      },
+      "weights_sha256": "ab682c7cb719378e2b3df329d38ffa08c1f007f961a5bce3ad041c5d48080e71",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 42,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.1881338655948639,
+        "max": 0.8051906824111938,
+        "mean": 0.4378645379989468,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "customer_service/seed42/S-soft": {
+      "fold": "customer_service",
+      "seed": 42,
+      "arm": "S-soft",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5333333333333333,
+        "soft_cross_entropy": 1.0468202037181829,
+        "soft_brier": 0.16498108593606983
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5213333333333333,
+        "soft_cross_entropy": 1.0557067091710357,
+        "soft_brier": 0.15708098839508056
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.424,
+        "soft_cross_entropy": 1.2347981309181748,
+        "soft_brier": 0.25301895034938293
+      },
+      "weights_sha256": "049724a607ecbe06d4b06921b41de05787a2ab2633cdfe90f374de2e548bd5e5",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 42,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.11905527114868164,
+        "max": 0.4511944353580475,
+        "mean": 0.24247460725188952,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "customer_service/seed42/T-typed-rps": {
+      "fold": "customer_service",
+      "seed": 42,
+      "arm": "T-typed-rps",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5344444444444445,
+        "soft_cross_entropy": 1.04774634816494,
+        "soft_brier": 0.16560195445709985
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5166666666666667,
+        "soft_cross_entropy": 1.0565531027928403,
+        "soft_brier": 0.15758829019837087
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.416,
+        "soft_cross_entropy": 1.2409956132344007,
+        "soft_brier": 0.2550221036727391
+      },
+      "weights_sha256": "8de06fd6490f2165c5a39f6db88cf331e5bd27a4850697bd0bb3a6d6fd897508",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 42,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.1315523087978363,
+        "max": 0.5296341180801392,
+        "mean": 0.29291780432413894,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "customer_service/seed42/R-rlcd-loo": {
+      "fold": "customer_service",
+      "seed": 42,
+      "arm": "R-rlcd-loo",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5322222222222223,
+        "soft_cross_entropy": 1.0470380521469789,
+        "soft_brier": 0.16571472930119677
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.522,
+        "soft_cross_entropy": 1.0575071593595098,
+        "soft_brier": 0.1587529958118359
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.414,
+        "soft_cross_entropy": 1.2385125915860775,
+        "soft_brier": 0.2553261474173293
+      },
+      "weights_sha256": "acaf3328c2173939babc8083ff8f31fe15bea517fe98f2dee1dea54664a43361",
+      "objective": {
+        "gradient_estimator": "score_function",
+        "noise_seed": 42,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 1.0,
+        "noise_calls": 171,
+        "noise_elements": 1720832,
+        "noise_plan_sha256": "77d239c68729ee8e339a56124d8ad428b63c423bb0bfac1c68afe3c321e2967c",
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "Monte Carlo Gaussian-smoothed CE+Brier+optional ordered RPS plus optional clean CE anchor",
+        "surrogate_is_risk": false,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.23600834608078003,
+        "max": 0.8663240075111389,
+        "mean": 0.4524846832480347,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "customer_service/seed43/H-hard": {
+      "fold": "customer_service",
+      "seed": 43,
+      "arm": "H-hard",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5533333333333333,
+        "soft_cross_entropy": 1.0792598574680317,
+        "soft_brier": 0.17865651942683225
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.49933333333333335,
+        "soft_cross_entropy": 1.1000209207656064,
+        "soft_brier": 0.1774394985710214
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.352,
+        "soft_cross_entropy": 1.300081688571063,
+        "soft_brier": 0.2849796566380874
+      },
+      "weights_sha256": "6219971a44a47cd23cdaa1f74a69002f6f9a20f4d603d6b3a6d6e02fd07e74c7",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 43,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.238672137260437,
+        "max": 1.133896827697754,
+        "mean": 0.43727420104874504,
+        "clipped_updates": 2
+      },
+      "updates": 171
+    },
+    "customer_service/seed43/S-soft": {
+      "fold": "customer_service",
+      "seed": 43,
+      "arm": "S-soft",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5355555555555556,
+        "soft_cross_entropy": 1.043294806643321,
+        "soft_brier": 0.16327061463109288
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.52,
+        "soft_cross_entropy": 1.0539026217602712,
+        "soft_brier": 0.15650284411030888
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.416,
+        "soft_cross_entropy": 1.2484486017270942,
+        "soft_brier": 0.25971675791114035
+      },
+      "weights_sha256": "9d93f0f3cfdd40fcef3fcf8647a14b0a42010af88557681e5dd73d935a4e6e27",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 43,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.1155594140291214,
+        "max": 0.5986005067825317,
+        "mean": 0.24239159249074277,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "customer_service/seed43/T-typed-rps": {
+      "fold": "customer_service",
+      "seed": 43,
+      "arm": "T-typed-rps",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5511111111111111,
+        "soft_cross_entropy": 1.0405478651308957,
+        "soft_brier": 0.1615842184579263
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5326666666666666,
+        "soft_cross_entropy": 1.0511632110696425,
+        "soft_brier": 0.1547049020845165
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.424,
+        "soft_cross_entropy": 1.2430709671852167,
+        "soft_brier": 0.2561326115478772
+      },
+      "weights_sha256": "282453778a9fec8b66ae967bad14d94a5f269b36fe3f75f67742be635324b84c",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 43,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.12455396354198456,
+        "max": 0.8187135457992554,
+        "mean": 0.29390021749058665,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "customer_service/seed43/R-rlcd-loo": {
+      "fold": "customer_service",
+      "seed": 43,
+      "arm": "R-rlcd-loo",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5411111111111111,
+        "soft_cross_entropy": 1.0424890867282144,
+        "soft_brier": 0.1629780956474046
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5266666666666666,
+        "soft_cross_entropy": 1.0545359248070858,
+        "soft_brier": 0.15722411600809288
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.414,
+        "soft_cross_entropy": 1.2506765969637845,
+        "soft_brier": 0.2614977776921128
+      },
+      "weights_sha256": "c751c605a0c1b4bb632dd40191ea627726b52b476682ea2d43e194874e493386",
+      "objective": {
+        "gradient_estimator": "score_function",
+        "noise_seed": 43,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 1.0,
+        "noise_calls": 171,
+        "noise_elements": 1717248,
+        "noise_plan_sha256": "ca907b02f391716e935357aacba1b6d9b3bde7ddfb51804a7cd288060c1bcefb",
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "Monte Carlo Gaussian-smoothed CE+Brier+optional ordered RPS plus optional clean CE anchor",
+        "surrogate_is_risk": false,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.2321547120809555,
+        "max": 1.0840246677398682,
+        "mean": 0.4537833495098248,
+        "clipped_updates": 2
+      },
+      "updates": 171
+    },
+    "customer_service/seed44/H-hard": {
+      "fold": "customer_service",
+      "seed": 44,
+      "arm": "H-hard",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5477777777777778,
+        "soft_cross_entropy": 1.0897736079714782,
+        "soft_brier": 0.18379007527278382
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5113333333333333,
+        "soft_cross_entropy": 1.1200387105086451,
+        "soft_brier": 0.1881112573766898
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.384,
+        "soft_cross_entropy": 1.241816197077617,
+        "soft_brier": 0.2677543729462518
+      },
+      "weights_sha256": "d755bedd6481cf688284373d828f1c4daee90eb0119d6b81519517178f0a5e89",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 44,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.21530009806156158,
+        "max": 0.7848846316337585,
+        "mean": 0.4172271706207454,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "customer_service/seed44/S-soft": {
+      "fold": "customer_service",
+      "seed": 44,
+      "arm": "S-soft",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5333333333333333,
+        "soft_cross_entropy": 1.045233349861624,
+        "soft_brier": 0.16367674064750687
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.524,
+        "soft_cross_entropy": 1.0578714101785027,
+        "soft_brier": 0.15792196866250097
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.432,
+        "soft_cross_entropy": 1.1911762415763791,
+        "soft_brier": 0.23538680331848982
+      },
+      "weights_sha256": "a426724cda69c740e4657746f45435774a1e8ae8acd49d1dc58366d501e7359f",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 44,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.1078362688422203,
+        "max": 0.4392414093017578,
+        "mean": 0.22765698872114482,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "customer_service/seed44/T-typed-rps": {
+      "fold": "customer_service",
+      "seed": 44,
+      "arm": "T-typed-rps",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.52,
+        "soft_cross_entropy": 1.046707044056182,
+        "soft_brier": 0.1644942131882015
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5166666666666667,
+        "soft_cross_entropy": 1.0590397939135259,
+        "soft_brier": 0.15840024692773014
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.448,
+        "soft_cross_entropy": 1.1899959533127915,
+        "soft_brier": 0.23452888786636397
+      },
+      "weights_sha256": "30f026e49dd43363bdf9ee24f4dc4a9779769988383649f9d1caa8799ecaed16",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 44,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.13283954560756683,
+        "max": 0.5997002124786377,
+        "mean": 0.2752153747960141,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "customer_service/seed44/R-rlcd-loo": {
+      "fold": "customer_service",
+      "seed": 44,
+      "arm": "R-rlcd-loo",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.52,
+        "soft_cross_entropy": 1.0468898268815554,
+        "soft_brier": 0.1650766079549932
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5126666666666667,
+        "soft_cross_entropy": 1.0595766754249256,
+        "soft_brier": 0.1593464490863853
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.44,
+        "soft_cross_entropy": 1.1906960015680892,
+        "soft_brier": 0.23575334244052104
+      },
+      "weights_sha256": "1e48e5baed2690586ced7de6384b27d30c3dd3b47bd6b0d498186e454239ee41",
+      "objective": {
+        "gradient_estimator": "score_function",
+        "noise_seed": 44,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 1.0,
+        "noise_calls": 171,
+        "noise_elements": 1718272,
+        "noise_plan_sha256": "fd13359299ec00404caeb5b55f705996b178fa5427d85e146214bc0d78ba1488",
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "Monte Carlo Gaussian-smoothed CE+Brier+optional ordered RPS plus optional clean CE anchor",
+        "surrogate_is_risk": false,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.20912861824035645,
+        "max": 0.8974601626396179,
+        "mean": 0.42980425295076874,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "invoice_processing/seed42/H-hard": {
+      "fold": "invoice_processing",
+      "seed": 42,
+      "arm": "H-hard",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5844444444444444,
+        "soft_cross_entropy": 1.1104551949596742,
+        "soft_brier": 0.15851511767234772
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5626666666666666,
+        "soft_cross_entropy": 1.1335611553870877,
+        "soft_brier": 0.15917874332453333
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.328,
+        "soft_cross_entropy": 1.4320732535919134,
+        "soft_brier": 0.5050858013983877
+      },
+      "weights_sha256": "1e40c244f36b31f0fe5ec6b1213cdba65eda21728515326f53de0e933a2eaf36",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 42,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.2393835335969925,
+        "max": 1.039099097251892,
+        "mean": 0.46183878889209345,
+        "clipped_updates": 2
+      },
+      "updates": 171
+    },
+    "invoice_processing/seed42/S-soft": {
+      "fold": "invoice_processing",
+      "seed": 42,
+      "arm": "S-soft",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5644444444444444,
+        "soft_cross_entropy": 1.0513014922246524,
+        "soft_brier": 0.13110907092106872
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5646666666666667,
+        "soft_cross_entropy": 1.0571856252840035,
+        "soft_brier": 0.12307847418165356
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.342,
+        "soft_cross_entropy": 1.2961980860410678,
+        "soft_brier": 0.44014423398717856
+      },
+      "weights_sha256": "3ce5f012e42c0ca22d091d8c06e57457e996ddcf09b55f0860a532f249a947e6",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 42,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.12902824580669403,
+        "max": 0.5783711075782776,
+        "mean": 0.25802707436837646,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "invoice_processing/seed42/T-typed-rps": {
+      "fold": "invoice_processing",
+      "seed": 42,
+      "arm": "T-typed-rps",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5655555555555556,
+        "soft_cross_entropy": 1.0503702187226944,
+        "soft_brier": 0.13063066523954003
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5706666666666667,
+        "soft_cross_entropy": 1.0562063473639411,
+        "soft_brier": 0.12259892431871458
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.31,
+        "soft_cross_entropy": 1.2888976819520879,
+        "soft_brier": 0.4326647666733215
+      },
+      "weights_sha256": "c40221795af241f6e05621f170333892b39d91b8720b77f7eb46f4cc35564298",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 42,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.16378676891326904,
+        "max": 0.6556435823440552,
+        "mean": 0.30579464564546505,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "invoice_processing/seed42/R-rlcd-loo": {
+      "fold": "invoice_processing",
+      "seed": 42,
+      "arm": "R-rlcd-loo",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.57,
+        "soft_cross_entropy": 1.0503792067974647,
+        "soft_brier": 0.13082316893830667
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5673333333333334,
+        "soft_cross_entropy": 1.0562232989298193,
+        "soft_brier": 0.12293334942276334
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.328,
+        "soft_cross_entropy": 1.3116441911177699,
+        "soft_brier": 0.44320266478738024
+      },
+      "weights_sha256": "6bdc3bf30d34af938be12dff69d5c58bbb188d69bd3f120eb80b99148079916b",
+      "objective": {
+        "gradient_estimator": "score_function",
+        "noise_seed": 42,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 1.0,
+        "noise_calls": 171,
+        "noise_elements": 1728000,
+        "noise_plan_sha256": "531b4fc0c5889d0777bdb514978141fea422cd7224d652737cdc5d97b90b08dc",
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "Monte Carlo Gaussian-smoothed CE+Brier+optional ordered RPS plus optional clean CE anchor",
+        "surrogate_is_risk": false,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.24190381169319153,
+        "max": 1.018053650856018,
+        "mean": 0.47703080550271865,
+        "clipped_updates": 1
+      },
+      "updates": 171
+    },
+    "invoice_processing/seed43/H-hard": {
+      "fold": "invoice_processing",
+      "seed": 43,
+      "arm": "H-hard",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5966666666666667,
+        "soft_cross_entropy": 1.1096861490898555,
+        "soft_brier": 0.159777979509745
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.564,
+        "soft_cross_entropy": 1.1309304128735336,
+        "soft_brier": 0.15944617515967863
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.34,
+        "soft_cross_entropy": 1.3714137961163242,
+        "soft_brier": 0.48425965223630774
+      },
+      "weights_sha256": "4a2768c6cb3fa9f92428657c09f3b2fa7cc10f9eff7c2905f0b913b662f91962",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 43,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.24095222353935242,
+        "max": 0.907761812210083,
+        "mean": 0.4673377470663416,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "invoice_processing/seed43/S-soft": {
+      "fold": "invoice_processing",
+      "seed": 43,
+      "arm": "S-soft",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5577777777777778,
+        "soft_cross_entropy": 1.0466198579125021,
+        "soft_brier": 0.1278114549939839
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5706666666666667,
+        "soft_cross_entropy": 1.054397977520117,
+        "soft_brier": 0.1205190601870238
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.352,
+        "soft_cross_entropy": 1.2213020480984165,
+        "soft_brier": 0.39390670912493
+      },
+      "weights_sha256": "0ab9489689decf26dcf5c58508fe31ac65af720aae8a6d45575d0d5bd88dbc29",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 43,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.13290861248970032,
+        "max": 0.5386843681335449,
+        "mean": 0.256512065902788,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "invoice_processing/seed43/T-typed-rps": {
+      "fold": "invoice_processing",
+      "seed": 43,
+      "arm": "T-typed-rps",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5522222222222222,
+        "soft_cross_entropy": 1.0491884066210417,
+        "soft_brier": 0.12918382240056814
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5653333333333334,
+        "soft_cross_entropy": 1.057237817967927,
+        "soft_brier": 0.12198085584094122
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.382,
+        "soft_cross_entropy": 1.224542438531068,
+        "soft_brier": 0.3958488208919821
+      },
+      "weights_sha256": "bd62c60e7d11b6dfa9dc524230df49a98caf43c537b68c0f9d36659df327142f",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 43,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.15286099910736084,
+        "max": 0.6423217058181763,
+        "mean": 0.3026493769465831,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "invoice_processing/seed43/R-rlcd-loo": {
+      "fold": "invoice_processing",
+      "seed": 43,
+      "arm": "R-rlcd-loo",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5633333333333334,
+        "soft_cross_entropy": 1.0472666724698274,
+        "soft_brier": 0.12895426504885119
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5713333333333334,
+        "soft_cross_entropy": 1.0547514540400953,
+        "soft_brier": 0.12135735342217159
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.322,
+        "soft_cross_entropy": 1.250121613754011,
+        "soft_brier": 0.40935734983710376
+      },
+      "weights_sha256": "86aff8d644430855230678aa021f8186a5de7616c030d260a8ba40d025370959",
+      "objective": {
+        "gradient_estimator": "score_function",
+        "noise_seed": 43,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 1.0,
+        "noise_calls": 171,
+        "noise_elements": 1728000,
+        "noise_plan_sha256": "3c6d01fe3905f0984e5bef62098427dbcae4761d15af287f426a93a98bee0e9c",
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "Monte Carlo Gaussian-smoothed CE+Brier+optional ordered RPS plus optional clean CE anchor",
+        "surrogate_is_risk": false,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.2557663023471832,
+        "max": 1.0247828960418701,
+        "mean": 0.4767754963266919,
+        "clipped_updates": 1
+      },
+      "updates": 171
+    },
+    "invoice_processing/seed44/H-hard": {
+      "fold": "invoice_processing",
+      "seed": 44,
+      "arm": "H-hard",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5511111111111111,
+        "soft_cross_entropy": 1.0955658379898061,
+        "soft_brier": 0.1516806055995938
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5306666666666666,
+        "soft_cross_entropy": 1.113028195174179,
+        "soft_brier": 0.14790460510965345
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.322,
+        "soft_cross_entropy": 1.349064644616886,
+        "soft_brier": 0.4711156257777248
+      },
+      "weights_sha256": "15eac4fe5b05756f16961bcc1f58b4b43d591dd5b552fa6ccbcacd8aba95790f",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 44,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.25228309631347656,
+        "max": 0.8645704984664917,
+        "mean": 0.4523155082736099,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "invoice_processing/seed44/S-soft": {
+      "fold": "invoice_processing",
+      "seed": 44,
+      "arm": "S-soft",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5555555555555556,
+        "soft_cross_entropy": 1.057143819477367,
+        "soft_brier": 0.1347928115167443
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.562,
+        "soft_cross_entropy": 1.0633189707621422,
+        "soft_brier": 0.12578345409806488
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.326,
+        "soft_cross_entropy": 1.2377989293489968,
+        "soft_brier": 0.40560213701265246
+      },
+      "weights_sha256": "e8fcba43050a48967b77f9cd9a3868f449c95cc7858bda032a56fd599dfad66f",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 44,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.13379041850566864,
+        "max": 0.5670291185379028,
+        "mean": 0.25904474812641476,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "invoice_processing/seed44/T-typed-rps": {
+      "fold": "invoice_processing",
+      "seed": 44,
+      "arm": "T-typed-rps",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5588888888888889,
+        "soft_cross_entropy": 1.0590408426391182,
+        "soft_brier": 0.13575792953555163
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5646666666666667,
+        "soft_cross_entropy": 1.0648243502550812,
+        "soft_brier": 0.12667922457714234
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.312,
+        "soft_cross_entropy": 1.248353527226704,
+        "soft_brier": 0.413021903740516
+      },
+      "weights_sha256": "73dc02adce172bab72490c13aeba4acd19eed70d31839883ac1dea65529a5a5b",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 44,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.16663090884685516,
+        "max": 0.7238144278526306,
+        "mean": 0.31095298924292736,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "invoice_processing/seed44/R-rlcd-loo": {
+      "fold": "invoice_processing",
+      "seed": 44,
+      "arm": "R-rlcd-loo",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5577777777777778,
+        "soft_cross_entropy": 1.0558932111215806,
+        "soft_brier": 0.13408989441199667
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5646666666666667,
+        "soft_cross_entropy": 1.0625092472104236,
+        "soft_brier": 0.1254407738334393
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.318,
+        "soft_cross_entropy": 1.2653521919730362,
+        "soft_brier": 0.4198159062620443
+      },
+      "weights_sha256": "5a3bed4a4e84dd6e073a7ae4bfb0649be1953c867320614deb750033b04a4f23",
+      "objective": {
+        "gradient_estimator": "score_function",
+        "noise_seed": 44,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 1.0,
+        "noise_calls": 171,
+        "noise_elements": 1728000,
+        "noise_plan_sha256": "32913e7c29d4e34665623c7c7e7925ca1f62c927382aac06f4e214cae4f2d717",
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "Monte Carlo Gaussian-smoothed CE+Brier+optional ordered RPS plus optional clean CE anchor",
+        "surrogate_is_risk": false,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.24597038328647614,
+        "max": 1.1277854442596436,
+        "mean": 0.4909295546903945,
+        "clipped_updates": 2
+      },
+      "updates": 171
+    },
+    "security_incidents/seed42/H-hard": {
+      "fold": "security_incidents",
+      "seed": 42,
+      "arm": "H-hard",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5677777777777778,
+        "soft_cross_entropy": 1.0530687097448812,
+        "soft_brier": 0.1851331580421743
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5633333333333334,
+        "soft_cross_entropy": 1.078751075232692,
+        "soft_brier": 0.19078152855443345
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.468,
+        "soft_cross_entropy": 1.1991507575631328,
+        "soft_brier": 0.17324291934138444
+      },
+      "weights_sha256": "c6dfb6bea00ca3862d27b7bfbd5ef5ac3a3967c5dde1e813429ff40998704f12",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 42,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.2713892459869385,
+        "max": 0.9486963152885437,
+        "mean": 0.4864053027323115,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "security_incidents/seed42/S-soft": {
+      "fold": "security_incidents",
+      "seed": 42,
+      "arm": "S-soft",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5611111111111111,
+        "soft_cross_entropy": 1.0123962346885025,
+        "soft_brier": 0.1666761610154117
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.556,
+        "soft_cross_entropy": 1.028153178240538,
+        "soft_brier": 0.1676461606636849
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.434,
+        "soft_cross_entropy": 1.2023501745501488,
+        "soft_brier": 0.17160040532312842
+      },
+      "weights_sha256": "54b10e279e8fa1d1facaccc3b1b37a5c8f0356a7ff6ad7f4f31514d48399ce03",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 42,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.1606355905532837,
+        "max": 0.5539345741271973,
+        "mean": 0.30935395269366034,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "security_incidents/seed42/T-typed-rps": {
+      "fold": "security_incidents",
+      "seed": 42,
+      "arm": "T-typed-rps",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5711111111111111,
+        "soft_cross_entropy": 1.0156114443896935,
+        "soft_brier": 0.16848033555306483
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.56,
+        "soft_cross_entropy": 1.0314896833009444,
+        "soft_brier": 0.16967142342609887
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.44,
+        "soft_cross_entropy": 1.1970404208977476,
+        "soft_brier": 0.16851108087050248
+      },
+      "weights_sha256": "03c97a273c087be5d9827348de6a4f44f9650ffa0450b78abd4b3560412839e8",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 42,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.19652488827705383,
+        "max": 0.640670895576477,
+        "mean": 0.36453985174496967,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "security_incidents/seed42/R-rlcd-loo": {
+      "fold": "security_incidents",
+      "seed": 42,
+      "arm": "R-rlcd-loo",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5655555555555556,
+        "soft_cross_entropy": 1.0127865488143186,
+        "soft_brier": 0.16708068626200007
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5493333333333333,
+        "soft_cross_entropy": 1.0310686688073745,
+        "soft_brier": 0.16954638588129034
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.438,
+        "soft_cross_entropy": 1.2042231696795365,
+        "soft_brier": 0.17491242850155775
+      },
+      "weights_sha256": "0a653d3acdb591e827827c9b1a1e5bcfeef5d1d72c1336bc35a4fc3be2ff0e9d",
+      "objective": {
+        "gradient_estimator": "score_function",
+        "noise_seed": 42,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 1.0,
+        "noise_calls": 171,
+        "noise_elements": 1728000,
+        "noise_plan_sha256": "531b4fc0c5889d0777bdb514978141fea422cd7224d652737cdc5d97b90b08dc",
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "Monte Carlo Gaussian-smoothed CE+Brier+optional ordered RPS plus optional clean CE anchor",
+        "surrogate_is_risk": false,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.31700363755226135,
+        "max": 1.0611597299575806,
+        "mean": 0.5675324659947066,
+        "clipped_updates": 1
+      },
+      "updates": 171
+    },
+    "security_incidents/seed43/H-hard": {
+      "fold": "security_incidents",
+      "seed": 43,
+      "arm": "H-hard",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5366666666666666,
+        "soft_cross_entropy": 1.0682331255486712,
+        "soft_brier": 0.1947856588930449
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.502,
+        "soft_cross_entropy": 1.1036632780759674,
+        "soft_brier": 0.20660846277914455
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.426,
+        "soft_cross_entropy": 1.193039244026117,
+        "soft_brier": 0.1655657209020527
+      },
+      "weights_sha256": "a3242a16b61eff10ddd1fbffcb61588173ab32986dd021c35cfda32716330a26",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 43,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.2560572624206543,
+        "max": 1.1643933057785034,
+        "mean": 0.4998145772699724,
+        "clipped_updates": 2
+      },
+      "updates": 171
+    },
+    "security_incidents/seed43/S-soft": {
+      "fold": "security_incidents",
+      "seed": 43,
+      "arm": "S-soft",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5366666666666666,
+        "soft_cross_entropy": 1.020789569863141,
+        "soft_brier": 0.1735625694134323
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5193333333333333,
+        "soft_cross_entropy": 1.0356229586019159,
+        "soft_brier": 0.17385931823698555
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.426,
+        "soft_cross_entropy": 1.2118833931551658,
+        "soft_brier": 0.1762159211896709
+      },
+      "weights_sha256": "e6e69a4590fb664f7127aa1bf888e79ea887a837b9c09e94051d2b43c3f55fdc",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 43,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.15051813423633575,
+        "max": 0.8127585649490356,
+        "mean": 0.32164282103379566,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "security_incidents/seed43/T-typed-rps": {
+      "fold": "security_incidents",
+      "seed": 43,
+      "arm": "T-typed-rps",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5311111111111111,
+        "soft_cross_entropy": 1.0214518112989213,
+        "soft_brier": 0.1735555982945446
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5193333333333333,
+        "soft_cross_entropy": 1.0367281817311602,
+        "soft_brier": 0.1742230097976593
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.436,
+        "soft_cross_entropy": 1.2063051076967939,
+        "soft_brier": 0.17314540401379322
+      },
+      "weights_sha256": "26ef07cc5a7e9e0d3c2c169e378351cba234cc3f0bb9a332d70d6a434055e492",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 43,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.1672847867012024,
+        "max": 1.146034598350525,
+        "mean": 0.38391999098641133,
+        "clipped_updates": 1
+      },
+      "updates": 171
+    },
+    "security_incidents/seed43/R-rlcd-loo": {
+      "fold": "security_incidents",
+      "seed": 43,
+      "arm": "R-rlcd-loo",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5355555555555556,
+        "soft_cross_entropy": 1.0230272947469066,
+        "soft_brier": 0.1752322901485226
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5146666666666667,
+        "soft_cross_entropy": 1.038227812945592,
+        "soft_brier": 0.17596898917163453
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.428,
+        "soft_cross_entropy": 1.2164646734305211,
+        "soft_brier": 0.17742622827345275
+      },
+      "weights_sha256": "f7b6d29640a0357fea8b340f745336226cec9d257909789260da1998f1de4c0d",
+      "objective": {
+        "gradient_estimator": "score_function",
+        "noise_seed": 43,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 1.0,
+        "noise_calls": 171,
+        "noise_elements": 1728000,
+        "noise_plan_sha256": "3c6d01fe3905f0984e5bef62098427dbcae4761d15af287f426a93a98bee0e9c",
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "Monte Carlo Gaussian-smoothed CE+Brier+optional ordered RPS plus optional clean CE anchor",
+        "surrogate_is_risk": false,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.29340291023254395,
+        "max": 1.5717031955718994,
+        "mean": 0.5908050544080679,
+        "clipped_updates": 5
+      },
+      "updates": 171
+    },
+    "security_incidents/seed44/H-hard": {
+      "fold": "security_incidents",
+      "seed": 44,
+      "arm": "H-hard",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5688888888888889,
+        "soft_cross_entropy": 1.0553634186872878,
+        "soft_brier": 0.184206362641026
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5526666666666666,
+        "soft_cross_entropy": 1.0852371978365716,
+        "soft_brier": 0.19075363295002037
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.456,
+        "soft_cross_entropy": 1.180843589764484,
+        "soft_brier": 0.1647258778190669
+      },
+      "weights_sha256": "da32849f96d21d7bbf5a8da426b3b6f969d99f0c1264b94c88b160856c81bce2",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 44,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.19702108204364777,
+        "max": 0.8844261765480042,
+        "mean": 0.4698907270243293,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "security_incidents/seed44/S-soft": {
+      "fold": "security_incidents",
+      "seed": 44,
+      "arm": "S-soft",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5822222222222222,
+        "soft_cross_entropy": 1.0147714534418095,
+        "soft_brier": 0.16808536692651263
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.554,
+        "soft_cross_entropy": 1.027900886318426,
+        "soft_brier": 0.16745794588187696
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.46,
+        "soft_cross_entropy": 1.195040818193256,
+        "soft_brier": 0.16493684359958619
+      },
+      "weights_sha256": "aab5a8c7b270a5414b1fa28e3f065c90915f9b7a255b48988d3bf4492fe2a4cd",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 44,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 0.0,
+        "ordered_cost_candidate_order": null,
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.1409616619348526,
+        "max": 0.5357807874679565,
+        "mean": 0.28926836067472983,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "security_incidents/seed44/T-typed-rps": {
+      "fold": "security_incidents",
+      "seed": 44,
+      "arm": "T-typed-rps",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5633333333333334,
+        "soft_cross_entropy": 1.0189188090358012,
+        "soft_brier": 0.17053372023053678
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.552,
+        "soft_cross_entropy": 1.0310361284927712,
+        "soft_brier": 0.1692581106301335
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.448,
+        "soft_cross_entropy": 1.1950426415099284,
+        "soft_brier": 0.16295834906883405
+      },
+      "weights_sha256": "cea7720ae7f75c7020b540bde1baa1170293cb9afab2974a81691f5c048ad3e5",
+      "objective": {
+        "gradient_estimator": "clean",
+        "noise_seed": 44,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 0.0,
+        "noise_calls": 0,
+        "noise_elements": 0,
+        "noise_plan_sha256": null,
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "clean CE+Brier+optional ordered RPS",
+        "surrogate_is_risk": true,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.17237935960292816,
+        "max": 0.8030428886413574,
+        "mean": 0.34819379623173274,
+        "clipped_updates": 0
+      },
+      "updates": 171
+    },
+    "security_incidents/seed44/R-rlcd-loo": {
+      "fold": "security_incidents",
+      "seed": 44,
+      "arm": "R-rlcd-loo",
+      "validation": {
+        "n": 900,
+        "argmax_agreement": 0.5744444444444444,
+        "soft_cross_entropy": 1.0163665704540772,
+        "soft_brier": 0.16912710184894264
+      },
+      "seen": {
+        "n": 1500,
+        "argmax_agreement": 0.5453333333333333,
+        "soft_cross_entropy": 1.029751276554936,
+        "soft_brier": 0.16842940615886037
+      },
+      "heldout": {
+        "n": 500,
+        "argmax_agreement": 0.46,
+        "soft_cross_entropy": 1.2037206905517608,
+        "soft_brier": 0.1679160650240676
+      },
+      "weights_sha256": "7b7c1b9f8c08dcc27cb91b342ae9e3ca9738c60f1b9a4db8ae2f86ce74e2cb38",
+      "objective": {
+        "gradient_estimator": "score_function",
+        "noise_seed": 44,
+        "noise_sigma": 0.4,
+        "noise_samples": 32,
+        "center_score_logits": true,
+        "ranked_probability_weight": 1.0,
+        "ordered_cost_candidate_order": "original semantic order restored after presentation permutation",
+        "clean_anchor_weight": 1.0,
+        "noise_calls": 171,
+        "noise_elements": 1728000,
+        "noise_plan_sha256": "32913e7c29d4e34665623c7c7e7925ca1f62c927382aac06f4e214cae4f2d717",
+        "noise_generator": "dedicated CPU torch.Generator; does not consume dropout RNG",
+        "risk": "Monte Carlo Gaussian-smoothed CE+Brier+optional ordered RPS plus optional clean CE anchor",
+        "surrogate_is_risk": false,
+        "score_baseline": "independent leave-one-out; no reward standard-deviation normalization"
+      },
+      "gradient_norm": {
+        "min": 0.2609958052635193,
+        "max": 1.0189282894134521,
+        "mean": 0.5405958981541862,
+        "clipped_updates": 2
+      },
+      "updates": 171
+    }
+  },
+  "contrasts": {
+    "soft_minus_hard": {
+      "control": "H-hard",
+      "treatment": "S-soft",
+      "paired_deltas": [
+        {
+          "fold": "agent_trace_observability",
+          "seed": 42,
+          "heldout_soft_ce": -0.2686112378645702,
+          "heldout_soft_brier": -0.06984324467318942,
+          "heldout_argmax": 0.02200000000000002,
+          "seen_soft_ce": -0.04775209543567105
+        },
+        {
+          "fold": "agent_trace_observability",
+          "seed": 43,
+          "heldout_soft_ce": -0.2631498375334269,
+          "heldout_soft_brier": -0.06587305500008589,
+          "heldout_argmax": 0.01200000000000001,
+          "seen_soft_ce": -0.044384451134867775
+        },
+        {
+          "fold": "agent_trace_observability",
+          "seed": 44,
+          "heldout_soft_ce": -0.2488819117517671,
+          "heldout_soft_brier": -0.057719823162729444,
+          "heldout_argmax": -0.006000000000000005,
+          "seen_soft_ce": -0.05541041500497956
+        },
+        {
+          "fold": "customer_service",
+          "seed": 42,
+          "heldout_soft_ce": -0.052739051279675486,
+          "heldout_soft_brier": -0.030411957627080766,
+          "heldout_argmax": 0.055999999999999994,
+          "seen_soft_ce": -0.04471659422016483
+        },
+        {
+          "fold": "customer_service",
+          "seed": 43,
+          "heldout_soft_ce": -0.051633086843968945,
+          "heldout_soft_brier": -0.025262898726947036,
+          "heldout_argmax": 0.064,
+          "seen_soft_ce": -0.04611829900533526
+        },
+        {
+          "fold": "customer_service",
+          "seed": 44,
+          "heldout_soft_ce": -0.05063995550123779,
+          "heldout_soft_brier": -0.032367569627761994,
+          "heldout_argmax": 0.04799999999999999,
+          "seen_soft_ce": -0.062167300330142394
+        },
+        {
+          "fold": "invoice_processing",
+          "seed": 42,
+          "heldout_soft_ce": -0.1358751675508456,
+          "heldout_soft_brier": -0.0649415674112091,
+          "heldout_argmax": 0.014000000000000012,
+          "seen_soft_ce": -0.07637553010308418
+        },
+        {
+          "fold": "invoice_processing",
+          "seed": 43,
+          "heldout_soft_ce": -0.15011174801790772,
+          "heldout_soft_brier": -0.09035294311137776,
+          "heldout_argmax": 0.011999999999999955,
+          "seen_soft_ce": -0.07653243535341647
+        },
+        {
+          "fold": "invoice_processing",
+          "seed": 44,
+          "heldout_soft_ce": -0.11126571526788909,
+          "heldout_soft_brier": -0.06551348876507235,
+          "heldout_argmax": 0.0040000000000000036,
+          "seen_soft_ce": -0.049709224412036734
+        },
+        {
+          "fold": "security_incidents",
+          "seed": 42,
+          "heldout_soft_ce": 0.0031994169870159794,
+          "heldout_soft_brier": -0.0016425140182560194,
+          "heldout_argmax": -0.03400000000000003,
+          "seen_soft_ce": -0.05059789699215411
+        },
+        {
+          "fold": "security_incidents",
+          "seed": 43,
+          "heldout_soft_ce": 0.01884414912904875,
+          "heldout_soft_brier": 0.010650200287618178,
+          "heldout_argmax": 0.0,
+          "seen_soft_ce": -0.06804031947405154
+        },
+        {
+          "fold": "security_incidents",
+          "seed": 44,
+          "heldout_soft_ce": 0.014197228428771913,
+          "heldout_soft_brier": 0.0002109657805192955,
+          "heldout_argmax": 0.0040000000000000036,
+          "seen_soft_ce": -0.057336311518145555
+        }
+      ],
+      "advancement": {
+        "heldout_ce_wins": 9,
+        "endpoints": 12,
+        "mean_heldout_soft_ce_delta": -0.10805557642220436,
+        "mean_seen_soft_ce_delta": -0.05659507274867079,
+        "mean_heldout_soft_brier_delta": -0.04108899133796436,
+        "workflow_mean_heldout_soft_ce_delta": {
+          "agent_trace_observability": -0.2602143290499214,
+          "customer_service": -0.05167069787496074,
+          "invoice_processing": -0.13241754361221414,
+          "security_incidents": 0.01208026484827888
+        },
+        "checks": {
+          "heldout_ce_wins_at_least_9_of_12": true,
+          "mean_heldout_ce_improves": true,
+          "no_workflow_mean_ce_regresses_over_0_01": false,
+          "mean_seen_ce_regression_at_most_0_005": true,
+          "mean_heldout_brier_nonregression": true
+        },
+        "advances_to_lora_validation": false
+      }
+    },
+    "typed_rps_minus_soft": {
+      "control": "S-soft",
+      "treatment": "T-typed-rps",
+      "paired_deltas": [
+        {
+          "fold": "agent_trace_observability",
+          "seed": 42,
+          "heldout_soft_ce": -0.007627038388367202,
+          "heldout_soft_brier": -0.0018230621658555102,
+          "heldout_argmax": -0.0040000000000000036,
+          "seen_soft_ce": 0.002450397528633075
+        },
+        {
+          "fold": "agent_trace_observability",
+          "seed": 43,
+          "heldout_soft_ce": -0.010477655557664889,
+          "heldout_soft_brier": -0.003905071598740595,
+          "heldout_argmax": -0.0040000000000000036,
+          "seen_soft_ce": 0.0025139827600781928
+        },
+        {
+          "fold": "agent_trace_observability",
+          "seed": 44,
+          "heldout_soft_ce": -0.0018011581843304647,
+          "heldout_soft_brier": -8.22874073092561e-05,
+          "heldout_argmax": -0.0020000000000000018,
+          "seen_soft_ce": 0.0016909887584887207
+        },
+        {
+          "fold": "customer_service",
+          "seed": 42,
+          "heldout_soft_ce": 0.006197482316225855,
+          "heldout_soft_brier": 0.002003153323356155,
+          "heldout_argmax": -0.008000000000000007,
+          "seen_soft_ce": 0.0008463936218046086
+        },
+        {
+          "fold": "customer_service",
+          "seed": 43,
+          "heldout_soft_ce": -0.005377634541877452,
+          "heldout_soft_brier": -0.003584146363263152,
+          "heldout_argmax": 0.008000000000000007,
+          "seen_soft_ce": -0.002739410690628663
+        },
+        {
+          "fold": "customer_service",
+          "seed": 44,
+          "heldout_soft_ce": -0.0011802882635876255,
+          "heldout_soft_brier": -0.0008579154521258514,
+          "heldout_argmax": 0.016000000000000014,
+          "seen_soft_ce": 0.0011683837350231485
+        },
+        {
+          "fold": "invoice_processing",
+          "seed": 42,
+          "heldout_soft_ce": -0.007300404088979917,
+          "heldout_soft_brier": -0.007479467313857069,
+          "heldout_argmax": -0.03200000000000003,
+          "seen_soft_ce": -0.0009792779200623603
+        },
+        {
+          "fold": "invoice_processing",
+          "seed": 43,
+          "heldout_soft_ce": 0.003240390432651452,
+          "heldout_soft_brier": 0.0019421117670521126,
+          "heldout_argmax": 0.030000000000000027,
+          "seen_soft_ce": 0.002839840447809827
+        },
+        {
+          "fold": "invoice_processing",
+          "seed": 44,
+          "heldout_soft_ce": 0.010554597877707073,
+          "heldout_soft_brier": 0.0074197667278635415,
+          "heldout_argmax": -0.014000000000000012,
+          "seen_soft_ce": 0.0015053794929389408
+        },
+        {
+          "fold": "security_incidents",
+          "seed": 42,
+          "heldout_soft_ce": -0.005309753652401161,
+          "heldout_soft_brier": -0.003089324452625941,
+          "heldout_argmax": 0.006000000000000005,
+          "seen_soft_ce": 0.0033365050604063917
+        },
+        {
+          "fold": "security_incidents",
+          "seed": 43,
+          "heldout_soft_ce": -0.005578285458371912,
+          "heldout_soft_brier": -0.0030705171758776684,
+          "heldout_argmax": 0.010000000000000009,
+          "seen_soft_ce": 0.001105223129244326
+        },
+        {
+          "fold": "security_incidents",
+          "seed": 44,
+          "heldout_soft_ce": 1.823316672533437e-06,
+          "heldout_soft_brier": -0.001978494530752134,
+          "heldout_argmax": -0.01200000000000001,
+          "seen_soft_ce": 0.003135242174345132
+        }
+      ],
+      "advancement": {
+        "heldout_ce_wins": 8,
+        "endpoints": 12,
+        "mean_heldout_soft_ce_delta": -0.0020548270160269757,
+        "mean_seen_soft_ce_delta": 0.0014061373415067784,
+        "mean_heldout_soft_brier_delta": -0.0012087712201779472,
+        "workflow_mean_heldout_soft_ce_delta": {
+          "agent_trace_observability": -0.0066352840434541855,
+          "customer_service": -0.00012014682974640738,
+          "invoice_processing": 0.0021648614071262027,
+          "security_incidents": -0.003628738598033513
+        },
+        "checks": {
+          "heldout_ce_wins_at_least_9_of_12": false,
+          "mean_heldout_ce_improves": true,
+          "no_workflow_mean_ce_regresses_over_0_01": true,
+          "mean_seen_ce_regression_at_most_0_005": true,
+          "mean_heldout_brier_nonregression": true
+        },
+        "advances_to_lora_validation": false
+      }
+    },
+    "rlcd_loo_minus_typed_rps": {
+      "control": "T-typed-rps",
+      "treatment": "R-rlcd-loo",
+      "paired_deltas": [
+        {
+          "fold": "agent_trace_observability",
+          "seed": 42,
+          "heldout_soft_ce": 0.012803949593621189,
+          "heldout_soft_brier": 0.0049357320630894486,
+          "heldout_argmax": -0.0020000000000000018,
+          "seen_soft_ce": -0.003142341534823956
+        },
+        {
+          "fold": "agent_trace_observability",
+          "seed": 43,
+          "heldout_soft_ce": 0.005121942115038802,
+          "heldout_soft_brier": 0.002105768690684129,
+          "heldout_argmax": 0.006000000000000005,
+          "seen_soft_ce": -0.0035100165749121226
+        },
+        {
+          "fold": "agent_trace_observability",
+          "seed": 44,
+          "heldout_soft_ce": 0.009123124263281435,
+          "heldout_soft_brier": 0.00420752517734202,
+          "heldout_argmax": 0.006000000000000005,
+          "seen_soft_ce": -0.0004920548444481421
+        },
+        {
+          "fold": "customer_service",
+          "seed": 42,
+          "heldout_soft_ce": -0.002483021648323147,
+          "heldout_soft_brier": 0.0003040437445901989,
+          "heldout_argmax": -0.0020000000000000018,
+          "seen_soft_ce": 0.00095405656666947
+        },
+        {
+          "fold": "customer_service",
+          "seed": 43,
+          "heldout_soft_ce": 0.007605629778567824,
+          "heldout_soft_brier": 0.0053651661442356,
+          "heldout_argmax": -0.010000000000000009,
+          "seen_soft_ce": 0.0033727137374433003
+        },
+        {
+          "fold": "customer_service",
+          "seed": 44,
+          "heldout_soft_ce": 0.0007000482552976806,
+          "heldout_soft_brier": 0.001224454574157069,
+          "heldout_argmax": -0.008000000000000007,
+          "seen_soft_ce": 0.0005368815113997449
+        },
+        {
+          "fold": "invoice_processing",
+          "seed": 42,
+          "heldout_soft_ce": 0.022746509165681994,
+          "heldout_soft_brier": 0.010537898114058752,
+          "heldout_argmax": 0.018000000000000016,
+          "seen_soft_ce": 1.695156587810942e-05
+        },
+        {
+          "fold": "invoice_processing",
+          "seed": 43,
+          "heldout_soft_ce": 0.025579175222943062,
+          "heldout_soft_brier": 0.013508528945121667,
+          "heldout_argmax": -0.06,
+          "seen_soft_ce": -0.0024863639278316363
+        },
+        {
+          "fold": "invoice_processing",
+          "seed": 44,
+          "heldout_soft_ce": 0.01699866474633227,
+          "heldout_soft_brier": 0.006794002521528286,
+          "heldout_argmax": 0.006000000000000005,
+          "seen_soft_ce": -0.0023151030446575405
+        },
+        {
+          "fold": "security_incidents",
+          "seed": 42,
+          "heldout_soft_ce": 0.007182748781788817,
+          "heldout_soft_brier": 0.006401347631055265,
+          "heldout_argmax": -0.0020000000000000018,
+          "seen_soft_ce": -0.0004210144935699045
+        },
+        {
+          "fold": "security_incidents",
+          "seed": 43,
+          "heldout_soft_ce": 0.010159565733727227,
+          "heldout_soft_brier": 0.0042808242596595325,
+          "heldout_argmax": -0.008000000000000007,
+          "seen_soft_ce": 0.0014996312144317514
+        },
+        {
+          "fold": "security_incidents",
+          "seed": 44,
+          "heldout_soft_ce": 0.008678049041832336,
+          "heldout_soft_brier": 0.00495771595523356,
+          "heldout_argmax": 0.01200000000000001,
+          "seen_soft_ce": -0.0012848519378352297
+        }
+      ],
+      "advancement": {
+        "heldout_ce_wins": 1,
+        "endpoints": 12,
+        "mean_heldout_soft_ce_delta": 0.010351365420815791,
+        "mean_seen_soft_ce_delta": -0.0006059593135213462,
+        "mean_heldout_soft_brier_delta": 0.005385250651729627,
+        "workflow_mean_heldout_soft_ce_delta": {
+          "agent_trace_observability": 0.009016338657313808,
+          "customer_service": 0.0019408854618474525,
+          "invoice_processing": 0.021774783044985774,
+          "security_incidents": 0.008673454519116127
+        },
+        "checks": {
+          "heldout_ce_wins_at_least_9_of_12": false,
+          "mean_heldout_ce_improves": false,
+          "no_workflow_mean_ce_regresses_over_0_01": false,
+          "mean_seen_ce_regression_at_most_0_005": true,
+          "mean_heldout_brier_nonregression": false
+        },
+        "advances_to_lora_validation": false
+      }
+    }
+  },
+  "arm_summary": {
+    "H-hard": {
+      "mean_heldout_soft_ce": 1.3721468868226208,
+      "mean_seen_soft_ce": 1.0895762717030377,
+      "mean_heldout_argmax_agreement": 0.3645
+    },
+    "S-soft": {
+      "mean_heldout_soft_ce": 1.2640913104004163,
+      "mean_seen_soft_ce": 1.032981198954367,
+      "mean_heldout_argmax_agreement": 0.38083333333333336
+    },
+    "T-typed-rps": {
+      "mean_heldout_soft_ce": 1.2620364833843893,
+      "mean_seen_soft_ce": 1.0343873362958735,
+      "mean_heldout_argmax_agreement": 0.38033333333333336
+    },
+    "R-rlcd-loo": {
+      "mean_heldout_soft_ce": 1.2723878488052052,
+      "mean_seen_soft_ce": 1.0337813769823523,
+      "mean_heldout_argmax_agreement": 0.37666666666666665
+    }
+  },
+  "gradient_summary": {
+    "H-hard": {
+      "endpoint_mean_pre_clip_norm": 0.46290988245612236,
+      "endpoint_max_pre_clip_norm": 1.2314785718917847,
+      "clipped_updates": 10,
+      "updates": 2052
+    },
+    "S-soft": {
+      "endpoint_mean_pre_clip_norm": 0.2726985193810791,
+      "endpoint_max_pre_clip_norm": 0.8127585649490356,
+      "clipped_updates": 0,
+      "updates": 2052
+    },
+    "T-typed-rps": {
+      "endpoint_mean_pre_clip_norm": 0.3257931426138441,
+      "endpoint_max_pre_clip_norm": 1.146034598350525,
+      "clipped_updates": 1,
+      "updates": 2052
+    },
+    "R-rlcd-loo": {
+      "endpoint_mean_pre_clip_norm": 0.5072924612384093,
+      "endpoint_max_pre_clip_norm": 1.5717031955718994,
+      "clipped_updates": 21,
+      "updates": 2052
+    }
+  },
+  "boundary": "This isolates objectives on fixed public-base features. Advancement means eligible for end-to-end LoRA validation, not a final model win."
+}

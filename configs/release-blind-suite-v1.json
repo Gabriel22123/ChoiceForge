@@ -1,0 +1,39 @@
+{
+  "format_version": 1,
+  "name": "release-candidate-v1 fresh BIG-bench task suite",
+  "repository": "https://github.com/google/BIG-bench",
+  "revision": "092b196c1f8f14a54bbc62f24759d43bde46dd3b",
+  "license": "Apache-2.0",
+  "tasks": {
+    "causal_judgment": {
+      "official_rows": 190,
+      "description": "Answer questions about causal attribution",
+      "files": {
+        "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "bigbench/benchmark_tasks/causal_judgment/README.md": "04bd530a3d69be9094e7dd934b8ca786f4f4ffc13b944875605190e497c36bcb",
+        "bigbench/benchmark_tasks/causal_judgment/task.json": "a1a46c914f142e5921398babf6784adc3af5443539b1632b3c4197c01a25a942"
+      }
+    },
+    "formal_fallacies_syllogisms_negation": {
+      "official_rows": 14200,
+      "description": "Distinguish deductively valid arguments from formal fallacies",
+      "files": {
+        "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "bigbench/benchmark_tasks/formal_fallacies_syllogisms_negation/README.md": "1b54d5dc966241635154e386ab2854b74c953ff9052e7cced51e5e16a4fbbf50",
+        "bigbench/benchmark_tasks/formal_fallacies_syllogisms_negation/task.json": "8b1a903c4d860d07cd134df8c44d579b255653d54a83f8f3794e27313e35fa40"
+      }
+    },
+    "movie_recommendation": {
+      "official_rows": 500,
+      "description": "Recommend movies similar to the given list of movies",
+      "files": {
+        "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "bigbench/benchmark_tasks/movie_recommendation/README.md": "90d5fbe3fa578ae8d38f1b3a7606820187d28bb5fdabd4a9ed063ca0c4cc7283",
+        "bigbench/benchmark_tasks/movie_recommendation/task.json": "94e9b3bafa38735d5d44bdca5449314cd7241b6ed0bbb83d8d061efb573d2b46"
+      }
+    }
+  },
+  "rows_per_task": 128,
+  "selection": "For each task, admit examples under the pinned decoder tokenizer; order by SHA-256 of task, input and candidate text without target scores; take 128.",
+  "release_policy": "Benchmark canary applies. Raw/transformed rows, labels, logits and per-case predictions are excluded from release bundles."
+}

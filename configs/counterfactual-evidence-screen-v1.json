@@ -1,0 +1,67 @@
+{
+  "format_version": 1,
+  "study": "counterfactual-evidence-screen-v1",
+  "status": "frozen_before_reference_or_training",
+  "seed": 1701,
+  "parent": {
+    "study": "functional-retention-screen-v1",
+    "checkpoint": "runs/functional-retention-screen-v1/warm-functional-context",
+    "weights_sha256": "24a64f1efa256e182049db117b8ce67495dd401326b1db5ebbba168a6f08c180",
+    "model_sha256": "b728b762e7f4d664fa37b3d6cb5976d8f6c731cebca502440f4814f26c052c6f",
+    "train_predictions_sha256": "506a2a3830fee5fe65335939ffae314aa841e5cfafae964d44244e4e495fb662",
+    "calibration_sha256": "e41aa1253886ad1ca0954219355d8f123a5ca62944fbc8ee4d03da05b2d486d9",
+    "cases": "runs/functional-retention-screen-v1/cases.jsonl",
+    "cases_sha256": "504cc328b81f881bb39e6894cac65acc9980bb0f5f9d83ab2510b6225d57619b"
+  },
+  "generated_evidence": {
+    "train_groups": 256,
+    "train_rows": 512,
+    "validation_groups": 64,
+    "validation_rows": 128,
+    "license": "Apache-2.0",
+    "selection": "all rows are emitted by a deterministic project-authored generator; each group fixes task, claim and candidates and changes only evidence; train and validation subjects are disjoint",
+    "labeling": "deterministic rule evaluation with one yes and one no row per group",
+    "redistribution": "generator source is the canonical public artifact; generated rows are reproducible and project-authored"
+  },
+  "training": {
+    "epochs": 1,
+    "batch_size": 2,
+    "accumulation": 4,
+    "updates": 128,
+    "encoder_lr": 0.000005,
+    "head_lr": 0.00005,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05,
+    "distillation_weight": 1.0,
+    "distillation_target_field": "teacher_probabilities",
+    "distillation_allow_missing_targets": true,
+    "teacher_scope": "the 512 replay rows only; generated evidence rows use deterministic gold labels without a teacher target",
+    "training_weight_field": "training_weight",
+    "weighting": "all replay and generated rows have weight 1; generated labels and group exposure are exactly balanced",
+    "gold_supervision_replaced": false
+  },
+  "development_suite": {
+    "cases": "runs/release-candidate-v1/blind-suite/cases.jsonl",
+    "cases_sha256": "4890b3ba5f22af9de9e8c6a12a163154395a7a069125c9a0e5ed16dd27183d63",
+    "protocol_sha256": "4ae8c129e292f2a79e5d229b5a21a207eb96e1c56e97466db912d00173703b21",
+    "role": "Consumed development diagnostic only; permanently ineligible as a fresh test."
+  },
+  "screening_rule": {
+    "seen_accuracy_vs_parent_min_delta": -0.005,
+    "seen_nll_vs_parent_max_delta": 0.01,
+    "seen_each_source_accuracy_vs_release_control_min_delta": -0.02,
+    "development_accuracy_vs_parent_min_delta": -0.005,
+    "development_each_source_accuracy_vs_release_control_min_delta": -0.02,
+    "development_context_advantage_each_source_positive": true,
+    "generated_validation_accuracy_vs_parent_min_delta": 0.1,
+    "generated_validation_complete_group_rate_vs_parent_min_delta": 0.1,
+    "decision": "Advance only if every condition passes. A later release study still requires newly sealed and previously unread task families."
+  },
+  "interpretation": {
+    "primary_question": "Does same-question evidence-only flip training repair cross-task evidence use while functional distillation preserves the current decision function?",
+    "single_seed_development_screen": true,
+    "public_or_project_authored_data_only": true,
+    "proofwriter_excluded": "No verified upstream dataset license was found; no ProofWriter row or derivative is used.",
+    "github_publication": false
+  }
+}

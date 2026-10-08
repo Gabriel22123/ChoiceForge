@@ -1,0 +1,53 @@
+{
+  "format_version": 1,
+  "study": "arc-expert-utility-screen-v1",
+  "role": "consumed public-family frozen-expert utility screen",
+  "protocol_sha256": "6d077f6c01a537d08ebe5610b9e2bbf9db3a137d2fc67a09ca097c3ded1d683f",
+  "summary": {
+    "rows": 384,
+    "mean_utility": 0.0008859500870433598,
+    "mean_absolute_utility": 0.11917876710655644,
+    "open_rate": 0.2265625,
+    "parent_accuracy": 0.8072916666666666,
+    "expert_accuracy": 0.8151041666666666,
+    "parent_nll": 0.544151725615083,
+    "expert_nll": 0.5476164289345111,
+    "by_source": {
+      "arc-challenge": {
+        "rows": 192,
+        "mean_utility": 0.0031751994417087794,
+        "mean_absolute_utility": 0.13128475834916267,
+        "open_rate": 0.25,
+        "parent_accuracy": 0.75,
+        "expert_accuracy": 0.7552083333333334,
+        "parent_nll": 0.6757484072511496,
+        "expert_nll": 0.6774661092567461
+      },
+      "arc-easy": {
+        "rows": 192,
+        "mean_utility": -0.0014032992676220601,
+        "mean_absolute_utility": 0.10707277586395018,
+        "open_rate": 0.203125,
+        "parent_accuracy": 0.8645833333333334,
+        "expert_accuracy": 0.875,
+        "parent_nll": 0.4125550439790173,
+        "expert_nll": 0.4177667486122765
+      }
+    }
+  },
+  "checks": {
+    "coverage.rows": true,
+    "coverage.sources": true,
+    "mechanism.weights_loaded": true,
+    "utility.combined": false,
+    "utility.each_source": false,
+    "accuracy.combined": false,
+    "nll.each_source": false
+  },
+  "qualifies_as_positive_utility_family": false,
+  "limitations": [
+    "ARC was previously consumed as an architecture evaluation and is not fresh evidence.",
+    "This screen evaluates an existing QASC expert and does not train a router.",
+    "Raw and transformed ARC rows remain outside the release source boundary."
+  ]
+}

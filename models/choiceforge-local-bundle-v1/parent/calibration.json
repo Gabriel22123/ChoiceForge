@@ -1,0 +1,8 @@
+{
+  "temperature": 1.9040819949185805,
+  "validation_nll": 0.7532674369127647,
+  "identity_validation_nll": 0.8544471796908301,
+  "fit_rows": 608,
+  "method": "fixed log-spaced grid on validation soft cross entropy only",
+  "test_used": false
+}

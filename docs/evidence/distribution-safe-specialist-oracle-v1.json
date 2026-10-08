@@ -1,0 +1,130 @@
+{
+  "format_version": 1,
+  "study": "distribution-safe-specialist-oracle-v1",
+  "role": "consumed lexicographically safe gold-cost oracle",
+  "protocol_sha256": "26dce85ba11f35ee0093034184952ab4cb0e974eb66f6df65a56668a27b1af5e",
+  "summary": {
+    "rows": 724,
+    "mean_proper_improvement": 0.1995777659540117,
+    "selection": {
+      "qasc": 133,
+      "paws-wiki": 134,
+      "parent": 146,
+      "clinc": 202,
+      "snli": 109
+    },
+    "parent_accuracy": 0.7292817679558011,
+    "safe_accuracy": 0.7720994475138122,
+    "accuracy_delta": 0.04281767955801108,
+    "parent_nll": 0.8217971668386246,
+    "safe_nll": 0.65645927643031,
+    "nll_delta": -0.1653378904083146,
+    "audit": {
+      "parent_correct_lost": 0,
+      "nll_regressed": 0,
+      "brier_regressed": 0,
+      "context_regressed": 0
+    },
+    "by_source": {
+      "clinc": {
+        "rows": 42,
+        "mean_proper_improvement": 0.0240615099391972,
+        "selection": {
+          "clinc": 29,
+          "qasc": 3,
+          "parent": 10
+        },
+        "accuracy_delta": 0.0,
+        "nll_delta": -0.021163617504392017,
+        "mean_context_delta": 1.4574302176829128
+      },
+      "json-schema": {
+        "rows": 42,
+        "mean_proper_improvement": 0.20638839843863946,
+        "selection": {
+          "parent": 7,
+          "clinc": 13,
+          "paws-wiki": 9,
+          "snli": 5,
+          "qasc": 8
+        },
+        "accuracy_delta": 0.0714285714285714,
+        "nll_delta": -0.15895949416606703,
+        "mean_context_delta": 0.5301136707940202
+      },
+      "paws-wiki": {
+        "rows": 96,
+        "mean_proper_improvement": 0.13547363800583115,
+        "selection": {
+          "clinc": 41,
+          "parent": 41,
+          "snli": 7,
+          "paws-wiki": 3,
+          "qasc": 4
+        },
+        "accuracy_delta": 0.02083333333333337,
+        "nll_delta": -0.1150325042483773,
+        "mean_context_delta": 0.4021183684175294
+      },
+      "qasc": {
+        "rows": 128,
+        "mean_proper_improvement": 0.4469515567387008,
+        "selection": {
+          "clinc": 76,
+          "qasc": 40,
+          "paws-wiki": 2,
+          "parent": 10
+        },
+        "accuracy_delta": 0.1015625,
+        "nll_delta": -0.371879339305128,
+        "mean_context_delta": 1.4117279356876973
+      },
+      "snli": {
+        "rows": 96,
+        "mean_proper_improvement": 0.2552342707396706,
+        "selection": {
+          "qasc": 15,
+          "paws-wiki": 6,
+          "parent": 33,
+          "clinc": 26,
+          "snli": 16
+        },
+        "accuracy_delta": 0.03125,
+        "nll_delta": -0.20233704935049246,
+        "mean_context_delta": 0.4210904012348056
+      },
+      "typed-decisions": {
+        "rows": 320,
+        "mean_proper_improvement": 0.12530514967722964,
+        "selection": {
+          "paws-wiki": 114,
+          "snli": 81,
+          "qasc": 63,
+          "parent": 45,
+          "clinc": 17
+        },
+        "accuracy_delta": 0.03125,
+        "nll_delta": -0.10647321684035171,
+        "mean_context_delta": 0.19335973946382398
+      }
+    }
+  },
+  "checks": {
+    "safety.parent_correct": true,
+    "safety.nll": true,
+    "safety.brier": true,
+    "safety.context": true,
+    "sources.accuracy": true,
+    "sources.nll": true,
+    "combined.accuracy": true,
+    "combined.nll": true,
+    "combined.proper_improvement": true
+  },
+  "advances_to_safe_router_design": true,
+  "limitations": [
+    "All validation rows are consumed and cannot support a fresh release claim.",
+    "The oracle reads public target distributions or hard labels to construct offline safety supervision and is not an inference-time router.",
+    "The specialist bank uses canonical frozen endpoints; seed uncertainty is reported by the preceding cross-matrix study.",
+    "No router is trained in this screen."
+  ]
+}

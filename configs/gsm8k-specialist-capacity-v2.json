@@ -1,0 +1,85 @@
+{
+  "format_version": 1,
+  "study": "gsm8k-specialist-capacity-v2",
+  "status": "frozen_before_training",
+  "display_name": "GSM8K capacity v2",
+  "data": {
+    "train": "runs/gsm8k-specialist-capacity-v2/cases.jsonl",
+    "train_sha256": "efc49cb858ac451dd907353a120970c1e65f0d31fd99bc05279cf108b47959ac",
+    "train_rows": 2048,
+    "train_splits": ["train"],
+    "train_sources": ["gsm8k"],
+    "train_dataset": "gsm8k-capacity-v2",
+    "validation": "runs/gsm8k-specialist-capacity-v2/cases.jsonl",
+    "validation_sha256": "efc49cb858ac451dd907353a120970c1e65f0d31fd99bc05279cf108b47959ac",
+    "validation_rows": 256,
+    "validation_splits": ["validation"],
+    "validation_sources": ["gsm8k"],
+    "validation_dataset": "gsm8k-capacity-v2"
+  },
+  "feature_cache": {
+    "path": "cache/gsm8k-specialist-capacity-features-v2",
+    "manifest_sha256": "f88f0b65c1284736b757c74fc9250ac0a4a230a9f0654d70e7c7c9b030af13df"
+  },
+  "training": {
+    "seeds": [42, 43, 44],
+    "epochs": 2,
+    "residual_width": 512,
+    "router_width": 128,
+    "dropout": 0.0,
+    "initial_gate_probability": 0.25,
+    "batch_size": 32,
+    "updates": 128,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "brier_weight": 0.5,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05
+  },
+  "cost": {
+    "brier_weight": 0.5,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05
+  },
+  "screening_rule": {
+    "combined_mean_utility_min": 0.02,
+    "each_source_mean_utility_min": 0.02,
+    "combined_accuracy_min_delta": 0.01,
+    "combined_nll_max_delta": -0.02,
+    "each_source_nll_max_delta": -0.02,
+    "context_advantage_min_delta": 0.0,
+    "decision": "Count GSM8K capacity v2 as a consumed positive-utility specialist only if every seed passes the unchanged exact initialization, utility, accuracy, NLL and hard context-advantage gates on the new validation examples."
+  },
+  "evidence_path": "docs/evidence/gsm8k-specialist-capacity-v2.json",
+  "report_path": "docs/GSM8K_SPECIALIST_CAPACITY_V2_RESULT.zh-CN.md",
+  "limitations": [
+    "This is a same-family capacity confirmation informed by the failed v1 mechanism result, not a zero-shot task-family evaluation.",
+    "The v1 validation rows are excluded, but GSM8K as a task family is consumed.",
+    "The decoder representation and parent decision head are frozen; this is not end-to-end LoRA training.",
+    "This screen trains a GSM8K specialist only; it does not train or evaluate a router."
+  ],
+  "source_files": {
+    "scripts/run_public_specialist.py": "bc33926c96ba1a2700b2d522eb4e221f177fe195ea7b1259789fd48887596de6",
+    "scripts/run_public_specialist_context_gate.py": "bab3256cf9803c8dc7e3e9cac035c5c6eacc54e2db344de6ca4682fc03bd625b",
+    "scripts/run_qasc_routed_residual_screen.py": "bd14916548a04465b33d0a1ed80e0fa9bd621a5ef0ca858670184ba911e64ba4",
+    "scripts/cache_public_specialist_features.py": "8775758ca9874bbb13b4ceb373d02971210a7046ae0f2f7e70b672afe220186e",
+    "scripts/prepare_gsm8k_capacity_data.py": "5e52768af9f6864d299d441363dda013b98627289fc30233ac6e06207cfbc426",
+    "scripts/prepare_gsm8k_specialist_data.py": "c7e6b2dc4d520062a992f9cbd124c270401ee8bd773442d8829b52ddf2ff1c1e",
+    "src/decision_model/core.py": "ed3eafaff30275e99bf4e7c970584d5bd3f2197d747d25b2ca20adbfb37621ae",
+    "src/decision_model/counterfactual_routing.py": "3f033b5a85fa6a57bcdc43c120de00f3f7a9c791727cc7e9d65049ddba1f37b5",
+    "src/decision_model/feature_screen.py": "3b16e2b880e1e3c861c01988c19ac323818e8a5e7f0afd54b2991d35c36124e2",
+    "src/decision_model/route_utility.py": "be260aa82f322cbac68015129a3c08a46048f92e7b8c6d943c73d8f0820d9f37",
+    "src/decision_model/train.py": "485af4564a68d6e44dbb080e97b0a08ded6925ae0d2bac8d74215fd665fa0f51",
+    "docs/GSM8K_SPECIALIST_CAPACITY_V2_DESIGN.zh-CN.md": "40c883fc0b3ffa7920a23766e05708338efb48c47bd3d63826ca0c2c4b259a25"
+  },
+  "interpretation": {
+    "public_data_only": true,
+    "consumed_capacity_followup": true,
+    "v1_validation_reused": false,
+    "same_family_new_examples": true,
+    "hard_context_advantage_gate": true,
+    "router_training": false,
+    "github_publication": false
+  }
+}

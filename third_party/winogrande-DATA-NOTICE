@@ -1,0 +1,13 @@
+WinoGrande 1.1 dataset notice
+
+Source: https://github.com/allenai/winogrande
+Authors: Keisuke Sakaguchi, Ronan Le Bras, Chandra Bhagavatula, Yejin Choi
+Paper: WinoGrande: An Adversarial Winograd Schema Challenge at Scale (2019)
+
+The official repository README states that the WinoGrande dataset is licensed
+under CC-BY, without identifying a Creative Commons version. The repository
+code is separately Apache-2.0.
+
+This project downloads the official archive for local evaluation, verifies its
+SHA-256, and does not include WinoGrande text in release bundles. This notice
+does not replace or reinterpret the upstream license.

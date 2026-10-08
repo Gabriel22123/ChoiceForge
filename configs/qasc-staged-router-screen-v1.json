@@ -1,0 +1,65 @@
+{
+  "format_version": 1,
+  "study": "qasc-staged-router-screen-v1",
+  "status": "frozen_before_training",
+  "feature_cache": "cache/qasc-routed-residual-features-v1",
+  "feature_manifest_sha256": "b6d2b5def9bf913cb7c06d80747e4a63976a07c21cbc60fe1df9deb7b107db53",
+  "data": {
+    "cases": "runs/qasc-dual-function-screen-v1/cases.jsonl",
+    "development": "runs/release-candidate-v1/blind-suite/cases.jsonl",
+    "qasc_development": "runs/qasc-evidence-screen-v1/qasc-development.jsonl",
+    "cases_sha256": "1e3085e934f30ab50f7258e8ad2cd28de87423f8ed4649a7403cff57e17b8381",
+    "development_sha256": "4890b3ba5f22af9de9e8c6a12a163154395a7a069125c9a0e5ed16dd27183d63",
+    "qasc_development_sha256": "ee1f206aeaa8dfe253c2df847020df147fe9553b2bbc4f4a539f8073a0667224"
+  },
+  "source_files": {
+    "src/decision_model/feature_screen.py": "3b16e2b880e1e3c861c01988c19ac323818e8a5e7f0afd54b2991d35c36124e2",
+    "src/decision_model/training_objective.py": "d333afd12452b85dfff67100e65b5e59074a610b560665f041f2f4a9b576ec8b",
+    "src/decision_model/objective.py": "2405e683f108c9c2c6bf75d180ee6a0f7d0cfc95217b923f8a9dfddef0877b81",
+    "src/decision_model/train.py": "485af4564a68d6e44dbb080e97b0a08ded6925ae0d2bac8d74215fd665fa0f51",
+    "scripts/run_qasc_routed_residual_screen.py": "bd14916548a04465b33d0a1ed80e0fa9bd621a5ef0ca858670184ba911e64ba4",
+    "scripts/run_qasc_staged_router_screen.py": "9b030f3aa29f39a348f7d1db413a41ac0a28956c761c953f3b93d33af4c6c9d2",
+    "docs/QASC_STAGED_ROUTER_DESIGN.zh-CN.md": "d0734e59c93b9b54e1a5b03ab06163ac055b9920728879bb598bb99f42972058"
+  },
+  "training": {
+    "expert_seed": 1701,
+    "router_seed": 1702,
+    "residual_width": 256,
+    "router_width": 128,
+    "dropout": 0.0,
+    "initial_gate_probability": 0.25,
+    "batch_size": 2,
+    "accumulation": 4,
+    "updates_per_stage": 128,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "brier_weight": 0.5,
+    "distillation_weight": 1.0,
+    "null_distillation_weight": 1.0,
+    "context_advantage_weight": 0.25,
+    "context_advantage_gap": 0.05,
+    "replay_weight": 1.0,
+    "qasc_weight": 0.5
+  },
+  "screening_rule": {
+    "qasc_vs_replay_gate_min_delta": 0.05,
+    "seen_accuracy_vs_parent_min_delta": -0.005,
+    "seen_nll_vs_parent_max_delta": 0.01,
+    "development_accuracy_vs_parent_min_delta": -0.005,
+    "development_each_context_advantage_vs_parent_min_delta": -0.005,
+    "qasc_accuracy_vs_parent_min_delta": 0.03,
+    "qasc_nll_vs_parent_max_delta": -0.02,
+    "qasc_context_advantage_vs_parent_min_delta": 0.02,
+    "decision": "Advance only if initialization, both stage-isolation checks, semantic routing separation, every retention check and every QASC check pass."
+  },
+  "interpretation": {
+    "primary_question": "Does learning a useful residual before learning its semantic gate avoid the dead-expert collapse while preserving the parent function?",
+    "single_seed_consumed_mechanism_screen": true,
+    "all_evaluation_tasks_consumed": true,
+    "router_has_source_or_task_identity_supervision": false,
+    "inference_router_uses_source_family_id_or_label": false,
+    "public_data_only": true,
+    "github_publication": false
+  }
+}

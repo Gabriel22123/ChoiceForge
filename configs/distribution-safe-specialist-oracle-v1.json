@@ -1,0 +1,82 @@
+{
+  "format_version": 1,
+  "study": "distribution-safe-specialist-oracle-v1",
+  "status": "frozen_before_evaluation",
+  "data": {
+    "path": "runs/qasc-dual-function-screen-v1/cases.jsonl",
+    "sha256": "1e3085e934f30ab50f7258e8ad2cd28de87423f8ed4649a7403cff57e17b8381",
+    "dataset": "cases",
+    "splits": [
+      "validation"
+    ],
+    "sources": [
+      "qasc",
+      "snli",
+      "paws-wiki",
+      "clinc",
+      "typed-decisions",
+      "json-schema"
+    ],
+    "rows": 724
+  },
+  "feature_cache": {
+    "path": "cache/qasc-routed-residual-features-v1",
+    "manifest_sha256": "b6d2b5def9bf913cb7c06d80747e4a63976a07c21cbc60fe1df9deb7b107db53"
+  },
+  "model": {
+    "residual_width": 256,
+    "router_width": 128,
+    "dropout": 0.0,
+    "initial_gate_probability": 0.25
+  },
+  "experts": {
+    "qasc": {
+      "weights": "runs/qasc-binary-route-screen-v1/binary-route.safetensors",
+      "weights_sha256": "a1b9d145e3532ddd0460aa3429420088cd74f8a3a56325249f227c5b846853ab"
+    },
+    "snli": {
+      "weights": "runs/snli-specialist-v1/specialist-seed-42.safetensors",
+      "weights_sha256": "b7fa22125e6c24e9b15532ba807bb47b2d2fc1bb28fb7d446312c4c0a71ed65b"
+    },
+    "paws-wiki": {
+      "weights": "runs/paws-wiki-specialist-v1/specialist-seed-42.safetensors",
+      "weights_sha256": "6d185df8a459041819abe6e3a48aed2df49bec335d468150d53b04931f8f2152"
+    },
+    "clinc": {
+      "weights": "runs/clinc-specialist-v1/specialist-seed-42.safetensors",
+      "weights_sha256": "1c1edff2735f173aca9e209e01029fad65c42c66d8840a64b086dafde3da2243"
+    }
+  },
+  "proper_loss": {
+    "brier_weight": 0.5,
+    "target": "public target_probabilities when present, otherwise hard-label one-hot"
+  },
+  "screening_rule": {
+    "accuracy_min_delta": 0.01,
+    "nll_max_delta": -0.02,
+    "proper_improvement_min": 0.02,
+    "decision": "Advance only if full-target distribution safety has zero per-row correctness, cross-entropy, Brier and expected-context regressions, no source-level accuracy/cross-entropy regression, and material aggregate gains."
+  },
+  "source_files": {
+    "scripts/run_distribution_safe_specialist_oracle.py": "68a9a9f4b4a096849bc54a29ee62d65ab52dee6454a4a774a384e0a7f26f971f",
+    "scripts/run_specialist_cross_matrix.py": "0d45851035c5631151702d351f2941f84a5b2c3522854a056a95294182f3a7e3",
+    "scripts/run_qasc_routed_residual_screen.py": "bd14916548a04465b33d0a1ed80e0fa9bd621a5ef0ca858670184ba911e64ba4",
+    "src/decision_model/core.py": "ed3eafaff30275e99bf4e7c970584d5bd3f2197d747d25b2ca20adbfb37621ae",
+    "src/decision_model/feature_screen.py": "3b16e2b880e1e3c861c01988c19ac323818e8a5e7f0afd54b2991d35c36124e2",
+    "src/decision_model/train.py": "485af4564a68d6e44dbb080e97b0a08ded6925ae0d2bac8d74215fd665fa0f51",
+    "docs/DISTRIBUTION_SAFE_ORACLE_DESIGN.zh-CN.md": "5bbda34d28fc230217f3d79b971dba874f4b919e1f7afb32424f2c5f74578075"
+  },
+  "limitations": [
+    "All validation rows are consumed and cannot support a fresh release claim.",
+    "The oracle reads public target distributions or hard labels to construct offline safety supervision and is not an inference-time router.",
+    "The specialist bank uses canonical frozen endpoints; seed uncertainty is reported by the preceding cross-matrix study.",
+    "No router is trained in this screen."
+  ],
+  "interpretation": {
+    "public_data_only": true,
+    "consumed_mechanism_screen": true,
+    "full_target_distribution_safety": true,
+    "router_training": false,
+    "github_publication": false
+  }
+}

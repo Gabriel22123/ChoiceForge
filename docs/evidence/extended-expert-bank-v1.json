@@ -1,0 +1,341 @@
+{
+  "format_version": 1,
+  "study": "extended-expert-bank-v1",
+  "role": "five-expert seven-family public cross evaluation",
+  "protocol_sha256": "58dbd73b26462b035f453414654e2db292dadee33890ec6117aa270747c4077c",
+  "matrix": {
+    "clinc": {
+      "clinc": {
+        "rows": 42,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.01794656040397708,
+        "mean_proper_gain": 0.019143808031002178,
+        "safe_rate": 0.6904761904761905
+      },
+      "paws-wiki": {
+        "rows": 42,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.006790869137162758,
+        "mean_proper_gain": -0.007763653151069467,
+        "safe_rate": 0.0
+      },
+      "qasc": {
+        "rows": 42,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.0007769288753210757,
+        "mean_proper_gain": 0.0007814173570296863,
+        "safe_rate": 0.14285714285714285
+      },
+      "snli": {
+        "rows": 42,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.00839828796625993,
+        "mean_proper_gain": -0.009965061501809383,
+        "safe_rate": 0.0
+      },
+      "truthfulqa": {
+        "rows": 42,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.017283066493789308,
+        "mean_proper_gain": -0.019850182138627756,
+        "safe_rate": 0.023809523809523808
+      }
+    },
+    "json-schema": {
+      "clinc": {
+        "rows": 42,
+        "accuracy_delta": 0.02380952380952378,
+        "cross_entropy_delta": 0.25706652545159314,
+        "mean_proper_gain": -0.29619309617762407,
+        "safe_rate": 0.3333333333333333
+      },
+      "paws-wiki": {
+        "rows": 42,
+        "accuracy_delta": 0.02380952380952378,
+        "cross_entropy_delta": -0.029766481621969598,
+        "mean_proper_gain": 0.034164059056829545,
+        "safe_rate": 0.2857142857142857
+      },
+      "qasc": {
+        "rows": 42,
+        "accuracy_delta": -0.047619047619047616,
+        "cross_entropy_delta": 0.01297990560639728,
+        "mean_proper_gain": -0.02052443152054936,
+        "safe_rate": 0.3333333333333333
+      },
+      "snli": {
+        "rows": 42,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.008250989859878821,
+        "mean_proper_gain": 0.010871923828525462,
+        "safe_rate": 0.30952380952380953
+      },
+      "truthfulqa": {
+        "rows": 42,
+        "accuracy_delta": 0.02380952380952378,
+        "cross_entropy_delta": -0.02812141438332616,
+        "mean_proper_gain": 0.033634890788270234,
+        "safe_rate": 0.19047619047619047
+      }
+    },
+    "paws-wiki": {
+      "clinc": {
+        "rows": 96,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.3335260016996762,
+        "mean_proper_gain": -0.3462333468180771,
+        "safe_rate": 0.4270833333333333
+      },
+      "paws-wiki": {
+        "rows": 96,
+        "accuracy_delta": 0.01041666666666663,
+        "cross_entropy_delta": -0.045085549157122706,
+        "mean_proper_gain": 0.048921858238982874,
+        "safe_rate": 0.08333333333333333
+      },
+      "qasc": {
+        "rows": 96,
+        "accuracy_delta": 0.01041666666666663,
+        "cross_entropy_delta": -0.029212981344600875,
+        "mean_proper_gain": 0.035491739400329826,
+        "safe_rate": 0.11458333333333333
+      },
+      "snli": {
+        "rows": 96,
+        "accuracy_delta": 0.01041666666666663,
+        "cross_entropy_delta": -0.025910654223190277,
+        "mean_proper_gain": 0.02151036755121341,
+        "safe_rate": 0.09375
+      },
+      "truthfulqa": {
+        "rows": 96,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.05676059555953872,
+        "mean_proper_gain": 0.060279376950253004,
+        "safe_rate": 0.10416666666666667
+      }
+    },
+    "qasc": {
+      "clinc": {
+        "rows": 128,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.22091012219343686,
+        "mean_proper_gain": -0.22431891372998605,
+        "safe_rate": 0.6953125
+      },
+      "paws-wiki": {
+        "rows": 128,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": 0.008162027990407883,
+        "mean_proper_gain": -0.01132739580074916,
+        "safe_rate": 0.109375
+      },
+      "qasc": {
+        "rows": 128,
+        "accuracy_delta": 0.109375,
+        "cross_entropy_delta": -0.3514322546634889,
+        "mean_proper_gain": 0.4235172228104576,
+        "safe_rate": 0.4921875
+      },
+      "snli": {
+        "rows": 128,
+        "accuracy_delta": -0.0234375,
+        "cross_entropy_delta": 0.046518198245807496,
+        "mean_proper_gain": -0.06057132656451358,
+        "safe_rate": 0.0390625
+      },
+      "truthfulqa": {
+        "rows": 128,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -6.838437343048565e-05,
+        "mean_proper_gain": -0.0035921575336218103,
+        "safe_rate": 0.09375
+      }
+    },
+    "snli": {
+      "clinc": {
+        "rows": 96,
+        "accuracy_delta": -0.03125,
+        "cross_entropy_delta": 0.35556022358939365,
+        "mean_proper_gain": -0.4024570393310467,
+        "safe_rate": 0.3020833333333333
+      },
+      "paws-wiki": {
+        "rows": 96,
+        "accuracy_delta": -0.02083333333333326,
+        "cross_entropy_delta": -0.019364218520921406,
+        "mean_proper_gain": 0.026268476121617784,
+        "safe_rate": 0.13541666666666666
+      },
+      "qasc": {
+        "rows": 96,
+        "accuracy_delta": -0.01041666666666663,
+        "cross_entropy_delta": -0.027415002445006054,
+        "mean_proper_gain": 0.03681132628772909,
+        "safe_rate": 0.2916666666666667
+      },
+      "snli": {
+        "rows": 96,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.044198775328151196,
+        "mean_proper_gain": 0.05692075653179801,
+        "safe_rate": 0.3020833333333333
+      },
+      "truthfulqa": {
+        "rows": 96,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.03274274717672099,
+        "mean_proper_gain": 0.042681537317761954,
+        "safe_rate": 0.20833333333333334
+      }
+    },
+    "truthfulqa": {
+      "clinc": {
+        "rows": 256,
+        "accuracy_delta": 0.02734375,
+        "cross_entropy_delta": 0.9699684464589076,
+        "mean_proper_gain": -1.0160407038242532,
+        "safe_rate": 0.30078125
+      },
+      "paws-wiki": {
+        "rows": 256,
+        "accuracy_delta": -0.01171875,
+        "cross_entropy_delta": -0.031324846627616365,
+        "mean_proper_gain": 0.028849163859206335,
+        "safe_rate": 0.28125
+      },
+      "qasc": {
+        "rows": 256,
+        "accuracy_delta": 0.015625,
+        "cross_entropy_delta": -0.0708439121243789,
+        "mean_proper_gain": 0.07091826803866597,
+        "safe_rate": 0.33203125
+      },
+      "snli": {
+        "rows": 256,
+        "accuracy_delta": 0.015625,
+        "cross_entropy_delta": -0.09923975881677172,
+        "mean_proper_gain": 0.11411512748824298,
+        "safe_rate": 0.44921875
+      },
+      "truthfulqa": {
+        "rows": 256,
+        "accuracy_delta": 0.015625,
+        "cross_entropy_delta": -0.23030858145451583,
+        "mean_proper_gain": 0.2630831483948867,
+        "safe_rate": 0.4375
+      }
+    },
+    "typed-decisions": {
+      "clinc": {
+        "rows": 320,
+        "accuracy_delta": -0.012499999999999956,
+        "cross_entropy_delta": 0.6521868305294842,
+        "mean_proper_gain": -0.700147670675419,
+        "safe_rate": 0.053125
+      },
+      "paws-wiki": {
+        "rows": 320,
+        "accuracy_delta": 0.006249999999999978,
+        "cross_entropy_delta": -0.08463474843898644,
+        "mean_proper_gain": 0.09618960537122798,
+        "safe_rate": 0.540625
+      },
+      "qasc": {
+        "rows": 320,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.030526413740286973,
+        "mean_proper_gain": 0.03386127346444844,
+        "safe_rate": 0.49375
+      },
+      "snli": {
+        "rows": 320,
+        "accuracy_delta": 0.006249999999999978,
+        "cross_entropy_delta": -0.03521167502928213,
+        "mean_proper_gain": 0.0385225581087474,
+        "safe_rate": 0.471875
+      },
+      "truthfulqa": {
+        "rows": 320,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.08235366000681554,
+        "mean_proper_gain": 0.0932885954769001,
+        "safe_rate": 0.503125
+      }
+    }
+  },
+  "oracle": {
+    "rows": 980,
+    "selection": {
+      "qasc": 155,
+      "paws-wiki": 112,
+      "truthfulqa": 123,
+      "parent": 200,
+      "clinc": 276,
+      "snli": 114
+    },
+    "violations": {
+      "parent_correct_lost": 0,
+      "cross_entropy_regressed": 0,
+      "brier_regressed": 0,
+      "context_regressed": 0
+    },
+    "violation_count": 0,
+    "parent_accuracy": 0.6775510204081633,
+    "oracle_accuracy": 0.7285714285714285,
+    "accuracy_delta": 0.05102040816326525,
+    "parent_cross_entropy": 0.9153590081880614,
+    "oracle_cross_entropy": 0.7094708747101673,
+    "cross_entropy_delta": -0.20588813347789403,
+    "by_source": {
+      "clinc": {
+        "rows": 42,
+        "accuracy_delta": 0.0,
+        "cross_entropy_delta": -0.021258097321708302
+      },
+      "json-schema": {
+        "rows": 42,
+        "accuracy_delta": 0.0714285714285714,
+        "cross_entropy_delta": -0.15895949416606703
+      },
+      "paws-wiki": {
+        "rows": 96,
+        "accuracy_delta": 0.02083333333333337,
+        "cross_entropy_delta": -0.11642123878312877
+      },
+      "qasc": {
+        "rows": 128,
+        "accuracy_delta": 0.1015625,
+        "cross_entropy_delta": -0.37187933869872447
+      },
+      "snli": {
+        "rows": 96,
+        "accuracy_delta": 0.03125,
+        "cross_entropy_delta": -0.20512753930614958
+      },
+      "truthfulqa": {
+        "rows": 256,
+        "accuracy_delta": 0.07421875,
+        "cross_entropy_delta": -0.31107771459968625
+      },
+      "typed-decisions": {
+        "rows": 320,
+        "accuracy_delta": 0.03125,
+        "cross_entropy_delta": -0.11280030930726004
+      }
+    }
+  },
+  "checks": {
+    "coverage.sources": true,
+    "coverage.experts": true,
+    "safety.zero_violations": true,
+    "sources.accuracy": true,
+    "sources.cross_entropy": true
+  },
+  "passed": true,
+  "limitations": [
+    "All seven validation families are consumed and cannot support a fresh release claim.",
+    "Canonical seed-42 experts are fixed before cross evaluation.",
+    "The safe oracle measures available headroom; it is not an inference-time router."
+  ]
+}
