@@ -55,7 +55,7 @@ class BenchmarkTests(unittest.TestCase):
                                             "data_sha256": digest(data.read_bytes())}))
             result = benchmark(SimpleNamespace(
                 data=str(data), predictions=str(predictions), output=str(output),
-                manifest=str(manifest), thresholds=[0.5, 0.9]))
+                manifest=str(manifest), split="test", thresholds=[0.5, 0.9]))
             self.assertEqual(result["rows"], 2)
             report = json.loads(output.read_text())
             self.assertEqual(report["metrics"]["selected_correct"], 1)
@@ -75,7 +75,7 @@ class BenchmarkTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 benchmark(SimpleNamespace(
                     data=str(data), predictions=str(predictions),
-                    output=str(root / "report.json"), manifest=None, thresholds=None))
+                    output=str(root / "report.json"), manifest=None, split=None, thresholds=None))
 
 
 if __name__ == "__main__":

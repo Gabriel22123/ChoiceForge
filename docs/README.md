@@ -25,6 +25,8 @@ This page is the entry point for the public documentation.
   representation-frozen objective comparison.
 - [Outcome feedback design](EXECUTABLE_OUTCOME_RLCD_DESIGN.zh-CN.md):
   nondifferentiable result-feedback decomposition.
+- [Architecture benchmark evidence](evidence/architecture-benchmark-v1.json):
+  the existing three-seed decoder/encoder study re-audited under Benchmark v0.1.
 - `evidence/`: machine-readable hashes, metrics and audit outputs.
 
 ## Reproduction conventions

@@ -142,6 +142,10 @@ def benchmark(args):
     data_path = Path(args.data)
     prediction_path = Path(args.predictions)
     rows = load_rows(data_path)
+    if args.split is not None:
+        rows = [row for row in rows if row["split"] == args.split]
+        if not rows:
+            raise ValueError("Requested benchmark split is empty: " + args.split)
     predictions = _read_predictions(prediction_path)
     row_ids = {row["id"] for row in rows}
     prediction_ids = set(predictions)
@@ -172,6 +176,7 @@ def benchmark(args):
         "data_sha256": digest(data_path.read_bytes()),
         "predictions_sha256": digest(prediction_path.read_bytes()),
         "rows": len(rows),
+        "split": args.split,
         "sources": dict(Counter(row.get("source") for row in rows)),
         "metrics": _metrics(rows, predictions, thresholds),
         "by_family": _group_metrics(rows, predictions, thresholds, "family"),

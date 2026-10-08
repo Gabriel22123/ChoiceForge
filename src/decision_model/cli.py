@@ -68,6 +68,7 @@ def _add_benchmark_parser(commands):
     parser.add_argument("--predictions", required=True)
     parser.add_argument("--output", required=True)
     parser.add_argument("--manifest")
+    parser.add_argument("--split", choices=("train", "validation", "test"))
     parser.add_argument("--threshold", dest="thresholds", action="append", type=float)
 
 
